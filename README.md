@@ -42,12 +42,45 @@ As tecnologias utilizadas no projeto incluem:
 Projeto desenvolvido pelas alunas do curso de **Desenvolvimento de Sistemas** da E.E Dr. Jorge Coury como parte do **Trabalho de Conclusão de Curso (TCC)** 2026.
 
 # 👩‍💻 Contatos
+
+- Clarine de Souza
+<a href="" target="_blank"> 
+  <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/> 
+</a>
+
+<a href="" target="_blank"> 
+  <img src="https://img.shields.io/badge/GitHub-000000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/> 
+</a>
+
+<a href="https://mail.google.com/mail/?view=cm&to=" target="_blank">
+  <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email">
+</a>
+
 - Laura Mancin
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/laura-mancin-591561366)
+<a href="www.linkedin.com/in/laura-mancin-591561366" target="_blank"> 
+  <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/> 
+</a>
 
-[![GitHub](https://img.shields.io/badge/GitHub-Repositórios-black?style=for-the-badge&logo=github)](https://github.com/LauraMancin)
+<a href="https://github.com/LauraMancin" target="_blank"> 
+  <img src="https://img.shields.io/badge/GitHub-000000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/> 
+</a>
 
-[![Email](https://img.shields.io/badge/Email-Contato-red?style=for-the-badge&logo=gmail)](mailto:lauramancin8@gmail.com)
+<a href="https://mail.google.com/mail/?view=cm&to=lauramancin8@gmail.com" target="_blank">
+  <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email">
+</a>
+
+- Mariane Carvalho Dearo
+<a href="" target="_blank"> 
+  <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/> 
+</a>
+
+<a href="" target="_blank"> 
+  <img src="https://img.shields.io/badge/GitHub-000000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/> 
+</a>
+
+<a href="https://mail.google.com/mail/?view=cm&to=" target="_blank">
+  <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email">
+</a>
 
 # 📌 Observação
 
