@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap'); /*fonte Inter*/
+
+*{
+    margin: 80;
+    padding: 0;
+}
+
+ 
+ 
+:root{
+    --cor-principal: #DB7093;
+    --cor-botao-efeito: #E99BB4;
+    --cor-secundaria: #FFFFFF;
+    --cor-terciaria: #000000;
+    --fonte-principal: 'Inter', sans-serif;
+    --fonte-logo: 'Ribeye', sans-serif;
+    --fonte-size-titulo: 40px;
+    --fonte-size-descricao: 20px;
+    --fonte-size-botao: 20px;
+    --fonte-size-subtítulo: 16px;
+}
+ 
+.adocaoBanner{
+    background-image: url(../assets/banner_gatos.png);
+    background-repeat: no-repeat;
+    height: 1282px;
+    align-items: center;
+    text-align: center;
+    max-height: 298px;
+    margin-bottom: 83px;
+}
+
+.gatosDisponiveis{
+    font-family: var(--fonte-principal);
+    color: var(--cor-secundaria);
+    font-size: var(--fonte-size-titulo);
+}
+
+.gatos{
+    display: flex;
+    line-height: 3vh;
+    margin: 10px;
+}
