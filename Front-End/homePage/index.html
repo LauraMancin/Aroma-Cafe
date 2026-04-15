@@ -1,12 +1,123 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style/style.css">
-    <title>Home</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/style.css" />
+    <title>Aroma Café - Home</title>
+  </head>
+
+  <body>
+    <header>
+      <nav class="menuNavegacao">
+        <a href="./index.html" class="logoAroma">Aroma Café |</a>
+        <a href="#">Produtos |</a>
+        <a href="#">Adoções |</a>
+        <a href="#">Reservas |</a>
+        <a href="#">Entre</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- BANNER -->
+      <section class="banner">
+        <h1 class="tituloPrincipal">AROMA CAFÉ</h1>
+        <p class="tituloSecundario">O ronron perfeito para o seu expresso</p>
+        <img
+          class="imagemBanner"
+          src="./imagens/fundo_cafeteria.jpg"
+          alt="Funcionário preparando café"
+        />
+      </section>
+
+      <!-- SOBRE -->
+      <section class="secaoSobre">
+        <h2 class="tituloPrincipal">SOBRE <em> NÓS </em></h2>
+        <p class="textoConteudo">
+          A Aroma não é apenas um lugar para beber café, é um santuário dedicado
+          à pausa. Com uma decoração que mistura madeira de demolição, plantas
+          suspensas e gatinhos, o ambiente convida você a esquecer o relógio.
+        </p>
+
+        <img
+          class="imagemSecao"
+          src="./imagens/gato_branco.jpg"
+          alt="Gato branco com uma xícara"
+        />
+      </section>
+
+      <!-- FUNCIONAMENTO -->
+      <section class="secaoFuncionamento">
+        <h2 class="tituloPrincipal">COMO FUNCIONA A GATERIA?</h2>
+        <p class="textoConteudo">
+          O estabelecimento é estruturado em dois ambientes distintos...
+        </p>
+
+        <img
+          class="imagemSecao"
+          src="./imagens/gato_preto.jpg"
+          alt="Gato preto deitado"
+        />
+      </section>
+
+      <!-- CARDÁPIO -->
+      <section class="secaoCardapio">
+        <h2 class="tituloPrincipal">CONHEÇA NOSSO CARDÁPIO</h2>
+
+        <div class="cardapioContainer">
+          <div class="card">
+            <img src="./imagens/cafe_cardapio.jpg" alt="Xícara de café" />
+            <h5 class="tituloCard">Cafés especiais da casa</h5>
+            <p class="textoCard">
+              Cafés especiais inspirados em gatos com aromas marcantes.
+            </p>
+          </div>
+
+          <div class="card">
+            <img
+              src="./imagens/bebida_gelada_cardapio.jpg"
+              alt="Bebida gelada"
+            />
+            <h5 class="tituloCard">Bebidas geladas</h5>
+            <p class="textoCard">
+              Bebidas refrescantes e criativas para qualquer momento.
+            </p>
+          </div>
+
+          <div class="card">
+            <img src="./imagens/bolo_morango.jpg" alt="Bolo de morango" />
+            <h5 class="tituloCard">Doces e acompanhamentos</h5>
+            <p class="textoCard">
+              Doces delicados e irresistíveis para acompanhar seu café.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTATO -->
+      <section class="secaoContato">
+        <h2 class="tituloPrincipal">FALE CONOSCO</h2>
+
+        <form class="formularioContato">
+          <input type="text" placeholder="Nome" required />
+          <input type="text" placeholder="Sobrenome" required />
+          <br>
+          <input type="email" placeholder="E-mail" required />
+          <br>
+          <textarea placeholder="Sua mensagem" required rows="4" cols="50"></textarea>
+          <br>
+          <button class="botaoEnviar">Enviar</button>
+        </form>
+      </section>
+
+      <!-- LOCALIZAÇÃO -->
+      <section class="secaoLocalizacao">
+        <img src="./imagens/marker.png" alt="Símbolo de localização" />
+      </section>
+    </main>
+
+    <footer class="rodape">
+      Aroma Café &copy; 2026. Todos os direitos reservados.
+    </footer>
+  </body>
 </html>
