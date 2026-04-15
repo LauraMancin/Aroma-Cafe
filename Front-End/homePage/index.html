@@ -9,25 +9,27 @@
 
   <body>
     <header>
+      <div>
+        <a href="./index.html" class="logoAroma"
+        ><abbr title="Voltar à página inicial">Aroma Café</abbr></a
+        >
+      </div>
+
+      <input type="text" placeholder="Pesquisa" class="barraPesquisa" />
+      
       <nav class="menuNavegacao">
-        <a href="./index.html" class="logoAroma">Aroma Café |</a>
-        <a href="#">Produtos |</a>
-        <a href="#">Adoções |</a>
-        <a href="#">Reservas |</a>
-        <a href="#">Entre</a>
+        <a href="#">PRODUTOS </a>
+        <a href="#">ADOÇÕES </a>
+        <a href="#">RESERVAS </a>
+        <a href="#" class="botaoPrincipal">Entre</a>
       </nav>
     </header>
 
     <main>
       <!-- BANNER -->
       <section class="banner">
-        <h1 class="tituloPrincipal">AROMA CAFÉ</h1>
-        <p class="tituloSecundario">O ronron perfeito para o seu expresso</p>
-        <img
-          class="imagemBanner"
-          src="./imagens/fundo_cafeteria.jpg"
-          alt="Funcionário preparando café"
-        />
+        <h1 class="tituloPrincipalHome">AROMA CAFÉ</h1>
+        <p class="tituloSecundarioHome">O ronron perfeito para o seu expresso</p>
       </section>
 
       <!-- SOBRE -->
@@ -101,11 +103,16 @@
         <form class="formularioContato">
           <input type="text" placeholder="Nome" required />
           <input type="text" placeholder="Sobrenome" required />
-          <br>
+          <br />
           <input type="email" placeholder="E-mail" required />
-          <br>
-          <textarea placeholder="Sua mensagem" required rows="4" cols="50"></textarea>
-          <br>
+          <br />
+          <textarea
+            placeholder="Sua mensagem"
+            required
+            rows="4"
+            cols="50"
+          ></textarea>
+          <br />
           <button class="botaoEnviar">Enviar</button>
         </form>
       </section>

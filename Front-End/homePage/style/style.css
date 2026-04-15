@@ -1,6 +1,132 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap'); /*fonte Inter*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Ribeye&display=swap'); /*fonte Ribeye*/
+
+:root{
+    --cor-principal: #DB7093;
+    --cor-botao-efeito: #E99BB4;
+    --cor-secundaria: #FFFFFF;
+    --cor-terciaria: #000000;
+    --fonte-principal: 'Inter', sans-serif;
+    --fonte-logo: 'Ribeye', sans-serif;
+    --fonte-size-titulo: 40px;
+    --fonte-size-descricao: 20px;
+    --fonte-size-botao: 20px;
+    --fonte-size-subtitulo: 16px;
+}
 
 *{
     margin: 0%;
     padding: 0%;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    background-color: var(--cor-secundaria);
+    color: var(--cor-terciaria);
+    font-family: var(--fonte-principal);
+    background: url(../image/Fundo.png) no-repeat center/cover;
+    height: 100vh;
+}
+
+header{
+  position: absolute; /* faz ficar sobre a imagem */
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  box-sizing: border-box;
+  color: white;
+}
+
+.barraPesquisa{
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  border-radius: 5px;
+  padding: 0.5em;
+}
+
+.barraPesquisa input{
+  width: 50%;
+  max-width: 400px;
+  padding: 10px 15px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+}
+
+.menuNavegacao{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+.menuNavegacao a{
+    font-family: var(--fonte-principal);
+    font-size: var(--fonte-size-descricao);
+    color: var(--cor-secundaria);
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.logoAroma{
+    font-family: var(--fonte-principal);
+    color: var(--cor-secundaria);
+    font-size: 24px;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.banner{
+    height: 100vh;
+    grid-template-columns: 50% 50%;
+}
+
+.tituloPrincipalHome{
+    font-family: var(--fonte-logo);
+    font-size: 64px;
+    text-align: center;
+    position: absolute; /* coloca sobre a imagem */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* centraliza */
+    color: white;
+    text-align: center;
+}
+
+.tituloSecundarioHome{
+    font-family: var(--fonte-principal);
+    font-size: 24px;
+    font-weight: 500;
+    text-align: center;
+    position: absolute; /* coloca sobre a imagem */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* centraliza */
+    color: var(--cor-secundaria);
+    margin-top: 5rem;
+    text-align: center;
+}
+
+.imagemBanner{
+    background-repeat: no-repeat;
+    background-size: contain;
+    align-items: center;
+    text-align: center;
+}
+
+.botaoPrincipal{
+    background-color: var(--cor-principal);
+    color: var(--cor-secundaria);
+    font-family: var(--fonte-principal);
+    font-size: var(--fonte-size-botao);
+    font-weight: 400;
+    padding: 0.5rem;
+    border-radius: 8px;
+}
+.botaoPrincipal:hover{
+    background-color: var(--cor-botao-efeito);
 }
