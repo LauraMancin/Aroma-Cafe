@@ -1,0 +1,48 @@
+/*importar fontes */
+
+/*fazer root*/
+
+*{
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*menu*/
+
+.imagem-produto-destaque{
+    float: left;
+    margin: 0em 10em 0 15em;
+}
+
+.container-produto-destaque{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 2rem;
+    margin: 10em 10em 10em 10em;
+}
+
+.nome-produto-destaque{
+    font-weight: bold;
+}
+
+.preco-produto{
+
+}
+
+.texto-produto-destaque{
+    font-size: 20px;
+    opacity: 0.5;
+}
+
+.botao-carrinho{
+    background-color: #DB7093;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    width: 500px;
+    padding: 15px
+    
+}
