@@ -5,7 +5,10 @@
     padding: 0;
 }
 
- 
+.body{
+
+}
+
  
 :root{
     --cor-principal: #DB7093;
@@ -16,28 +19,94 @@
     --fonte-logo: 'Ribeye', sans-serif;
     --fonte-size-titulo: 40px;
     --fonte-size-descricao: 20px;
-    --fonte-size-botao: 20px;
+    --fonte-size-botao: 14px;
     --fonte-size-subtítulo: 16px;
 }
  
+/*menu
+.menuNavegacao{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+    font-weight: bold;
+    text-decoration: none;
+}
+ 
+.logoAroma{
+    font-family: var(--fonte-logo);
+    text-decoration: none;
+    cursor: pointer;
+    color: black;
+}
+ 
+.botao-carrinho1{
+    background-color: #DB7093;
+    color: white;
+    font-weight: bold;
+    font-size: var(--fonte-size-botao);
+    border-radius: 8px;
+    width: 100px;
+    padding: 15px
+}
+ 
+.botao-carrinho1:hover{
+    opacity: 0.9;
+    cursor: pointer;
+}
+ 
+.botao-carrinho1:active{
+    opacity: 0.5;
+}
+ 
+.botao-carrinho{
+    background-color: #DB7093;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    width: 500px;
+    padding: 15px
+   
+}
+ 
+.botao-carrinho:hover{
+    opacity: 0.9;
+    cursor: pointer;
+}
+ 
+.botao-carrinho:active{
+    opacity: 0.5;
+}*/
+
+
+/*Seção Banner principal*/
 .adocaoBanner{
-    background-image: url(../assets/banner_gatos.png);
-    background-repeat: no-repeat;
-    height: 1282px;
+    height: 1282vh;
     align-items: center;
     text-align: center;
     max-height: 298px;
     margin-bottom: 83px;
+    margin: 200;
+}
+
+.bannerGatos{
+    background-image: url(../assets/banner_gatos.png);
+    background-repeat: no-repeat;
 }
 
 .gatosDisponiveis{
     font-family: var(--fonte-principal);
-    color: var(--cor-secundaria);
+
     font-size: var(--fonte-size-titulo);
 }
 
+/*Seção dos Gatos*/
 .gatos{
     display: flex;
     line-height: 3vh;
-    margin: 10px;
+    margin-left: 80px;
+}
+
+.nome{
+    font-family: var(--fonte-size-subtítulo);
 }
