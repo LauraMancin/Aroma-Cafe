@@ -29,6 +29,14 @@ body{
     height: 100vh;
 }
 
+main{
+    padding: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
 header{
   position: absolute; /* faz ficar sobre a imagem */
   top: 0;
@@ -46,8 +54,9 @@ header{
   flex: 2;
   display: flex;
   justify-content: center;
-  border-radius: 5px;
-  padding: 0.5em;
+  border-radius: 10px;
+  padding: 0.5rem;
+  width: 30%;
 }
 
 .barraPesquisa input{
@@ -129,4 +138,34 @@ header{
 }
 .botaoPrincipal:hover{
     background-color: var(--cor-botao-efeito);
+}
+
+
+
+/*parte das sessões*/
+
+section{
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.tituloPrincipal{
+    font-family: var(--fonte-principal);
+    font-size: var(--fonte-size-titulo);
+    color: #000000;
+}
+
+.textoConteudo{
+    font-family: var(--fonte-principal);
+    font-size: var(--fonte-size-descricao);
+    color: #000000;
+    text-align: center;
+}
+
+
+.secaoCardapio{
+    display: flex;
+    flex-direction: row;
 }
