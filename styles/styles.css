@@ -1,14 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap'); /*fonte Inter*/
 
 *{
-    margin: 80;
+    margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
-
-.body{
-
-}
-
  
 :root{
     --cor-principal: #DB7093;
@@ -22,91 +18,50 @@
     --fonte-size-botao: 14px;
     --fonte-size-subtítulo: 16px;
 }
- 
-/*menu
-.menuNavegacao{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px 10%;
-    font-weight: bold;
-    text-decoration: none;
-}
- 
-.logoAroma{
-    font-family: var(--fonte-logo);
-    text-decoration: none;
-    cursor: pointer;
-    color: black;
-}
- 
-.botao-carrinho1{
-    background-color: #DB7093;
-    color: white;
-    font-weight: bold;
-    font-size: var(--fonte-size-botao);
-    border-radius: 8px;
-    width: 100px;
-    padding: 15px
-}
- 
-.botao-carrinho1:hover{
-    opacity: 0.9;
-    cursor: pointer;
-}
- 
-.botao-carrinho1:active{
-    opacity: 0.5;
-}
- 
-.botao-carrinho{
-    background-color: #DB7093;
-    color: white;
-    font-weight: bold;
-    border-radius: 8px;
-    width: 500px;
-    padding: 15px
-   
-}
- 
-.botao-carrinho:hover{
-    opacity: 0.9;
-    cursor: pointer;
-}
- 
-.botao-carrinho:active{
-    opacity: 0.5;
-}*/
-
 
 /*Seção Banner principal*/
-.adocaoBanner{
-    height: 1282vh;
-    align-items: center;
+.adocaoBanner {
     text-align: center;
-    max-height: 298px;
-    margin-bottom: 83px;
-    margin: 200;
+    margin-bottom: 3rem;
+    padding: 0 2rem;
+    position: relative; 
 }
 
-.bannerGatos{
-    background-image: url(../assets/banner_gatos.png);
-    background-repeat: no-repeat;
+.bannerGatos {
+    width: 100%;
+    max-width: 1280px;
+    height: auto;
+    display: block;
 }
 
 .gatosDisponiveis{
     font-family: var(--fonte-principal);
-
     font-size: var(--fonte-size-titulo);
+    position: absolute; 
+    bottom: 7rem; 
+    left: 10%;
+    right: 10%;
+    text-align: center;
+    color: white;
 }
 
 /*Seção dos Gatos*/
-.gatos{
+.blocoGato{
+    flex-direction: row;
     display: flex;
+    align-items: center;
+}
+
+.gatos{
+    display: grid;
     line-height: 3vh;
-    margin-left: 80px;
+    margin-left: 20px;
+    text-decoration: none;
+    padding: 0;
 }
 
 .nome{
-    font-family: var(--fonte-size-subtítulo);
+    font-family: var(--fonte-principal);
+    font-size: var(--fonte-size-subtítulo);
+    color: var(--cor-terciaria);
 }
