@@ -50,6 +50,8 @@
     flex-direction: row;
     display: flex;
     align-items: center;
+    margin-top: 80px;
+
 }
 
 .gatos{
@@ -64,4 +66,6 @@
     font-family: var(--fonte-principal);
     font-size: var(--fonte-size-subtítulo);
     color: var(--cor-terciaria);
+    margin-top: 20px;
+    font-weight: 500;
 }
