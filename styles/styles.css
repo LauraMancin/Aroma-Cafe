@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
  
 :root{
     --cor-principal: #DB7093;
@@ -23,15 +24,17 @@
 .adocaoBanner {
     text-align: center;
     margin-bottom: 3rem;
-    padding: 0 2rem;
-    position: relative; 
+    padding: 0;
+    position: relative;
 }
 
 .bannerGatos {
     width: 100%;
-    max-width: 1280px;
+    max-width: 100%;
     height: auto;
     display: block;
+    margin: 0 20px;
+    width: calc(100% - 40px); /*usado para diminuir as laterais*/
 }
 
 .gatosDisponiveis{
@@ -47,19 +50,24 @@
 
 /*Seção dos Gatos*/
 .blocoGato{
-    flex-direction: row;
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    padding: 0 2rem;
     margin-top: 80px;
-
 }
 
 .gatos{
     display: grid;
-    line-height: 3vh;
-    margin-left: 20px;
+    line-height: 1.5;
     text-decoration: none;
     padding: 0;
+}
+
+.gatos img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 .nome{
@@ -69,3 +77,38 @@
     margin-top: 20px;
     font-weight: 500;
 }
+
+/* Mobile */
+@media (max-width: 480px) {
+    .blocoGato {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+        margin-top: 40px;
+    }
+
+    .gatosDisponiveis {
+        bottom: 1rem;
+    }
+}
+
+/* Tablet */
+@media (min-width: 481px) and (max-width: 1024px) {
+    .blocoGato {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 1.5rem;
+    }
+
+    .gatosDisponiveis {
+        bottom: 3rem;
+    }
+}
+
+/* Responsividade */
+@media (min-width: 1025px) {
+    .blocoGato {
+        grid-template-columns: repeat(3, 1fr);
+        padding: 0 2rem;
+    }
+}
+
+/*página dos gatos*/
