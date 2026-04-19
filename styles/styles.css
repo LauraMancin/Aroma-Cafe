@@ -44,7 +44,7 @@
     align-items: center;
     gap: 30px;
     font-family: var(--fonte-principal);
-    font-size: var(--fonte-size-descricao);
+    font-size: var(--fonte-size-botao);
 }
 
 .menu a{
