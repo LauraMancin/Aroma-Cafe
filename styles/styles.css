@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap'); /*fonte Inter*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 *{
     margin: 0;
@@ -6,7 +6,6 @@
     box-sizing: border-box;
 }
 
- 
 :root{
     --cor-principal: #DB7093;
     --cor-botao-efeito: #E99BB4;
@@ -18,23 +17,72 @@
     --fonte-size-descricao: 20px;
     --fonte-size-botao: 14px;
     --fonte-size-subtítulo: 16px;
+
+    /* padrão de alinhamento */
+    --container-padding: 10%;
 }
 
-/*Seção Banner principal*/
+/* Menu */
+
+.menuNavegacao{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px var(--container-padding);
+}
+
+.logoAroma{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-family: var(--fonte-logo);
+    font-size: var(--fonte-size-descricao);
+}
+
+.menu{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    font-family: var(--fonte-principal);
+    font-size: var(--fonte-size-descricao);
+}
+
+.menu a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.menu .ativo{
+    color: var(--cor-principal);
+}
+
+.botao-carrinho1{
+    background-color: var(--cor-principal);
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 10px 20px;
+    border: none;
+    font-size: var(--fonte-size-botao);
+}
+
+.botao-carrinho1:hover{
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+/* Bannner*/
+
 .adocaoBanner {
-    text-align: center;
-    margin-bottom: 3rem;
-    padding: 0;
     position: relative;
+    padding: 0 var(--container-padding);
+    margin-bottom: 3rem;
 }
 
 .bannerGatos {
     width: 100%;
-    max-width: 100%;
-    height: auto;
     display: block;
-    margin: 0 20px;
-    width: calc(100% - 40px); /*usado para diminuir as laterais*/
 }
 
 .gatosDisponiveis{
@@ -48,12 +96,13 @@
     color: white;
 }
 
-/*Seção dos Gatos*/
+/* Parte dos Gatos */
+
 .blocoGato{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 2rem;
-    padding: 0 2rem;
+    padding: 0 var(--container-padding);
     margin-top: 80px;
 }
 
@@ -61,7 +110,6 @@
     display: grid;
     line-height: 1.5;
     text-decoration: none;
-    padding: 0;
 }
 
 .gatos img {
@@ -78,7 +126,8 @@
     font-weight: 500;
 }
 
-/* Mobile */
+/* Responsividade */
+
 @media (max-width: 480px) {
     .blocoGato {
         grid-template-columns: 1fr;
@@ -88,14 +137,14 @@
 
     .gatosDisponiveis {
         bottom: 1rem;
+        font-size: 24px;
     }
 }
 
-/* Tablet */
 @media (min-width: 481px) and (max-width: 1024px) {
     .blocoGato {
         grid-template-columns: repeat(2, 1fr);
-        padding: 0 1.5rem;
+        padding: 0 2rem;
     }
 
     .gatosDisponiveis {
@@ -103,24 +152,13 @@
     }
 }
 
-/* Responsividade */
-@media (min-width: 1025px) {
-    .blocoGato {
-        grid-template-columns: repeat(3, 1fr);
-        padding: 0 2rem;
-    }
-}
+/* Rodapé*/
 
-/*página dos gatos*/
-
-
-/*Rodapé*/
 footer {
     background-color: var(--cor-secundaria);
-    padding: 3rem 2rem;
+    padding: 3rem var(--container-padding);
 }
 
-/* container principal */
 .footer-container {
     display: flex;
     justify-content: space-between;
@@ -132,14 +170,12 @@ footer {
     font-size: var(--fonte-size-subtítulo);
 }
 
-/* coluna logo */
 .logo {
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
 
-/* redes sociais */
 .redesSociais {
     display: flex;
     gap: 10px;
@@ -147,10 +183,11 @@ footer {
 
 .redesSociais img {
     width: 20px;
+    height: 20px;
+    object-fit: contain;
     opacity: 0.7;
 }
 
-/* colunas */
 .explorar, .servicos, .suporte {
     display: flex;
     flex-direction: column;
@@ -158,13 +195,11 @@ footer {
     min-width: 150px;
 }
 
-/* títulos */
 .titulo {
     font-weight: 600;
     margin-bottom: 5px;
 }
 
-/* links */
 footer a {
     text-decoration: none;
     color: #555;
