@@ -17,9 +17,7 @@
     --fonte-size-descricao: 20px;
     --fonte-size-botao: 14px;
     --fonte-size-subtítulo: 16px;
-
-    /* padrão de alinhamento */
-    --container-padding: 10%;
+    --container-padding: clamp(16px, 5%, 80px) /*deixa o padding responsivo valorMinimo, valorIdeal e valorMaximo*/
 }
 
 /* Menu */
@@ -72,7 +70,7 @@
     cursor: pointer;
 }
 
-/* Bannner*/
+/* Bannner */
 
 .adocaoBanner {
     position: relative;
@@ -100,7 +98,7 @@
 
 .blocoGato{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /*deixa o layout como um todo responsivo*/
     gap: 2rem;
     padding: 0 var(--container-padding);
     margin-top: 80px;
@@ -126,8 +124,26 @@
     font-weight: 500;
 }
 
+
+/* Página dos Gatos */
+
+/*Pucca*/
+
+.voltar{
+    font-family: var(--fonte-principal);
+    font-size: var(--fonte-size-botao);
+    text-decoration: none;
+    color: var(--cor-terciaria);
+}
+
+.voltar a{
+    color: var(--cor-principal);
+}
+
+
 /* Responsividade */
 
+/*mobile*/
 @media (max-width: 480px) {
     .blocoGato {
         grid-template-columns: 1fr;
@@ -141,6 +157,7 @@
     }
 }
 
+/*tablet*/
 @media (min-width: 481px) and (max-width: 1024px) {
     .blocoGato {
         grid-template-columns: repeat(2, 1fr);
