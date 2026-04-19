@@ -9,37 +9,51 @@
 
   <body>
     <main>
-    <header>
-      <div>
-        <a href="./index.html" class="logoAroma"
-        ><abbr title="Voltar à página inicial">Aroma Café</abbr></a
-        >
-      </div>
+      <header>
+        <div>
+          <a href="./index.html" class="logoAroma">
+            <abbr title="Voltar à página inicial">Aroma Café</abbr>
+          </a>
+        </div>
 
-      <input type="text" placeholder="Pesquisa" class="barraPesquisa" />
-      
-      <nav class="menuNavegacao">
-        <a href="#">PRODUTOS </a>
-        <a href="#">ADOÇÕES </a>
-        <a href="#">RESERVAS </a>
-        <a href="#" class="botaoPrincipal">Entre</a>
-      </nav>
-    </header>
+        <div class="containerBarraPesquisa barraPesquisa">
+          <img
+            src="./image/lupaPesquisa.png"
+            alt="Lupa de pesquisa"
+            class="iconePesquisa"
+          />
+          <input type="text" placeholder="Pesquisa" />
+        </div>
+
+        <nav class="menuNavegacao">
+          <a href="#">PRODUTOS</a>
+          <a href="#">ADOÇÕES</a>
+          <a href="#">RESERVAS</a>
+          <a href="#" class="botaoPrincipal">Entre</a>
+        </nav>
+      </header>
 
       <!-- BANNER -->
       <section class="banner">
         <h1 class="tituloPrincipalHome">AROMA CAFÉ</h1>
-        <p class="tituloSecundarioHome">O ronron perfeito para o seu expresso</p>
+        <p class="tituloSecundarioHome">
+          O ronron perfeito para o seu expresso
+        </p>
       </section>
 
       <!-- SOBRE -->
       <section class="secaoSobre">
-        <h2 class="tituloPrincipal">SOBRE <em> NÓS </em></h2>
-        <p class="textoConteudo">
-          A Aroma não é apenas um lugar para beber café, é um santuário dedicado
-          à pausa. Com uma decoração que mistura madeira de demolição, plantas
-          suspensas e gatinhos, o ambiente convida você a esquecer o relógio.
-        </p>
+        <div class="containerSobre">
+          <h2 class="tituloPrincipal">
+            SOBRE <span class="destaque">NÓS</span>
+          </h2>
+          <p class="textoConteudo">
+            A Aroma não é apenas um lugar para beber café, é um santuário
+            dedicado à pausa. Com uma decoração que mistura madeira de
+            demolição, plantas suspensas e gatinhos, o ambiente convida você a
+            esquecer o relógio.
+          </p>
+        </div>
 
         <img
           class="imagemSecao"
@@ -50,82 +64,192 @@
 
       <!-- FUNCIONAMENTO -->
       <section class="secaoFuncionamento">
-        <h2 class="tituloPrincipal">COMO FUNCIONA A GATERIA?</h2>
-        <p class="textoConteudo">
-         O estabelecimento é estruturado em dois ambientes distintos. O primeiro é dedicado ao conforto dos clientes, proporcionando um espaço acolhedor onde é possível realizar refeições, trabalhar, estudar ou simplesmente desfrutar de momentos de lazer.
-          O segundo ambiente corresponde à gateria, um espaço reservado e cuidadosamente controlado, no qual os visitantes podem interagir com os gatos de forma segura. O acesso costuma ocorrer mediante reserva, a fim de assegurar o bem-estar dos animais. Além das visitas, o local também oferece atividades especiais e incentiva a adoção responsável dos gatos.
-        </p>
-
         <img
           class="imagemSecao"
           src="./image/gatoPretoDeitado.png"
           alt="Gato preto deitado"
         />
+
+        <div class="containerFuncionamento">
+          <h2 class="tituloPrincipal">
+            COMO <span class="destaque">FUNCIONA</span> A GATERIA?
+          </h2>
+          <p class="textoFuncionamento textoConteudo">
+            O estabelecimento é estruturado em dois ambientes distintos. O
+            primeiro é dedicado ao conforto dos clientes, proporcionando um
+            espaço acolhedor onde é possível realizar refeições, trabalhar,
+            estudar ou simplesmente desfrutar de momentos de lazer. O segundo
+            ambiente corresponde à gateria, um espaço reservado e cuidadosamente
+            controlado, no qual os visitantes podem interagir com os gatos de
+            forma segura. O acesso costuma ocorrer mediante reserva, a fim de
+            assegurar o bem-estar dos animais. Além das visitas, o local também
+            oferece atividades especiais e incentiva a adoção responsável dos
+            gatos.
+          </p>
+        </div>
       </section>
 
       <!-- CARDÁPIO -->
       <section class="secaoCardapio">
-        <h2 class="tituloPrincipal">CONHEÇA NOSSO CARDÁPIO</h2>
+        <div class="containerCardapio">
+          <h2 class="tituloCardapio tituloPrincipal">
+            CONHEÇA NOSSO <span class="destaque">CARDÁPIO</span>
+          </h2>
 
-        <div class="cardapioContainer">
-          <div class="card">
-            <img src="./image/xicaraCafe.png" alt="Xícara de café" />
-            <h5 class="tituloCard">Cafés especiais da casa</h5>
-            <p class="textoCard">
-              Cafés especiais inspirados em gatos com aromas marcantes.
-            </p>
-          </div>
+          <div class="cardapioContainer">
+            <div class="card animacaoCard">
+              <img
+                src="./image/xicaraCafe.png"
+                alt="Xícara de café"
+                class="imagemCard"
+              />
+              <h5 class="tituloCard">Cafés especiais da casa</h5>
+              <p class="textoCard">
+                Cafés especiais inspirados em gatos com aromas marcantes.
+              </p>
+            </div>
 
-          <div class="card">
-            <img
-              src="./image/cafeGelado.png"
-              alt="Bebida gelada"
-            />
-            <h5 class="tituloCard">Bebidas geladas</h5>
-            <p class="textoCard">
-              Bebidas refrescantes e criativas para qualquer momento.
-            </p>
-          </div>
+            <div class="cardapioLadoDireito">
+              <div class="card animacaoCard">
+                <img
+                  src="./image/cafeGelado.png"
+                  alt="Bebida gelada"
+                  class="imagemCard"
+                />
+                <h5 class="tituloCard">Bebidas geladas</h5>
+                <p class="textoCard">
+                  Bebidas refrescantes e criativas para qualquer momento.
+                </p>
+              </div>
 
-          <div class="card">
-            <img src="./image/boloMorango.png" alt="Bolo de morango" />
-            <h5 class="tituloCard">Doces e acompanhamentos</h5>
-            <p class="textoCard">
-              Doces delicados e irresistíveis para acompanhar seu café.
-            </p>
+              <div class="card animacaoCard">
+                <img
+                  src="./image/boloMorango.png"
+                  alt="Bolo de morango"
+                  class="imagemCard"
+                />
+                <h5 class="tituloCard">Doces e acompanhamentos</h5>
+                <p class="textoCard">
+                  Doces delicados e irresistíveis para acompanhar seu café.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       <!-- CONTATO -->
       <section class="secaoContato">
-        <h2 class="tituloPrincipal">FALE CONOSCO</h2>
+        <h2 class="tituloPrincipal">
+          FALE <span class="destaque">CONOSCO!</span>
+        </h2>
 
-        <form class="formularioContato">
-          <input type="text" placeholder="Nome" required />
-          <input type="text" placeholder="Sobrenome" required />
-          <br />
-          <input type="email" placeholder="E-mail" required />
-          <br />
-          <textarea
-            placeholder="Sua mensagem"
-            required
-            rows="4"
-            cols="50"
-          ></textarea>
-          <br />
-          <button class="botaoEnviar">Enviar</button>
-        </form>
-      </section>
+        <div class="containerContato">
+          <!-- FORM -->
+          <form class="formularioContato">
+            <div class="linhaDupla">
+              <div>
+                <p class="tituloFormulario">Nome</p>
+                <input
+                  type="text"
+                  placeholder="Ex: Maria"
+                  required
+                  class="caixaFormulario"
+                />
+              </div>
 
-      <!-- LOCALIZAÇÃO -->
-      <section class="secaoLocalizacao">
-        <img src="./imagens/marker.png" alt="Símbolo de localização" />
+              <div>
+                <p class="tituloFormulario">Sobrenome</p>
+                <input
+                  type="text"
+                  placeholder="Ex: Silva"
+                  required
+                  class="caixaFormulario"
+                />
+              </div>
+            </div>
+
+            <p class="tituloFormulario">Endereço de e-mail</p>
+            <input
+              type="email"
+              placeholder="Ex: seu.email@dominio.com"
+              required
+              class="caixaFormulario"
+            />
+
+            <p class="tituloFormulario">Sua mensagem</p>
+            <textarea
+              placeholder="Digite sua mensagem aqui..."
+              required
+            ></textarea>
+
+            <button type="submit" class="botaoPrincipal botaoEnviar">Enviar</button>
+          </form>
+
+          <!-- INFO -->
+          <div class="secaoInfo">
+            <div class="itemInfo">
+              <img src="./image/marker 1.png" />
+              <p class="textoItemInfo">
+                Rua dos Miados, 127 Bairro Vila Felina – São Paulo, SP
+              </p>
+            </div>
+
+            <div class="itemInfo">
+              <img src="./image/phone-call 1.png" />
+              <p class="textoItemInfo">WhatsApp: (11) 98765-4321</p>
+            </div>
+
+            <div class="itemInfo">
+              <img src="./image/envelope 1.png" />
+              <p class="textoItemInfo">E-mail: contato@miauocafe.com.br</p>
+            </div>
+
+            <div class="itemInfo">
+              <img src="./image/clock 1.png" />
+              <p class="textoItemInfo">
+                De terça a sexta das 10h30 às 18h00 <br />
+                De sábado e domingo das 9h30 às 19h00
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
 
-    <footer class="rodape">
-      Aroma Café &copy; 2026. Todos os direitos reservados.
+    <!-- Rodapé -->
+    <footer>
+      <section class="footer-container">
+        <div class="footer-col logo">
+          <h2 class="rodapeAromaCafe">Aroma Café</h2>
+
+          <div class="redesSociais">
+            <a href="#"><img src="./image/icon_FaceBook.png" /></a>
+            <a href="#"><img src="./image/Icon_link.png" /></a>
+            <a href="#"><img src="./image/Icon_youtube.png" /></a>
+            <a href="#"><img src="./image/Icon_Instagram.png" /></a>
+          </div>
+        </div>
+
+        <div class="explorar">
+          <p class="titulo tituloExplorar">Explorar</p>
+          <a href="#">Nosso espaço</a>
+          <a href="#">Mural dos gatos</a>
+        </div>
+
+        <div class="servicos">
+          <p class="titulo tituloServicos">Serviços</p>
+          <a href="#">Eventos & Workshop</a>
+          <a href="#">Coffee Experience</a>
+        </div>
+
+        <div class="suporte">
+          <p class="titulo tituloSuporte">Suporte</p>
+          <a href="#">Contato</a>
+          <a href="#">Privacidade</a>
+          <a href="#">Fale com a gente</a>
+        </div>
+      </section>
     </footer>
   </body>
 </html>
