@@ -86,8 +86,14 @@
 .container-nome{
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 20px;
     margin-top: 40px;
+}
+
+.icone-lactose{
+    width: 50px;   /* Largura desejada */
+    height: 50px;  /* Altura desejada */
+    object-fit: contain;
 }
 
 /*produtos, cardápio */
