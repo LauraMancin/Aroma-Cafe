@@ -13,7 +13,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 10%;
+    padding: 50px 10%;
     font-weight: bold;
     text-decoration: none;
 }
@@ -30,6 +30,7 @@
     color: white;
     font-size: 14px;
     font-weight: bold;
+    border: none;
     border-radius: 8px;
     width: 100px;
     padding: 15px
@@ -45,7 +46,7 @@
 }
 
 .botao-carrinho{
-    width: 500px;
+    width: 400px;
     padding: 15px
     
 }
@@ -61,42 +62,43 @@
 
 
 /*produto DESTAQUE */
+.card{
+    display: flex;
+    justify-content: center;
+    gap: 130px;
+    margin-top: 70px;
+    margin-right: 100px;
+}    
 
-.imagem-produto-destaque{ /*adiconar efeito salto na imagem */
-    float: left;
-    margin: 0em 5em 0 15em;
+ 
+/* Imagem do produto */
+.card-img{
+    display: flex;
+    gap: 30px;
+    transition: transform 0.3s ease; 
+    cursor: pointer;
 }
 
-
-.container-produto-destaque{
+.card-img:hover{
+    transform: scale(1.05);
+}
+ 
+ /* Info do produto */
+.container-nome{
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 1.5rem;
-    padding: 2rem;
-    margin: 5em 10em 10em 10em;
-}
-
-.nome-produto-destaque{
-    font-weight: bold;
-}
-
-.preco-produto{
-
-}
-
-.texto-produto-destaque{
-    font-size: 20px;
-    color: gray;
-    width: 350px;
+    gap: 30px;
+    margin-top: 40px;
 }
 
 /*produtos, cardápio */
 
 /* container produtos */
 
-.outras-opcoes{
-    display: grid;
-    align-items: flex-end;
-    padding: 5px;
+.outras-op{
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 60px;
+    padding: 50px 10%;
+    margin-bottom: 20px;
 }
