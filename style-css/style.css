@@ -79,7 +79,7 @@
 }
 
 .card-img:hover{
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
  
  /* Info do produto */
@@ -96,14 +96,35 @@
     object-fit: contain;
 }
 
-/*produtos, cardápio */
 
 /* container produtos */
 
 .outras-op{
-    display: flex;
-    justify-content: flex-start;
-    margin-top: 60px;
-    padding: 50px 10%;
+    grid-column: 1 / -1;
+    margin-left: 10rem;
+    margin-top: 5rem;
     margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.grid-produtos{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 10px;
+}
+
+.info-produtos{
+    margin-left: 10rem;
+}
+
+.card-img-produto{
+    width: 300px;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.nome-produto{
+    /*colocar fonte */
 }
