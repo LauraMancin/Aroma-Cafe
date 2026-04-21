@@ -248,7 +248,7 @@ section{
 .tituloCardapio{
     gap: 2rem;
     margin-bottom: -2rem;
-    margin-left: -44rem;
+    margin-left: -47rem;
 }
 
 .animacaoCard:hover{
@@ -305,99 +305,125 @@ section{
     text-align: left;
 }
 
-.containerContato {
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-    margin-top: 20px;
-}
 
 .tituloContato{
-    gap: 2rem;
-    margin-bottom: 2rem;
-    margin-left: 4rem;
-}
-
-.formularioContato{
-    width: 60%;
-    display: flex;
-    flex-direction: column;
-}
-
-.linhaDupla {
-    display: flex;
-    gap: 20px;
-}
-
-.linhaDupla div {
-    width: 100%;
-}
-
-.caixaFormulario,
-textarea {
-    width: 100%;
-    padding: 12px;
-    border-radius: 8px;
-    border: 1px solid #828282;
-    margin-bottom: 15px;
-}
-
-.tituloFormulario{
-    font-family: var(--fonte-principal);
-    font-size: 16px;
-    font-weight: 500;
-    color: var(--cor-terciaria);
     text-align: left;
+    margin-left: 1.5rem;
 }
 
-.caixaFormulario{
-    color: var(--cor-cinza);
-    padding: 12px;
-    border-radius: 8px;
-    border-color: #828282;
-   
+.contatoSection{
+    align-items: left;
+    margin: 0.5rem;
+    padding: 1rem;
 }
 
-.botaoEnviar {
-    margin-top: 10px;
-    padding: 12px;
-    border-radius: 10px;
-    border: none;
+    /* Layout principal: formulário à esquerda, info à direita */
+.contatoContainer {
+      display: flex;
+      gap: 80px;
+      align-items: flex-start;
 }
-
-
-
-.secaoInfo{
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+ 
+    /* ---- FORMULÁRIO ---- */
+.contatoForm {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
 }
-
-.itemInfo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+ 
+.formRow {
+      display: flex;
+      gap: 16px;
 }
-
-.itemInfo img {
-    width: 20px;
+ 
+.formGroup {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      flex: 1;
 }
-
-.textoSecaoInfo{
-    font-family: var(--fonte-principal);
-    font-size: 16px;
-    font-weight: 400;
-    color: var(--cor-terciaria);
-    text-align: left;
+ 
+.formGroup label {
+      font-family: var(--fonte-principal);
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--cor-cinza-secundario);
+      text-align: left;
 }
-
-.textoItemInfo{
-    font-family: var(--fonte-principal);
-    font-size: 16px;
-    font-weight: 400;
-    color: var(--cor-terciaria);
+ 
+.formGroup input, .formGroup textarea {
+      border: 1.5px solid var(--cor-cinza);
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 0.9rem;
+      color: var(--cor-cinza-secundario);
+      background: var(--cor-secundaria);
+      outline: none;
+      transition: border-color 0.2s;
+      font-family: inherit;
 }
+ 
+.form-group input:focus, .form-group textarea:focus {
+      border-color: var(--cor-principal);
+}
+ 
+.form-group input::placeholder, .form-group textarea::placeholder {
+      color: var(--cor-cinza);
+}
+ 
+.form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+}
+ 
+    .botaoEnviar {
+      background: var(--cor-principal);
+      color: var(--cor-secundaria);
+      font-size: 1rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 8px;
+      padding: 14px;
+      cursor: pointer;
+      transition: background 0.2s;
+      width: 100%;
+    }
+ 
+    .botaoEnviar:hover {
+      background: var(--cor-botao-efeito);
+      cursor: pointer;
+    }
+ 
+    /* ---- INFORMAÇÕES ---- */
+    .contatoInfo {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      padding-top: 42px; /* alinha verticalmente com o form */
+      min-width: 280px;
+      margin-left: 20rem;
+    }
+ 
+    .infoItem {
+      font-family: var(--fonte-principal);
+      font-size: 20px;
+      font-weight: 400;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.9rem;
+      color: var(--cor-cinza-secundario);
+      line-height: 1.5;
+    }
+ 
+    .infoItem .icon {
+      font-size: 1.1rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+ 
+
 
 footer {
     background-color: var(--cor-secundaria);

@@ -139,80 +139,57 @@
       </section>
 
       <!-- CONTATO -->
-      <section class="secaoContato">
-        <h2 class="tituloPrincipal">
-          FALE <span class="destaque">CONOSCO!</span>
-        </h2>
-
-        <div class="containerContato">
-          <!-- FORM -->
-          <form class="formularioContato">
-            <div class="linhaDupla">
-              <div>
-                <p class="tituloFormulario">Nome</p>
-                <input
-                  type="text"
-                  placeholder="Ex: Maria"
-                  required
-                  class="caixaFormulario"
-                />
+      <h2 class="tituloContato tituloPrincipal">FALE <span class="destaque">CONOSCO!</span></h2>
+      <section class="contatoSection">
+ 
+        <div class="contatoContainer">
+      
+          <!-- Formulário -->
+          <div class="contatoForm">
+            <div class="formRow">
+              <div class="formGroup">
+                <label>Nome</label>
+                <input type="text" placeholder="Ex: Maria" />
               </div>
-
-              <div>
-                <p class="tituloFormulario">Sobrenome</p>
-                <input
-                  type="text"
-                  placeholder="Ex: Silva"
-                  required
-                  class="caixaFormulario"
-                />
+              <div class="formGroup">
+                <label>Sobrenome</label>
+                <input type="text" placeholder="Ex: Silvia" />
               </div>
             </div>
-
-            <p class="tituloFormulario">Endereço de e-mail</p>
-            <input
-              type="email"
-              placeholder="Ex: seu.email@dominio.com"
-              required
-              class="caixaFormulario"
-            />
-
-            <p class="tituloFormulario">Sua mensagem</p>
-            <textarea
-              placeholder="Digite sua mensagem aqui..."
-              required
-            ></textarea>
-
-            <button type="submit" class="botaoPrincipal botaoEnviar">Enviar</button>
-          </form>
-
-          <!-- INFO -->
-          <div class="secaoInfo">
-            <div class="itemInfo">
-              <img src="./image/marker 1.png" />
-              <p class="textoItemInfo">
-                Rua dos Miados, 127 Bairro Vila Felina – São Paulo, SP
-              </p>
+      
+            <div class="formGroup">
+              <label>Endereço de e-mail</label>
+              <input type="email" placeholder="Ex: seuemail@gmail.com" />
             </div>
-
-            <div class="itemInfo">
-              <img src="./image/phone-call 1.png" />
-              <p class="textoItemInfo">WhatsApp: (11) 98765-4321</p>
+      
+            <div class="formGroup">
+              <label>Sua mensagem</label>
+              <textarea placeholder="Digite sua pergunta ou mensagem"></textarea>
             </div>
-
-            <div class="itemInfo">
-              <img src="./image/envelope 1.png" />
-              <p class="textoItemInfo">E-mail: contato@miauocafe.com.br</p>
+      
+            <button class="botaoEnviar">Enviar</button>
+          </div>
+      
+          <!-- Informações de contato -->
+          <div class="contatoInfo">
+            <div class="infoItem">
+              <span class="icon"> <img src="./image/marker 1.png" alt="Simbolo de localização"></span>
+              <span>Rua dos Miados, 127 Bairro Vila Felina – São Paulo, SP</span>
             </div>
-
-            <div class="itemInfo">
-              <img src="./image/clock 1.png" />
-              <p class="textoItemInfo">
-                De terça a sexta das 10h30 às 18h00 <br />
-                De sábado e domingo das 9h30 às 19h00
-              </p>
+            <div class="infoItem">
+              <span class="icon"><img src="./image/phone-call 1.png" alt="Simbolo de telefone"></span>
+              <span>WhatsApp: (11) 98765-4321</span>
+            </div>
+            <div class="infoItem">
+              <span class="icon"> <img src="./image/envelope 1.png" alt="Simbolo de envelope"></span>
+              <span>E-mail: contato@miauocafe.com.br</span>
+            </div>
+            <div class="infoItem">
+              <span class="icon"><img src="./image/clock 1.png" alt="Simbolo de relogio"></span>
+              <span>De terça a sexta das 10h30 às 18h00 <br>De sábado e domingo das 9h30 às 19h00 </span>
             </div>
           </div>
+      
         </div>
       </section>
     </main>
