@@ -17,6 +17,7 @@
     --fonte-size-descricao: 20px;
     --fonte-size-botao: 20px;
     --fonte-size-subtitulo: 16px;
+    --fonte-size-outras-op: 24px
 }
 
 
@@ -186,6 +187,7 @@ header{
 
 .outras-op{
     font-family: var(--fonte-principal);
+    font-size: 24px;
     grid-column: 1 / -1;
     margin-left: 10rem;
     margin-top: 5rem;
