@@ -19,9 +19,6 @@
 }
 
 
-
-
-
 *{
     border: 0;
     margin: 0;
@@ -29,22 +26,50 @@
 }
 
 /*menu*/
-.menuNavegacao{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 50px 10%;
-    font-weight: bold;
-    text-decoration: none;
+header{
+  position: absolute; /* faz ficar sobre a imagem */
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  box-sizing: border-box;
+  color: rgb(0, 0, 0);
 }
 
 
+.menuNavegacao{
+    color: var(--cor-secundaria);
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    font-family: var(--fonte-principal);
+    font-size: 16px;
+}
+.menuNavegacao a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+
+.menuNavegacao a:hover{
+    color: var(--cor-principal);
+}
 
 .logoAroma{
     text-decoration: none;
-    cursor: pointer;
-    color: var(--cor-terciaria)
+    color: var(--cor-secundaria);
+    font-weight: bold;
+    font-family: var(--fonte-logo);
+    font-size: var(--fonte-size-descricao);
 }
+
+.logoAroma abbr{
+    text-decoration: none;
+}
+
 
 /* BOTÕES */
 .botao-carrinho1, .botao-carrinho{
