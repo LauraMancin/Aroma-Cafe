@@ -38,6 +38,8 @@
     text-decoration: none;
 }
 
+
+
 .logoAroma{
     text-decoration: none;
     cursor: pointer;
@@ -110,6 +112,7 @@
     flex-direction: column;
     gap: 20px;
     margin-top: 40px;
+    font-family: var(--fonte-principal);
 }
 
 .icone-lactose{
@@ -122,11 +125,16 @@
 /* container produtos - SEÇÃO 02*/
 
 .outras-op{
+    font-family: var(--fonte-principal);
     grid-column: 1 / -1;
     margin-left: 10rem;
     margin-top: 5rem;
     margin-bottom: 2rem;
     text-transform: uppercase;
+}
+
+.op-colorido{
+    color: var(--cor-principal);
 }
 
 .grid-produtos{
@@ -167,16 +175,17 @@
 }
 
 .nome-produto{
-    /*colocar fonte */
+    font-family: var(--fonte-principal);
 }
 
 .descricao-produto{
     color: gray;
-    /*fonte size */
+    font-family: var(--fonte-principal);
 }
 
 .preco-produto{
     margin-top: 15px;
     margin-bottom: 15px;
-    font-weight: bold;
+    font-weight: 300px;
+    font-family: var(--fonte-principal);
 }
