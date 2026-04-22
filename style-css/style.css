@@ -10,7 +10,8 @@
     --cor-secundaria: #FFFFFF;
     --cor-terciaria: #000000;
     --cor-cinza: #828282;
-    --cor-cinza-secundario: #454545;
+    --cor-rosa-claro: #e0b5d6;
+    --cor-pesquisa: #e7e7e7;
     --fonte-principal: 'Inter', sans-serif;
     --fonte-size-titulo: 40px;
     --fonte-size-descricao: 20px;
@@ -71,11 +72,11 @@ header{
 .containerBarraPesquisa{
   display: flex;
   align-items: center;
-  background-color: #ffffff;
+  background-color: var(--cor-pesquisa);
   border-radius: 50px; /* Isso cria o formato de pílula (bordas totalmente arredondadas) */
   padding: 8px 16px; /* Espaço interno (vertical e horizontal) */
   width: 500px; /* Ajuste a largura como preferir */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Uma sombra muito leve para dar destaque (opcional) */
+  box-shadow: 0 2px 4px rgba(20, 19, 19, 0.158); /* Uma sombra muito leve para dar destaque (opcional) */
 }
 
 .barraPesquisa input{
@@ -197,9 +198,9 @@ header{
 }
 
 .grid-produtos{
-    display: grid;
+    display: flex;
     grid-template-columns: repeat(3, max-content);
-    gap: 20px;
+    gap: 25px;
     padding: 10px;
 }
 
@@ -221,30 +222,32 @@ header{
 .info-produtos3{
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 10px;
     margin-top: 10px; 
 }
 
 
 .card-img-produto{
     width: 500px;
-    height: auto;
+    height: 300px;
     border-radius: 8px;
     object-fit: cover;
 }
 
 .nome-produto{
     font-family: var(--fonte-principal);
+    font-weight: 500;
 }
 
 .descricao-produto{
     color: gray;
+    font-weight: 250;
     font-family: var(--fonte-principal);
 }
 
 .preco-produto{
-    margin-top: 15px;
+    margin-top: 10px;
     margin-bottom: 15px;
-    font-weight: 300px;
+    font-weight: 300;
     font-family: var(--fonte-principal);
 }
