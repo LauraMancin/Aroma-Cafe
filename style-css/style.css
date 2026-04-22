@@ -1,6 +1,26 @@
 /*importar fontes */
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap'); /*fonte Inter*/
+
 /*fazer root*/
+
+:root{
+    --cor-principal: #DB7093;
+    --cor-botao-efeito: #E99BB4;
+    --cor-secundaria: #FFFFFF;
+    --cor-terciaria: #000000;
+    --cor-cinza: #828282;
+    --cor-cinza-secundario: #454545;
+    --fonte-principal: 'Inter', sans-serif;
+    --fonte-size-titulo: 40px;
+    --fonte-size-descricao: 20px;
+    --fonte-size-botao: 20px;
+    --fonte-size-subtitulo: 16px;
+}
+
+
+
+
 
 *{
     border: 0;
@@ -21,13 +41,13 @@
 .logoAroma{
     text-decoration: none;
     cursor: pointer;
-    color: black;
+    color: var(--cor-terciaria)
 }
 
 /* BOTÕES */
 .botao-carrinho1, .botao-carrinho{
-    background-color: #DB7093;
-    color: white;
+    background-color: var(--cor-principal);
+    color: var(--cor-secundaria);
     font-size: 14px;
     font-weight: bold;
     border: none;
