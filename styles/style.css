@@ -144,38 +144,70 @@
 }
 
 /* Página de cada Gato */
+
+.container{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
 .voltar{
     font-family: var(--fonte-principal);
     font-size: var(--fonte-size-botao);
     text-decoration: none;
     color: var(--cor-terciaria);
-}
-
-.voltar :hover{
-    color: var(--cor-principal);
+    font-weight: 600;
 }
 
 .imgGato{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    grid-template-columns: repeat(auto-fit, minmax(200px)); 
     gap: 2rem;
     padding: 0 var(--container-padding);
     margin-top: 80px;
+    max-height: 50vh;
+}
+
+.nomeGato{
+    font-family: var(--fonte-principal);
+    font-size: var(--fonte-size-titulo);
+    color: var(--cor-principal);
+    font-weight: 500;
+}
+
+.containerEspecificacoes{
+    font-family: var(--fonte-principal);
+    font-size: var(--fonte-size-descricao2);
+    padding: var(--container-padding);
+     
 }
 
 .especificacoes{
-    font-family: var(--fonte-principal);
-    font-size: var(--fonte-size-descricao2);
+    list-style: none;
+
 }
 
 .descricao{
+    font-family: var(--fonte-principal);
     font-size: var(--fonte-size-descricao);
     color: var(--cor-quaternaria);
+    padding: var(--container-padding);
 }
 
+.botaoAdotar{
+    background-color: var(--cor-principal);
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 10px 20px;
+    border: none;
+    font-size: var(--fonte-size-botao);
+    margin-top: 150px;
+}
 
-
-
+.botaoAdotar:hover{
+    opacity: 0.9;
+    cursor: pointer;
+}
 
 
 /* Rodapé*/
@@ -185,7 +217,7 @@ footer {
     padding: 3rem var(--container-padding);
 }
 
-.footer-container {
+.footerContainer {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -228,7 +260,7 @@ footer {
 
 footer a {
     text-decoration: none;
-    color: #555;
+    color: var(--cor-quaternaria);
     font-size: 14px;
 }
 
