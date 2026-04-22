@@ -11,12 +11,14 @@
     --cor-botao-efeito: #E99BB4;
     --cor-secundaria: #FFFFFF;
     --cor-terciaria: #000000;
+    --cor-quaternaria: #828282;
     --fonte-principal: 'Inter', sans-serif;
     --fonte-logo: 'Ribeye', sans-serif;
     --fonte-size-titulo: 40px;
     --fonte-size-descricao: 20px;
     --fonte-size-botao: 14px;
     --fonte-size-subtítulo: 16px;
+    --fonte-size-descricao2: 12px;
     --container-padding: clamp(16px, 5%, 80px) /*deixa o padding responsivo valorMinimo, valorIdeal e valorMaximo*/
 }
 
@@ -124,11 +126,24 @@
     font-weight: 500;
 }
 
+/*Como funciona adotar*/
+.descricaoComoAdotar{
+    text-align: center;
+    font-family: var(--fonte-principal);
+    font-size: var(--fonte-size-subtítulo);
+}
 
-/* Página dos Gatos */
+.titulo{
+    text-align: center;
+    font-family: var(--fonte-principal);
+    font-size: 32px;
+}
 
-/*Pucca*/
+.tituloDestaque{
+    color: var(--cor-principal);
+}
 
+/* Página de cada Gato */
 .voltar{
     font-family: var(--fonte-principal);
     font-size: var(--fonte-size-botao);
@@ -136,38 +151,32 @@
     color: var(--cor-terciaria);
 }
 
-.voltar a{
+.voltar :hover{
     color: var(--cor-principal);
 }
 
-
-/* Responsividade */
-
-/*mobile*/
-@media (max-width: 480px) {
-    .blocoGato {
-        grid-template-columns: 1fr;
-        padding: 0 1rem;
-        margin-top: 40px;
-    }
-
-    .gatosDisponiveis {
-        bottom: 1rem;
-        font-size: 24px;
-    }
+.imgGato{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 2rem;
+    padding: 0 var(--container-padding);
+    margin-top: 80px;
 }
 
-/*tablet*/
-@media (min-width: 481px) and (max-width: 1024px) {
-    .blocoGato {
-        grid-template-columns: repeat(2, 1fr);
-        padding: 0 2rem;
-    }
-
-    .gatosDisponiveis {
-        bottom: 3rem;
-    }
+.especificacoes{
+    font-family: var(--fonte-principal);
+    font-size: var(--fonte-size-descricao2);
 }
+
+.descricao{
+    font-size: var(--fonte-size-descricao);
+    color: var(--cor-quaternaria);
+}
+
+
+
+
+
 
 /* Rodapé*/
 
@@ -225,4 +234,34 @@ footer a {
 
 footer a:hover {
     color: var(--cor-principal);
+
+
+
+/* Responsividade */
+    
+    /*mobile*/
+    @media (max-width: 480px) {
+        .blocoGato {
+            grid-template-columns: 1fr;
+            padding: 0 1rem;
+            margin-top: 40px;
+        }
+    
+        .gatosDisponiveis {
+            bottom: 1rem;
+            font-size: 24px;
+        }
+    }
+    
+    /*tablet*/
+    @media (min-width: 481px) and (max-width: 1024px) {
+        .blocoGato {
+            grid-template-columns: repeat(2, 1fr);
+            padding: 0 2rem;
+        }
+    
+        .gatosDisponiveis {
+            bottom: 3rem;
+        }
+    }
 }
