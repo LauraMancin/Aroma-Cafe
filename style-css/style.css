@@ -27,7 +27,6 @@
 
 /*menu*/
 header{
-  position: absolute; /* faz ficar sobre a imagem */
   top: 0;
   left: 0;
   width: 100%;
@@ -36,12 +35,11 @@ header{
   justify-content: space-between;
   padding: 20px 40px;
   box-sizing: border-box;
-  color: rgb(0, 0, 0);
+  color: var(--cor-terciaria);
 }
 
-
 .menuNavegacao{
-    color: var(--cor-secundaria);
+    color: var(--cor-terciaria);
     display: flex;
     align-items: center;
     gap: 30px;
@@ -50,7 +48,7 @@ header{
 }
 .menuNavegacao a{
     text-decoration: none;
-    color: rgb(0, 0, 0);
+    color: var(--cor-terciaria);
     font-weight: bold;
 }
 
@@ -60,14 +58,50 @@ header{
 
 .logoAroma{
     text-decoration: none;
-    color: var(--cor-secundaria);
+    color: var(--cor-terciaria);
     font-weight: bold;
-    font-family: var(--fonte-logo);
+    font-family: var(--fonte-principal);
     font-size: var(--fonte-size-descricao);
 }
 
 .logoAroma abbr{
     text-decoration: none;
+}
+
+.containerBarraPesquisa{
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 50px; /* Isso cria o formato de pílula (bordas totalmente arredondadas) */
+  padding: 8px 16px; /* Espaço interno (vertical e horizontal) */
+  width: 500px; /* Ajuste a largura como preferir */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Uma sombra muito leve para dar destaque (opcional) */
+}
+
+.barraPesquisa input{
+  border: none; /* Remove a borda padrão do HTML */
+  outline: none; /* Remove aquela linha azul que aparece quando você clica */
+  background: transparent; /* Deixa o fundo transparente para usar a cor do contêiner */
+  font-size: 14px;
+  font-family: var(--fonte-principal); /* Use a fonte do seu projeto */
+  color: #333333; /* Cor do texto digitado */
+  width: 100%; /* Faz o input ocupar o resto do espaço */
+}
+
+.iconePesquisa{
+  width: 18px;
+  height: 18px;
+  color: #333333; /* Cor do ícone */
+  margin-right: 15px; /* Dá um espaço entre o ícone e o texto */
+}
+
+
+.botao-colorido{
+    color: var(--cor-secundaria);
+}
+
+.cardap-colorido{
+    color: var(--cor-principal);
 }
 
 
