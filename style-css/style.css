@@ -75,14 +75,14 @@ header{
   display: flex;
   align-items: center;
   background-color: var(--cor-pesquisa);
-  border-radius: 50px; /* Isso cria o formato de pílula (bordas totalmente arredondadas) */
-  padding: 8px 16px; /* Espaço interno (vertical e horizontal) */
-  width: 500px; /* Ajuste a largura como preferir */
-  box-shadow: 0 2px 4px rgba(20, 19, 19, 0.158); /* Uma sombra muito leve para dar destaque (opcional) */
+  border-radius: 50px; /* (bordas  arredondadas) */
+  padding: 8px 16px; /* espaço interno (vertical e horizontal) */
+  width: 500px; /*  largura  */
+  box-shadow: 0 2px 4px rgba(20, 19, 19, 0.158); /* sombra */
 }
 
 .barraPesquisa input{
-  border: none; /* Remove a borda padrão do HTML */
+  border: none; /* Remove borda */
   outline: none; /* Remove aquela linha azul que aparece quando você clica */
   background: transparent; /* Deixa o fundo transparente para usar a cor do contêiner */
   font-size: 14px;
