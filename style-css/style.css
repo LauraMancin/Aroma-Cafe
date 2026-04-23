@@ -119,6 +119,10 @@ header{
     padding: 15px
 }
 
+.botao-carrinho{
+    margin-top: 2rem;
+}
+
 .botao-carrinho1:hover{
     transition: transform 0.9s ease;
     transform: scale(1.03);
