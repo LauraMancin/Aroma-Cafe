@@ -107,20 +107,20 @@ header{
 }
  
 .barraPesquisa input{
-  border: none; /* Remove a borda padrão do HTML */
-  outline: none; /* Remove aquela linha azul que aparece quando você clica */
-  background: transparent; /* Deixa o fundo transparente para usar a cor do contêiner */
+  border: none; 
+  outline: none; 
+  background: transparent;
   font-size: 14px;
-  font-family: var(--fonte-principal); /* Use a fonte do seu projeto */
-  color: #333333; /* Cor do texto digitado */
-  width: 100%; /* Faz o input ocupar o resto do espaço */
+  font-family: var(--fonte-principal);
+  color: #333333;
+  width: 100%;
 }
  
 .iconePesquisa{
   width: 18px;
   height: 18px;
-  color: #333333; /* Cor do ícone */
-  margin-right: 15px; /* Dá um espaço entre o ícone e o texto */
+  color: #333333;
+  margin-right: 15px;
 }
  
 
@@ -147,6 +147,7 @@ header{
     text-align: center;
     color: white;
 }
+
 
 /* Parte dos Gatos */
 .blocoGato{
@@ -177,17 +178,33 @@ header{
     font-weight: 500;
 }
 
+
 /*Como funciona adotar*/
-.descricaoComoAdotar{
-    text-align: center;
+
+.comoAdotar{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-top: 42px;
+    min-width: 280px;
+    align-items: center;
     font-family: var(--fonte-principal);
     font-size: var(--fonte-size-subtítulo);
+    margin-bottom: 1%;
+    color: var(--cor-terciaria);
 }
+
+.descricao{
+    list-style: none;
+    color: var(--cor-terciaria);
+}
+
 
 .titulo{
     text-align: center;
     font-family: var(--fonte-principal);
     font-size: 32px;
+    margin-bottom: 1%;
 }
 
 .tituloDestaque{
@@ -272,6 +289,120 @@ header{
     opacity: 0.9;
     cursor: pointer;
 }
+
+
+/* Reservas */
+.funcionamentoRegras{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-top: 40px;
+    min-width: 280px;
+    align-items: center;
+    font-family: var(--fonte-principal);
+    font-size: var(--fonte-size-subtítulo);
+    list-style: none;
+    margin-bottom: 2%;
+    color: var(--cor-terciaria);
+}
+
+.reserva{
+    margin-bottom: 5rem;
+}
+
+.lista{
+    gap: 20px;
+}
+
+/* parte do formulário */
+.contatoContainer {
+    display: flex;
+    gap: 80px;
+    align-items: center;
+    margin-left: 3.5rem;
+    padding: var(--container-padding);
+}
+ 
+.contatoForm {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-left: 2rem;
+}
+ 
+.formRow {
+    display: flex;
+    gap: 16px;
+}
+ 
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+}
+ 
+.formGroup label {
+    font-family: var(--fonte-principal);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--cor-cinza-secundario);
+    text-align: left;
+}
+ 
+.formGroup input, .formGroup textarea {
+    border: 1.5px solid var(--cor-quaternaria);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 0.9rem;
+    color: var(--cor-quaternaria);
+    background: var(--cor-secundaria);
+    outline: none;
+    transition: border-color 0.2s;
+    font-family: inherit;
+}
+ 
+.formGroup input:focus, .formGroup textarea:focus {
+    border-color: var(--cor-principal);
+}
+ 
+.formGroup input::placeholder, .formGroup textarea::placeholder {
+    color: var(--cor-quaternaria);
+}
+ 
+.formGroup textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.data textarea{       
+    resize: vertical;
+    min-height: 10px;
+    border: 2px solid;
+    padding: 10px;
+    box-sizing: border-box;
+    border-color: var(--cor-quaternaria);
+}
+
+ 
+.botaoEnviar {
+    background-color: var(--cor-principal);
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 10px 115px;
+    border: none;
+    font-size: var(--fonte-size-botao);
+    margin-top: 50px;
+    text-decoration: none;
+}
+ 
+.botaoEnviar:hover {
+    background: var(--cor-botao-efeito);
+    cursor: pointer;
+}
+
 
 
 /* Rodapé*/

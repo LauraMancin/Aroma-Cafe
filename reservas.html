@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adoção</title>
+    <title>Reservas</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="shortcut icon" href="./assets/icone.png" type="image/x-icon">
 
@@ -11,7 +11,7 @@
 <body>
     <header>
         <!-- logo-->
-        <a href="./index.html" class="logoAroma">Aroma Café</a>
+        <a href="index.html" class="logoAroma">Aroma Café</a>
         <div class="containerBarraPesquisa barraPesquisa">
           <img
             src="./assets/icon_pesquisa.png"
@@ -33,7 +33,6 @@
                 </div>
             </nav>
         </div>
- 
     </header>
 
     <!--Parte principal-->
@@ -45,18 +44,65 @@
         </section>
 
         
-        <!--Como funciona adotar-->
-        <section>
-            <h1 class="titulo">COMO <strong class="tituloDestaque">FUNCIONA?</strong></h1>
-            <ul class="descricaoComoAdotar">
-                <li> <img src="./assets/icon_num1.png">Reservas: As visitas devem ser agendadas com pelo menos 30 minutos de antecedência em relação ao horário desejado;</li>
-                <li> <img src="./assets/icon_num2.png">Capacidade: Cada sessão recebe um máximo de até 10 pessoas, para manter um ambiente tranquilo e confortável para os gatos;.</li>
-                <li> <img src="./assets/icon_num3.png">Duração da visita: O tempo de permanência é de até 1 hora por sessão;</li>
-                <li> <img src="./assets/icon_num4.png">Valor: A entrada custa R$15 por pessoa.</li>
-            </ul>
-        </section>
+        <div class="funcionamentoRegras">
+            <!--Como funciona a reserva-->
+            <div class="reserva">
+                <h1 class="titulo">COMO <strong class="tituloDestaque">FUNCIONA?</strong></h1>
+                    <div><img src="./assets/icon_num1.png">Reservas: As visitas devem ser agendadas com pelo menos 30 minutos de antecedência em relação ao horário desejado;</div>
+                    <div><img src="./assets/icon_num2.png">Capacidade: Cada sessão recebe um máximo de até 10 pessoas, para manter um ambiente tranquilo e confortável para os gatos;.</div>
+                    <div><img src="./assets/icon_num3.png">Duração da visita: O tempo de permanência é de até 1 hora por sessão;</div>
+                    <div><img src="./assets/icon_num4.png">Valor: A entrada custa R$15 por pessoa.</div>
+            </div>
 
+            <!--Regras do ambiente-->
+            <div>
+                <h1 class="titulo">NOSSAS <strong class="tituloDestaque">REGRAS</strong></h1>
+                <div class="lista">
+                    <div><img src="./assets/icon_num1.png">Seja gentil e respeitoso com os gatos; nada de puxar, apertar, adorda-lós ou assusta-lós;</div>
+                    <div><img src="./assets/icon_num2.png">Evite fazer barulho alto, correr pelo ambiente ou pegar os gatos no colo;</div>
+                    <div><img src="./assets/icon_num3.png">Higienize as mãos antes e depois da interação com os gatos;</div>
+                    <div><img src="./assets/icon_num4.png">Crianças devem estar sempre acompanhadas por um responsável.</div>
+                </div>
+            </div>
+        </div>
     </main>
+
+        <!-- Parte do formulário -->
+
+        <div class="contatoContainer">
+      
+            <div class="contatoForm">
+                <div class="formRow">
+                    <div class="formGroup">
+                        <label>Nome</label>
+                        <input type="text" placeholder="Ex: Maria" />
+                    </div>
+                    
+                    <div class="formGroup">
+                        <label>Sobrenome</label>
+                        <input type="text" placeholder="Ex: Silvia" />
+                    </div>
+                </div>
+                
+                <div class="formRow">
+                    <div class="formGroup">
+                        <label>Endereço de e-mail</label>
+                        <input type="email" placeholder="Ex: seuemail@gmail.com" />
+                    </div>
+                    
+                    <div class="formGroup">
+                        <label>Data</label>
+                        <div class="data">
+                            <input type="date" id="data" name="data">
+                        </div>
+                    </div>
+                </div>
+        
+                <button class="botaoEnviar">Enviar</button>
+                
+            </div>
+        </div>
+
     
     <!--Rodapé-->
     <footer>
