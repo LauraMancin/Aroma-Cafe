@@ -24,8 +24,11 @@ body{
     background-color: #FFDDE8;
 }
 
-.sectionLogin img{
-    width: 30px;
+.sectionLoginAndCadastro img{
+  width: 30px; /* Imagem responsiva */
+  height: auto; /* Mantém a proporção */
+  object-fit: cover; /* Ajusta a imagem sem distorção */
+  margin-right: 2rem;
 
 }
 
@@ -33,8 +36,16 @@ body{
     background-color: var(--cor-botao-efeito);
     border: #DB7093;
     border-radius: 8px;
-    padding: 2rem;
-    margin-top: 15rem;
+    padding: 3rem;
+    margin-top: 12rem;
+}
+
+.containerCadastro{
+    background-color: var(--cor-botao-efeito);
+    border: #DB7093;
+    border-radius: 8px;
+    padding: 3rem;
+    margin-top: 7rem;
 }
 
 .tituloPrincipal{
@@ -48,6 +59,7 @@ body{
 
 .containerBotao{
     background-color: #DB7093;
+    border-color: #000000;
     border-bottom: 2rem;
     border-radius: 8px;
     font-family: var(--fonte-principal);
@@ -58,9 +70,11 @@ body{
     text-align: center;
     padding: 1rem;
     margin: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
 .containerBotao a{
+    text-align: center;
     text-decoration: none;
     color: var(--cor-secundaria);
 }
@@ -70,10 +84,11 @@ body{
 }
 
 .formGroup {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+    border: none;
 }
 
 
@@ -86,14 +101,17 @@ body{
     margin-left: 1rem ;
 }
 
+.formGroup input:focus{
+     border-color: #E99BB4;
+}
+
 .botaoDigitar{
- display: flex;
-  align-items: center;
-  background-color: #ffffff;
-  border-radius: 50px; /* Isso cria o formato de pílula (bordas totalmente arredondadas) */
-  padding: 8px 16px; /* Espaço interno (vertical e horizontal) */
-  width: 500px; /* Ajuste a largura como preferir */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 50px; /* Isso cria o formato de pílula (bordas totalmente arredondadas) */
+    padding: 8px 16px; /* Espaço interno (vertical e horizontal) */
+    width: 500px; /* Ajuste a largura como preferir */
 }
 
 .botaoCadastro{

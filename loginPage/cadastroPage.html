@@ -4,24 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/style.css">
-    <title>Login</title>
+    <title>Cadastro</title>
 </head>
 <body>
     <main>
         <section class="sectionLoginAndCadastro">
             
-            <div class="containerLogin">
+            <div class="containerCadastro">
                 <div>
-                    <h2 class="tituloPrincipal"> ENTRE </h2>
+                    <h2 class="tituloPrincipal"> CADASTRE-SE </h2>
+
+                    <div class="formGroup">
+                        <label>Seu nome:</label>
+                        <input type="text" placeholder="Digite o seu nome completo" class="botaoDigitar">
+                    </div>
+                    
+                    <div class="formGroup">
+                        <label>Seu User:</label>
+                        <input type="text" placeholder="Digite o seu User" class="botaoDigitar">
+                    </div>
 
                     <div class="formGroup">
                         <label>E-mail:</label>
                         <input type="text" placeholder="Digite o seu e-mail" class="botaoDigitar">
                     </div>
-                    
+
                     <div class="formGroup">
                         <label>Senha:</label>
                         <input type="text" placeholder="Digite a sua senha" class="botaoDigitar">
+                    </div>
+
+                    <div class="formGroup">
+                        <label>Confirmar senha:</label>
+                        <input type="text" placeholder="Confirme a sua senha" class="botaoDigitar">
                     </div>
 
                 <div class="containerBotao">
@@ -29,10 +44,8 @@
                 </div>
 
                 <div class="containerBotao">
-                    <a href="#"> ENTRAR </a>
+                    <a href="./loginPage.html"> CRIAR </a>
                 </div>
-
-                <a href="./cadastroPage.html" class="botaoCadastro"> Não tem conta? Crie uma agora </a>
             </div>
         </section>
 </body>
