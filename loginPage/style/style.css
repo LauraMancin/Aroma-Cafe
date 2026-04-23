@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Ribeye&display=swap');
+
+:root{
+    --cor-principal: #DB7093;
+    --cor-funfo: #FFDDE8;
+    --cor-botao-efeito: #E99BB4;
+    --cor-secundaria: #FFFFFF;
+    --cor-terciaria: #000000;
+    --cor-cinza: #828282;
+    --cor-cinza-secundario: #454545;
+    --fonte-principal: 'Inter', sans-serif;
+}
+
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFDDE8;
+}
+
+.sectionLogin img{
+    width: 30px;
+
+}
+
+.containerLogin{
+    background-color: var(--cor-botao-efeito);
+    border: #DB7093;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-top: 15rem;
+}
+
+.tituloPrincipal{
+    color: var(--cor-secundaria);
+    font-family: var(--fonte-principal);
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+    margin: 2rem;
+}
+
+.containerBotao{
+    background-color: #DB7093;
+    border-bottom: 2rem;
+    border-radius: 8px;
+    font-family: var(--fonte-principal);
+    font-size: 16px;
+    font-weight: 700;
+    margin: 2rem;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    margin: 2rem;
+}
+
+.containerBotao a{
+    text-decoration: none;
+    color: var(--cor-secundaria);
+}
+
+.containerBotao:hover{
+    color: #000000;
+}
+
+.formGroup {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      flex: 1;
+}
+
+
+.formGroup label{
+    text-decoration: none;
+    font-family: var(--fonte-principal);
+    color: var(--cor-secundaria);
+    font-size: 16px;
+    font-weight: 300;
+    margin-left: 1rem ;
+}
+
+.botaoDigitar{
+ display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 50px; /* Isso cria o formato de pílula (bordas totalmente arredondadas) */
+  padding: 8px 16px; /* Espaço interno (vertical e horizontal) */
+  width: 500px; /* Ajuste a largura como preferir */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.botaoCadastro{
+    text-decoration: none;
+    font-family: var(--fonte-principal);
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--cor-secundaria);
+    margin-left: 9.3rem;
+}
+
+.botaoCadastro:hover{
+    color: #000000;
+}
