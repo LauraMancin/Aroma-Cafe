@@ -24,11 +24,35 @@
 
 /* Menu */
 
-.menuNavegacao{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+header{
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  box-sizing: border-box;
+  color: var(--cor-terciaria);
+  margin-bottom: 2rem;
     padding: 20px var(--container-padding);
+}
+
+.menuNavegacao{
+    color: var(--cor-terciaria);
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    font-family: var(--fonte-principal);
+    font-size: 16px;
+    transition: transform 0.9s ease;
+    padding: 20px var(--container-padding);
+}
+
+.menuNavegacao a{
+    text-decoration: none;
+    color: var(--cor-terciaria);
+    font-weight: bold;
 }
 
 .logoAroma{
@@ -72,8 +96,36 @@
     cursor: pointer;
 }
 
-/* Bannner */
+.containerBarraPesquisa{
+  display: flex;
+  align-items: center;
+  background-color: var(--cor-pesquisa);
+  border-radius: 50px; /* Isso cria o formato de pílula (bordas totalmente arredondadas) */
+  padding: 8px 16px; /* Espaço interno (vertical e horizontal) */
+  width: 500px; /* Ajuste a largura como preferir */
+  box-shadow: 0 2px 4px rgba(20, 19, 19, 0.158); /* Uma sombra muito leve para dar destaque (opcional) */
+}
+ 
+.barraPesquisa input{
+  border: none; /* Remove a borda padrão do HTML */
+  outline: none; /* Remove aquela linha azul que aparece quando você clica */
+  background: transparent; /* Deixa o fundo transparente para usar a cor do contêiner */
+  font-size: 14px;
+  font-family: var(--fonte-principal); /* Use a fonte do seu projeto */
+  color: #333333; /* Cor do texto digitado */
+  width: 100%; /* Faz o input ocupar o resto do espaço */
+}
+ 
+.iconePesquisa{
+  width: 18px;
+  height: 18px;
+  color: #333333; /* Cor do ícone */
+  margin-right: 15px; /* Dá um espaço entre o ícone e o texto */
+}
+ 
 
+
+/* Bannner */
 .adocaoBanner {
     position: relative;
     padding: 0 var(--container-padding);
@@ -97,7 +149,6 @@
 }
 
 /* Parte dos Gatos */
-
 .blocoGato{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /*deixa o layout como um todo responsivo*/
@@ -143,19 +194,26 @@
     color: var(--cor-principal);
 }
 
+
 /* Página de cada Gato */
-
-.container{
-    display: grid;
-    grid-template-columns: 50% 50%;
-}
-
 .voltar{
     font-family: var(--fonte-principal);
     font-size: var(--fonte-size-botao);
     text-decoration: none;
     color: var(--cor-terciaria);
     font-weight: 600;
+    padding: var(--container-padding);
+}
+
+.voltar :hover{
+    color: var(--cor-botao-efeito);
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    gap: 130px;
+    padding: var(--container-padding);
 }
 
 .imgGato{
@@ -165,6 +223,7 @@
     padding: 0 var(--container-padding);
     margin-top: 80px;
     max-height: 50vh;
+    max-width: 100%;
 }
 
 .nomeGato{
@@ -172,18 +231,22 @@
     font-size: var(--fonte-size-titulo);
     color: var(--cor-principal);
     font-weight: 500;
+    margin-bottom: 5%;
 }
 
 .containerEspecificacoes{
     font-family: var(--fonte-principal);
-    font-size: var(--fonte-size-descricao2);
+    font-size: var(--fonte-size-descricao);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 40px;
     padding: var(--container-padding);
-     
 }
 
 .especificacoes{
     list-style: none;
-
+    margin-bottom: 50px;
 }
 
 .descricao{
@@ -198,10 +261,11 @@
     color: white;
     font-weight: bold;
     border-radius: 8px;
-    padding: 10px 20px;
+    padding: 10px 115px;
     border: none;
     font-size: var(--fonte-size-botao);
-    margin-top: 150px;
+    margin-top: 50px;
+    text-decoration: none;
 }
 
 .botaoAdotar:hover{
@@ -211,7 +275,6 @@
 
 
 /* Rodapé*/
-
 footer {
     background-color: var(--cor-secundaria);
     padding: 3rem var(--container-padding);

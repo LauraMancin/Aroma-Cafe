@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pucca</title>
-    <link rel="stylesheet" href="./styles/style.css">
+    <title>Adoção</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="shortcut icon" href="./assets/icone.png" type="image/x-icon">
+
 </head>
 <body>
     <header>
@@ -25,53 +27,47 @@
                 <!-- menu -->
                 <div class="menu">
                     <a href="#">CARDÁPIO</a>
-                    <a href="gatos.html" class="ativo">ADOÇÃO</a>
-                    <a href="reservas.html">RESERVAS</a>
+                    <a href="gatos.html">ADOÇÃO</a>
+                    <a href="reservas.html" class="ativo">RESERVAS</a>
                     <a href="#"><button class="botao-carrinho1">Carrinho</button></a>
                 </div>
             </nav>
         </div>
  
     </header>
-    
-    <!--Parte do gato-->
-    <a href="./gatos.html" class="voltar"><img src="./assets/icon_voltar.png"></a>
-    <section class="container">
-        <div class="containerFoto">
-            <div class="imgGato">
-                <img src="./assets/gata_pucca.png" alt="Foto Gata Pucca">
-            </div>
 
-        </div>
+    <!--Parte principal-->
+    <main class="adocao">
+        <!--Parte do Banner-->
+        <section class="adocaoBanner">
+            <img src="./assets/banner_reservas.png" alt="Banner Reservas" class="bannerGatos">
+            <h2 class="gatosDisponiveis">VEJA NOSSOS GATINHOS DISPONÍVEIS:</h2>
+        </section>
 
-        <div class="containerEspecificacoes">
-            <ul class="especificacoes">
-                <li><h1 class="nomeGato">PUCCA</h1></li>
-                <li> <img src="./assets/icon_femea.png" alt="Sexo do gato">Fêmea</li>
-                <li> <img src="./assets/icon_raca.png" alt="Raça do gato">Sialata</li>
-                <li> <img src="./assets/icon_pelagem.png" alt="Tipo de pelagem">Pelagem curta</li>
-                <li> <img src="./assets/icon_olhos.png" alt="Cor dos olhos">Olhos Azuis</li>
-                <li> <img src="./assets/icon_nascimento.png" alt="Data de Nascimento">Nascimento aprox. Junho 2024</li>
-                
-                <a href="#"><button class="botaoAdotar">Quero adotar!</button></a>
+        
+        <!--Como funciona adotar-->
+        <section>
+            <h1 class="titulo">COMO <strong class="tituloDestaque">FUNCIONA?</strong></h1>
+            <ul class="descricaoComoAdotar">
+                <li> <img src="./assets/icon_num1.png">Reservas: As visitas devem ser agendadas com pelo menos 30 minutos de antecedência em relação ao horário desejado;</li>
+                <li> <img src="./assets/icon_num2.png">Capacidade: Cada sessão recebe um máximo de até 10 pessoas, para manter um ambiente tranquilo e confortável para os gatos;.</li>
+                <li> <img src="./assets/icon_num3.png">Duração da visita: O tempo de permanência é de até 1 hora por sessão;</li>
+                <li> <img src="./assets/icon_num4.png">Valor: A entrada custa R$15 por pessoa.</li>
             </ul>
-        </div>
-    </section>
-    <div class="descricao">
-        <p>Uma gatinha que vivia nas ruas, sobrevivendo com ajuda ocasional de pessoas em um estacionamento, estava grávida e doente com esporotricose. Próxima de dar à luz, foi resgatada por alguém que lhe ofereceu cuidados, tratamento e segurança para ter seus filhotes. Hoje, está saudável, curada e pronta para adoção, sendo carinhosa após ganhar confiança, sociável com outros gatos e já castrada, vacinada e testada negativa para FIV e FeLV.</p>
-    </div>
+        </section>
 
+    </main>
+    
     <!--Rodapé-->
     <footer>
         <section class="footerContainer">
 
             <div class="footer logo">
-
                 <h2 class="rodape">Aroma Café</h2>
 
                 <div class="redesSociais">
                     <a href="#"><img src="./assets/Icon_facebook.png"></a>
-                    <a href="#"><img src="./assets/Icon_linkedIn.png"></a>
+                    <a href="#"><img src="./assets/Icon_linkedIn.png"></a> 
                     <a href="#"><img src="./assets/Icon_youtube.png"></a>
                     <a href="#"><img src="./assets/Icon_Instagram.png"></a>
                 </div>
@@ -98,4 +94,4 @@
         </section>
     </footer>
 </body>
-</html> 
+</html>
