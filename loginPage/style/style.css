@@ -2,7 +2,7 @@
 
 :root{
     --cor-principal: #DB7093;
-    --cor-funfo: #FFDDE8;
+    --cor-fundo: #FFDDE8;
     --cor-botao-efeito: #E99BB4;
     --cor-secundaria: #FFFFFF;
     --cor-terciaria: #000000;
@@ -22,21 +22,15 @@ body{
     justify-content: center;
     align-items: center;
     background-color: #FFDDE8;
+    height: 50% 50%;
 }
 
-.sectionLoginAndCadastro img{
-  width: 30px; /* Imagem responsiva */
-  height: auto; /* Mantém a proporção */
-  object-fit: cover; /* Ajusta a imagem sem distorção */
-  margin-right: 2rem;
 
-}
-
-.containerLogin{
+.containerLoginAndCadastro{
     background-color: var(--cor-botao-efeito);
     border: #DB7093;
     border-radius: 8px;
-    padding: 3rem;
+    padding: 2rem;
     margin-top: 12rem;
 }
 
@@ -45,7 +39,7 @@ body{
     border: #DB7093;
     border-radius: 8px;
     padding: 3rem;
-    margin-top: 7rem;
+    margin-top: 4rem;
 }
 
 .tituloPrincipal{
@@ -73,15 +67,29 @@ body{
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
+.containerBotao img{
+  position: relative;
+  top: 9px;
+  width: 30px; /* Imagem responsiva */
+  height: auto; /* Mantém a proporção */
+  object-fit: cover; /* Ajusta a imagem sem distorção */
+  margin-right: 1rem;
+
+}
 .containerBotao a{
+    position: relative;
+    top: -7px;
     text-align: center;
     text-decoration: none;
     color: var(--cor-secundaria);
 }
 
 .containerBotao:hover{
-    color: #000000;
+    background-color: #9c3769;
+    opacity: 0.9;
+    cursor: pointer;
 }
+
 
 .formGroup {
     display: flex;
@@ -89,6 +97,8 @@ body{
     gap: 6px;
     flex: 1;
     border: none;
+    padding: 0.5em;
+    outline: none;
 }
 
 
@@ -97,12 +107,22 @@ body{
     font-family: var(--fonte-principal);
     color: var(--cor-secundaria);
     font-size: 16px;
-    font-weight: 300;
+    font-weight: 400;
     margin-left: 1rem ;
 }
 
+.formGroup input{
+    border: none;
+    border-bottom: 2px solid #9c3769;/* ;Borda branca só embaixo */
+    background-color: rgba(255, 255, 255, 0.8); /* Fundo levemente transparente */
+    padding: 10px;
+    border-radius: 20px; /* Mantém o estilo arredondado da sua imagem */
+}
+
 .formGroup input:focus{
-     border-color: #E99BB4;
+    color: #454545;
+    outline: none;
+    box-shadow: none; 
 }
 
 .botaoDigitar{
@@ -120,9 +140,17 @@ body{
     font-size: 16px;
     font-weight: 300;
     color: var(--cor-secundaria);
-    margin-left: 9.3rem;
+    margin-left: 10rem;
 }
 
 .botaoCadastro:hover{
-    color: #000000;
+    color: #9c3769;
+}
+
+.textoAviso{
+    font-family: var(--fonte-principal);
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--cor-secundaria);
+    margin-left: 8rem; 
 }
