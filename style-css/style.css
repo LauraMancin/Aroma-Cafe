@@ -48,6 +48,7 @@ header{
     gap: 30px;
     font-family: var(--fonte-principal);
     font-size: 16px;
+    transition: transform 0.9s ease;
 }
 .menuNavegacao a{
     text-decoration: none;
@@ -57,6 +58,7 @@ header{
 
 .menuNavegacao a:hover{
     color: var(--cor-principal);
+    transform: scale(1.03); 
 }
 
 .logoAroma{
