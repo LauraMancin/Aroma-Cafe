@@ -186,6 +186,10 @@ header{
     object-fit: contain;
 }
 
+.texto-produto-destaque{
+    font-size: 16px;
+}
+
 .botao-voltar{
     margin-left: 8rem;
 }    
