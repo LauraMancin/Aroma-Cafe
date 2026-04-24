@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap'); /*fonte Inter*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Ribeye&display=swap'); /*fonte Ribeye*/
+@import url('https://fonts.googleapis.com/css2?family=Mogra&display=swap'); /*fonte da logo inferior*/
+ 
+
+:root{
+        --cor-principal: #DB7093;
+        --cor-botao-efeito: #E99BB4;
+        --cor-secundaria: #FFFFFF;
+        --cor-terciaria: #000000;
+        --cor-quaternaria: #828282;
+        --fonte-principal: 'Inter', sans-serif;
+        --fonte-logo: 'Mogra', system-ui;
+        --fonte-size-titulo: 40px;
+        --fonte-size-descricao: 20px;
+        --fonte-size-botao: 14px;
+        --fonte-size-subtítulo: 16px;
+        --fonte-size-descricao2: 12px;
+}
+
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    body{
+        display: flex;
+        flex-direction: column;
+        background-color: #FFDDE8;
+        height: 50% 50%;
+    }
+}
