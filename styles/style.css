@@ -477,29 +477,28 @@ footer a:hover {
 
 
 /* Responsividade */
-    /*mobile*/
-    @media (max-width: 480px) {
-        .blocoGato {
-            grid-template-columns: 1fr;
-            padding: 0 1rem;
-            margin-top: 40px;
-        }
-    
-        .gatosDisponiveis {
-            bottom: 1rem;
-            font-size: 24px;
-        }
+/*mobile*/
+@media (max-width: 480px) {
+    .blocoGato {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+        margin-top: 40px;
     }
     
-    /*tablet*/
-    @media (min-width: 481px) and (max-width: 1024px) {
-        .blocoGato {
-            grid-template-columns: repeat(2, 1fr);
-            padding: 0 2rem;
-        }
+    .gatosDisponiveis {
+        bottom: 1rem;
+        font-size: 24px;
+    }
+}
     
-        .gatosDisponiveis {
-            bottom: 3rem;
-        }
+/*tablet*/
+@media (min-width: 481px) and (max-width: 1024px) {
+    .blocoGato {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 2rem;
+    }
+    
+    .gatosDisponiveis {
+        bottom: 3rem;
     }
 }
