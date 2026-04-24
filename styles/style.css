@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mogra&display=swap');
 
 *{
     margin: 0;
@@ -13,7 +14,7 @@
     --cor-terciaria: #000000;
     --cor-quaternaria: #828282;
     --fonte-principal: 'Inter', sans-serif;
-    --fonte-logo: 'Ribeye', sans-serif;
+    --fonte-logo: 'Mogra', system-ui;
     --fonte-size-titulo: 40px;
     --fonte-size-descricao: 20px;
     --fonte-size-botao: 14px;
@@ -55,12 +56,15 @@ header{
     font-weight: bold;
 }
 
+.menuNavegacao :hover{
+    color: var(--cor-botao-efeito);
+}
+
 .logoAroma{
     text-decoration: none;
     color: black;
-    font-weight: bold;
     font-family: var(--fonte-logo);
-    font-size: var(--fonte-size-descricao);
+    font-size: var(--fonte-size-descricao)
 }
 
 .menu{
@@ -376,13 +380,16 @@ header{
     min-height: 120px;
 }
 
-.data textarea{       
-    resize: vertical;
-    min-height: 10px;
-    border: 2px solid;
-    padding: 10px;
-    box-sizing: border-box;
-    border-color: var(--cor-quaternaria);
+/* input de data */
+.data input {
+    border: 1.5px solid var(--cor-quaternaria);
+    border-radius: 8px;
+    padding: 10px 14px;
+}
+
+.data input:focus {
+    border-color: var(--cor-principal);
+    outline: none;
 }
 
  
@@ -408,10 +415,11 @@ header{
 /* Rodapé*/
 footer {
     background-color: var(--cor-secundaria);
-    padding: 3rem var(--container-padding);
+    padding: 3rem 2rem;
 }
 
-.footerContainer {
+/* container principal */
+.footer-container {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -422,12 +430,14 @@ footer {
     font-size: var(--fonte-size-subtítulo);
 }
 
+/* coluna logo */
 .logo {
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
 
+/* redes sociais */
 .redesSociais {
     display: flex;
     gap: 10px;
@@ -435,11 +445,10 @@ footer {
 
 .redesSociais img {
     width: 20px;
-    height: 20px;
-    object-fit: contain;
     opacity: 0.7;
 }
 
+/* colunas */
 .explorar, .servicos, .suporte {
     display: flex;
     flex-direction: column;
@@ -447,24 +456,27 @@ footer {
     min-width: 150px;
 }
 
+/* títulos */
 .titulo {
     font-weight: 600;
     margin-bottom: 5px;
+    flex-direction: column;
 }
 
+/* links */
 footer a {
     text-decoration: none;
-    color: var(--cor-quaternaria);
+    color: #555;
     font-size: 14px;
 }
 
 footer a:hover {
     color: var(--cor-principal);
+}
 
 
 
 /* Responsividade */
-    
     /*mobile*/
     @media (max-width: 480px) {
         .blocoGato {
