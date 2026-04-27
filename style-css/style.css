@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap'); /*fonte Inter*/
-
+@import url('https://fonts.googleapis.com/css2?family=Mogra&display=swap'); /* fonte Logo*/
+ 
 /*fazer root*/
 
 :root{
@@ -11,6 +12,7 @@
     --cor-rosa-claro: #e0b5d6;
     --cor-pesquisa: #e7e7e7;
     --fonte-principal: 'Inter', sans-serif;
+    --fonte-logo: 'Mogra', system-ui;
     --fonte-size-titulo: 40px;
     --fonte-size-descricao: 20px;
     --fonte-size-botao: 20px;
@@ -63,7 +65,7 @@ header{
     text-decoration: none;
     color: var(--cor-terciaria);
     font-weight: bold;
-    font-family: var(--fonte-principal);
+    font-family: var(--fonte-logo);
     font-size: var(--fonte-size-descricao);
 }
 
