@@ -358,16 +358,3 @@ footer a {
 footer a:hover {
     color: var(--cor-principal);
 }
-
-/* Estilos padrões (mobile) */
-body { font-size: 14px; }
-
-/* Estilos para tablets (telas maiores que 768px) */
-@media (min-width: 768px) {
-  body { font-size: 16px; }
-}
-
-/* Estilos para desktops (telas maiores que 1024px) */
-@media (min-width: 1024px) {
-  body { font-size: 18px; }
-}
