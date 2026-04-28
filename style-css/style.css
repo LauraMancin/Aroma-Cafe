@@ -180,8 +180,8 @@ header{
 .card-img{
     display: flex;
     gap: 30px;
-    max-width: 100%;
-    height: auto;
+    width: 40rem;
+    height: 28rem;
     transition: transform 0.9s ease; 
     cursor: pointer;
 }
