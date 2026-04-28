@@ -175,3 +175,93 @@ body{
     margin-left: 80%;
     
 }
+
+.infoSecundarias{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    padding: 1rem;
+    gap: 1rem;
+    margin-top: -10rem;
+}
+
+.infoSecundarias hr{
+    color: #a8a8a8;
+}
+
+.infoSecundarias label{
+    font-family: var(--fonte-principal);
+    font-size: 1.2rem;
+    color: #000000;
+    font-weight: 400;
+    position: relative;
+    top: 1rem;
+    margin-left: 5rem;
+}
+
+/*.infoSecundarias input{
+    width: 20rem;
+    height: 1.5rem;
+    padding: 0.5rem 1rem;
+    margin-left: 75%;
+    color: #828282;
+    border-bottom: 0.2rem solid;
+    border-radius: 0.5rem;
+
+}
+
+.infoSecundarias input:hover{
+    cursor: pointer;
+    color: #DB7093;
+}*/
+
+.campoPreenchimento{
+    width: 20rem;
+    height: 1.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border-color: #828282;
+    box-shadow: none;
+    position: relative;
+    top: -1.5rem;
+    margin-left: 75%;
+
+}
+
+.botaoSalvarPerfil{
+    width: 10rem;
+    height: 2.5rem;
+    background-color: var(--cor-principal);
+    color: var(--cor-secundaria);
+    font-family: var(--fonte-principal);
+    font-weight: 700;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    position: relative; 
+    top: 3.5rem;   
+}
+
+.botaoFormPerfil{
+    text-decoration: none;
+    text-align: center;
+    width: 15rem;
+    height: 2.5rem;
+    background-color: var(--cor-principal);
+    color: var(--cor-secundaria);
+    font-family: var(--fonte-principal);
+    font-weight: 300;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    position: relative;
+    margin-left: 80%;
+
+}
+
+.botaoFormPerfil:hover, .botaoSalvarPerfil:hover, .botaoEditarPerfil:hover{
+    background-color: var(--cor-botao-efeito);
+    cursor: pointer;
+}
