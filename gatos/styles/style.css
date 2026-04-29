@@ -162,6 +162,8 @@ header{
     margin-top: 80px;
 }
 
+
+/* Animação em cima das img dos gatos*/
 .blocoGatoAnimacao img {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -184,7 +186,6 @@ header{
 }
 
 
-
 .nome{
     font-family: var(--fonte-principal);
     font-size: var(--fonte-size-subtítulo);
@@ -199,12 +200,12 @@ header{
     display: flex;
     flex-direction: column;
     gap: 16px;
+    margin-bottom: 1%;
     padding-top: 42px;
     min-width: 280px;
     align-items: center;
     font-family: var(--fonte-principal);
     font-size: var(--fonte-size-subtítulo);
-    margin-bottom: 1%;
     color: var(--cor-terciaria);
 }
 
@@ -310,14 +311,19 @@ header{
     display: flex;
     flex-direction: column;
     gap: 16px;
-    padding-top: 40px;
+    margin-bottom: 0.5%;
+    padding-top: 42px;
     min-width: 280px;
     align-items: center;
     font-family: var(--fonte-principal);
     font-size: var(--fonte-size-subtítulo);
-    list-style: none;
-    margin-bottom: 2%;
     color: var(--cor-terciaria);
+}
+
+.descricao li{
+    list-style: none;
+    color: var(--cor-terciaria);
+    margin-bottom: 10px;
 }
 
 .reserva{
