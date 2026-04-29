@@ -61,17 +61,16 @@ header{
     transform: scale(1.03); 
 }
 
-.dropdown{
-    position: relative;
-}
-
 .dropdown-menu{
-    display: flex;
-    padding: 10px;
-    margin-top: 8rem;
-    flex-direction: column;
+    display: none;
     position: absolute;
 }
+
+.dropdown:hover .dropdown-menu{
+    display: block;
+}
+
+
 
 
 .logoAroma{
