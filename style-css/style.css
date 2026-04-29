@@ -61,16 +61,32 @@ header{
     transform: scale(1.03); 
 }
 
+.dropdown{
+    list-style-type: none;
+}
+
 .dropdown-menu{
     display: none;
     position: absolute;
+    margin-top: 2rem;
+    border: 1px solid var(--cor-botao-efeito);
+    border-radius: 5px;
+    padding: 15px;
+    right: 16%;
 }
 
-.dropdown:hover .dropdown-menu{
+.dropdown-menu a{
     display: block;
 }
 
+.dropdown:focus-within .dropdown-menu{
+    display: block;
+}
 
+.Bebidas-menu{
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+}
 
 
 .logoAroma{
