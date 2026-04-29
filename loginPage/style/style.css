@@ -65,6 +65,7 @@ body{
     padding: 1rem;
     margin: 2rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    
 }
 
 .containerBotao img{
@@ -78,7 +79,8 @@ body{
 }
 .containerBotao a{
     position: relative;
-    top: -7px;
+    padding-left: 1rem;
+    top: 2px;
     text-align: center;
     text-decoration: none;
     color: var(--cor-secundaria);
@@ -153,4 +155,8 @@ body{
     font-weight: 300;
     color: var(--cor-secundaria);
     margin-left: 8rem; 
+}
+
+.botaoCriar{
+    padding-left: 1.5rem;
 }
