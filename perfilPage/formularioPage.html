@@ -7,6 +7,65 @@
     <title>Meu Fomulário</title>
 </head>
 <body>
+     <section class="perfilContainer">
+        <div class="infoPerfil">
+            <img src="./image/user.png" alt="Foto de Perfil do Usuario" class="fotoPerfilUsuario">
+            <span> Nome Completo </span>
+            <span class="destaque"> seuemail@dominio.com </span>
+        </div>
+<hr>
+        <div class="opcoesPerfil">
+            <span class="icon"> <img src="./image/User_icon.png" alt="Simbolo do Usuario"> </span>
+        </div>
+            
+            <span class="opcaoConfig"> Minha Conta </span>
+            
+            <span> <img src="./image/settings-01.png" alt="Simbolo de Engrenagem"> </span>
+            <span class="opcaoConfig"> Configurações </span>
+            
+            <span> <img src="./image/log-out-04.png" alt="Simbolo de Sair"> </span>
+            <span class="opcaoConfig"> Sair </span>
+    </section>
+
+    <section class="configuracaoFormContainer">
+
+        <div class="infoPrincipais">
+
+            <img src="./image/user.png" alt="Foto de Perfil do Usuario" class="fotoPerfilConfig"> 
+            <img src="./image/editar_pefil_icon.png" alt="Icone de Editar Perfil" class="editarPerfilIcon">
+
+            <span class="tituloPrincipal"> Nome Completo </span>
+            <span class="destaque"> seuemail@dominio.com </span>
+
+            <a href="./perfilPage.html" class="botaoEditarPerfil"> EDITAR PERFIL </button>
+
+        </div>
+
+        <div class="infoForms">
+            <label for="email"> Nome Completo </label>
+            <input type="text" placeholder="Digite seu nome completo" id="nomeCompleto" name="nomeCompleto" class="campoPreenchimento">
+            <hr>
+            <label for="numTelefone"> Data de Nascimento </label>
+            <input type="date" placeholder="DD/MM/AAAA" id="dataNascimento" name="dataNascimento" class="campoPreenchimento">
+            <hr>
+            <label for="endereco"> Seu Endereço </label>
+            <input type="text" placeholder=" " id="endereco" name="endereco" class="campoPreenchimento">
+            <hr>
+            <label for="numCasa"> Número </label>
+            <input type="text" placeholder=" n° " id="numCasa" name="numCasa" class="campoPreenchimento">
+            <hr>
+            <label for="complemento"> Complemento </label>
+            <input type="text" placeholder=" -- " id="complemento" name="complemento" class="campoPreenchimento">
+            <hr>
+            <label for="moradia"> Moradia </label>
+            <input type="text" placeholder="Ex: Casa ou Apartamento" id="endereco" name="endereco" class="campoPreenchimento">
+            <button class="botaoSalvarPerfil"> SALVAR </button>
+
+        </div>
+
+    </section>
+    
+
     
 </body>
 </html>
