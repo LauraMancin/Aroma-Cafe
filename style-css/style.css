@@ -201,8 +201,8 @@ header{
 }
 
 .icone-lactose{
-    width: 50px;   /* Largura desejada */
-    height: 50px;  /* Altura desejada */
+    width: 50px;   /* Largura  */
+    height: 50px;  /* Altura */
     object-fit: contain;
 }
 
@@ -233,7 +233,7 @@ header{
 }
 
 .grid-produtos{
-    display: flex;
+    display: grid;
     grid-template-columns: repeat(3, max-content);
     gap: 25px;
     padding: 10px;
