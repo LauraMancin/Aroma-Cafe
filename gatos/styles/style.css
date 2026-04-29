@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mogra&display=swap');
 
 *{
     margin: 0;
@@ -13,7 +14,7 @@
     --cor-terciaria: #000000;
     --cor-quaternaria: #828282;
     --fonte-principal: 'Inter', sans-serif;
-    --fonte-logo: 'Ribeye', sans-serif;
+    --fonte-logo: 'Mogra', system-ui;
     --fonte-size-titulo: 40px;
     --fonte-size-descricao: 20px;
     --fonte-size-botao: 14px;
@@ -55,12 +56,15 @@ header{
     font-weight: bold;
 }
 
+.menuNavegacao :hover{
+    color: var(--cor-botao-efeito);
+}
+
 .logoAroma{
     text-decoration: none;
     color: black;
-    font-weight: bold;
     font-family: var(--fonte-logo);
-    font-size: var(--fonte-size-descricao);
+    font-size: var(--fonte-size-descricao)
 }
 
 .menu{
@@ -158,6 +162,15 @@ header{
     margin-top: 80px;
 }
 
+.blocoGatoAnimacao img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blocoGatoAnimacao img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
 .gatos{
     display: grid;
     line-height: 1.5;
@@ -170,6 +183,8 @@ header{
     display: block;
 }
 
+
+
 .nome{
     font-family: var(--fonte-principal);
     font-size: var(--fonte-size-subtítulo);
@@ -180,7 +195,6 @@ header{
 
 
 /*Como funciona adotar*/
-
 .comoAdotar{
     display: flex;
     flex-direction: column;
@@ -194,11 +208,11 @@ header{
     color: var(--cor-terciaria);
 }
 
-.descricao{
+.descricao li{
     list-style: none;
     color: var(--cor-terciaria);
+    margin-bottom: 12px;
 }
-
 
 .titulo{
     text-align: center;
@@ -376,13 +390,16 @@ header{
     min-height: 120px;
 }
 
-.data textarea{       
-    resize: vertical;
-    min-height: 10px;
-    border: 2px solid;
-    padding: 10px;
-    box-sizing: border-box;
-    border-color: var(--cor-quaternaria);
+/* input de data */
+.data input {
+    border: 1.5px solid var(--cor-quaternaria);
+    border-radius: 8px;
+    padding: 10px 14px;
+}
+
+.data input:focus {
+    border-color: var(--cor-principal);
+    outline: none;
 }
 
  
@@ -408,10 +425,11 @@ header{
 /* Rodapé*/
 footer {
     background-color: var(--cor-secundaria);
-    padding: 3rem var(--container-padding);
+    padding: 3rem 2rem;
 }
 
-.footerContainer {
+/* container principal */
+.footer-container {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -422,12 +440,15 @@ footer {
     font-size: var(--fonte-size-subtítulo);
 }
 
+/* coluna logo */
 .logo {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    font-family: var(--fonte-logo);
 }
 
+/* redes sociais */
 .redesSociais {
     display: flex;
     gap: 10px;
@@ -435,11 +456,10 @@ footer {
 
 .redesSociais img {
     width: 20px;
-    height: 20px;
-    object-fit: contain;
     opacity: 0.7;
 }
 
+/* colunas */
 .explorar, .servicos, .suporte {
     display: flex;
     flex-direction: column;
@@ -447,47 +467,49 @@ footer {
     min-width: 150px;
 }
 
+/* títulos */
 .titulo {
     font-weight: 600;
     margin-bottom: 5px;
+    flex-direction: column;
 }
 
+/* links */
 footer a {
     text-decoration: none;
-    color: var(--cor-quaternaria);
+    color: #555;
     font-size: 14px;
 }
 
 footer a:hover {
     color: var(--cor-principal);
+}
 
 
 
 /* Responsividade */
-    
-    /*mobile*/
-    @media (max-width: 480px) {
-        .blocoGato {
-            grid-template-columns: 1fr;
-            padding: 0 1rem;
-            margin-top: 40px;
-        }
-    
-        .gatosDisponiveis {
-            bottom: 1rem;
-            font-size: 24px;
-        }
+/*mobile*/
+@media (max-width: 480px) {
+    .blocoGato {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+        margin-top: 40px;
     }
     
-    /*tablet*/
-    @media (min-width: 481px) and (max-width: 1024px) {
-        .blocoGato {
-            grid-template-columns: repeat(2, 1fr);
-            padding: 0 2rem;
-        }
+    .gatosDisponiveis {
+        bottom: 1rem;
+        font-size: 24px;
+    }
+}
     
-        .gatosDisponiveis {
-            bottom: 3rem;
-        }
+/*tablet*/
+@media (min-width: 481px) and (max-width: 1024px) {
+    .blocoGato {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 2rem;
+    }
+    
+    .gatosDisponiveis {
+        bottom: 3rem;
     }
 }
