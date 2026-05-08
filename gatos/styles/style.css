@@ -165,12 +165,11 @@ header{
 
 /* Animação em cima das img dos gatos*/
 .blocoGatoAnimacao img {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.9s ease; 
 }
 
 .blocoGatoAnimacao img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+    transform: scale(1.03);
 }
 
 .gatos{
