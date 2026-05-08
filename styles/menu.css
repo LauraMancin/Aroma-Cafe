@@ -1,0 +1,118 @@
+
+:root{
+    --cor-principal: #DB7093;
+    --cor-botao-efeito: #E99BB4;
+    --cor-secundaria: #FFFFFF;
+    --cor-terciaria: #000000;
+    --cor-quaternaria: #828282;
+    --fonte-principal: 'Inter', sans-serif;
+    --fonte-logo: 'Mogra', system-ui;
+    --fonte-size-titulo: 40px;
+    --fonte-size-descricao: 20px;
+    --fonte-size-botao: 14px;
+    --fonte-size-subtítulo: 16px;
+    --fonte-size-descricao2: 12px;
+    --container-padding: clamp(16px, 5%, 80px) /*deixa o padding responsivo valorMinimo, valorIdeal e valorMaximo*/
+}
+
+
+/* Menu */
+header{
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  box-sizing: border-box;
+  color: var(--cor-terciaria);
+  margin-bottom: 2rem;
+    padding: 20px var(--container-padding);
+}
+
+.menuNavegacao{
+    color: var(--cor-terciaria);
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    font-family: var(--fonte-principal);
+    font-size: 16px;
+    transition: transform 0.9s ease;
+    padding: 20px var(--container-padding);
+}
+
+.menuNavegacao a{
+    text-decoration: none;
+    color: var(--cor-terciaria);
+    font-weight: bold;
+}
+
+.menuNavegacao :hover{
+    color: var(--cor-botao-efeito);
+}
+
+
+.menu{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    font-family: var(--fonte-principal);
+    font-size: var(--fonte-size-botao);
+}
+
+.menu a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.menu .ativo{
+    color: var(--cor-principal);
+}
+
+.botao-carrinho1{
+    background-color: var(--cor-principal);
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 10px 20px;
+    border: none;
+    font-size: var(--fonte-size-botao);
+}
+
+.botao-carrinho1:hover{
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+.containerBarraPesquisa{
+  display: flex;
+  align-items: center;
+  background-color: var(--cor-pesquisa);
+  border-radius: 50px; /* Isso cria o formato de pílula (bordas totalmente arredondadas) */
+  padding: 8px 16px; /* Espaço interno (vertical e horizontal) */
+  width: 500px; /* Ajuste a largura como preferir */
+  box-shadow: 0 2px 4px rgba(20, 19, 19, 0.158); /* Uma sombra muito leve para dar destaque (opcional) */
+}
+ 
+.barraPesquisa input{
+  border: none; 
+  outline: none; 
+  background: transparent;
+  font-size: 14px;
+  font-family: var(--fonte-principal);
+  color: #333333;
+  width: 100%;
+}
+ 
+.iconePesquisa{
+  width: 18px;
+  height: 18px;
+  color: #333333;
+  margin-right: 15px;
+}
+
+
+/* Área do Home */
+
