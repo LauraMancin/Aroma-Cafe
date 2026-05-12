@@ -57,17 +57,23 @@ body{
     margin-left: 28rem;
 }
 
-.infoForms{
+.formularioContainer{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: left;
-    margin: 1rem;
+    margin-left: -50rem;
     padding: 1rem;
-    position: relative;
-    top: 10rem;
+    margin: 1rem;
+    gap: 2rem;
+    color: #000000;
+    font-family: var(--fonte-principal);
+    font-size: 1.5rem;
 
 }
 
-.infoForms label{
-    color: #000000;
+.formularioPrimeiraLinha{
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
 }
