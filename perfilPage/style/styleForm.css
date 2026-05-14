@@ -57,7 +57,7 @@ body{
     margin-left: 28rem;
 }
 
-.formularioContainer{
+/* .formularioContainer{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -70,7 +70,7 @@ body{
     font-family: var(--fonte-principal);
     font-size: 1.5rem;
 
-}
+} */
 
 .formularioPrimeiraLinha{
     display: flex;
