@@ -74,30 +74,30 @@
                 <div class="formRow">
                     <div class="formGroup">
                         <label>Nome</label>
-                        <input type="text" placeholder="Ex: Maria" />
+                        <input type="text" placeholder="Ex: Maria" id="name" />
                     </div>
                     
                     <div class="formGroup">
                         <label>Sobrenome</label>
-                        <input type="text" placeholder="Ex: Silvia" />
+                        <input type="text" placeholder="Ex: Silvia" id="last"/>
                     </div>
                 </div>
                 
                 <div class="formRow">
                     <div class="formGroup">
                         <label>Endereço de e-mail</label>
-                        <input type="email" placeholder="Ex: seuemail@gmail.com" />
+                        <input type="email" placeholder="Ex: seuemail@gmail.com" id="email" />
                     </div>
                     
                     <div class="formGroup">
                         <label> Data e Horário </label>
                         <div class="data">
-                            <input type="datetime-local" placeholder="DD/MM/AAAA HH:MM:SS">
+                            <input type="datetime-local" placeholder="DD/MM/AAAA HH:MM:SS" id="date">
                         </div>
                     </div>
                 </div>
         
-                <input class="botaoEnviar" type="button" onclick="alert('Perfeito! Sua reserva já foi solicitada, logo um e-mail de confirmação chegará para você, até logo!')" value="Enviar">
+                <input class="botaoEnviar" type="button" value="Enviar" id="botao">
                 
             </div>
         </div>
@@ -138,5 +138,6 @@
             </div>
         </section>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
