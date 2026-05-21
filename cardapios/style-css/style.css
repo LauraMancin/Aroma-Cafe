@@ -65,14 +65,16 @@ header{
     list-style-type: none;
 }
 
+/*DEIXAR EM PASTA A PARTE */
 .dropdown-menu{
     display: none;
     position: absolute;
     margin-top: 1rem;
-    border: 1px solid var(--cor-botao-efeito);
-    border-radius: 5px;
-    padding: 15px;
+    border: 5px solid var(--cor-botao-efeito);
+    border-radius: 18px;
+    padding: 20px;
     right: 16%;
+    
 }
 
 .dropdown-menu a{
