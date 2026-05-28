@@ -208,7 +208,7 @@ header{
     color: var(--cor-terciaria);
 }
 
-.descricao li{
+.descricaoAdotar li{
     list-style: none;
     color: var(--cor-terciaria);
     margin-bottom: 12px;
@@ -243,7 +243,7 @@ header{
 .container{
     display: flex;
     justify-content: center;
-    gap: 130px;
+    gap: 100px;
     padding: var(--container-padding);
 }
 
@@ -285,6 +285,7 @@ header{
     font-size: var(--fonte-size-descricao);
     color: var(--cor-quaternaria);
     padding: var(--container-padding);
+    margin-top: -160px;
 }
 
 .botaoAdotar{
