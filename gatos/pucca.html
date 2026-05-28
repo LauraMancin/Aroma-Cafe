@@ -53,7 +53,14 @@
                 <li> <img src="./assets/icon_olhos.png" alt="Cor dos olhos">Olhos Azuis</li>
                 <li> <img src="./assets/icon_nascimento.png" alt="Data de Nascimento">Nascimento aprox. Junho 2024</li>
                 
-                <a href="#"><button class="botaoAdotar">Quero adotar!</button></a>
+                <button class="botaoAdotar" onclick="abrirModal()">Quero Adotar</button>
+                <div id="modal" class="modal-overlay">
+                    <div class="modal-caixa">
+                        <h2>Solicitação de Adoção foi enviada!</h2>
+                        <p>Seu interesse em adotar foi enviado para nossa equipe! Em breve, você receberá um e-mail com mais informações sobre o processo de adoção e o formulário necessário para continuar. Agradecemos por escolher transformar a vida de um gatinho com muito amor e carinho.</p>
+                        <button onclick="fecharModal()">Fechar</button>
+                    </div>
+                </div>
             </ul>
         </div>
     </section>
