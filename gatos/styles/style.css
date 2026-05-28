@@ -453,6 +453,10 @@ header{
     max-width: 400px;
 }
 
+.botaoFechar{
+    cursor: pointer;
+}
+
 /* Rodapé*/
 footer {
     background-color: var(--cor-secundaria);
