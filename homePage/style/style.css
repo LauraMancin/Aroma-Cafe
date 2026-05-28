@@ -98,6 +98,7 @@ header{
 }
 
 .logoAroma{
+    font-family: var(--fonte-l);
     text-decoration: none;
     color: var(--cor-secundaria);
     font-weight: bold;
