@@ -45,7 +45,7 @@ header{
     align-items: center;
     gap: 30px;
     font-family: var(--fonte-principal);
-    font-size: 16px;
+    font-size: var(--fonte-size-subtítulo);
     transition: transform 0.9s ease;
     padding: 20px var(--container-padding);
 }
@@ -72,7 +72,7 @@ header{
     align-items: center;
     gap: 30px;
     font-family: var(--fonte-principal);
-    font-size: var(--fonte-size-botao);
+    font-size: var(--fonte-size-subtítulo);
 }
 
 .menu a{
