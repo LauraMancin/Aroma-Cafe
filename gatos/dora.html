@@ -9,7 +9,7 @@
 <body>
     <header>
         <!-- logo-->
-        <a href="./index.html" class="logoAroma">Aroma Café</a>
+        <a href="../homePage/index.html" class="logoAroma">Aroma Café</a>
         <div class="containerBarraPesquisa barraPesquisa">
           <img
             src="./assets/icon_pesquisa.png"
@@ -22,17 +22,29 @@
         <div>
             <nav class="menuNavegacao">
 
+                <ul> 
+                    <li class="dropdown" tabindex="0">
+                    <a href="#"><span class="cardap-colorido">CARDÁPIO</span></a>
+
+                    <div class="dropdown-menu">
+                        <a href="./cafesEspeciais.html">Cafés Especiais</a>
+                        <a href="./bebidasGeladas.html" class="Bebidas-menu">Bebidas Geladas</a>
+                        <a href="./doces.html">Doces e <br>
+                        Acompanhamentos</a>
+                    </div>
+                    </li>  
+            </ul>
+
                 <!-- menu -->
                 <div class="menu">
-                    <a href="#">CARDÁPIO</a>
                     <a href="gatos.html" class="ativo">ADOÇÕES</a>
                     <a href="reservas.html">RESERVAS</a>
                     <a href="#"><button class="botao-carrinho1">Carrinho</button></a>
                 </div>
             </nav>
         </div>
- 
     </header>
+
     
     <!--Parte do gato-->
     <a href="./gatos.html" class="voltar"><img src="./assets/icon_voltar.png"></a>

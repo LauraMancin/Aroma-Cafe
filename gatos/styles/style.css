@@ -127,7 +127,35 @@ header{
     margin-right: 15px;
 }
 
+.dropdown{
+    list-style-type: none;
+}
 
+/*DEIXAR EM PASTA A PARTE */
+.dropdown-menu{
+    display: none;
+    position: absolute;
+    margin-top: 1rem;
+    border: 5px solid var(--cor-botao-efeito);
+    border-radius: 18px;
+    padding: 20px;
+    right: 19%;
+    z-index: 1;
+    background-color: var(--cor-secundaria);
+}
+
+.dropdown-menu a{
+    display: block;
+}
+
+.dropdown:focus-within .dropdown-menu{
+    display: block;
+}
+
+.Bebidas-menu{
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+}
 
 /* Bannner */
 .adocaoBanner {
