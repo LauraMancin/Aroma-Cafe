@@ -26,16 +26,16 @@
 /* Menu */
 
 header{
-  top: 0;
-  left: 0;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 40px;
-  box-sizing: border-box;
-  color: var(--cor-terciaria);
-  margin-bottom: 2rem;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+    box-sizing: border-box;
+    color: var(--cor-terciaria);
+    margin-bottom: 2rem;
     padding: 20px var(--container-padding);
 }
 
@@ -101,32 +101,32 @@ header{
 }
 
 .containerBarraPesquisa{
-  display: flex;
-  align-items: center;
-  background-color: var(--cor-pesquisa);
-  border-radius: 50px; /* Isso cria o formato de pílula (bordas totalmente arredondadas) */
-  padding: 8px 16px; /* Espaço interno (vertical e horizontal) */
-  width: 500px; /* Ajuste a largura como preferir */
-  box-shadow: 0 2px 4px rgba(20, 19, 19, 0.158); /* Uma sombra muito leve para dar destaque (opcional) */
+    display: flex;
+    align-items: center;
+    background-color: var(--cor-pesquisa);
+    border-radius: 50px; /* Isso cria o formato de pílula (bordas totalmente arredondadas) */
+    padding: 8px 16px; /* Espaço interno (vertical e horizontal) */
+    width: 500px; /* Ajuste a largura como preferir */
+    box-shadow: 0 2px 4px rgba(20, 19, 19, 0.158); /* Uma sombra muito leve para dar destaque (opcional) */
 }
- 
+
 .barraPesquisa input{
-  border: none; 
-  outline: none; 
-  background: transparent;
-  font-size: 14px;
-  font-family: var(--fonte-principal);
-  color: #333333;
-  width: 100%;
+    border: none; 
+    outline: none; 
+    background: transparent;
+    font-size: 14px;
+    font-family: var(--fonte-principal);
+    color: #333333;
+    width: 100%;
 }
- 
+
 .iconePesquisa{
-  width: 18px;
-  height: 18px;
-  color: #333333;
-  margin-right: 15px;
+    width: 18px;
+    height: 18px;
+    color: #333333;
+    margin-right: 15px;
 }
- 
+
 
 
 /* Bannner */
@@ -208,8 +208,9 @@ header{
     color: var(--cor-terciaria);
 }
 
-.descricao li{
+.descricaoAdotar li{
     list-style: none;
+    font-size: var(--fonte-size-descricao);
     color: var(--cor-terciaria);
     margin-bottom: 12px;
 }
@@ -243,7 +244,7 @@ header{
 .container{
     display: flex;
     justify-content: center;
-    gap: 130px;
+    gap: 100px;
     padding: var(--container-padding);
 }
 
@@ -285,6 +286,7 @@ header{
     font-size: var(--fonte-size-descricao);
     color: var(--cor-quaternaria);
     padding: var(--container-padding);
+    margin-top: -160px;
 }
 
 .botaoAdotar{
@@ -341,7 +343,7 @@ header{
     margin-left: 3.5rem;
     padding: var(--container-padding);
 }
- 
+
 .contatoForm {
     flex: 1;
     display: flex;
@@ -349,19 +351,19 @@ header{
     gap: 16px;
     margin-left: 2rem;
 }
- 
+
 .formRow {
     display: flex;
     gap: 16px;
 }
- 
+
 .formGroup {
     display: flex;
     flex-direction: column;
     gap: 6px;
     flex: 1;
 }
- 
+
 .formGroup label {
     font-family: var(--fonte-principal);
     font-size: 16px;
@@ -369,7 +371,7 @@ header{
     color: var(--cor-cinza-secundario);
     text-align: left;
 }
- 
+
 .formGroup input, .formGroup textarea {
     border: 1.5px solid var(--cor-quaternaria);
     border-radius: 8px;
@@ -381,15 +383,15 @@ header{
     transition: border-color 0.2s;
     font-family: inherit;
 }
- 
+
 .formGroup input:focus, .formGroup textarea:focus {
     border-color: var(--cor-principal);
 }
- 
+
 .formGroup input::placeholder, .formGroup textarea::placeholder {
     color: var(--cor-quaternaria);
 }
- 
+
 .formGroup textarea {
     resize: vertical;
     min-height: 120px;
@@ -407,7 +409,7 @@ header{
     outline: none;
 }
 
- 
+
 .botaoEnviar {
     background-color: var(--cor-principal);
     color: white;
@@ -419,13 +421,41 @@ header{
     margin-top: 50px;
     text-decoration: none;
 }
- 
+
 .botaoEnviar:hover {
     background: var(--cor-botao-efeito);
     cursor: pointer;
 }
 
+/*Popup*/
+.modal-overlay{
+    display: none;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
 
+.modal-overlay.ativo{
+    display: flex;
+}
+
+.modal-caixa{
+    background: var(--cor-secundaria);
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 400px;
+}
+
+.botaoFechar{
+    cursor: pointer;
+}
 
 /* Rodapé*/
 footer {

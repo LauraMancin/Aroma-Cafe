@@ -25,7 +25,7 @@
                 <!-- menu -->
                 <div class="menu">
                     <a href="#">CARDÁPIO</a>
-                    <a href="gatos.html" class="ativo">ADOÇÃO</a>
+                    <a href="gatos.html" class="ativo">ADOÇÕES</a>
                     <a href="reservas.html">RESERVAS</a>
                     <a href="#"><button class="botao-carrinho1">Carrinho</button></a>
                 </div>
@@ -48,12 +48,19 @@
             <ul class="especificacoes">
                 <li><h1 class="nomeGato">PUCCA</h1></li>
                 <li> <img src="./assets/icon_femea.png" alt="Sexo do gato">Fêmea</li>
-                <li> <img src="./assets/icon_raca.png" alt="Raça do gato">Sialata</li>
+                <li> <img src="./assets/icon_raca.png" alt="Raça do gato">SRD (Vira-lata)</li>
                 <li> <img src="./assets/icon_pelagem.png" alt="Tipo de pelagem">Pelagem curta</li>
                 <li> <img src="./assets/icon_olhos.png" alt="Cor dos olhos">Olhos Azuis</li>
                 <li> <img src="./assets/icon_nascimento.png" alt="Data de Nascimento">Nascimento aprox. Junho 2024</li>
                 
-                <a href="#"><button class="botaoAdotar">Quero adotar!</button></a>
+                <button class="botaoAdotar" onclick="abrirModal()">Quero Adotar</button>
+                <div id="modal" class="modal-overlay">
+                    <div class="modal-caixa">
+                        <p class="botaoFechar" onclick="fecharModal()">x</p>
+                        <h2 class="tituloPopup">Solicitação de Adoção foi enviada!</h2>
+                        <p class="textoPopup">Seu interesse em adotar foi enviado para nossa equipe! Em breve, você receberá um e-mail com mais informações sobre o processo de adoção e o formulário necessário para continuar. Agradecemos por escolher transformar a vida de um gatinho com muito amor e carinho.</p>
+                    </div>
+                </div>
             </ul>
         </div>
     </section>
@@ -96,5 +103,7 @@
             </div>
         </section>
     </footer>
+
+    <script src="botaoAdotar.js"></script>
 </body>
 </html> 
