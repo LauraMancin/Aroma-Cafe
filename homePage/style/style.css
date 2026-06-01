@@ -19,6 +19,10 @@ Ribeye*/
     --container-padding: clamp(16px, 5%, 80px) /*deixa o padding responsivo valorMinimo, valorIdeal e valorMaximo*/
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 *{
     margin: 0%;
     padding: 0%;
