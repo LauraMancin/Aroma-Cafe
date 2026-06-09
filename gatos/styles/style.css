@@ -483,6 +483,13 @@ header{
 
 .botaoFechar{
     cursor: pointer;
+    display: flex;
+    justify-content: right;
+}
+
+.botaoFechar:hover{
+    cursor: pointer;
+    color: var(--cor-botao-efeito);
 }
 
 /* Rodapé*/
