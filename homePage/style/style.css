@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap'); /*fonte Inter*/
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Ribeye&display=swap'); /*fonte Ribeye*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Ribeye&display=swap'); /*fonte 
+Ribeye*/
+@import url('https://fonts.googleapis.com/css2?family=Mogra&display=swap');
 
 :root{
     --cor-principal: #DB7093;
@@ -14,6 +16,11 @@
     --fonte-size-descricao: 20px;
     --fonte-size-botao: 20px;
     --fonte-size-subtitulo: 16px;
+    --container-padding: clamp(16px, 5%, 80px) /*deixa o padding responsivo valorMinimo, valorIdeal e valorMaximo*/
+}
+
+html{
+    scroll-behavior: smooth;
 }
 
 *{
@@ -50,6 +57,8 @@ header{
   padding: 20px 40px;
   box-sizing: border-box;
   color: white;
+  margin-bottom: 2rem;
+  padding: 20px var(--container-padding);
 }
 
 .containerBarraPesquisa{
@@ -62,6 +71,13 @@ header{
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Uma sombra muito leve para dar destaque (opcional) */
 }
 
+.iconePesquisa{
+  width: 18px;
+  height: 18px;
+  color: #333333;
+  margin-right: 15px;
+}
+
 .barraPesquisa input{
   border: none; /* Remove a borda padrão do HTML */
   outline: none; /* Remove aquela linha azul que aparece quando você clica */
@@ -70,6 +86,25 @@ header{
   font-family: var(--fonte-principal); /* Use a fonte do seu projeto */
   color: #333333; /* Cor do texto digitado */
   width: 100%; /* Faz o input ocupar o resto do espaço */
+}
+
+.menu{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    font-family: var(--fonte-principal);
+    font-size: var(--fonte-size-botao);
+}
+
+.menu a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.menu .ativo{
+    color: var(--cor-principal);
 }
 
 .iconePesquisa{
@@ -86,6 +121,8 @@ header{
     gap: 30px;
     font-family: var(--fonte-principal);
     font-size: 16px;
+    transition: transform 0.9s ease;
+    padding: 20px var(--container-padding);
 }
 .menuNavegacao a{
     text-decoration: none;
@@ -101,7 +138,7 @@ header{
     text-decoration: none;
     color: var(--cor-secundaria);
     font-weight: bold;
-    font-family: var(--fonte-logo);
+    font-family: 'Mogra', sans-serif;
     font-size: var(--fonte-size-descricao);
 }
 
@@ -112,6 +149,21 @@ header{
 .banner{
     height: 100vh;
     grid-template-columns: 50% 50%;
+}
+
+.botao-carrinho1{
+    background-color: var(--cor-principal);
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 10px 20px;
+    border: none;
+    font-size: var(--fonte-size-botao);
+}
+
+.botao-carrinho1:hover{
+    opacity: 0.9;
+    cursor: pointer;
 }
 
 .tituloPrincipalHome{

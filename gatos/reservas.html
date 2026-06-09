@@ -16,23 +16,38 @@
           <img
             src="./assets/icon_pesquisa.png"
             alt="Lupa de pesquisa"
-            class="iconePesquisa">
+            class="iconePesquisa"
+          />
           <input type="text" placeholder="Encontre Seu Café &#127861;" />
         </div>
  
         <div>
             <nav class="menuNavegacao">
 
+                <ul> 
+                    <li class="dropdown" tabindex="0">
+                    <a href="#"><span class="cardap-colorido">CARDÁPIO</span></a>
+
+                    <div class="dropdown-menu">
+                        <a href="./cafesEspeciais.html">Cafés Especiais</a>
+                        <a href="./bebidasGeladas.html" class="Bebidas-menu">Bebidas Geladas</a>
+                        <a href="./doces.html">Doces e <br>
+                        Acompanhamentos</a>
+                    </div>
+                    </li>  
+            </ul>
+
                 <!-- menu -->
                 <div class="menu">
-                    <a href="../cardapios/cardapio.html">CARDÁPIO</a>
-                    <a href="gatos.html">ADOÇÃO</a>
-                    <a href="reservas.html" class="ativo">RESERVAS</a>
+                    <a href="gatos.html" class="ativo">ADOÇÕES</a>
+                    <a href="reservas.html">RESERVAS</a>
                     <a href="#"><button class="botao-carrinho1">Carrinho</button></a>
                 </div>
             </nav>
         </div>
+ 
     </header>
+
 
     <!--Parte principal-->
     <main class="adocao">
@@ -46,10 +61,10 @@
         <div class="funcionamentoRegras">
             <!--Como funciona a reserva-->
             <div class="reserva">
-                <h1 class="titulo">COMO <strong class="tituloDestaque">FUNCIONA?</strong></h1>
-                    <ul class="descricao">
+                <h1 class="titulo">COMO FUNCIONA PARA<strong class="tituloDestaque"> RESERVAR</strong></h1>
+                    <ul class="descricaoAdotar">
                         <li><img src="./assets/icon_num1.png">Reservas: As visitas devem ser agendadas com pelo menos 30 minutos de antecedência em relação ao horário desejado;</li>
-                        <li><img src="./assets/icon_num2.png">Capacidade: Cada sessão recebe um máximo de até 10 pessoas, para manter um ambiente tranquilo e confortável para os gatos;.</li>
+                        <li><img src="./assets/icon_num2.png">Capacidade: Cada sessão recebe um máximo de até 10 pessoas, para manter um ambiente tranquilo e confortável para os gatos;</li>
                         <li><img src="./assets/icon_num3.png">Duração da visita: O tempo de permanência é de até 1 hora por sessão;</li>
                         <li><img src="./assets/icon_num4.png">Valor: A entrada custa R$15 por pessoa.</li>
                     </ul>
@@ -58,7 +73,7 @@
             <!--Regras do ambiente-->
             <div>
                 <h1 class="titulo">NOSSAS <strong class="tituloDestaque">REGRAS</strong></h1>
-                <ul class="descricao">
+                <ul class="descricaoAdotar">
                     <li><img src="./assets/icon_num1.png">Seja gentil e respeitoso com os gatos; nada de puxar, apertar, acorda-los ou assusta-los;</li>
                     <li><img src="./assets/icon_num2.png">Evite fazer barulho alto, correr pelo ambiente ou pegar os gatos no colo;</li>
                     <li><img src="./assets/icon_num3.png">Higienize as mãos antes e depois da interação com os gatos;</li>
@@ -97,7 +112,19 @@
                     </div>
                 </div>
         
-                <input class="botaoEnviar" type="button" value="Enviar" id="botao">
+                <!--Botão e popup-->
+                <button class="botaoEnviar" onclick="abrirModal()">Enviar</button>
+                <div id="modal" class="modal-overlay">
+                    <div class="modal-caixa">
+                        <p class="botaoFechar" onclick="fecharModal()">x</p>
+                        <h2 class="tituloPopup">Solicitação de Reserva enviada!</h2>
+                        <p class="textoPopup">Sua solicitação de reserva foi enviada para nossa equipe! Em breve, você receberá um e-mail de confirmação com mais informações sobre o horário escolhido para visitar o ambiente dos gatinhos.
+
+                        Agradecemos pelo seu interesse e esperamos sua visita!</p>
+                    </div>
+                </div>
+            </ul>
+        </div>
                 
             </div>
         </div>
@@ -138,6 +165,6 @@
             </div>
         </section>
     </footer>
-    <script src="script.js"></script>
+    <script src="botaoReserva.js"></script>
 </body>
 </html>

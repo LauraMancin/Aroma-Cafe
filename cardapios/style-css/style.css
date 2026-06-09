@@ -18,6 +18,7 @@
     --fonte-size-botao: 20px;
     --fonte-size-subtitulo: 16px;
     --fonte-size-outras-op: 24px
+    --container-padding: clamp(16px, 5%, 80px) /*deixa o padding responsivo valorMinimo, valorIdeal e valorMaximo*/
 }
 
 
@@ -39,6 +40,7 @@ header{
   box-sizing: border-box;
   color: var(--cor-terciaria);
   margin-bottom: 2rem;
+  padding: 20px var(--container-padding);
 }
 
 .menuNavegacao{
@@ -65,14 +67,16 @@ header{
     list-style-type: none;
 }
 
+/*DEIXAR EM PASTA A PARTE */
 .dropdown-menu{
     display: none;
     position: absolute;
     margin-top: 1rem;
-    border: 1px solid var(--cor-botao-efeito);
-    border-radius: 5px;
-    padding: 15px;
+    border: 5px solid var(--cor-botao-efeito);
+    border-radius: 18px;
+    padding: 20px;
     right: 16%;
+    
 }
 
 .dropdown-menu a{
@@ -104,7 +108,7 @@ header{
 .containerBarraPesquisa{
   display: flex;
   align-items: center;
-  background-color: var(--cor-pesquisa);
+  background-color: var(--cor-secundaria);
   border-radius: 50px; /* (bordas  arredondadas) */
   padding: 8px 16px; /* espaço interno (vertical e horizontal) */
   width: 500px; /*  largura  */

@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.login-principal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    text-align: center;
+}
+
+.card{
+    padding: 20px;
+    margin: 15rem 70rem 20rem 15rem;
+}
+
+.nome-empresa{
+    margin-bottom: 15px;
+}
+
+.titulo{
+    margin-bottom: 10px;
+}
+
+.titulo-{
+    color: pink;
+}
+
+.texto-{
+    color: gray;
+    margin-bottom: 20px;
+}
+
+.input-principal{
+
+}
+
+.input-{
+    display: flex;
+    flex-direction: column;
+    padding: 13px;
+    width: 350px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 2px rgba(128, 128, 128, 0.219) solid;
+}
+
+.outras-opcoes{
+    display: flex;
+    margin-top: 20px;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+
+.linha{
+    width: 250px;
+    margin-top: 9px;
+    margin-left: 10px;
+    height: 0.5px;
+    background-color: rgba(0, 0, 0, 0.308);
+}

@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/menu.css">
     <link rel="stylesheet" href="./style/style.css" />
     <link rel="icon" href="./image/botao-home-colorido.png">
     <title>Aroma Café - Home</title>
@@ -11,27 +12,28 @@
   <body>
     <main>
       <header>
-        <div>
-          <a href="./index.html" class="logoAroma logoHome home">
-            <abbr title="Voltar à página inicial">Aroma Café</abbr>
-          </a>
-        </div>
+              <!-- logo-->
+              <a href="../homePage/index.html" class="logoAroma">Aroma Café</a>
+              <div class="containerBarraPesquisa barraPesquisa">
+                <img
+                  src="./image/lupaPesquisa.png"
+                  alt="Lupa de pesquisa"
+                  class="iconePesquisa">
+                <input type="text" placeholder="Encontre Seu Café &#127861;" />
+              </div>
+      
+              <div>
+                  <nav class="menuNavegacao">
 
-        <div class="containerBarraPesquisa barraPesquisa home">
-          <img
-            src="./image/lupaPesquisa.png"
-            alt="Lupa de pesquisa"
-            class="iconePesquisa"
-          />
-          <input type="text" placeholder="Pesquisa" />
-        </div>
-
-        <nav class="menuNavegacao home">
-          <a href="#">CARDÁPIO</a>
-          <a href="../gatos/gatos.html">ADOÇÕES</a>
-          <a href="../gatos/reservas.html">RESERVAS</a>
-          <a href="../loginPage/" class="botaoPrincipal">Entre</a>
-        </nav>
+                      <!-- menu -->
+                      <div class="menu">
+                          <a href="#cardapio">CARDÁPIO</a>
+                          <a href="../gatos/gatos.html">ADOÇÕES</a>
+                          <a href="../gatos/reservas.html">RESERVAS</a>
+                          <a href="#"><button class=" botaoPrincipal">Entre</button></a>
+                      </div>
+                  </nav>
+              </div>
       </header>
 
       <!-- BANNER -->
@@ -91,7 +93,7 @@
       </section>
 
       <!-- CARDÁPIO -->
-      <section class="secaoCardapio">
+      <section class="secaoCardapio" id="cardapio">
         <div class="containerCardapio">
           <h2 class="tituloCardapio tituloPrincipal">
             CONHEÇA NOSSO <span class="destaque">CARDÁPIO</span>
@@ -99,11 +101,13 @@
 
           <div class="cardapioContainer">
             <div class="card animacaoCard">
+              <a href="../cardapios/cafesEspeciais.html">
               <img
                 src="./image/xicaraCafe.png"
                 alt="Xícara de café"
                 class="imagemCard"
               />
+              </a>
               <h5 class="tituloCard">Cafés especiais da casa</h5>
               <p class="textoCard">
                 Cafés especiais inspirados em gatos com aromas marcantes.
@@ -112,11 +116,13 @@
 
             <div class="cardapioLadoDireito">
               <div class="card animacaoCard">
+                <a href="../cardapios/bebidasGeladas.html">
                 <img
                   src="./image/cafeGelado.png"
                   alt="Bebida gelada"
                   class="imagemCard"
                 />
+                </a>
                 <h5 class="tituloCard">Bebidas geladas</h5>
                 <p class="textoCard">
                   Bebidas refrescantes e criativas para qualquer momento.
@@ -124,11 +130,13 @@
               </div>
 
               <div class="card animacaoCard">
+                <a href="../cardapios/doces.html">
                 <img
                   src="./image/boloMorango.png"
                   alt="Bolo de morango"
                   class="imagemCard"
                 />
+                </a>
                 <h5 class="tituloCard">Doces e acompanhamentos</h5>
                 <p class="textoCard">
                   Doces delicados e irresistíveis para acompanhar seu café.
