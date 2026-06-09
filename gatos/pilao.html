@@ -9,7 +9,7 @@
 <body>
     <header>
         <!-- logo-->
-        <a href="./index.html" class="logoAroma">Aroma Café</a>
+        <a href="../homePage/index.html" class="logoAroma">Aroma Café</a>
         <div class="containerBarraPesquisa barraPesquisa">
           <img
             src="./assets/icon_pesquisa.png"
@@ -22,9 +22,21 @@
         <div>
             <nav class="menuNavegacao">
 
+                <ul> 
+                    <li class="dropdown" tabindex="0">
+                    <a href="#"><span class="cardap-colorido">CARDÁPIO</span></a>
+
+                    <div class="dropdown-menu">
+                        <a href="./cafesEspeciais.html">Cafés Especiais</a>
+                        <a href="./bebidasGeladas.html" class="Bebidas-menu">Bebidas Geladas</a>
+                        <a href="./doces.html">Doces e <br>
+                        Acompanhamentos</a>
+                    </div>
+                    </li>  
+            </ul>
+
                 <!-- menu -->
                 <div class="menu">
-                    <a href="#">CARDÁPIO</a>
                     <a href="gatos.html" class="ativo">ADOÇÕES</a>
                     <a href="reservas.html">RESERVAS</a>
                     <a href="#"><button class="botao-carrinho1">Carrinho</button></a>
@@ -33,6 +45,7 @@
         </div>
  
     </header>
+
     
     <!--Parte do gato-->
     <a href="./gatos.html" class="voltar"><img src="./assets/icon_voltar.png"></a>
@@ -53,7 +66,15 @@
                 <li> <img src="./assets/icon_olhos.png" alt="Cor dos olhos">Olhos Amarelos</li>
                 <li> <img src="./assets/icon_nascimento.png" alt="Data de Nascimento">Nascimento aprox. Fevereiro 2025</li>
 
-                <a href="#"><button class="botaoAdotar">Quero adotar!</button></a>
+                <!--Botão e popup-->
+                <button class="botaoAdotar" onclick="abrirModal()">Quero Adotar</button>
+                <div id="modal" class="modal-overlay">
+                    <div class="modal-caixa">
+                        <p class="botaoFechar" onclick="fecharModal()">x</p>
+                        <h2 class="tituloPopup">Solicitação de Adoção foi enviada!</h2>
+                        <p class="textoPopup">Em breve, você receberá um e-mail com mais informações sobre o processo de adoção e o formulário necessário para continuar.</p>
+                    </div>
+                </div>
             </ul>
         </div>
     </section>
@@ -96,5 +117,7 @@
             </div>
         </section>
     </footer>
+
+    <script src="botaoAdotar.js"></script>
 </body>
 </html> 

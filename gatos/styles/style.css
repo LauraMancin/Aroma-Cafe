@@ -45,7 +45,7 @@ header{
     align-items: center;
     gap: 30px;
     font-family: var(--fonte-principal);
-    font-size: 16px;
+    font-size: var(--fonte-size-subtítulo);
     transition: transform 0.9s ease;
     padding: 20px var(--container-padding);
 }
@@ -72,7 +72,7 @@ header{
     align-items: center;
     gap: 30px;
     font-family: var(--fonte-principal);
-    font-size: var(--fonte-size-botao);
+    font-size: var(--fonte-size-subtítulo);
 }
 
 .menu a{
@@ -127,7 +127,35 @@ header{
     margin-right: 15px;
 }
 
+.dropdown{
+    list-style-type: none;
+}
 
+/*DEIXAR EM PASTA A PARTE */
+.dropdown-menu{
+    display: none;
+    position: absolute;
+    margin-top: 1rem;
+    border: 5px solid var(--cor-botao-efeito);
+    border-radius: 18px;
+    padding: 20px;
+    right: 19%;
+    z-index: 1;
+    background-color: var(--cor-secundaria);
+}
+
+.dropdown-menu a{
+    display: block;
+}
+
+.dropdown:focus-within .dropdown-menu{
+    display: block;
+}
+
+.Bebidas-menu{
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+}
 
 /* Bannner */
 .adocaoBanner {
@@ -433,7 +461,7 @@ header{
     position: fixed;
     justify-content: center;
     align-items: center;
-    z-index: 999;
+    z-index: 3;
     top: 0;
     left: 0;
     width: 100%;
@@ -455,6 +483,22 @@ header{
 
 .botaoFechar{
     cursor: pointer;
+    display: flex;
+    justify-content: right;
+}
+
+.botaoFechar:hover{
+    cursor: pointer;
+    color: var(--cor-botao-efeito);
+}
+
+.tituloPopup{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.textoPopup{
+    font-size: var(--fonte-size-subtítulo);
 }
 
 /* Rodapé*/
