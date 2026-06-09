@@ -47,6 +47,7 @@ header {
     font-family: var(--fonte-principal);
     font-size: 16px;
     transition: transform 0.9s ease;
+    padding: 20px var(--container-padding);
 }
 
 .menuNavegacao a {
@@ -177,6 +178,8 @@ header {
     opacity: 0.5;
 }
 
+
+
 /* ===== SEÇÃO 01 — PRODUTO DESTAQUE ===== */
 .card {
     display: flex;
@@ -226,9 +229,9 @@ header {
 /* ===== SEÇÃO 02 — GRID DE PRODUTOS ===== */
 .outras-op {
     font-family: var(--fonte-principal);
-    font-size: 24px;
+    font-size: 17px;
     grid-column: 1 / -1;
-    margin-left: var(--container-padding); /* CORRIGIDO: era 10rem fixo */
+    margin-left: 15rem; 
     margin-top: 5rem;
     margin-bottom: 2rem;
     text-transform: uppercase;
