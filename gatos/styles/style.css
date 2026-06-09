@@ -461,7 +461,7 @@ header{
     position: fixed;
     justify-content: center;
     align-items: center;
-    z-index: 999;
+    z-index: 3;
     top: 0;
     left: 0;
     width: 100%;
@@ -483,6 +483,22 @@ header{
 
 .botaoFechar{
     cursor: pointer;
+    display: flex;
+    justify-content: right;
+}
+
+.botaoFechar:hover{
+    cursor: pointer;
+    color: var(--cor-botao-efeito);
+}
+
+.tituloPopup{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.textoPopup{
+    font-size: var(--fonte-size-subtítulo);
 }
 
 /* Rodapé*/
