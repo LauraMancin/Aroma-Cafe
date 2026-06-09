@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.login-principal{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.card{
+    padding: 60px;
+    margin: 10rem 40rem 10rem 10rem;
+}
+
+.nome-empresa{
+    margin-bottom: 1.1rem;
+}
+
+.titulo{
+    margin-top: 1.1rem;
+    margin-bottom: 1.1rem;
+}
