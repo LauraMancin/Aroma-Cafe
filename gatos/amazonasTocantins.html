@@ -66,13 +66,21 @@
                 <li> <img src="./assets/icon_olhos.png" alt="Cor dos olhos">Olhos Castanhos </li>
                 <li> <img src="./assets/icon_nascimento.png" alt="Data de Nascimento">Nascimento aprox. Abril 2025</li>
 
-                <a href="#"><button class="botaoAdotar">Quero adotar!</button></a>
+                <!--Botão e popup-->
+                <button class="botaoAdotar" onclick="abrirModal()">Quero Adotar</button>
+                <div id="modal" class="modal-overlay">
+                    <div class="modal-caixa">
+                        <p class="botaoFechar" onclick="fecharModal()">x</p>
+                        <h2 class="tituloPopup">Solicitação de Adoção foi enviada!</h2>
+                        <p class="textoPopup">Seu interesse em adotar foi enviado para nossa equipe! Em breve, você receberá um e-mail com mais informações sobre o processo de adoção e o formulário necessário para continuar. Agradecemos por escolher transformar a vida de um gatinho com muito amor e carinho.</p>
+                    </div>
+                </div>
             </ul>
+        </div>
         </div>
     </section>
     <div class="descricao">
-        <p>Essas duas são pura conexão. Amazonas e Tocantins formam uma dupla cheia de energia e afeto. Adoram brincar juntas e estão sempre em sintonia. Ideais para adoção conjunta, pois já possuem um vínculo muito forte. Alegram qualquer ambiente com suas travessuras e companheirismo.
-</p>
+        <p>Essas duas são pura conexão. Amazonas e Tocantins formam uma dupla cheia de energia e afeto. Adoram brincar juntas e estão sempre em sintonia. Ideais para adoção conjunta, pois já possuem um vínculo muito forte. Alegram qualquer ambiente com suas travessuras e companheirismo.</p>
     </div>
 
     <!--Rodapé-->

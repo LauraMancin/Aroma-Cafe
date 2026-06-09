@@ -67,9 +67,19 @@
                 <li> <img src="./assets/icon_nascimento.png" alt="Data de Nascimento">Nascimento aprox. Março 2024</li>
                 <li> <img src="./assets/icon_estrela.png" alt="Deficiência que possui">Visão reduzida de um dos olhos, necessita acompanhamento e atenção contínua</li>
 
-                <a href="#"><button class="botaoAdotar">Quero adotar!</button></a>
+                <!--Botão e popup-->
+                <button class="botaoAdotar" onclick="abrirModal()">Quero Adotar</button>
+                <div id="modal" class="modal-overlay">
+                    <div class="modal-caixa">
+                        <p class="botaoFechar" onclick="fecharModal()">x</p>
+                        <h2 class="tituloPopup">Solicitação de Adoção foi enviada!</h2>
+                        <p class="textoPopup">Seu interesse em adotar foi enviado para nossa equipe! Em breve, você receberá um e-mail com mais informações sobre o processo de adoção e o formulário necessário para continuar. Agradecemos por escolher transformar a vida de um gatinho com muito amor e carinho.</p>
+                    </div>
+                </div>
             </ul>
         </div>
+
+
     </section>
     <div class="descricao">
         <p>Eliane é sinônimo de delicadeza e superação. Com uma condição especial que exige atenção, ela compensa com um carinho imenso e um olhar cheio de doçura. Gosta de ambientes tranquilos e de receber amor no seu tempo. É perfeita para quem busca uma conexão profunda e significativa.
