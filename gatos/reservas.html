@@ -13,40 +13,35 @@
         <!-- logo-->
         <a href="../homePage/index.html" class="logoAroma">Aroma Café</a>
         <div class="containerBarraPesquisa barraPesquisa">
-          <img
+        <img
             src="./assets/icon_pesquisa.png"
             alt="Lupa de pesquisa"
-            class="iconePesquisa"
-          />
-          <input type="text" placeholder="Encontre Seu Café &#127861;" />
+            class="iconePesquisa"/>
+        <input type="text" placeholder="Encontre Seu Café &#127861;" />
         </div>
- 
+
         <div>
             <nav class="menuNavegacao">
 
-            <ul> 
+                <ul> 
                     <li class="dropdown" tabindex="0">
                         <a href="#"><span class="cardap-colorido">CARDÁPIO</span></a>
 
                         <div class="dropdown-menu">
-                            <a href="../cardapios/cafesEspeciais.html">Cafés Especiais</a>
-                            <a href="../cardapios/bebidasGeladas.html" class="Bebidas-menu">Bebidas Geladas</a>
-                            <a href="../cardapios/doces.html">Doces e <br>
-                            Acompanhamentos</a>
+                                <a href="../cardapios/cafesEspeciais.html">Cafés Especiais</a>
+                                <a href="../cardapios/bebidasGeladas.html" class="Bebidas-menu">Bebidas Geladas</a>
+                            <a href="../cardapios/doces.html">Doces e <br>Acompanhamentos</a>
                         </div>
                     </li>  
-            </ul>
+                </ul>
 
-            </ul>
-
-                <!-- menu -->
-                <div class="menu">
-                    <a href="gatos.html">ADOÇÕES</a>
-                    <a href="reservas.html" class="ativo">RESERVAS</a>
-                </div>
+                    <!-- menu -->
+                    <div class="menu">
+                        <a href="gatos.html">ADOÇÕES</a>
+                        <a href="reservas.html" class="ativo">RESERVAS</a>
+                    </div>
             </nav>
         </div>
- 
     </header>
 
 
@@ -86,49 +81,49 @@
 
         <!-- Parte do formulário -->
         <div class="contatoContainer">
+
             <div class="contatoForm">
                 <div class="formRow">
                     <div class="formGroup">
                         <label>Nome</label>
-                        <input type="text" placeholder="Ex: Maria" id="name" />
+                        <input type="text" placeholder="Ex: Maria" />
                     </div>
                     
                     <div class="formGroup">
                         <label>Sobrenome</label>
-                        <input type="text" placeholder="Ex: Silvia" id="last"/>
+                        <input type="text" placeholder="Ex: Silvia" />
                     </div>
                 </div>
                 
                 <div class="formRow">
                     <div class="formGroup">
                         <label>Endereço de e-mail</label>
-                        <input type="email" placeholder="Ex: seuemail@gmail.com" id="email" />
+                        <input type="email" placeholder="Ex: seuemail@gmail.com" />
                     </div>
                     
                     <div class="formGroup">
-                        <label> Data e Horário </label>
+                        <label>Data</label>
                         <div class="data">
-                            <input type="datetime-local" placeholder="DD/MM/AAAA HH:MM:SS" id="date">
+                            <input type="date" id="data" name="data">
                         </div>
                     </div>
                 </div>
-        
+
                 <!--Botão e popup-->
-                <button class="botaoEnviar" onclick="abrirModal()">Enviar</button>
-                <div id="modal" class="modal-overlay">
-                    <div class="modal-caixa">
-                        <p class="botaoFechar" onclick="fecharModal()">x</p>
-                        <h2 class="popupReserva">Solicitação de Reserva enviada!</h2>
-                        <p class="popupReserva">Em breve, você receberá um e-mail de confirmação com mais informações sobre o horário escolhido para visitar o ambiente dos gatinhos.
-                        Agradecemos pelo seu interesse e esperamos sua visita!</p>
+                    <button class="botaoEnviar" onclick="abrirModal()">Enviar</button>
+        
+                    <div id="modal" class="modal-overlay">
+                        <div class="modal-caixa">
+                            <p class="botaoFechar" onclick="fecharModal()">x</p>
+                            <h2 class="tituloPopup">Solicitação de Reserva enviada!</h2>
+                            <p class="textoPopup">Em breve, <strong class="textoPopupDestacado">você receberá um e-mail de confirmação</strong> com mais informações sobre o horário escolhido para visitar o ambiente dos gatinhos.
+                            Agradecemos pelo seu interesse e esperamos sua visita!</p>
+                        </div>
                     </div>
-                </div>
-            </ul>
-        </div>
                 
             </div>
         </div>
-
+        
     
    <!--Rodapé-->
    <footer>
