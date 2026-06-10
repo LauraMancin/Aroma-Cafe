@@ -154,8 +154,11 @@
 }
 
 .termosUso{
-    display: flex;
-    flex-direction: column;
     font-family: var(--fonte-principal);
     font-size: 14px;
+    text-decoration: none;
+}
+
+.termosUso a{
+    color: var(--cor-principal);
 }
