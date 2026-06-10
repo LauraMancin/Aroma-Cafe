@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mogra&display=swap');
+
+:root{
+    --fonte-principal: 'Inter', sans-serif;
+    --fonte-logo: 'Mogra', system-ui;
+    --cor-principal: #DB7093;
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.container-pai{
+    display: flex;
+    height: 100vh;
+}
+
+.login-principal{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background-color: white;
+    height: 90vh;
+    justify-content: center;   
+}
+
+.card{
+    background-color: white;
+    padding: 40px;
+    align-items: center;
+}
+
+.nome-empresa{
+    margin-bottom: 15px;
+    font-family: var(--fonte-principal);
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+    font-family: var(--fonte-logo);
+}
+
+.titulo{
+    margin-bottom: 10px;
+    font-family: var(--fonte-principal);
+}
+
+.titulo-{
+    color: var(--cor-principal);
+    font-family:  var(--fonte-principal);
+}
+
+.texto-{
+    color: gray;
+    margin-bottom: 20px;
+    font-family: var(--fonte-principal);
+}
+
+.input-{
+    display: flex;
+    flex-direction: column;
+    padding: 13px;
+    width: 350px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 2px rgba(128, 128, 128, 0.219) solid;
+}
+
+.input- input:focus, .input- textarea:focus {
+    border-color: var(--cor-principal);
+}
+
+.outras-opcoes{
+    display: flex;
+    margin-top: 20px;
+    flex-direction: row;
+    margin-bottom: 20px;
+    font-family: var(--fonte-principal);
+}
+
+.linha{
+    width: 240px;
+    margin-top: 9px;
+    margin-left: 10px;
+    height: 0.5px;
+    background-color: rgba(0, 0, 0, 0.308);
+}
+
+.outras-opcoes-apps{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+}
+
+.botoes-1, .botoes-2{
+    background-color: #F7F7F7;
+    border: 2px #f7f7f7c8 solid;
+    border-radius: 10px;
+    padding: 5px;
+    width: 85px;
+    margin-bottom: 2rem;
+    box-shadow: 0px 4px 2px 0px rgba(0, 0, 0, 0.092);
+}
+
+.img-icons{
+    width: 18px;
+}
+
+.img-icons2{
+    width: 20px;
+}
+
+.botao{
+    width: 300px;
+    padding: 14px;
+    font-family: var(--fonte-principal);
+    background-color: var(--cor-principal);
+    color: white;
+    border-radius: 8px;
+    border: 1px var(--cor-principal) solid;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.botao-texto{
+    font-family: var(--fonte-principal);
+    font-size: 14px;
+}
+
+.link{
+    color: var(--cor-principal);
+}
+
+.login-dois{
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.parte-dois{
+    flex: 2;
+}
+
+.fundo{
+    border-top-left-radius: 28px;
+    width: 600px;
+    height: 1000px;
+}

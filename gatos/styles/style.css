@@ -64,7 +64,7 @@ header{
     text-decoration: none;
     color: black;
     font-family: var(--fonte-logo);
-    font-size: var(--fonte-size-descricao)
+    font-size: var(--fonte-size-descricao);
 }
 
 .menu{
