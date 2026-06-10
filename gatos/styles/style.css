@@ -289,7 +289,7 @@ header{
 .nomeGato{
     font-family: var(--fonte-principal);
     font-size: var(--fonte-size-titulo);
-    color: var(--cor-principal);
+    color: var(--cor-terciaria);
     font-weight: 500;
     margin-bottom: 5%;
 }
