@@ -146,7 +146,16 @@
 }
 
 .fundo{
+    display: flex;
+    justify-content: right;
     border-top-left-radius: 28px;
     width: 600px;
     height: 1000px;
+}
+
+.termosUso{
+    display: flex;
+    flex-direction: column;
+    font-family: var(--fonte-principal);
+    font-size: 14px;
 }
