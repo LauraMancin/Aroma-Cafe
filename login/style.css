@@ -9,20 +9,28 @@
 *{
     margin: 0;
     padding: 0;
-    overflow: hidden;
+
+}
+
+.container-pai{
+    display: flex;
+    height: 100vh;
 }
 
 .login-principal{
+    flex: 1;
     display: flex;
-    justify-content: center;
     align-items: center;
-    padding: 30px;
     text-align: center;
+    background-color: white;
+    height: 90vh;
+    justify-content: center;   
 }
 
 .card{
-    padding: 20px;
-    margin: 15rem 70rem 20rem 15rem;
+    background-color: white;
+    padding: 40px;
+    align-items: center;
 }
 
 .nome-empresa{
@@ -104,7 +112,7 @@
 
 .botao{
     width: 300px;
-    padding: 8px;
+    padding: 14px;
     font-family: var(--fonte-principal);
     background-color: var(--cor-principal);
     color: white;
@@ -124,5 +132,23 @@
 }
 
 .login-dois{
-    display: ;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.parte-dois{
+    flex: 1;
+}
+
+/*.parte-dois img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+*/
+.fundo{
+    border-top-left-radius: 28px;
+    width: 800px;
+    height: 1000px;
+    
 }
