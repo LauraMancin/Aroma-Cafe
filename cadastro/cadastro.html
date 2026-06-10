@@ -3,34 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/style.css">
-    <title>Cadastro</title>
+    <link rel="stylesheet" href="../cadastro/styles/style.css">
+    <title>Faça seu Cadastro</title>
 </head>
 <body>
     <div class="container-pai">
-        <section class="cadastro-principal">
+        <section class="login-principal">
             <div class="card">
 
                 <p class="nome-empresa">Aroma café</p>
 
                 <h2 class="titulo"><span class="titulo-">Cadastre-se</span> e encontre seu <span class="titulo-">café</span></h2>
 
-                <p class="texto-">Escolha uma opção para cadastrar</p>
+                <p class="texto-">Escolha uma opção para entra</p>
 
                 <form class="input-principal">
-                    <input class="input-" type="email" placeholder="exemplo@email.com.br">
+                    <label>E-mail</label>
+                    <input type="email" placeholder="exemplo@email.com.br" class="input-">
 
-                    <input class="input-" type="email" placeholder="confirmar email">
+                    <label>Confirmar e-mail</label>
+                    <input type="email" placeholder="confirmar e-mail" class="input-">
 
-                    <input class="input-" type="password" placeholder="senha">
+                    <label>Senha</label>
+                    <input type="password" placeholder="senha"
+                    class="input-">
 
-                    <input class="input-" type="password" placeholder="confirmar senha">
+                    <label>Confirmar senha</label>
+                    <input type="password" placeholder="confirmar senha"
+                    class="input-">
 
-                    <input class="input-" type="tel" placeholder="(19) 99999-9999">
+                    <label>Data de nascimento</label>
+                    <input type="date" placeholder="data de nascimento"
+                    class="input-">
+
                 </form>
 
                 <div class="outras-opcoes">
-                    <p>ou cadastre-se com </p> <div class="linha"></div>
+                    <p>ou continue com </p> <div class="linha"></div>
                 </div>
 
                 <div class="outras-opcoes-apps">
@@ -47,17 +56,13 @@
                     </a>
                 </div>
 
-                    <button class="botao">Fazer Cadastro</button>
-
-                <div class="checkbox-div">
-                    <input class="checkbox" type="checkbox">
-                    <label class="termosUso">Ao "Cadastrar", aceito os <a href="">Termos e condições</a> e autorizo o uso <br> dos meus dados de acesso com a <a href="">Declaração de privacidade</a>.</label>
-                </div> 
+                    <button class="botao-entrar">Entrar</button>
             </div>
         </section>
 
 
         <section class="parte-dois">
+            
             <div class="login-dois">
                 <img src="./assets/fundoCadastro.png" alt="Aroma café imagem" class="fundo">
             </div>
