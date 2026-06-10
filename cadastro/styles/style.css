@@ -1,24 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Mogra&display=swap');
 
+
 :root{
     --fonte-principal: 'Inter', sans-serif;
-    --fonte-logo: 'Mogra', system-ui;
     --cor-principal: #DB7093;
-
+    --fonte-logo: 'Mogra', system-ui;
 }
 
 *{
     margin: 0;
     padding: 0;
     overflow: hidden;
+
 }
 
+/* == div pai == */
 .container-pai{
     display: flex;
     height: 100vh;
 }
 
+/* == parte 1 ==  */
 .login-principal{
     flex: 1;
     display: flex;
@@ -37,11 +40,8 @@
 
 .nome-empresa{
     margin-bottom: 15px;
-    font-family: var(--fonte-principal);
-    font-weight: bold;
-    text-decoration: none;
-    color: black;
     font-family: var(--fonte-logo);
+    font-weight: bold;
 }
 
 .titulo{
@@ -68,10 +68,6 @@
     margin-bottom: 15px;
     border-radius: 8px;
     border: 2px rgba(128, 128, 128, 0.219) solid;
-}
-
-.input- input:focus, .input- textarea:focus {
-    border-color: var(--cor-principal);
 }
 
 .outras-opcoes{
@@ -107,6 +103,28 @@
     box-shadow: 0px 4px 2px 0px rgba(0, 0, 0, 0.092);
 }
 
+/* == efeitos no botão == */
+
+.botoes-1:hover{
+    transform: scale(1.009);
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+.botoes-2:hover{
+    transform: scale(1.009);
+    opacity: 0.9;
+    cursor: pointer;    
+}
+
+.botao-entrar:hover{
+    transform: scale(1.01);
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+/* == parte dois ==   */
+
 .img-icons{
     width: 18px;
 }
@@ -115,7 +133,7 @@
     width: 20px;
 }
 
-.botao{
+.botao-entrar{
     width: 300px;
     padding: 14px;
     font-family: var(--fonte-principal);
@@ -142,23 +160,24 @@
 }
 
 .parte-dois{
-    flex: 2;
+    flex: 1;
 }
+
+/* == config == */
 
 .fundo{
-    display: flex;
-    justify-content: right;
     border-top-left-radius: 28px;
-    width: 600px;
-    height: 1000px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
 }
 
-.termosUso{
+label{
+    display: flex;
+    font-size: 12px;
     font-family: var(--fonte-principal);
-    font-size: 14px;
-    text-decoration: none;
-}
-
-.termosUso a{
-    color: var(--cor-principal);
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: rgb(82, 80, 80);
 }
