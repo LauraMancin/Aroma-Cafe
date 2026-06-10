@@ -501,6 +501,15 @@ header{
     font-size: var(--fonte-size-subtítulo);
 }
 
+.popupReserva{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.popupReserva{
+    font-size: var(--fonte-size-subtítulo);
+}
+
 /* Rodapé*/
 footer {
     background-color: var(--cor-secundaria);
