@@ -209,6 +209,7 @@ header{
     font-size: var(--fonte-size-botao);
 }
 .botaoPrincipal:hover{
+    color: #FFFFFF;
     background-color: var(--cor-botao-efeito);
     opacity: 0.9;
     cursor: pointer;
