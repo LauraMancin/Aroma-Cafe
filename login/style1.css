@@ -106,13 +106,13 @@
 /* == efeitos no botão == */
 
 .botoes-1:hover{
-    transform: scale(1.01);
+    transform: scale(1.009);
     opacity: 0.9;
     cursor: pointer;
 }
 
 .botoes-2:hover{
-    transform: scale(1.01);
+    transform: scale(1.009);
     opacity: 0.9;
     cursor: pointer;    
 }
