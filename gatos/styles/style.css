@@ -57,7 +57,7 @@ header{
 }
 
 .menuNavegacao :hover{
-    color: var(--cor-botao-efeito);
+    color: var(--cor-principal);
 }
 
 .logoAroma{
@@ -83,21 +83,6 @@ header{
 
 .menu .ativo{
     color: var(--cor-principal);
-}
-
-.botao-carrinho1{
-    background-color: var(--cor-principal);
-    color: white;
-    font-weight: bold;
-    border-radius: 8px;
-    padding: 10px 20px;
-    border: none;
-    font-size: var(--fonte-size-botao);
-}
-
-.botao-carrinho1:hover{
-    opacity: 0.9;
-    cursor: pointer;
 }
 
 .containerBarraPesquisa{
