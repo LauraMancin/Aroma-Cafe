@@ -173,7 +173,7 @@
     
 }
 
-label{
+.input-texto{
     display: flex;
     font-size: 12px;
     font-family: var(--fonte-principal);
@@ -184,7 +184,7 @@ label{
 
 .termosUso{
     display: flex;
-    font-size: 12px;
+    flex-direction: column;
     font-family: var(--fonte-principal);
     font-size: 14px;
     text-decoration: none;
@@ -192,7 +192,4 @@ label{
 
 .termosUso a{
     color: var(--cor-principal);
-    font-weight: bold;
-    margin-bottom: 15px;
-}
 }
