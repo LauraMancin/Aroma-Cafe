@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap'); /*fonte Inter*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Ribeye&display=swap'); /*fonte 
+Ribeye*/
+@import url('https://fonts.googleapis.com/css2?family=Mogra&display=swap');
+
+:root{
+    --cor-principal: #DB7093;
+    --cor-botao-efeito: #E99BB4;
+    --cor-secundaria: #FFFFFF;
+    --cor-terciaria: #000000;
+    --cor-cinza: #828282;
+    --cor-cinza-secundario: #454545;
+    --fonte-principal: 'Inter', sans-serif;
+    --fonte-logo: 'Ribeye', sans-serif;
+    --fonte-size-titulo: 40px;
+    --fonte-size-descricao: 20px;
+    --fonte-size-botao: 20px;
+    --fonte-size-subtitulo: 16px;
+    --container-padding: clamp(16px, 5%, 80px) /*deixa o padding responsivo valorMinimo, valorIdeal e valorMaximo*/
+}
+
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    background-color: var(--cor-secundaria);
+    color: var(--cor-terciaria);
+    font-family: var(--fonte-principal);
+}
+
+
+header{
+  position: absolute; /* faz ficar sobre a imagem */
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+    box-sizing: border-box;
+    color: var(--cor-terciaria);
+    margin-bottom: 2rem;
+    padding: 20px var(--container-padding);
+}
+
+.containerBarraPesquisa{
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 50px; /* Isso cria o formato de pílula (bordas totalmente arredondadas) */
+    padding: 8px 16px; /* Espaço interno (vertical e horizontal) */
+    width: 500px; /* Ajuste a largura como preferir */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Uma sombra muito leve para dar destaque (opcional) */
+}
+
+.iconePesquisa{
+    width: 18px;
+    height: 18px;
+    color: #333333;
+    margin-right: 15px;
+}
+
+.barraPesquisa input{
+  border: none; /* Remove a borda padrão do HTML */
+  outline: none; /* Remove aquela linha azul que aparece quando você clica */
+  background: transparent; /* Deixa o fundo transparente para usar a cor do contêiner */
+    font-size: 14px;
+  font-family: var(--fonte-principal); /* Use a fonte do seu projeto */
+  color: #333333; /* Cor do texto digitado */
+  width: 100%; /* Faz o input ocupar o resto do espaço */
+}
+
+.menu{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    font-family: var(--fonte-principal);
+    font-size: var(--fonte-size-botao);
+}
+
+.menu a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.menu .ativo{
+    color: var(--cor-principal);
+}
+
+.iconePesquisa{
+    width: 18px;
+    height: 18px;
+  color: #333333; /* Cor do ícone */
+  margin-right: 10px; /* Dá um espaço entre o ícone e o texto */
+}
+
+.menuNavegacao{
+    color: var(--cor-terciaria);
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    font-family: var(--fonte-principal);
+    font-size: 16px;
+    transition: transform 0.9s ease;
+    padding: 20px var(--container-padding);
+}
+.menuNavegacao a{
+    text-decoration: none;
+    color: var(--cor-terciaria);
+    font-weight: bold;
+}
+
+.menuNavegacao a:hover{
+    color: var(--cor-principal);
+}
+
+.logoAroma{
+    text-decoration: none;
+    color: var(--cor-terciaria);
+    font-weight: bold;
+    font-family: 'Mogra', sans-serif;
+    font-size: var(--fonte-size-descricao);
+}
+
+.logoAroma abbr{
+    text-decoration: none;
+}
+
+.dropdown{
+    list-style-type: none;
+}
+
+/*DEIXAR EM PASTA A PARTE */
+.dropdown-menu{
+    display: none;
+    position: absolute;
+    margin-top: 1rem;
+    border: 5px solid var(--cor-botao-efeito);
+    border-radius: 18px;
+    padding: 20px;
+    right: 19%;
+    z-index: 1;
+    background-color: var(--cor-secundaria);
+}
+
+.dropdown-menu a{
+    display: block;
+}
+
+.dropdown:focus-within .dropdown-menu{
+    display: block;
+}
+
+.Bebidas-menu{
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+}
+
+
+
+footer {
+    background-color: var(--cor-secundaria);
+    padding: 3rem 2rem;
+}
+
+/* container principal */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    border-top: 1px solid #ddd;
+    padding-top: 2rem;
+    font-family: var(--fonte-principal);
+    font-size: var(--fonte-size-subtítulo);
+}
+
+/* coluna logo */
+.logo {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* redes sociais */
+.redesSociais {
+    display: flex;
+    gap: 10px;
+}
+
+.redesSociais img {
+    width: 30px;
+    opacity: 0.7;
+}
+
+/* colunas */
+.explorar, .servicos, .suporte {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 150px;
+}
+
+/* títulos */
+.titulo {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+/* links */
+footer a {
+    text-decoration: none;
+    color: #555;
+    font-size: 14px;
+}
+
+footer a:hover {
+    color: var(--cor-principal);
+}
+
+/* Estilos padrões (mobile) */
+body { font-size: 14px; }
+
+/* Estilos para tablets (telas maiores que 768px) */
+@media (min-width: 768px) {
+    body { font-size: 16px; }
+}
+
+/* Estilos para desktops (telas maiores que 1024px) */
+@media (min-width: 1024px) {
+    body { font-size: 18px; }
+}
