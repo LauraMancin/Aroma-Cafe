@@ -70,6 +70,20 @@
     border: 2px rgba(128, 128, 128, 0.219) solid;
 }
 
+.checkbox{
+    display: flex;
+    margin-bottom: 18px;
+}
+
+.input-check{
+    margin-right: 10px;
+}
+
+.label-conectado{
+    font-family: var(--fonte-principal);
+    font-size: 13px;
+}
+
 .outras-opcoes{
     display: flex;
     margin-top: 20px;
@@ -152,6 +166,8 @@
 
 .link{
     color: var(--cor-principal);
+    font-family: var(--fonte-principal);
+    font-size: 14px;
 }
 
 .login-dois{
