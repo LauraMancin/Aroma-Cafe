@@ -2,6 +2,7 @@
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
+    <!-- viewport correto para responsividade -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../styles/menu.css">
     <link rel="stylesheet" href="./style/style.css" />
@@ -11,45 +12,41 @@
 
   <body>
     <main>
+      <!-- HEADER: hamburger menu oculto em mobile via CSS -->
       <header>
-              <!-- logo-->
-              <a href="../homePage/index.html" class="logoAroma">Aroma Café</a>
-              <div class="containerBarraPesquisa barraPesquisa">
-                <img
-                  src="./image/lupaPesquisa.png"
-                  alt="Lupa de pesquisa"
-                  class="iconePesquisa">
-                <input type="text" placeholder="Encontre Seu Café &#127861;" />
-              </div>
-      
-              <div>
-                  <nav class="menuNavegacao">
+        <a href="../homePage/index.html" class="logoAroma">Aroma Café</a>
 
-                      <!-- menu -->
-                      <div class="menu">
-                          <a href="#cardapio">CARDÁPIO</a>
-                          <a href="../gatos/gatos.html">ADOÇÕES</a>
-                          <a href="../gatos/reservas.html">RESERVAS</a>
-                          <a href="../login/login.html"><button class=" botaoPrincipal">Entre</button></a>
-                      </div>
-                  </nav>
-              </div>
+        <div class="containerBarraPesquisa barraPesquisa">
+          <img src="./image/lupaPesquisa.png" alt="Lupa de pesquisa" class="iconePesquisa">
+          <input type="text" placeholder="Encontre Seu Café &#127861;" />
+        </div>
+
+        <!-- Checkbox hack para menu mobile sem JS -->
+        <input type="checkbox" id="menuToggle" class="menuToggle" />
+        <label for="menuToggle" class="menuHamburguer" aria-label="Abrir menu">
+          <span></span><span></span><span></span>
+        </label>
+
+        <nav class="menuNavegacao">
+          <div class="menu">
+            <a href="#cardapio">CARDÁPIO</a>
+            <a href="../gatos/gatos.html">ADOÇÕES</a>
+            <a href="../gatos/reservas.html">RESERVAS</a>
+            <a href="../login/login.html"><button class="botaoPrincipal">Entre</button></a>
+          </div>
+        </nav>
       </header>
 
       <!-- BANNER -->
       <section class="banner">
         <h1 class="tituloPrincipalHome">Aroma Café</h1>
-        <p class="tituloSecundarioHome">
-          O ronron perfeito para o seu expresso
-        </p>
+        <p class="tituloSecundarioHome">O ronron perfeito para o seu expresso</p>
       </section>
 
       <!-- SOBRE -->
       <section class="secaoSobre">
         <div class="containerSobre">
-          <h2 class="tituloPrincipal">
-            SOBRE <span class="destaque">NÓS</span>
-          </h2>
+          <h2 class="tituloPrincipal">SOBRE <span class="destaque">NÓS</span></h2>
           <p class="textoConteudo">
             A Aroma não é apenas um lugar para beber café, é um santuário
             dedicado à pausa. Com uma decoração que mistura madeira de
@@ -57,22 +54,12 @@
             esquecer o relógio.
           </p>
         </div>
-
-        <img
-          class="imagemSecao"
-          src="./image/gatoBrancoXicara.png"
-          alt="Gato branco com uma xícara"
-        />
+        <img class="imagemSecao" src="./image/gatoBrancoXicara.png" alt="Gato branco com uma xícara" />
       </section>
 
       <!-- FUNCIONAMENTO -->
       <section class="secaoFuncionamento">
-        <img
-          class="imagemSecao"
-          src="./image/gatoPretoDeitado.png"
-          alt="Gato preto deitado"
-        />
-
+        <img class="imagemSecao" src="./image/gatoPretoDeitado.png" alt="Gato preto deitado" />
         <div class="containerFuncionamento">
           <h2 class="tituloPrincipal">
             COMO <span class="destaque">FUNCIONA</span> A GATERIA?
@@ -102,45 +89,27 @@
           <div class="cardapioContainer">
             <div class="card animacaoCard">
               <a href="../cardapios/cafesEspeciais.html">
-              <img
-                src="./image/xicaraCafe.png"
-                alt="Xícara de café"
-                class="imagemCard"
-              />
+                <img src="./image/xicaraCafe.png" alt="Xícara de café" class="imagemCard" />
               </a>
               <h5 class="tituloCard">Cafés especiais da casa</h5>
-              <p class="textoCard">
-                Cafés especiais inspirados em gatos com aromas marcantes.
-              </p>
+              <p class="textoCard">Cafés especiais inspirados em gatos com aromas marcantes.</p>
             </div>
 
             <div class="cardapioLadoDireito">
               <div class="card animacaoCard">
                 <a href="../cardapios/bebidasGeladas.html">
-                <img
-                  src="./image/cafeGelado.png"
-                  alt="Bebida gelada"
-                  class="imagemCard"
-                />
+                  <img src="./image/cafeGelado.png" alt="Bebida gelada" class="imagemCard" />
                 </a>
                 <h5 class="tituloCard">Bebidas geladas</h5>
-                <p class="textoCard">
-                  Bebidas refrescantes e criativas para qualquer momento.
-                </p>
+                <p class="textoCard">Bebidas refrescantes e criativas para qualquer momento.</p>
               </div>
 
               <div class="card animacaoCard">
                 <a href="../cardapios/doces.html">
-                <img
-                  src="./image/boloMorango.png"
-                  alt="Bolo de morango"
-                  class="imagemCard"
-                />
+                  <img src="./image/boloMorango.png" alt="Bolo de morango" class="imagemCard" />
                 </a>
                 <h5 class="tituloCard">Doces e acompanhamentos</h5>
-                <p class="textoCard">
-                  Doces delicados e irresistíveis para acompanhar seu café.
-                </p>
+                <p class="textoCard">Doces delicados e irresistíveis para acompanhar seu café.</p>
               </div>
             </div>
           </div>
@@ -150,9 +119,7 @@
       <!-- CONTATO -->
       <h2 class="tituloContato tituloPrincipal">FALE <span class="destaque">CONOSCO!</span></h2>
       <section class="contatoSection">
- 
         <div class="contatoContainer">
-      
           <!-- Formulário -->
           <div class="contatoForm">
             <div class="formRow">
@@ -165,43 +132,39 @@
                 <input type="text" placeholder="Ex: Silvia" />
               </div>
             </div>
-      
             <div class="formGroup">
               <label>Endereço de e-mail</label>
               <input type="email" placeholder="Ex: seuemail@gmail.com" />
             </div>
-      
             <div class="formGroup">
               <label>Sua mensagem</label>
               <textarea placeholder="Digite sua pergunta ou mensagem"></textarea>
             </div>
-      
             <button class="botaoEnviar">Enviar</button>
           </div>
-      
+
           <!-- Informações de contato -->
           <div class="contatoInfo">
             <div class="infoItem">
-              <span class="icon"> <img src="./image/marker 1.png" alt="Simbolo de localização"></span>
+              <span class="icon"><img src="./image/marker 1.png" alt="Localização"></span>
               <span>Rua dos Miados, 127 Bairro Vila Felina – São Paulo, SP</span>
             </div>
             <div class="infoItem">
-              <span class="icon"><img src="./image/phone-call 1.png" alt="Simbolo de telefone"></span>
+              <span class="icon"><img src="./image/phone-call 1.png" alt="Telefone"></span>
               <span>WhatsApp: (11) 98765-4321</span>
             </div>
             <div class="infoItem">
-              <span class="icon"> <img src="./image/envelope 1.png" alt="Simbolo de envelope"></span>
+              <span class="icon"><img src="./image/envelope 1.png" alt="E-mail"></span>
               <span>E-mail: contato@miauocafe.com.br</span>
             </div>
             <div class="infoItem">
-              <span class="icon"><img src="./image/clock 1.png" alt="Simbolo de relogio"></span>
+              <span class="icon"><img src="./image/clock 1.png" alt="Horário"></span>
               <span>
-              De terça a sexta das 10h30 às 18h00
-              <br>
-              De sábado e domingo das 9h30 às 19h00</span>
+                De terça a sexta das 10h30 às 18h00<br>
+                De sábado e domingo das 9h30 às 19h00
+              </span>
             </div>
           </div>
-      
         </div>
       </section>
     </main>
@@ -211,27 +174,23 @@
       <section class="footer-container">
         <div class="footer-col logo">
           <h2 class="rodapeAromaCafe">Aroma Café</h2>
-
           <div class="redesSociais">
-            <a href="#"><img src="./image/icon_FaceBook.png" /></a>
-            <a href="#"><img src="./image/Icon_link.png" /></a>
-            <a href="#"><img src="./image/Icon_youtube.png" /></a>
-            <a href="#"><img src="./image/Icon_Instagram.png" /></a>
+            <a href="#"><img src="./image/icon_FaceBook.png" alt="Facebook" /></a>
+            <a href="#"><img src="./image/Icon_link.png" alt="LinkedIn" /></a>
+            <a href="#"><img src="./image/Icon_youtube.png" alt="YouTube" /></a>
+            <a href="#"><img src="./image/Icon_Instagram.png" alt="Instagram" /></a>
           </div>
         </div>
-
         <div class="explorar">
           <p class="titulo tituloExplorar">Explorar</p>
           <a href="#">Nosso espaço</a>
           <a href="../gatos/gatos.html">Mural dos gatos</a>
         </div>
-
         <div class="servicos">
           <p class="titulo tituloServicos">Serviços</p>
           <a href="#">Eventos & Workshop</a>
           <a href="#">Coffee Experience</a>
         </div>
-
         <div class="suporte">
           <p class="titulo tituloSuporte">Suporte</p>
           <a href="#">Contato</a>
