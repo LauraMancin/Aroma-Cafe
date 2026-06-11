@@ -182,7 +182,7 @@
     color: rgb(82, 80, 80);
 }
 
-.termosUso{
+/* .termosUso{
     display: flex;
     flex-direction: column;
     font-family: var(--fonte-principal);
@@ -192,4 +192,4 @@
 
 .termosUso a{
     color: var(--cor-principal);
-}
+} */
