@@ -183,7 +183,6 @@ label{
 }
 
 .termosUso{
-label{
     display: flex;
     font-size: 12px;
     font-family: var(--fonte-principal);
