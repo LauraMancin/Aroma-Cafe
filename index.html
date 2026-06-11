@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/styleMenu.css">
     <link rel="stylesheet" href="./styles/style.css">
     <title>Perfil</title>
 </head>
@@ -33,19 +32,73 @@
         </div>
     </section>
 
-    <section class="formulario">
-        <div class="info-pessoais">
-            <form action="formulario">
-                <label for=""> Nome </label>
-                <input type="text">
-                <label for=""> Sobrenome </label>
-                <input type="text">
-            </form>
+    <section>
+        <div class="formulario">
+
+        <div class="tabs">
+            <button class="tab active" data-tab="personal">
+                Informações Pessoais
+            </button>
+
+            <button class="tab" data-tab="account">
+                Configurações
+            </button>
+
+            <button class="tab" data-tab="security">
+                Segurança
+            </button>
+
+            <button class="tab" data-tab="preferences">
+                Preferências
+            </button>
+        
         </div>
-    </section>
+
+        <!-- Aba Personal Info -->
+        <div class="content active" id="personal">
+            <div class="form-row">
+                <div class="input-group">
+                    <label>Nome</label>
+                    <input type="text">
+                </div>
+
+                <div class="input-group">
+                    <label>Sobrenome</label>
+                    <input type="text">
+                </div>
+
+                <div class="input-group">
+                    <label>Data de Nascimento</label>
+                    <input type="date" placeholder="DD/MM/AAAA">
+                </div>
+
+                <div class="input-group">
+                    <label>CPF</label>
+                    <input type="text" maxlength="12">
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Aba Account Settings -->
+        <div class="content" id="account">
+            <h2>Account Settings</h2>
+        </div>
+
+        <!-- Aba Security -->
+        <div class="content" id="security">
+            <h2>Security</h2>
+        </div>
+
+        <!-- Aba Preferences -->
+        <div class="content" id="preferences">
+            <h2>Preferences</h2>
+        </div>
+
+    </div>
+</section>
 
 
-
-    
+<script src="script.js"></script>    
 </body>
 </html>
