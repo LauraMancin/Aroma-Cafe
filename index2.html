@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Estado e Cidade</title>
+</head>
+<body>
+
+    <label>ESCOLHA O SEU ESTADO</label>
+    <select id="estado">
+        <option value="">Selecione</option>
+        <option value="AC">Acre</option>
+        <option value="AL">Alagoas</option>
+        <option value="AP">Amapá</option>
+        <option value="AM">Amazonas</option>
+        <option value="BA">Bahia</option>
+        <option value="CE">Ceará</option>
+        <option value="DF">Distrito Federal</option>
+        <option value="ES">Espírito Santo</option>
+        <option value="GO">Goiás</option>
+        <option value="MA">Maranhão</option>
+        <option value="MT">Mato Grosso</option>
+        <option value="MS">Mato Grosso do Sul</option>
+        <option value="MG">Minas Gerais</option>
+        <option value="PA">Pará</option>
+        <option value="PB">Paraíba</option>
+        <option value="PR">Paraná</option>
+        <option value="PE">Pernambuco</option>
+        <option value="PI">Piauí</option>
+        <option value="RJ">Rio de Janeiro</option>
+        <option value="RN">Rio Grande do Norte</option>
+        <option value="RS">Rio Grande do Sul</option>
+        <option value="RO">Rondônia</option>
+        <option value="RR">Roraima</option>
+        <option value="SC">Santa Catarina</option>
+        <option value="SP">São Paulo</option>
+        <option value="SE">Sergipe</option>
+        <option value="TO">Tocantins</option>
+    </select>
+
+    <br><br>
+
+    <label>ESCOLHA SUA CIDADE</label>
+    <select id="cidade">
+        <option value="">Selecione um estado primeiro</option>
+    </select>
+
+<script>
+
+document.getElementById("estado").addEventListener("change", function() {
+    
+    let uf = this.value;
+    let cidadeSelect = document.getElementById("cidade");
+
+    cidadeSelect.innerHTML = "<option>Carregando...</option>";
+
+    fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${uf}/municipios`)
+    
+    .then(response => response.json())
+    
+    .then(cidades => {
+        
+        cidadeSelect.innerHTML = '<option value="">Selecione</option>';
+
+        cidades.forEach(cidade => {
+            let option = document.createElement("option");
+            option.value = cidade.nome;
+            option.textContent = cidade.nome;
+            cidadeSelect.appendChild(option);
+        });
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>

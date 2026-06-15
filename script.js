@@ -16,3 +16,29 @@ tabs.forEach(tab => {
         document.getElementById(target).classList.add("active");
     });
 });
+
+document.getElementById("estado").addEventListener("change", function() {
+    
+    let uf = this.value;
+    let cidadeSelect = document.getElementById("cidade");
+
+    cidadeSelect.innerHTML = "<option>Carregando...</option>";
+
+    fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${uf}/municipios`)
+    
+    .then(response => response.json())
+    
+    .then(cidades => {
+        
+        cidadeSelect.innerHTML = '<option value="">Selecione</option>';
+
+        cidades.forEach(cidade => {
+            let option = document.createElement("option");
+            option.value = cidade.nome;
+            option.textContent = cidade.nome;
+            cidadeSelect.appendChild(option);
+        });
+
+    });
+
+});
