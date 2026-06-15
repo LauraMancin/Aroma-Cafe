@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="shortcut icon" href="./assets/iconLogin.png" type="image/x-icon">
+    <title>Faça seu Login</title>
+</head>
+<body>
+    <div class="container-pai">
+        <section class="login-principal">
+            <div class="card">
+
+                <p class="nome-empresa">Aroma café</p>
+
+                <h2 class="titulo">Recupere a sua <span class="titulo-">senha</span></h2>
+
+                <form class="input-principal">
+
+                    <label class="texto-">Nova Senha</label>
+                    <input type="password" placeholder="senha"
+                    class="input-">
+
+                    <label class="texto-">Confirmar nova senha</label>
+                    <input type="password" placeholder="confirmar senha"
+                    class="input-">
+                </form>
+
+
+                    <a href="../login/login.html">
+                        <button class="botao-entrar">Entrar</button>
+                    </a>
+                    
+            </div>
+        </section>
+
+
+        <section class="parte-dois">
+            
+            <div class="login-dois">
+                <img src="./assets/fundo.png" alt="Aroma café imagem" class="fundo">
+            </div>
+
+        </section>
+
+    </div>
+
+    <script>
+        localStorage.setItem('usuarioLogado', 'true');
+    </script>
+
+</body>
+</html>
