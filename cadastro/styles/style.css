@@ -181,14 +181,13 @@
     color: rgb(82, 80, 80);
 }
 
-/* .termosUso{
-    display: flex;
-    flex-direction: column;
+.checkbox-div{
     font-family: var(--fonte-principal);
     font-size: 14px;
-    text-decoration: none;
 }
 
-.termosUso a{
+.checkbox-div a{
+    font-family: var(--fonte-principal);
+    font-size: 14px;
     color: var(--cor-principal);
-} */
+}
