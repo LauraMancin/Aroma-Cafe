@@ -11,7 +11,8 @@
 *{
     margin: 0;
     padding: 0;
-    /* overflow: hidden; */
+    overflow: hidden;
+
 }
 
 /* == div pai == */
@@ -54,10 +55,12 @@
 }
 
 .texto-{
-    color: gray;
-    margin-bottom: 20px;
+    display: flex;
+    font-size: 12px;
     font-family: var(--fonte-principal);
-    
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: rgb(82, 80, 80);
 }
 
 .input-{
@@ -68,6 +71,20 @@
     margin-bottom: 15px;
     border-radius: 8px;
     border: 2px rgba(128, 128, 128, 0.219) solid;
+}
+
+.checkbox{
+    display: flex;
+    margin-bottom: 18px;
+}
+
+.input-check{
+    margin-right: 10px;
+}
+
+.label-conectado{
+    font-family: var(--fonte-principal);
+    font-size: 13px;
 }
 
 .outras-opcoes{
@@ -152,6 +169,8 @@
 
 .link{
     color: var(--cor-principal);
+    font-family: var(--fonte-principal);
+    font-size: 14px;
 }
 
 .login-dois{
@@ -163,7 +182,7 @@
     flex: 1;
 }
 
-/* == config == */
+/* == config */
 
 .fundo{
     border-top-left-radius: 28px;
@@ -171,24 +190,4 @@
     height: 100%;
     object-fit: cover;
     
-}
-
-.input-texto{
-    display: flex;
-    font-size: 12px;
-    font-family: var(--fonte-principal);
-    font-weight: bold;
-    margin-bottom: 15px;
-    color: rgb(82, 80, 80);
-}
-
-.checkbox-div{
-    font-family: var(--fonte-principal);
-    font-size: 14px;
-}
-
-.checkbox-div a{
-    font-family: var(--fonte-principal);
-    font-size: 14px;
-    color: var(--cor-principal);
 }
