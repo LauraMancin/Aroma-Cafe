@@ -144,7 +144,6 @@
                         <option value="TO">Tocantins</option>
                     </select>
                 </div>
-
                 <div class="input-group">
                     <label>Cidade</label>
                     <select id="cidade">
@@ -152,6 +151,24 @@
                     </select>
                 </div>
             </div>
+
+            <div class="textarea">
+                <div class="input-group">
+                    <label>Descreva seu ambiente:</label>
+                    <textarea name="ambiente" id="ambiente" placeholder="Faça uma descrição mais detalhada sobre o seu ambiente..."></textarea>
+                </div>
+            </div>
+
+            <button class="botao-salvar" onclick="abrirModal()">SALVAR</button>
+        
+                    <div id="modal" class="modal-overlay">
+                        <div class="modal-caixa">
+                            <p class="botaoFechar" onclick="fecharModal()">X</p>
+                            <h2 class="tituloPopup"> SALVO! </h2>
+                            <p class="textoPopup"> Suas alterações foram salvo com sucesso. </p>
+                        </div>
+                    </div>
+
         </div>
         <!-- Aba Account Settings -->
         <div class="content" id="account">
