@@ -10,7 +10,7 @@ Ribeye*/
     --cor-terciaria: #000000;
     --cor-cinza: #828282;
     --cor-cinza-secundario: #454545;
-    --cor-fundo-carrinho: #e9e9e9;
+    --cor-fundo-carrinho: #ebcad5;
     --fonte-principal: 'Inter', sans-serif;
     --fonte-logo: 'Ribeye', sans-serif;
     --fonte-size-titulo: 40px;
@@ -166,20 +166,21 @@ header{
 
 .produtosCarrinho{
     background-color: var(--cor-fundo-carrinho);
-    padding: 500px;
+    margin: auto;
+    margin-top: 170px;
+    justify-content: start;
+    width: 1500px;
+    height: 1000px;
     border-radius: 18px;
-    margin: 100px;
 }
 
 .titulosCarrinho{
     display: flex;
-    flex-direction: column;
-    
     font-family: var(--fonte-principal);
-    font-size: var(--fonte-size-subtitulo);
-    gap: 20px;
+    font-size: var(--fonte-size-descricao);
+    gap: 402px;
+    padding: 25px;
 }
-
 
 
 
