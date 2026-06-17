@@ -21,6 +21,7 @@ body{
     width: 100vh;
     display: grid;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 .dashboard{
