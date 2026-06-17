@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>Perfil</title>
+</head>
+<body>
+    <section class="dashboard">
+        <h2> Aroma Café </h2>
+        <ul>
+            <li> <img src="./image/home.png" alt="Icone de casa"> Página Principal </li>
+            <li> <img src="./image/user.png" alt="Icone de uma Pessoa">Perfil </li>
+            <li> <img src="./image/bell.png" alt="Icone de Sino">Notificações  
+            </li>
+            <li> <img src="./image/settings.png" alt="Icone de Engrenagem">Configurações </li>
+            <li> <img src="./image/exit.png" alt="Icone para sair da conta">Sair da conta </li>
+        </ul>
+    </section>
+
+    <section class="perfil">
+        <div class="info-principais">
+            <img src="./image/user-icon.png" alt="Icone para foto de perfil" class="foto-perfil">
+            <img src="./image/camera.png" alt="Icone para mudar a foto de perfil" class="editar-perfil">
+
+            <h2> Nome Completo </h2>
+            <p> exemplo@gmail.com</p>
+
+            <button class="botao-perfil"> Editar Perfil </button>
+            <button class="botao-senha"> Mudar a Senha </button>
+        </div>
+    </section>
+
+    <section>
+        <div class="formulario">
+
+        <div class="tabs">
+            <button class="tab active" data-tab="personal">
+                Informações Pessoais
+            </button>
+
+            <button class="tab" data-tab="account">
+                Configurações
+            </button>
+
+            <button class="tab" data-tab="security">
+                Segurança
+            </button>
+
+            <button class="tab" data-tab="preferences">
+                Preferências
+            </button>
+        
+        </div>
+
+        <!-- Aba Personal Info -->
+        <div class="content active" id="personal">
+            <div class="form-row">
+                <div class="input-group">
+                    <label>Nome</label>
+                    <input type="text">
+                </div>
+
+                <div class="input-group">
+                    <label>Sobrenome</label>
+                    <input type="text">
+                </div>
+
+                <div class="input-group">
+                    <label>Data de Nascimento</label>
+                    <input type="date" placeholder="DD/MM/AAAA">
+                </div>
+
+                <div class="input-group">
+                    <label>CPF</label>
+                    <input type="text" maxlength="12">
+                </div>
+
+                <div class="input-group">
+                    <label>Número para contato</label>
+                    <input type="number" maxlength="14" placeholder="(11) 99999-9999">
+                </div>
+            </div>
+
+            <div class="form-second-row">
+                <div class="input-group">
+                    <label>Endereço</label>
+                    <input type="text">
+                </div>
+
+                <div class="input-group">
+                    <label>Número</label>
+                    <input type="number">
+                </div>
+
+                <div class="input-group">
+                    <label>Complemento</label>
+                    <input type="text">
+                </div>
+
+                <div class="input-group">
+                    <label>CEP</label>
+                    <input type="number" maxlength="8" placeholder="00000-000">
+                </div>
+            </div>
+
+            <div class="form-third-row">
+                <div class="input-group">
+                    <label>Moradia</label>
+                    <input type="text" placeholder="Ex: Casa, Apartamento e etc...">
+                </div>
+
+                <div class="input-group">
+                    <label>Estado</label>
+                    <select id="estado">
+                        <option value="">Selecione</option>
+                        <option value="AC">Acre</option>
+                        <option value="AL">Alagoas</option>
+                        <option value="AP">Amapá</option>
+                        <option value="AM">Amazonas</option>
+                        <option value="BA">Bahia</option>
+                        <option value="CE">Ceará</option>
+                        <option value="DF">Distrito Federal</option>
+                        <option value="ES">Espírito Santo</option>
+                        <option value="GO">Goiás</option>
+                        <option value="MA">Maranhão</option>
+                        <option value="MT">Mato Grosso</option>
+                        <option value="MS">Mato Grosso do Sul</option>
+                        <option value="MG">Minas Gerais</option>
+                        <option value="PA">Pará</option>
+                        <option value="PB">Paraíba</option>
+                        <option value="PR">Paraná</option>
+                        <option value="PE">Pernambuco</option>
+                        <option value="PI">Piauí</option>
+                        <option value="RJ">Rio de Janeiro</option>
+                        <option value="RN">Rio Grande do Norte</option>
+                        <option value="RS">Rio Grande do Sul</option>
+                        <option value="RO">Rondônia</option>
+                        <option value="RR">Roraima</option>
+                        <option value="SC">Santa Catarina</option>
+                        <option value="SP">São Paulo</option>
+                        <option value="SE">Sergipe</option>
+                        <option value="TO">Tocantins</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Cidade</label>
+                    <select id="cidade">
+                        <option value="">Selecione um estado primeiro</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="textarea">
+                <div class="input-group">
+                    <label>Descreva seu ambiente:</label>
+                    <textarea name="ambiente" id="ambiente" placeholder="Faça uma descrição mais detalhada sobre o seu ambiente..."></textarea>
+                </div>
+            </div>
+
+            <button class="botao-salvar" onclick="abrirModal()">SALVAR</button>
+        
+                    <div id="modal" class="modal-overlay">
+                        <div class="modal-caixa">
+                            <p class="botaoFechar" onclick="fecharModal()">X</p>
+                            <h2 class="tituloPopup"> SALVO! </h2>
+                            <p class="textoPopup"> Suas alterações foram salvo com sucesso. </p>
+                        </div>
+                    </div>
+
+        </div>
+        <!-- Aba Account Settings -->
+        <div class="content" id="account">
+            <h2>Account Settings</h2>
+        </div>
+
+        <!-- Aba Security -->
+        <div class="content" id="security">
+            <h2>Security</h2>
+        </div>
+
+        <!-- Aba Preferences -->
+        <div class="content" id="preferences">
+            <h2>Preferences</h2>
+        </div>
+
+    </div>
+</section>
+
+
+<script src="script.js"></script>    
+</body>
+</html>

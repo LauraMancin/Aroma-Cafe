@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ribeye&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mogra&display=swap');
+
+:root{
+    --fonte-principal: 'Poppins';
+    --cor-principal: #DB7093;
+    --cor-botao-efeito: #E99BB4;
+    --cor-secundaria: #FFFFFF;
+    --cor-terciaria: #000000;
+    --cor-quaternaria: #828282;
+    --fonte-secundaria: 'Inter', sans-serif;
+}
+
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+
+body{
+    width: 100vh;
+    display: grid;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.dashboard{
+    display: flex;
+    flex-direction: column; 
+    list-style: none;
+    font-family: var(--fonte-principal);
+    background-color: #f1f1f1cc;
+    border: 1px solid #d3d2d2cc;
+    padding: 10px;
+    width: 20rem;
+    height: 60rem;
+}
+
+ul li {
+    font-size: 18px;
+    display: flex; /* Coloca imagem e texto lado a lado */
+    align-items: center; /* Alinha os elementos verticalmente ao centro */
+    gap: 20px; /* Controla o espaçamento exato entre a imagem e o texto */
+}
+
+ul li img {
+    width: 22px; 
+    height: auto;
+}
+
+
+.dashboard li{
+    padding: 0.5rem;
+}
+
+.dashboard li:hover{
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--cor-principal);
+    background: #e9e9e9;
+    border-radius: 8px;
+    padding: 0.5rem;
+}
+
+.dashboard h2{
+    font-family: 'Mogra', sans-serif;
+    margin-bottom: 1rem;
+    font-size: 30px;
+}
+
+.perfil{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    margin-left: 35rem;
+    position: relative;
+    top: -60rem;
+}
+
+.foto-perfil{
+    width: 150px; 
+    height: auto;
+}
+
+.editar-perfil{
+    border-radius: 10PX;
+    background: #ffff;
+    padding: 5px;
+    width: 35px;
+    margin-left: -50px;
+}
+
+.info-principais{
+    margin-bottom: 10rem;
+    border: 1px solid #cccc;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-left: -12rem;
+    width: 93rem;
+    height: 10rem;
+}
+
+.info-principais h2, p, button{
+    font-family: var(--fonte-principal);
+    position: relative;
+    top: -7rem;
+    margin-left: 10rem;
+}
+
+.botao-perfil{
+    margin-top: 0.5rem;
+    color: white;
+    background: var(--cor-principal);
+    font-weight: 700;
+    font-size: 15px;
+    padding: 5px;
+    border: none;
+    border-radius: 8px;
+    transform: scale(1);
+    transition: transform 0.3s ease;
+}
+
+.botao-perfil:hover{
+    border: none;
+    cursor: pointer;
+    background: var(--cor-botao-efeito);
+    transform:scale(0.9)
+}
+
+.botao-senha{
+    margin-top: 0.5rem;
+    margin-left: -0.0rem;
+    color: #000000;
+    background: #e6e6e6;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 5px;
+    border: none;
+    border-radius: 8px;
+    transform: scale(1);
+    transition: transform 0.3s ease;
+}
+
+.botao-senha:hover{
+    cursor: pointer;
+    background: #d6d6d6;
+    transform:scale(0.9)
+}
+
+.formulario{
+    margin-left: 23rem;
+    width: 95rem;
+    height: 44rem;
+    background:white;
+    border:1px solid #ddd;
+    border-radius:8px;
+    position: relative;
+    top: -69rem;
+}
+
+.tabs{
+    display:flex;
+    gap:30px;
+    padding:20px;
+    position: relative;
+    margin-left: -10rem;
+    top:7rem;
+}
+
+.tab{
+    background:none;
+    border:none;
+    cursor:pointer;
+    font-size:16px;
+    color:#888;
+    padding-bottom:12px;
+}
+
+.tab.active{
+    color:black;
+    font-weight:bold;
+    border-bottom:3px solid var(--cor-principal);
+}
+
+.content{
+    display:none;
+    padding:30px 20px;
+}
+
+.content.active{
+    display:block;
+}
+
+.form-row, .form-second-row, .form-third-row, .textarea{
+    font-family: var(--fonte-principal);
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 18px;
+    display:flex;
+    gap:20px;
+    position: relative;
+    top: -3rem;
+}
+
+
+.input-group{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+}
+
+.input-group label{
+    margin-bottom:10px;
+    font-weight:600;
+}
+
+.input-group input, select, textarea{
+    font-family: var(--fonte-secundaria);
+    font-weight: 500;
+    background-color: #f0f0f0;
+    padding:12px;
+    border:1px solid #b1b1b1;
+    border-radius:10px;
+}
+
+.botao-salvar{
+    font-family: var(--fonte-principal);
+    font-size: 16px;
+    font-weight: 600;
+    padding: 0.5rem;
+    border-radius: 10px;
+    border: none;
+    background-color: #DB7093;
+    color: var(--cor-secundaria);
+    width: 7rem;
+    margin-top: 4rem;
+    margin-left: 2rem;
+}
+
+.botao-salvar:hover{
+    cursor: pointer;
+    background-color: #E99BB4;
+
+}
+
+/* dialog {
+    border: none;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    width: 300px;
+}
+
+/* Efeito de fundo escuro quando o pop-up abre */
+/* dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+} */
+
+.modal-overlay{
+    display: none;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /*deixa o fundo escurinho*/
+    font-family: var(--fonte-principal);
+}
+
+.modal-overlay.ativo{
+    display: flex;
+}
+
+.modal-caixa{
+    background: var(--cor-secundaria);
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 200px;
+    max-height: 150px;
+}
+
+.botaoFechar{
+    font-size: var(--fonte-size-descricao);
+    position: relative;
+    top: 0.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: right;
+}
+
+.botaoFechar:hover{
+    cursor: pointer;
+    color: var(--cor-botao-efeito);
+}
+
+.tituloPopup{
+    color: #DB7093;
+    font-size: 20px;
+    margin-bottom: 10rem;
+}
+
+.textoPopup{
+    margin-left: 0.5rem;
+    margin-top: -2rem;
+    font-size: var(--fonte-size-subtítulo);
+}
+
+.textoPopupDestacado{
+    font-weight: 600;
+    color: var(--cor-principal);
+}
