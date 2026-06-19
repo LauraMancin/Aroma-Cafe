@@ -183,13 +183,15 @@
     color: rgb(82, 80, 80);
 }
 
-.checkbox-div{
+.input-check{
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 1.5rem;
     font-family: var(--fonte-principal);
     font-size: 14px;
+    color: black;
 }
 
-.checkbox-div a{
-    font-family: var(--fonte-principal);
-    font-size: 14px;
-    color: var(--cor-principal);
+.check{
+    margin-right: 10px;
 }
