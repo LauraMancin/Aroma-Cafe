@@ -70,6 +70,15 @@
     border: 2px rgba(128, 128, 128, 0.219) solid;
 }
 
+.input-texto{
+    display: flex;
+    font-size: 12px;
+    font-family: var(--fonte-principal);
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: rgb(82, 80, 80);
+}
+
 .checkbox{
     display: flex;
     margin-bottom: 18px;

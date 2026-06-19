@@ -4,19 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/style.css">
-    <link rel="shortcut icon" href="./assets/iconLogin.png" type="image/x-icon">
-    <title>Cadastro</title>
+    <title>Faça seu Cadastro</title>
 </head>
 <body>
     <div class="container-pai">
-        <section class="cadastro-principal">
+        <section class="login-principal">
             <div class="card">
 
                 <p class="nome-empresa">Aroma café</p>
 
                 <h2 class="titulo"><span class="titulo-">Cadastre-se</span> e encontre seu <span class="titulo-">café</span></h2>
-
-                <p class="texto-">Escolha uma opção para cadastrar</p>
 
                 <form class="input-principal">
                     <label class="input-texto">E-mail</label>
@@ -42,43 +39,46 @@
                 </form>
 
                 <div class="outras-opcoes">
-                    <p>ou cadastre-se com </p> <div class="linha"></div>
+                    <p>ou continue com </p> <div class="linha"></div>
                 </div>
 
                 <div class="outras-opcoes-apps">
                     <a href="#">
                         <button class="botoes-1">
-                            <img src="./assets/google-icon (1).png" alt="google" class="img-icons">
+                            <img src="../login/src/google-icon (1).png" alt="google" class="img-icons">
                         </button>
                     </a>
 
                     <a href="#">
                         <button class="botoes-2">
-                            <img src="./assets/apple-icon (1).png" alt="apple" class="img-icons2">
+                            <img src="../login/src/apple-icon (1).png" alt="apple" class="img-icons2">
                         </button>
                     </a>
                 </div>
 
-                    <a href="../login/login.html">
-                        <button class="botao-entrar">Cadastrar</button>
+                    <a href="../homePage_perfil/indexPerfil.html">
+                        <button class="botao-entrar">Cadastre-se</button>
                     </a>
 
-                <div class="checkbox-div">
-                    <input class="checkbox" type="checkbox">
-                    <label class="termosUso">Ao "Cadastrar", aceito os <a href="">Termos e condições</a> e autorizo o uso <br> dos meus dados de acesso com a <a href="">Declaração de privacidade</a>.</label>
-                </div>
+                    <p class="botao-texto">Tem conta? <a href="../login/login.html" class="link">Entre</a></p>
+
             </div>
         </section>
 
 
         <section class="parte-dois">
+            
             <div class="login-dois">
-                <img src="./assets/fundoCadastro.png" alt="Aroma café imagem" class="fundo">
+                <img src="../login/src/fundo.png" alt="Aroma café imagem" class="fundo">
             </div>
 
         </section>
 
     </div>
+
+    <script>
+        localStorage.setItem('usuarioLogado', 'true');
+    </script>
 
 </body>
 </html>
