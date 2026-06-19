@@ -27,27 +27,23 @@
 
 /*  HEADER  */
 header {
-    top: 0;
-    left: 0;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 2rem;
+    padding: 20px var(--container-padding);
     box-sizing: border-box;
-    color: var(--cor-terciaria);
     margin-bottom: 2rem;
-    /* padding: 20px var(--container-padding); */
 }
 
 .menuNavegacao {
-    color: var(--cor-terciaria);
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: clamp(12px, 2vw, 30px);
     font-family: var(--fonte-principal);
     font-size: 16px;
-    transition: transform 0.9s ease;
-    padding: 20px var(--container-padding);
+    padding: 0;
 }
 
 .menuNavegacao a {
@@ -97,7 +93,9 @@ header {
     font-weight: bold;
     font-family: var(--fonte-logo);
     font-size: var(--fonte-size-descricao);
-    margin-left: 5rem;
+    margin-left: 1rem;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .logoAroma abbr {
@@ -105,14 +103,18 @@ header {
 }
 
 .containerBarraPesquisa {
+    flex: 1;
+    min-width: 200px;
+    max-width: 450px;
+
     display: flex;
     align-items: center;
+
     background-color: var(--cor-secundaria);
     border-radius: 50px;
     padding: 8px 16px;
-    width: 100%;          
-    max-width: 500px;      
-    box-shadow: 0 2px 4px rgba(20, 19, 19, 0.158);
+
+    box-shadow: 0 2px 4px rgba(20,19,19,.15);
 }
 
 .barraPesquisa input {
@@ -185,9 +187,16 @@ header {
 .card {
     display: flex;
     justify-content: center;
-    gap: clamp(30px, 5vw, 130px); 
+    align-items: center;
+
+    gap: clamp(20px, 4vw, 80px);
+
     margin-top: 70px;
+
     padding: 0 var(--container-padding);
+
+    max-width: 1400px;
+    margin-inline: auto;
 }
 
 .card-img {
@@ -231,11 +240,12 @@ header {
 .outras-op {
     font-family: var(--fonte-principal);
     font-size: 17px;
-    grid-column: 1 / -1;
-    margin-left: 15rem; 
-    margin-top: 5rem;
-    margin-bottom: 2rem;
-    text-transform: uppercase;
+
+    max-width: 1400px;
+
+    margin: 5rem auto 2rem auto;
+
+    padding: 0 var(--container-padding);
 }
 
 .op-colorido {
@@ -244,11 +254,16 @@ header {
 
 .grid-produtos {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* CORRIGIDO: era repeat(3, max-content) */
+
+    grid-template-columns: repeat(3, 1fr);
+
     gap: 25px;
-    padding: 10px var(--container-padding);
-    margin: 0 auto 8rem auto;
+
     max-width: 1400px;
+
+    margin: 0 auto 8rem auto;
+
+    padding: 0 var(--container-padding);
 }
 
 .info-produtos1 {
@@ -270,7 +285,8 @@ header {
 .card-img-produto {
     width: 100%;        
     max-width: 500px;   
-    height: 300px;
+    height: auto;
+    aspect-ratio: 5 / 3;
     border-radius: 8px;
     object-fit: cover;
     transition: transform 0.9s ease;
@@ -290,6 +306,8 @@ header {
     color: gray;
     font-weight: 250;
     font-family: var(--fonte-principal);
+
+    min-height: 3.5rem;
 }
 
 .preco-produto {
@@ -370,102 +388,46 @@ iframe {
 
 /*  Tablet (até 1024px)  */
 @media (max-width: 1024px) {
+
+    header {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
     .containerBarraPesquisa {
-        max-width: 300px;
-    }
-
-    .card {
-        gap: 40px;
-    }
-
-    .card-img {
-        max-width: 28rem;
+        order: 3;
+        width: 100%;
+        max-width: 100%;
     }
 
     .grid-produtos {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .info-produtos3 {
-        grid-column: 1 / -1; /* ocupa linha inteira quando fica sozinha */
-        max-width: 50%;
-        margin: 0 auto;
+    .card {
+        flex-direction: column;
+        text-align: center;
     }
 }
 
 /*  mobile (até 768px)  */
 @media (max-width: 768px) {
 
-    /* Header */
-    header {
-        flex-wrap: wrap;
-        gap: 16px;
-        padding: 16px var(--container-padding);
-    }
-
-    .containerBarraPesquisa {
-        order: 3;        /* barra vai para baixo do logo e nav */
-        max-width: 100%;
-        width: 100%;
+    .grid-produtos {
+        grid-template-columns: 1fr;
     }
 
     .menuNavegacao {
-        gap: 16px;
-        font-size: 14px;
         flex-wrap: wrap;
-    }
-
-    /* Seção 01 — destaque */
-    .card {
-        flex-direction: column;  /* empilha imagem e info */
-        align-items: center;
-        margin-top: 40px;
-        gap: 24px;
-    }
-
-    .card-img {
-        max-width: 100%;
-    }
-
-    .container-nome {
-        margin-top: 0;
-        width: 100%;
-    }
-
-    .botao-voltar {
-        margin-left: var(--container-padding);
-    }
-
-    /* Seção 02 — grid */
-    .outras-op {
-        margin-left: var(--container-padding);
-        margin-top: 3rem;
-    }
-
-    .grid-produtos {
-        grid-template-columns: 1fr; /* 1 coluna no mobile */
-    }
-
-    .info-produtos3 {
-        grid-column: auto;
-        max-width: 100%;
-        margin: 0;
+        justify-content: center;
     }
 
     .card-img-produto {
-        height: 220px;
+        max-width: 100%;
     }
 
-    /* Footer */
     .footer-container {
         flex-direction: column;
-        align-items: flex-start;
-    }
-
-    /* Dropdown */
-    .dropdown-menu {
-        right: auto;
-        left: 0;
     }
 }
 

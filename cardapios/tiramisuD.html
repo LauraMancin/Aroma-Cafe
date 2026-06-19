@@ -4,8 +4,8 @@
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../style-css/style.css" />
-    <link rel="shortcut icon" href="../imagens/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./style-css/style.css" />
+    <link rel="shortcut icon" href="./imagens/favicon.ico" type="image/x-icon">
     <title>Cardápio - Doces E Acompanhamentos</title>
 
   </head>
@@ -13,14 +13,14 @@
   <body>
       <header>
         <div>
-          <a href="./cafesEspeciais.html" class="logoAroma">
+          <a href="../homePage_perfil/indexPerfil.html" class="logoAroma">
             <abbr title="Voltar à página inicial">Aroma Café</abbr>
           </a>
         </div>
 
         <div class="containerBarraPesquisa barraPesquisa">
           <img
-            src="../imagens/iconePesquisa.png"
+            src="./imagens/iconePesquisa.png"
             alt="Lupa de pesquisa"
             class="iconePesquisa"
           />
@@ -28,20 +28,21 @@
         </div>
 
         <nav class="menuNavegacao">
-          <a href="#" class="dropdown">
-            <span class="cardap-colorido">
-              CARDÁPIO
-            </span>
-          </a>
+          <ul> 
+            <li class="dropdown" tabindex="0">
+              <a href="#"><span class="cardap-colorido">CARDÁPIO</span></a>
 
-          <div class="dropdown-menu">
-            <a href="../doces.html"><span>Doces e Acompanhamentos</span></a>
-            <a href="../cafesEspeciais.html"><span>Cafés Especiais</span></a>
-            <a href="../bebidasGeladas.html"><span>Bebidas Geladas</span></a>
-          </div>
+              <div class="dropdown-menu">
+                <a href="./cafesEspeciais.html">Cafés Especiais</a>
+                <a href="./bebidasGeladas.html" class="Bebidas-menu">Bebidas Geladas</a>
+                <a href="./doces.html">Doces e <br>
+                  Acompanhamentos</a>
+              </div>
+            </li>  
+          </ul>
 
-          <a href="#">ADOÇÕES</a>
-          <a href="#">RESERVAS</a>
+          <a href="../gatos/gatos.html">ADOÇÕES</a>
+          <a href="../gatos/reservas.html">RESERVAS</a>
           <a href="#" class="botao-carrinho1"><span class="botao-colorido">Carrinho</span></a>
         </nav>
 
@@ -49,27 +50,27 @@
 
 
     <main>
-          <a href="../doces.html" class="botao-voltar">
-                <img src="../imagens/icons/icon_voltar.png" alt="Voltar" title="Voltar">
+          <a href="../homePage_perfil/indexPerfil.html" class="botao-voltar">
+                <img src="./imagens/icons/icon_voltar.png" alt="Voltar" title="Voltar">
           </a>
 
 
         <section> <!--01--DESTAQUE-->
             <div class="card">
         <!--ADICIONAR LINKS AOS PRODUTOS-->        
-               <a href="./cinnamon.html"><img src="../imagens/produtos/doces/cina.png" alt="Cinnamon Roll"
+               <img src="./imagens/produtos/doces/tiramisu.png" alt="Tiramisù"
                class="card-img"></a>
 
               <div class="container-nome">
-                <h1>Cinnamon Roll</h1>
-                <h3>R$25,00</h3>
+                <h1>Tiramisù</h1>
+                <h3>R$30,00</h3>
                 
-                <img src="../imagens/icon_lactose.png"  title="Contém Lactose" class="icone-lactose">
+                <img src="./imagens/icon_lactose.png"  title="Contém Lactose" class="icone-lactose">
             
 
                 <p class="texto-produto-destaque">
-                    Massa fofinha recheada com manteiga, açúcar
-                    e canela.
+                    Camadas alternadas de biscoitos embebidos <br>
+                    em café forte e um creme de queijo mascarpone.
                 </p>
 
                 <button class="botao-carrinho">
@@ -88,7 +89,7 @@
             <div class="info-produtos1"> <!--COLUNA UM-->
 
                 <!--CIMA-->
-              <a href="../doces.html"><img src="../imagens/produtos/doces/cookie.jpg" alt="Cookie De Patinha"
+              <a href="./doces.html"><img src="./imagens/produtos/doces/cookie.jpg" alt="Cookie De Patinha"
               class="card-img-produto"> </a>
 
               <h3 class="nome-produto">Cookie De Patinha</h3>
@@ -96,7 +97,7 @@
               <span class="preco-produto">R$25,00</span>
 
                 <!--BAIXO-->
-              <a href="./brownie.html"><img src="../imagens/produtos/doces/brownie.png" alt="Brownie De Café"
+              <a href="./brownieD.html"><img src="./imagens/produtos/doces/brownie.png" alt="Brownie De Café"
               class="card-img-produto"></a> 
 
               <h3 class="nome-produto">Brownie De Café</h3>
@@ -109,7 +110,7 @@
             <div class="info-produtos2"> <!--COLUNA DOIS-->
 
                 <!--CIMA-->
-              <a href="./chessecake.html"><img src="../imagens/produtos/doces/chesscake.jpg" alt="Cheessecake De Café Com Chocolate" class="card-img-produto"></a>
+              <a href="./chessecakeD.html"><img src="./imagens/produtos/doces/chesscake.jpg" alt="Cheessecake De Café Com Chocolate" class="card-img-produto"></a>
 
               <h3 class="nome-produto">Cheessecake De Café Com Chocolate</h3>
               <p class="descricao-produto">
@@ -119,11 +120,12 @@
               <span class="preco-produto">R$30,00</span>
 
                 <!--BAIXO-->
-              <a href="./banoffee.html"><img src="../imagens/produtos/doces/banana.png" alt="Banoffee" class="card-img-produto"></a>
+              <a href="./cinnamonD.html"><img src="./imagens/produtos/doces/cina.png" alt="Cinnamon Roll" class="card-img-produto"></a>
 
-              <h3 class="nome-produto">Banoffee</h3>
-              <p class="descricao-produto">Base crocante de biscoito, fatias de banana <br>
-              fresca e uma cobertura generosa de chantilly.</p>
+              <h3 class="nome-produto">Cinnamon Roll</h3>
+              <p class="descricao-produto">
+                    Massa fofinha recheada com manteiga, açúcar
+                    e canela.</p>
               <span class="preco-produto">R$30,00</span>  
             </div>
 
@@ -131,15 +133,14 @@
             <div class="info-produtos3"> <!--COLUNA TRÊS-->
 
               <!--CIMA-->
-              <a href="./tiramisu.html"><img src="../imagens/produtos/doces/tiramisu.png" alt="Tiramisù" class="card-img-produto"></a>
+              <a href="./banoffeeD.html"><img src="./imagens/produtos/doces/banana.png" alt="Banoffee" class="card-img-produto"></a>
 
-              <h3 class="nome-produto">Tiramisù</h3>
-              <p class="descricao-produto">Camadas alternadas de biscoitos embebidos <br>
-              em café forte e um creme de queijo mascarpone.</p>
-              <span class="preco-produto">R$30,00</span>
+              <h3 class="nome-produto">Banoffee</h3>
+              <p class="descricao-produto">Base crocante de biscoito, fatias de banana <br> fresca e uma cobertura generosa de chantilly.</p>
+              <span class="preco-produto">R$25,00</span>
               
                 <!--BAIXO-->
-              <a href="./focaccia.html"><img src="../imagens/produtos/doces/foca.png" alt="Focaccia" class="card-img-produto"></a>
+              <a href="./focacciaD.html"><img src="./imagens/produtos/doces/foca.png" alt="Focaccia" class="card-img-produto"></a>
 
               <h3 class="nome-produto">Focaccia</h3>
               <p class="descricao-produto">Pão achatado, macio e aromático e banhado <br>
@@ -159,10 +160,10 @@
           <h2 class="rodapeAromaCafe">Aroma Café</h2>
 
           <div class="redesSociais">
-            <a href="#"><img src="../imagens/icons/icon_FaceBook.png" /></a>
-            <a href="#"><img src="../imagens/icons/icon_Link.png" /></a>
-            <a href="#"><img src="../imagens/icons/icon_Youtube.png" /></a>
-            <a href="#"><img src="../imagens/icons/icon_Instagram.png" /></a>
+            <a href="#"><img src="./imagens/icons/icon_FaceBook.png" /></a>
+            <a href="#"><img src="./imagens/icons/icon_Link.png" /></a>
+            <a href="#"><img src="./imagens/icons/icon_Youtube.png" /></a>
+            <a href="#"><img src="./imagens/icons/icon_Instagram.png" /></a>
           </div>
         </div>
 
