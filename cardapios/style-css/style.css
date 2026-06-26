@@ -189,19 +189,18 @@ header {
     justify-content: center;
     align-items: center;
 
-    gap: clamp(20px, 4vw, 80px);
+    /* Isso trava a distância exata entre a imagem e o texto do lado */
+    gap: 50px; 
 
     margin-top: 70px;
-
     padding: 0 var(--container-padding);
-
     max-width: 1400px;
     margin-inline: auto;
 }
 
 .card-img {
     width: 100%;         
-    max-width: 40rem;      
+    max-width: 35rem;      
     height: auto;          
     aspect-ratio: 10 / 7;  
     border-radius: 15px;
