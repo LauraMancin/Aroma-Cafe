@@ -1,25 +1,24 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // Pega os campos da página
     const campos = document.querySelectorAll('.input-');
     const botaoEntrar = document.querySelector('.botao-entrar');
 
-    // Se a página não tiver esses elementos, não faz nada
     if (campos.length < 2 || !botaoEntrar) {
         return;
     }
 
+    // Campos
     const email = campos[0];
     const senha = campos[1];
 
-    // Cores
+    // Cores do botão
     const corNormal = '#DB7093';
     const corApagada = '#d99aae';
 
 
-    // ==============================
-    // VERIFICA OS CAMPOS
-    // ==============================
+    // =========================
+    // ATUALIZA O BOTÃO
+    // =========================
 
     function verificarCampos() {
 
@@ -28,7 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (emailPreenchido && senhaPreenchida) {
 
-            // Tudo preenchido → botão normal
             botaoEntrar.style.backgroundColor = corNormal;
             botaoEntrar.style.borderColor = corNormal;
             botaoEntrar.style.opacity = '1';
@@ -36,7 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         } else {
 
-            // Algum campo vazio → botão apagado
             botaoEntrar.style.backgroundColor = corApagada;
             botaoEntrar.style.borderColor = corApagada;
             botaoEntrar.style.opacity = '0.7';
@@ -45,33 +42,115 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // ==============================
-    // ENQUANTO DIGITA
-    // ==============================
+    // =========================
+    // VALIDAÇÃO DO E-MAIL
+    // =========================
 
-    email.addEventListener('input', verificarCampos);
-    senha.addEventListener('input', verificarCampos);
+    function emailValido(valor) {
+
+        // Exemplo válido:
+        // nome@gmail.com
+        // usuario@hotmail.com
+
+        const formatoEmail =
+            /^[^\s@]+@[^\s@]+\.com$/i;
+
+        return formatoEmail.test(valor);
+    }
 
 
-    // ==============================
-    // CLICOU EM ENTRAR
-    // ==============================
+    // =========================
+    // MOSTRAR ERRO
+    // =========================
+
+    function mostrarErro(campo, mensagem) {
+
+        // Remove erro anterior
+        const erroAnterior = campo.nextElementSibling;
+
+        if (
+            erroAnterior &&
+            erroAnterior.classList.contains('mensagem-erro')
+        ) {
+            erroAnterior.remove();
+        }
+
+        // Cria mensagem
+        const erro = document.createElement('small');
+
+        erro.classList.add('mensagem-erro');
+        erro.textContent = mensagem;
+
+        // Coloca abaixo do campo
+        campo.insertAdjacentElement('afterend', erro);
+
+        // Destaca o campo
+        campo.classList.add('campo-invalido');
+    }
+
+
+    // =========================
+    // REMOVER ERRO
+    // =========================
+
+    function removerErro(campo) {
+
+        const erro = campo.nextElementSibling;
+
+        if (
+            erro &&
+            erro.classList.contains('mensagem-erro')
+        ) {
+            erro.remove();
+        }
+
+        campo.classList.remove('campo-invalido');
+    }
+
+
+    // =========================
+    // E-MAIL
+    // =========================
+
+    email.addEventListener('input', () => {
+
+        removerErro(email);
+        verificarCampos();
+
+    });
+
+
+    // =========================
+    // SENHA
+    // =========================
+
+    senha.addEventListener('input', () => {
+
+        removerErro(senha);
+        verificarCampos();
+
+    });
+
+
+    // =========================
+    // BOTÃO ENTRAR
+    // =========================
 
     botaoEntrar.addEventListener('click', (evento) => {
 
-        const emailPreenchido = email.value.trim() !== '';
-        const senhaPreenchida = senha.value.trim() !== '';
+        evento.preventDefault();
 
 
-        // ------------------------------
-        // OS DOIS ESTÃO VAZIOS
-        // ------------------------------
+        // -------------------------
+        // E-MAIL VAZIO
+        // -------------------------
 
-        if (!emailPreenchido && !senhaPreenchida) {
+        if (email.value.trim() === '') {
 
-            evento.preventDefault();
-
-            mostrarErro(email);
+            mostrarErro(
+                email,
+                'Preencha esse campo'
+            );
 
             email.focus();
 
@@ -79,15 +158,33 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
 
-        // ------------------------------
-        // SÓ O E-MAIL ESTÁ PREENCHIDO
-        // ------------------------------
+        // -------------------------
+        // E-MAIL INVÁLIDO
+        // -------------------------
 
-        if (emailPreenchido && !senhaPreenchida) {
+        if (!emailValido(email.value.trim())) {
 
-            evento.preventDefault();
+            mostrarErro(
+                email,
+                'Digite um e-mail válido'
+            );
 
-            mostrarErro(senha);
+            email.focus();
+
+            return;
+        }
+
+
+        // -------------------------
+        // SENHA VAZIA
+        // -------------------------
+
+        if (senha.value.trim() === '') {
+
+            mostrarErro(
+                senha,
+                'Preencha esse campo'
+            );
 
             senha.focus();
 
@@ -95,74 +192,19 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
 
-        // ------------------------------
-        // SÓ A SENHA ESTÁ PREENCHIDA
-        // ------------------------------
+        // -------------------------
+        // TUDO CORRETO
+        // -------------------------
 
-        if (!emailPreenchido && senhaPreenchida) {
+        window.location.href =
+            '../homePage_perfil/indexPerfil.html';
 
-            evento.preventDefault();
-
-            mostrarErro(email);
-
-            email.focus();
-
-            return;
-        }
-
-
-        // ------------------------------
-        // TUDO PREENCHIDO
-        // ------------------------------
-
-        // Aqui o login pode continuar normalmente.
-        // Se o botão estiver dentro de um <a>,
-        // o link será seguido normalmente.
     });
 
 
-    // ==============================
-    // MOSTRAR ERRO
-    // ==============================
-
-    function mostrarErro(campo) {
-
-        // Não cria duas mensagens
-        if (
-            campo.nextElementSibling &&
-            campo.nextElementSibling.classList.contains('mensagem-erro')
-        ) {
-            return;
-        }
-
-        const mensagem = document.createElement('small');
-
-        mensagem.classList.add('mensagem-erro');
-
-        mensagem.textContent = 'Preencha esse campo';
-
-        campo.insertAdjacentElement('afterend', mensagem);
-
-        campo.style.borderColor = corNormal;
-
-
-        // Quando começar a digitar,
-        // remove a mensagem
-        campo.addEventListener('input', () => {
-
-            if (mensagem) {
-                mensagem.remove();
-            }
-
-            campo.style.borderColor = '';
-
-        }, { once: true });
-    }
-
-
-    // ==============================
+    // =========================
     // ESTADO INICIAL
-    // ==============================
+    // =========================
 
     verificarCampos();
 

@@ -543,10 +543,10 @@ body::-webkit-scrollbar {
 .mensagem-erro {
     display: block;
 
-    width: 100%;
-    max-width: 350px;
+    width: 350px;
+    max-width: 100%;
 
-    margin: -8px auto 12px;
+    margin: -10px auto 12px;
 
     text-align: left;
 
@@ -554,5 +554,9 @@ body::-webkit-scrollbar {
 
     font-family: var(--fonte-principal);
     font-size: 12px;
-    font-weight: 500;
+    font-weight: 600;
+}
+
+.campo-invalido {
+    border: 1px solid #DB7093 !important;
 }
