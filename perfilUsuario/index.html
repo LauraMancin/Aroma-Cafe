@@ -4,18 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/style.css">
-    <title>Perfil</title>
+    <title>Perfil - Usuário</title>
 </head>
 <body>
     <section class="dashboard">
         <h2> Aroma Café </h2>
         <ul>
-            <li> <img src="./image/home.png" alt="Icone de casa"> Página Principal </li>
-            <li> <img src="./image/user.png" alt="Icone de uma Pessoa">Perfil </li>
-            <li> <img src="./image/bell.png" alt="Icone de Sino">Notificações  
+            <li> <img src="./image/home.png" alt="Icone de casa">
+            <a href="../homePage_perfil/indexPerfil.html">Página Principal</a>
             </li>
-            <li> <img src="./image/settings.png" alt="Icone de Engrenagem">Configurações </li>
-            <li> <img src="./image/exit.png" alt="Icone para sair da conta">Sair da conta </li>
+
+            <li> <img src="./image/user.png" alt="Icone de uma Pessoa">
+            <label class="tab" data-tab="personal">Perfil</label>
+            </li>
+
+            <li> <img src="./image/settings.png" alt="Icone de Engrenagem">
+            <label class="tab" data-tab="account" >Configurações</label>
+            </li>
+
+            <li> <img src="./image/exit.png" alt="Icone para sair da conta">
+            <label class="botaoSair" id="botaoSair"  onclick="sairDaConta()" style="cursor: pointer;" > Sair da conta </label>
+            </li>
         </ul>
     </section>
 
@@ -46,10 +55,6 @@
 
             <button class="tab" data-tab="security">
                 Segurança
-            </button>
-
-            <button class="tab" data-tab="preferences">
-                Preferências
             </button>
         
         </div>
