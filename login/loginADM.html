@@ -1,53 +1,116 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style1.css">
-    <link rel="shortcut icon" href="./src/iconLogin.png" type="image/x-icon">
+    <link
+        rel="shortcut icon"
+        href="./src/iconLogin.png"
+        type="image/x-icon"
+    >
     <title>Faça seu Login</title>
+
 </head>
 <body>
+
     <div class="container-pai">
+
         <section class="login-principal">
+
             <div class="card">
 
-                <p class="nome-empresa">Aroma café</p>
+                <p class="nome-empresa">
+                    Aroma café
+                </p>
 
-                <h2 class="titulo">Bem-Vindo<span class="titulo-"> de volta</span></h2>
+                <h2 class="titulo">
+                    Bem-Vindo
+                    <span class="titulo-">
+                        de volta
+                    </span>
+                </h2>
 
-                <p class="texto-">Entrar</p>
+                <p class="texto-">
+                    Entrar
+                </p>
 
                 <form class="input-principal">
-                    <label class="input-texto">E-mail</label>
-                    <input type="email" placeholder="exemplo@email.com.br" class="input-">
 
-                    <label class="input-texto">Senha</label>
-                    <input type="password" placeholder="senha"
-                    class="input-">
+                    <label class="input-texto">
+                        E-mail
+                    </label>
+
+                    <input
+                        type="email"
+                        placeholder="exemplo@email.com.br"
+                        class="input-"
+                    >
+
+                    <label class="input-texto">
+                        Senha
+                    </label>
+
+                    <input
+                        type="password"
+                        placeholder="senha"
+                        class="input-"
+                        minlength="8"
+                        maxlength="8"
+                    >
 
                     <div class="checkbox">
-                        <input type="checkbox" class="input-check">
-                        <label class="label-conectado">Manter-me conectado</label>
+
+                        <input
+                            type="checkbox"
+                            class="input-check"
+                        >
+
+                        <label class="label-conectado">
+                            Manter-me conectado
+                        </label>
+
                     </div>
 
                 </form>
 
-                    <a href="../perfilADM/perfilADM.html" class="link-botao">
-                        <button class="botao-entrar">Entrar</button>
-                    </a>
+                <a
+                    href="../perfilADM/perfilADM.html"
+                    class="link-botao"
+                    onclick="entrarAdministrador(event)"
+                >
+                    <button
+                        type="button"
+                        class="botao-entrar"
+                    >
+                        Entrar
+                    </button>
+                </a>
 
-                    <p><a href="../esqueceuSenha/senha.html" class="link">Esqueceu a senha?</a></p>
-                    
-                    
+                <p>
+                    <a
+                        href="../esqueceuSenha/senha.html"
+                        class="link"
+                    >
+                        Esqueceu a senha?
+                    </a>
+                </p>
+
             </div>
+
         </section>
 
-
         <section class="parte-dois">
-            
+
             <div class="login-dois">
-                <img src="./src/fundo.png" alt="Aroma café imagem" class="fundo">
+
+                <img
+                    src="./src/fundo.png"
+                    alt="Aroma café imagem"
+                    class="fundo"
+                >
+
             </div>
 
         </section>
@@ -55,11 +118,31 @@
     </div>
 
     <script>
-        localStorage.setItem('usuarioLogado', 'true');
+
+        function entrarAdministrador(event) {
+
+            event.preventDefault();
+
+            const senha = document.querySelector(
+                '.input-principal input[type="password"]'
+            );
+
+            if (senha.value.length !== 8) {
+                alert("A senha deve ter exatamente 8 caracteres.");
+                return;
+            }
+
+            localStorage.setItem("usuarioLogado", "true");
+            localStorage.setItem("tipoUsuario", "admin");
+
+            window.location.href = "../perfilADM/perfilADM.html";
+        }
+
     </script>
 
     <script src="./script.js"></script>
 
-
 </body>
+
 </html>
+

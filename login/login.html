@@ -1,81 +1,189 @@
-<!DOCTYPE html>
+<!doctype html>
+
 <html lang="pt-br">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="./style1.css">
+
     <link rel="shortcut icon" href="./src/iconLogin.png" type="image/x-icon">
+
     <title>Faça seu Login</title>
+
 </head>
+
 <body>
+
     <div class="container-pai">
+
         <section class="login-principal">
+
             <div class="card">
 
                 <p class="nome-empresa">Aroma café</p>
 
-                <h2 class="titulo"><span class="titulo-">Entre</span> e encontre seu <span class="titulo-">café</span></h2>
+                <h2 class="titulo">
+                    <span class="titulo-">Entre</span>
+                    e encontre seu
+                    <span class="titulo-">café</span>
+                </h2>
 
-                <p class="texto-">Escolha uma opção para entrar</p>
+                <p class="texto-">
+                    Escolha uma opção para entrar
+                </p>
 
                 <form class="input-principal">
-                    <label class="input-texto">E-mail</label>
-                    <input type="email" placeholder="exemplo@email.com.br" class="input-">
 
-                    <label class="input-texto">Senha</label>
-                    <input type="password" placeholder="senha"
-                    class="input-">
+                    <label class="input-texto">
+                        E-mail
+                    </label>
+
+                    <input
+                        type="email"
+                        placeholder="exemplo@email.com.br"
+                        class="input-"
+                    >
+
+                    <label class="input-texto">
+                        Senha
+                    </label>
+
+                    <input
+                        type="password"
+                        placeholder="senha"
+                        class="input-"
+                        minlength="8"
+                        maxlength="8"
+                    >
 
                     <div class="checkbox">
-                        <input type="checkbox" class="input-check">
-                        <label class="label-conectado">Manter-me conectado</label>
+
+                        <input
+                            type="checkbox"
+                            class="input-check"
+                        >
+
+                        <label class="label-conectado">
+                            Manter-me conectado
+                        </label>
+
                     </div>
 
                 </form>
 
                 <div class="outras-opcoes">
-                    <p>ou continue com </p> <div class="linha"></div>
+
+                    <p>ou continue com</p>
+
+                    <div class="linha"></div>
+
                 </div>
 
                 <div class="outras-opcoes-apps">
+
                     <a href="#">
-                        <button class="botoes-1">
-                            <img src="../login/src/google-icon (1).png" alt="google" class="img-icons">
+                        <button
+                            class="botoes-1"
+                            type="button"
+                        >
+                            <img
+                                src="./src/google-icon (1).png"
+                                alt="Google"
+                                class="img-icons"
+                            >
                         </button>
                     </a>
 
                     <a href="#">
-                        <button class="botoes-2">
-                            <img src="./src/apple-icon (1).png" alt="apple" class="img-icons2">
+                        <button
+                            class="botoes-2"
+                            type="button"
+                        >
+                            <img
+                                src="./src/apple-icon (1).png"
+                                alt="Apple"
+                                class="img-icons2"
+                            >
                         </button>
                     </a>
+
                 </div>
 
-                    <a href="../homePage_perfil/indexPerfil.html" class="link-botao">
-                        <button class="botao-entrar">Entrar</button>
-                    </a>
-                    <p class="botao-texto">Não tem conta? <a href="../cadastro/cadastro.html" class="link">Cadastre-se</a></p>
+                <a
+                    href="../homePage_perfil/indexPerfil.html"
+                    class="link-botao"
+                >
+                    <button
+                        type="button"
+                        class="botao-entrar"
+                    >
+                        Entrar
+                    </button>
+                </a>
 
-                    <p><a href="../esqueceuSenha/senha.html" class="link">Esqueceu a senha?</a></p>
-                    <br>
-                    <p class="botao-texto">Administrador <a href="./loginADM.html" class="link">Entrar</a></p>
-                    
+                <p class="botao-texto">
+                    Não tem conta?
+
+                    <a
+                        href="../cadastro/cadastro.html"
+                        class="link"
+                    >
+                        Cadastre-se
+                    </a>
+                </p>
+
+                <p>
+                    <a
+                        href="../esqueceuSenha/senha.html"
+                        class="link"
+                    >
+                        Esqueceu a senha?
+                    </a>
+                </p>
+
+                <br>
+
+                <p class="botao-texto">
+                    Administrador
+
+                    <a
+                        href="./loginADM.html"
+                        class="link"
+                    >
+                        Entrar
+                    </a>
+                </p>
+
             </div>
+
         </section>
 
-
         <section class="parte-dois">
-            
+
             <div class="login-dois">
-                <img src="./src/fundo.png" alt="Aroma café imagem" class="fundo">
+
+                <img
+                    src="./src/fundo.png"
+                    alt="Aroma café imagem"
+                    class="fundo"
+                >
+
             </div>
 
         </section>
 
     </div>
 
+    <script>
+        localStorage.setItem("usuarioLogado", "true");
+    </script>
+
     <script src="./script.js"></script>
 
-
 </body>
+
 </html>

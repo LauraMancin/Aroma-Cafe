@@ -722,3 +722,207 @@ footer a:hover {
     scroll-behavior: auto;
   }
 }
+
+/* ============================================================
+   AJUSTE FINAL DE RESPONSIVIDADE
+   Mantém as seções estáveis em diferentes telas
+   ============================================================ */
+
+.secaoSobre,
+.secaoFuncionamento {
+  width: 100%;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: clamp(2rem, 4vw, 4rem);
+
+  padding-top: clamp(2.5rem, 4vw, 3.5rem);
+  padding-bottom: clamp(2.5rem, 4vw, 3.5rem);
+  padding-left: clamp(1.5rem, 5vw, 4.5rem);
+  padding-right: clamp(1.5rem, 5vw, 4.5rem);
+}
+
+
+/* Mantém o conteúdo com largura controlada */
+
+.containerSobre,
+.containerFuncionamento {
+  flex: 1 1 0;
+  width: 100%;
+  max-width: 600px;
+  min-width: 0;
+}
+
+
+/* Imagens proporcionais */
+
+.imagemSecao {
+  flex: 0 1 520px;
+  width: 100%;
+  max-width: 520px;
+
+  height: clamp(280px, 30vw, 380px);
+
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+
+/* Texto não cresce demais */
+
+.textoConteudo,
+.textoFuncionamento {
+  width: 100%;
+  max-width: 600px;
+}
+
+
+/* ============================================================
+   TELAS MÉDIAS
+   ============================================================ */
+
+@media (min-width: 768px) and (max-width: 1100px) {
+
+  .secaoSobre,
+  .secaoFuncionamento {
+    gap: 2.5rem;
+
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+
+  .imagemSecao {
+    flex: 0 1 45%;
+    max-width: 460px;
+    height: clamp(280px, 32vw, 340px);
+  }
+
+  .containerSobre,
+  .containerFuncionamento {
+    max-width: 500px;
+  }
+
+  .textoConteudo {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+}
+
+
+/* ============================================================
+   DESKTOP GRANDE
+   ============================================================ */
+
+@media (min-width: 1101px) {
+
+  .secaoSobre,
+  .secaoFuncionamento {
+    min-height: 450px;
+  }
+
+  .imagemSecao {
+    height: 380px;
+  }
+
+}
+
+
+/* ============================================================
+   CELULAR
+   ============================================================ */
+
+@media (max-width: 767px) {
+
+  .secaoSobre,
+  .secaoFuncionamento {
+    width: 100%;
+
+    flex-direction: column;
+
+    gap: 1.8rem;
+
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+  }
+
+  .secaoFuncionamento {
+    flex-direction: column;
+  }
+
+  .containerSobre,
+  .containerFuncionamento {
+    width: 100%;
+    max-width: 600px;
+
+    align-items: center;
+
+    text-align: center;
+  }
+
+  .tituloPrincipal {
+    text-align: center;
+  }
+
+  .textoConteudo {
+    text-align: center;
+
+    width: 100%;
+    max-width: 600px;
+
+    line-height: 1.5;
+  }
+
+  .imagemSecao {
+    width: 100%;
+    max-width: 520px;
+
+    height: clamp(220px, 65vw, 300px);
+  }
+
+}
+
+
+/* ============================================================
+   CELULAR PEQUENO
+   ============================================================ */
+
+@media (max-width: 480px) {
+
+  .secaoSobre,
+  .secaoFuncionamento {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    gap: 1.5rem;
+  }
+
+  .imagemSecao {
+    height: 250px;
+  }
+
+}
+
+
+/* ============================================================
+   TELAS MUITO PEQUENAS
+   ============================================================ */
+
+@media (max-width: 359px) {
+
+  .imagemSecao {
+    height: 220px;
+  }
+
+}
