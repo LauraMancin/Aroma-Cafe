@@ -17,13 +17,23 @@
     box-sizing: border-box;
 }
 
+html {
+    width: 100%;
+    min-height: 100%;
+}
+
 body {
-    font-family: var(--fonte-principal);
+    width: 100%;
     min-height: 100vh;
+    font-family: var(--fonte-principal);
+
+    /* Esconde a barra de rolagem */
+    scrollbar-width: none;
+    overflow-x: hidden;
 }
 
 body::-webkit-scrollbar {
-    display: none; /* Chrome, Edge e Safari */
+    display: none;
 }
 
 /* =========================
@@ -32,8 +42,8 @@ body::-webkit-scrollbar {
 
 .container-pai {
     display: flex;
-    min-height: 100vh;
     width: 100%;
+    min-height: 100vh;
 }
 
 /* =========================
@@ -43,19 +53,22 @@ body::-webkit-scrollbar {
 .login-principal {
     flex: 1;
     min-width: 0;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     text-align: center;
     background-color: white;
-    padding: 40px 20px;
+
+    padding: clamp(20px, 4vw, 60px);
 }
 
 .card {
     width: 100%;
-    max-width: 450px;
-    background-color: white;
-    padding: 30px;
+    max-width: 430px;
+
+    padding: clamp(10px, 2vw, 30px);
 }
 
 /* =========================
@@ -64,54 +77,87 @@ body::-webkit-scrollbar {
 
 .nome-empresa {
     margin-bottom: 15px;
+
     font-family: var(--fonte-logo);
     font-weight: bold;
+
+    /* Nunca fica gigante */
+    font-size: clamp(22px, 2vw, 30px);
 }
 
 .titulo {
     margin-bottom: 10px;
+
     font-family: var(--fonte-principal);
+    font-weight: 700;
+
+    /* Tamanho médio e fluido */
+    font-size: clamp(22px, 2.2vw, 30px);
+
+    line-height: 1.2;
 }
 
 .titulo- {
     color: var(--cor-principal);
-    font-family: var(--fonte-principal);
 }
 
 .texto- {
     color: gray;
+
     margin-bottom: 20px;
+
     font-family: var(--fonte-principal);
+
+    font-size: clamp(13px, 1.2vw, 16px);
+    line-height: 1.5;
 }
 
 /* =========================
-   INPUTS
+   FORMULÁRIO
 ========================= */
 
-.input- {
-    display: flex;
-    flex-direction: column;
+.input-principal {
+    width: 100%;
+}
+
+.input-texto {
+    display: block;
+
     width: 100%;
     max-width: 350px;
+
+    margin: 0 auto 7px;
+
+    text-align: left;
+
+    font-family: var(--fonte-principal);
+    font-size: 12px;
+    font-weight: bold;
+
+    color: rgb(82, 80, 80);
+}
+
+.input- {
+    display: block;
+
+    width: 100%;
+    max-width: 350px;
+
     padding: 13px;
+
     margin: 0 auto 15px;
+
     border-radius: 8px;
     border: 2px solid rgba(128, 128, 128, 0.219);
+
     outline: none;
+
     font-family: var(--fonte-principal);
+    font-size: 14px;
 }
 
 .input-:focus {
     border-color: var(--cor-principal);
-}
-
-.input-texto {
-    display: flex;
-    font-size: 12px;
-    font-family: var(--fonte-principal);
-    font-weight: bold;
-    margin-bottom: 15px;
-    color: rgb(82, 80, 80);
 }
 
 /* =========================
@@ -121,19 +167,24 @@ body::-webkit-scrollbar {
 .checkbox {
     display: flex;
     align-items: center;
-    margin: 0 auto 18px;
+
     width: 100%;
     max-width: 350px;
+
+    margin: 0 auto 18px;
+
     text-align: left;
 }
 
 .input-check {
+    flex-shrink: 0;
     margin-right: 10px;
 }
 
 .label-conectado {
     font-family: var(--fonte-principal);
-    font-size: 13px;
+
+    font-size: clamp(12px, 1vw, 14px);
 }
 
 /* =========================
@@ -144,57 +195,65 @@ body::-webkit-scrollbar {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    margin: 20px auto;
-    font-family: var(--fonte-principal);
+
     width: 100%;
     max-width: 350px;
+
+    gap: 10px;
+
+    margin: 20px auto;
+
+    font-family: var(--fonte-principal);
+
+    font-size: clamp(12px, 1vw, 14px);
 }
 
 .linha {
     flex: 1;
+
     height: 1px;
+
     background-color: rgba(0, 0, 0, 0.2);
-    margin: 0;
 }
 
 /* =========================
-   BOTÕES DE APPS
+   BOTÕES DOS APPS
 ========================= */
 
 .outras-opcoes-apps {
     display: flex;
     align-items: center;
     justify-content: center;
+
     gap: 13px;
-    flex-wrap: wrap;
+
+    margin-bottom: 5px;
 }
 
 .botoes-1,
 .botoes-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     background-color: #F7F7F7;
+
     border: 2px solid #f7f7f7c8;
     border-radius: 10px;
+
     padding: 8px;
-    width: 85px;
-    margin-bottom: 2rem;
+
+    width: 80px;
+    height: 48px;
+
     box-shadow: 0 4px 2px 0 rgba(0, 0, 0, 0.092);
+
     transition: 0.2s ease;
 }
-
-/* =========================
-   HOVER
-========================= */
 
 .botoes-1:hover,
 .botoes-2:hover {
     transform: scale(1.02);
-    opacity: 0.9;
-    cursor: pointer;
-}
-
-.botao-entrar:hover {
-    transform: scale(1.01);
     opacity: 0.9;
     cursor: pointer;
 }
@@ -219,58 +278,110 @@ body::-webkit-scrollbar {
 
 .botao-entrar {
     display: block;
+
     width: 100%;
     max-width: 300px;
+
     padding: 14px;
-    margin: 0 auto 20px;
+
+    margin: 15px auto 20px;
+
     font-family: var(--fonte-principal);
+    font-size: 14px;
+    font-weight: bold;
+
     background-color: var(--cor-principal);
     color: white;
+
     border-radius: 8px;
     border: 1px solid var(--cor-principal);
-    font-weight: bold;
+
     transition: 0.2s ease;
 }
 
-.botao-texto {
+.botao-entrar:hover {
+    transform: scale(1.01);
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+.link-botao {
+    text-decoration: none;
+}
+
+.botao-texto,
+.card > p {
     font-family: var(--fonte-principal);
-    font-size: 14px;
+
+    font-size: clamp(12px, 1vw, 14px);
+
+    line-height: 1.5;
 }
 
 .link {
     color: var(--cor-principal);
+
     font-family: var(--fonte-principal);
-    font-size: 14px;
+
+    font-size: inherit;
+
+    text-decoration: none;
+}
+
+.link:hover {
+    text-decoration: underline;
 }
 
 /* =========================
    PARTE DA IMAGEM
 ========================= */
 
-.login-dois {
-    display: flex;
-    flex-direction: column-reverse;
-    flex: 1;
-    min-width: 0;
-}
-
 .parte-dois {
     flex: 1;
     min-width: 0;
+
     min-height: 100vh;
+}
+
+.login-dois {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
 }
 
 .fundo {
     display: block;
+
     width: 100%;
-    height: 100%;
-    min-height: 100vh;
+    height: 100vh;
+
     object-fit: cover;
+
     border-top-left-radius: 28px;
 }
 
 /* =========================
-   TABLET
+   TELAS GRANDES
+========================= */
+
+@media (min-width: 1400px) {
+
+    .login-principal {
+        padding: 40px;
+    }
+
+    .card {
+        max-width: 440px;
+    }
+
+    .titulo {
+        font-size: 28px;
+    }
+}
+
+/* =========================
+   TABLETS
 ========================= */
 
 @media (max-width: 900px) {
@@ -279,27 +390,40 @@ body::-webkit-scrollbar {
         flex-direction: column;
     }
 
-    .login-principal {
-        min-height: auto;
-        padding: 50px 20px;
-        order: 2;
+    /* Imagem em cima */
+    .parte-dois {
+        order: 1;
+
+        width: 100%;
+        min-height: 35vh;
+        height: 35vh;
     }
 
     .login-dois {
-        order: 1;
-        min-height: 40vh;
-    }
-
-    .parte-dois {
-        min-height: 40vh;
+        width: 100%;
+        height: 100%;
     }
 
     .fundo {
-        min-height: 40vh;
-        max-height: 45vh;
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 28px;
-        border-bottom-right-radius: 28px;
+        width: 100%;
+        height: 35vh;
+        min-height: 250px;
+
+        border-radius: 0 0 28px 28px;
+    }
+
+    /* Login embaixo */
+    .login-principal {
+        order: 2;
+
+        width: 100%;
+        min-height: 65vh;
+
+        padding: 40px 20px;
+    }
+
+    .card {
+        max-width: 430px;
     }
 }
 
@@ -309,35 +433,33 @@ body::-webkit-scrollbar {
 
 @media (max-width: 600px) {
 
-    .container-pai {
-        width: 100%;
-        min-height: 100vh;
-    }
-
-    .login-dois {
-        min-height: 30vh;
-    }
-
     .parte-dois {
-        min-height: 30vh;
+        height: 30vh;
+        min-height: 200px;
     }
 
     .fundo {
-        min-height: 30vh;
-        max-height: 35vh;
+        height: 30vh;
+        min-height: 200px;
+
         border-radius: 0 0 20px 20px;
     }
 
     .login-principal {
+        min-height: 70vh;
+
         padding: 30px 15px;
     }
 
     .card {
-        padding: 20px 10px;
+        max-width: 400px;
+
+        padding: 5px;
     }
 
     .nome-empresa {
         font-size: 24px;
+        margin-bottom: 12px;
     }
 
     .titulo {
@@ -346,21 +468,18 @@ body::-webkit-scrollbar {
 
     .texto- {
         font-size: 14px;
-        line-height: 1.5;
+        margin-bottom: 18px;
+    }
+
+    .input-texto,
+    .input-,
+    .checkbox,
+    .outras-opcoes {
+        max-width: 100%;
     }
 
     .input- {
-        max-width: 100%;
         padding: 12px;
-    }
-
-    .checkbox {
-        max-width: 100%;
-    }
-
-    .outras-opcoes {
-        max-width: 100%;
-        font-size: 13px;
     }
 
     .botao-entrar {
@@ -369,22 +488,29 @@ body::-webkit-scrollbar {
 
     .botoes-1,
     .botoes-2 {
-        width: 80px;
+        width: 75px;
+        height: 45px;
     }
 }
 
 /* =========================
-   CELULARES MUITO PEQUENOS
+   CELULARES PEQUENOS
 ========================= */
 
 @media (max-width: 380px) {
 
-    .login-principal {
-        padding: 25px 10px;
+    .parte-dois {
+        height: 26vh;
+        min-height: 170px;
     }
 
-    .card {
-        padding: 15px 5px;
+    .fundo {
+        height: 26vh;
+        min-height: 170px;
+    }
+
+    .login-principal {
+        padding: 25px 12px;
     }
 
     .nome-empresa {
@@ -399,12 +525,34 @@ body::-webkit-scrollbar {
         font-size: 13px;
     }
 
-    .outras-opcoes-apps {
-        gap: 8px;
+    .input- {
+        padding: 11px;
+    }
+
+    .botao-entrar {
+        padding: 12px;
     }
 
     .botoes-1,
     .botoes-2 {
-        width: 75px;
+        width: 70px;
+        height: 43px;
     }
+}
+
+.mensagem-erro {
+    display: block;
+
+    width: 100%;
+    max-width: 350px;
+
+    margin: -8px auto 12px;
+
+    text-align: left;
+
+    color: #DB7093;
+
+    font-family: var(--fonte-principal);
+    font-size: 12px;
+    font-weight: 500;
 }

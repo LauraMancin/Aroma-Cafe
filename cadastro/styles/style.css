@@ -195,3 +195,20 @@
 .check{
     margin-right: 10px;
 }
+
+.mensagem-erro {
+    display: block;
+
+    width: 350px;
+    max-width: 100%;
+
+    margin: -10px auto 12px;
+
+    text-align: left;
+
+    color: #DB7093;
+
+    font-family: var(--fonte-principal);
+    font-size: 12px;
+    font-weight: 600;
+}
