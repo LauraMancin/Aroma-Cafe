@@ -3,14 +3,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const campos = document.querySelectorAll('.input-');
     const botao = document.querySelector('.botao-entrar');
 
-    if (campos.length < 3 || !botao) {
+    if (campos.length < 2 || !botao) {
         return;
     }
 
-    // Campos na ordem do HTML
-    const email = campos[0];
-    const senha = campos[1];
-    const confirmarSenha = campos[2];
+    const senha = campos[0];
+    const confirmarSenha = campos[1];
 
     const corNormal = '#DB7093';
     const corApagada = '#d99aae';
@@ -22,12 +20,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function atualizarBotao() {
 
-        const tudoPreenchido =
-            email.value.trim() !== '' &&
-            senha.value.trim() !== '' &&
-            confirmarSenha.value.trim() !== '';
+        const senhaPreenchida = senha.value.trim() !== '';
+        const confirmarPreenchida = confirmarSenha.value.trim() !== '';
 
-        if (tudoPreenchido) {
+        if (senhaPreenchida && confirmarPreenchida) {
 
             botao.style.backgroundColor = corNormal;
             botao.style.borderColor = corNormal;
@@ -45,22 +41,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // Atualiza enquanto digita
-    campos.forEach(campo => {
-        campo.addEventListener('input', atualizarBotao);
-    });
+    senha.addEventListener('input', atualizarBotao);
+    confirmarSenha.addEventListener('input', atualizarBotao);
 
 
     // =========================
     // MOSTRAR ERRO
     // =========================
 
-    function mostrarErro(campo, mensagem = 'Preencha esse campo') {
+    function mostrarErro(campo, mensagem) {
+
+        const erroExistente = campo.nextElementSibling;
 
         if (
-            campo.nextElementSibling &&
-            campo.nextElementSibling.classList.contains('mensagem-erro')
+            erroExistente &&
+            erroExistente.classList.contains('mensagem-erro')
         ) {
-            return;
+            erroExistente.remove();
         }
 
         const erro = document.createElement('small');
@@ -71,112 +68,42 @@ document.addEventListener('DOMContentLoaded', () => {
         campo.insertAdjacentElement('afterend', erro);
 
         campo.style.borderColor = corNormal;
-
-        campo.addEventListener('input', () => {
-
-            if (erro) {
-                erro.remove();
-            }
-
-            campo.style.borderColor = '';
-
-        }, { once: true });
     }
 
 
     // =========================
-    // LIMPAR ERROS
-    // =========================
-
-    function limparErros() {
-
-        document.querySelectorAll('.mensagem-erro').forEach(erro => {
-            erro.remove();
-        });
-
-        campos.forEach(campo => {
-            campo.style.borderColor = '';
-        });
-    }
-
-
-    // =========================
-    // POP-UP
-    // =========================
-
-    function mostrarPopup() {
-
-        const fundo = document.createElement('div');
-        fundo.classList.add('popup-fundo');
-
-        const popup = document.createElement('div');
-        popup.classList.add('popup');
-
-        popup.innerHTML = `
-            <h2>Senha alterada!</h2>
-
-            <p>
-                Sua solicitação de alteração de senha foi realizada.
-            </p>
-
-            <p>
-                Para garantir que foi você quem solicitou a alteração
-                e evitar golpes, acesse o <strong>e-mail cadastrado</strong>
-                e confirme a alteração.
-            </p>
-
-            <button class="popup-botao" type="button">
-                Entendi
-            </button>
-        `;
-
-        fundo.appendChild(popup);
-        document.body.appendChild(fundo);
-
-        const botaoPopup = popup.querySelector('.popup-botao');
-
-        botaoPopup.addEventListener('click', () => {
-
-            window.location.href = '../login/login.html';
-
-        });
-    }
-
-
-    // =========================
-    // BOTÃO ENTRAR
+    // BOTÃO
     // =========================
 
     botao.addEventListener('click', (evento) => {
 
         evento.preventDefault();
 
-        limparErros();
 
-
-        // E-mail vazio
-        if (email.value.trim() === '') {
-
-            mostrarErro(email);
-            email.focus();
-            return;
-        }
-
-
-        // Senha vazia
+        // Verifica senha
         if (senha.value.trim() === '') {
 
-            mostrarErro(senha);
+            mostrarErro(
+                senha,
+                'Preencha esse campo'
+            );
+
             senha.focus();
+
             return;
         }
 
 
-        // Confirmação vazia
+        // Verifica confirmação
         if (confirmarSenha.value.trim() === '') {
 
-            mostrarErro(confirmarSenha);
+            mostrarErro(
+                confirmarSenha,
+                'Preencha esse campo'
+            );
+
             confirmarSenha.focus();
+
             return;
         }
 
@@ -190,19 +117,78 @@ document.addEventListener('DOMContentLoaded', () => {
             );
 
             confirmarSenha.focus();
+
             return;
         }
 
 
         // =========================
-        // TUDO CERTO
+        // SENHA CORRETA
         // =========================
 
         mostrarPopup();
+
     });
 
 
-    // Estado inicial do botão
+    // =========================
+    // POP-UP
+    // =========================
+
+    function mostrarPopup() {
+
+        const fundo = document.createElement('div');
+
+        fundo.classList.add('popup-fundo');
+
+
+        const popup = document.createElement('div');
+
+        popup.classList.add('popup');
+
+
+        popup.innerHTML = `
+            <h2>Senha alterada!</h2>
+
+            <p>
+                Sua senha foi alterada com sucesso.
+            </p>
+
+            <p>
+                Para sua segurança, acesse o
+                <strong>e-mail cadastrado</strong>
+                e confirme a alteração.
+            </p>
+
+            <p>
+                Essa confirmação ajuda a proteger sua conta
+                contra golpes e alterações não autorizadas.
+            </p>
+
+            <button type="button" class="popup-botao">
+                Entendi
+            </button>
+        `;
+
+
+        fundo.appendChild(popup);
+
+        document.body.appendChild(fundo);
+
+
+        const botaoPopup = popup.querySelector('.popup-botao');
+
+
+        botaoPopup.addEventListener('click', () => {
+
+            window.location.href = '../login/login.html';
+
+        });
+
+    }
+
+
+    // Estado inicial
     atualizarBotao();
 
 });
