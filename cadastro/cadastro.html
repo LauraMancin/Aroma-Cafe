@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/style.css">
+    <link rel="shortcut icon" href="../login/src/iconLogin.png" type="image/x-icon">
+
     <title>Faça seu Cadastro</title>
 </head>
 <body>
@@ -35,15 +37,22 @@
                     class="input-">
 
                     <label class="input-texto">Telefone</label>
-                    <input class="input-" type="tel" placeholder="(19) 99999-9999">
+                    <input
+                        class="input-"
+                        type="tel"
+                        placeholder="(19) 99999-9999"
+                        maxlength="15"
+                        id="telefone"
+                    >
 
                     <label class="input-check">
                     <input type="checkbox" class="check">Eu li e aceito os termos de privacidade.
                     </label>
                 </form> 
-                    <a href="../login/login.html">
-                        <button class="botao-entrar">Cadastre-se</button>
-                    </a>
+
+                    <button type="button" class="botao-entrar">
+                         Cadastre-se
+                    </button>
 
                     <p class="botao-texto">Tem conta? <a href="../login/login.html" class="link">Entre</a></p>
 
@@ -64,6 +73,8 @@
     <script>
         localStorage.setItem('usuarioLogado', 'true');
     </script>
+
+    <script src="./script.js"></script>
 
 </body>
 </html>
