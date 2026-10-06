@@ -51,8 +51,13 @@ function fecharModal(){
     document.getElementById('modal').classList.remove('ativo');
 }
 
-
 //fecha se o usuario clicar fora do popup
 document.getElementById('modal').addEventListener('click', function(e) {
     if (e.target === this) fecharModal();
 })
+
+// Remove o login e redireciona para a página inicial
+function sairDaConta() {
+    localStorage.removeItem('usuarioLogado');
+    window.location.href = '../homePage_perfil/indexPerfil.html';
+}
