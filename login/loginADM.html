@@ -56,8 +56,6 @@
                         type="password"
                         placeholder="senha"
                         class="input-"
-                        minlength="8"
-                        maxlength="8"
                     >
 
                     <div class="checkbox">
@@ -73,20 +71,14 @@
 
                     </div>
 
-                </form>
-
-                <a
-                    href="../perfilADM/perfilADM.html"
-                    class="link-botao"
-                    onclick="entrarAdministrador(event)"
-                >
                     <button
-                        type="button"
+                        type="submit"
                         class="botao-entrar"
                     >
                         Entrar
                     </button>
-                </a>
+
+                </form>
 
                 <p>
                     <a
@@ -117,32 +109,7 @@
 
     </div>
 
-    <script>
-
-        function entrarAdministrador(event) {
-
-            event.preventDefault();
-
-            const senha = document.querySelector(
-                '.input-principal input[type="password"]'
-            );
-
-            if (senha.value.length !== 8) {
-                alert("A senha deve ter exatamente 8 caracteres.");
-                return;
-            }
-
-            localStorage.setItem("usuarioLogado", "true");
-            localStorage.setItem("tipoUsuario", "admin");
-
-            window.location.href = "../perfilADM/perfilADM.html";
-        }
-
-    </script>
-
     <script src="./script.js"></script>
 
 </body>
-
 </html>
-
