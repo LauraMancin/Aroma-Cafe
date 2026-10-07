@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrinho</title>
+    <title>Carrinho | Aroma Café</title>
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/carrinho.css">
 </head>
 <body>
     <header>
@@ -48,17 +49,125 @@
 
     </header>
 
-    <section class="produtosCarrinho">
-        <div class="titulosCarrinho">
-            <p>PRODUTO</p>
-            <p>UNIDADE</p>
-            <p>PREÇO UND</p>
-        </div>
-        <p class="titulosCarrinho total">TOTAL</p> <div class="linha"></div>
-    </section>
+    <main class="pagina-carrinho">
+        <section class="carrinho-topo">
+            <div>
+                <small>3 itens no carrinho</small>
+                <h1>Meu carrinho</h1>
+                <p>Confira seu pedido antes de finalizar</p>
+            </div>
+            <a href="../cardapios/cafesEspeciais.html" class="btn-continuar">Continuar comprando</a>
+        </section>
 
+        <section class="carrinho-layout">
+            <!-- Itens -->
+            <section class="carrinho-itens">
+                <div class="carrinho-titulo">
+                    <h2>Itens do pedido</h2>
+                    <p>Ajuste as quantidades ou remova itens</p>
+                </div>
 
+                <div class="lista-itens">
+                    <article class="item-carrinho">
+                        <div class="item-icone">
+                        <img src="../cardapios/imagens/produtos/gatoccino.jpg" alt="Gatoccino">
+                        </div>
+                        <div class="item-info">
+                            <h3>Gatoccino</h3>
+                            <p>Cappuccino cremoso com arte de latte em formato de gatinho.</p>
+                            <span class="tag-lactose">Contém lactose</span>
+                        </div>
+                        <div class="quantidade">
+                            <button type="button" class="btn-qtd" aria-label="Diminuir quantidade">−</button>
+                            <span class="qtd-valor">2</span>
+                            <button type="button" class="btn-qtd" aria-label="Aumentar quantidade">+</button>
+                        </div>
+                        <div class="item-preco">
+                            <small>R$ 24,99 un.</small>
+                            <strong>R$ 49,98</strong>
+                        </div>
+                        <button type="button" class="btn-remover" aria-label="Remover item">×</button>
+                    </article>
 
+                    <article class="item-carrinho">
+                        <div class="item-icone">
+                        <img src="../cardapios/imagens/produtos/doces/cookie.jpg" alt="Cookie de patinha">
+                        </div>
+                        <div class="item-info">
+                            <h3>Cookie de patinha</h3>
+                            <p>Intenso e amanteigado, macio por dentro e crocante por fora.</p>
+                            <span class="tag-lactose">Contém lactose</span>
+                        </div>
+                        <div class="quantidade">
+                            <button type="button" class="btn-qtd" aria-label="Diminuir quantidade">−</button>
+                            <span class="qtd-valor">1</span>
+                            <button type="button" class="btn-qtd" aria-label="Aumentar quantidade">+</button>
+                        </div>
+                        <div class="item-preco">
+                            <small>R$ 19,99 un.</small>
+                            <strong>R$ 19,99</strong>
+                        </div>
+                        <button type="button" class="btn-remover" aria-label="Remover item">×</button>
+                    </article>
+
+                    <article class="item-carrinho">
+                        <div class="item-icone">
+                            <img src="../cardapios/imagens/produtos/cold.png" alt="Cold brew felino">
+                        </div>
+                        <div class="item-info">
+                            <h3>Cold brew felino</h3>
+                            <p>Cold brew gelado com toque de baunilha e canela.</p>
+                            <span class="tag-lactose">Contém lactose</span>
+                        </div>
+                        <div class="quantidade">
+                            <button type="button" class="btn-qtd" aria-label="Diminuir quantidade">−</button>
+                            <span class="qtd-valor">1</span>
+                            <button type="button" class="btn-qtd" aria-label="Aumentar quantidade">+</button>
+                        </div>
+                        <div class="item-preco">
+                            <small>R$ 18,00 un.</small>
+                            <strong>R$ 18,00</strong>
+                        </div>
+                        <button type="button" class="btn-remover" aria-label="Remover item">×</button>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Resumo -->
+            <aside class="carrinho-resumo">
+                <div class="carrinho-titulo">
+                    <h2>Resumo</h2>
+                    <p>Valores do pedido</p>
+                </div>
+
+                <div class="resumo-linhas">
+                    <div class="resumo-linha">
+                        <span>Subtotal</span>
+                        <strong>R$ 87,97</strong>
+                    </div>
+                    <div class="resumo-linha">
+                        <span>Desconto</span>
+                        <strong>− R$ 0,00</strong>
+                    </div>
+                    <div class="resumo-linha total">
+                        <span>Total</span>
+                        <strong>R$ 87,97</strong>
+                    </div>
+                </div>
+
+                <form class="cupom" onsubmit="return false">
+                    <label for="cupom">Cupom de desconto</label>
+                    <div class="cupom-campo">
+                        <input type="text" id="cupom" name="cupom" placeholder="Digite seu cupom">
+                        <button type="submit" class="btn-aplicar">Aplicar</button>
+                    </div>
+                </form>
+
+                <button type="button" class="btn-finalizar">Finalizar pedido</button>
+                <button type="button" class="btn-limpar">Esvaziar carrinho</button>
+            </aside>
+        </section>
+    </main>
 
     <!-- Rodapé-->
     <footer>
