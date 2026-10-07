@@ -1,35 +1,56 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Mogra&display=swap');
 
-
 :root{
     --fonte-principal: 'Inter', sans-serif;
     --cor-principal: #DB7093;
     --fonte-logo: 'Mogra', system-ui;
 }
 
+/* == configuração geral == */
+
 *{
     margin: 0;
     padding: 0;
-    overflow: hidden; 
+    box-sizing: border-box;
 }
 
+html,
+body{
+    width: 100%;
+    height: 100%;
+}
+
+body{
+    overflow: hidden;
+    scrollbar-width: none;
+}
+
+body::-webkit-scrollbar{
+    display: none;
+}
+
+
 /* == div pai == */
+
 .container-pai{
     display: flex;
+    width: 100%;
     height: 100vh;
 }
 
-/* == parte 1 ==  */
+
+/* == parte 1 == */
+
 .login-principal{
     flex: 1;
     display: flex;
     align-items: center;
     text-align: center;
     background-color: white;
-    height: 90vh;
-    justify-content: center; 
-    margin-top: 4rem;  
+    height: 100vh;
+    justify-content: center;
+    margin-top: 0;
 }
 
 .card{
@@ -38,11 +59,17 @@
     align-items: center;
 }
 
+
+/* == nome da empresa == */
+
 .nome-empresa{
     margin-bottom: 15px;
     font-family: var(--fonte-logo);
     font-weight: bold;
 }
+
+
+/* == título == */
 
 .titulo{
     margin-bottom: 25px;
@@ -51,15 +78,20 @@
 
 .titulo-{
     color: var(--cor-principal);
-    font-family:  var(--fonte-principal);
+    font-family: var(--fonte-principal);
 }
+
+
+/* == texto == */
 
 .texto-{
     color: gray;
     margin-bottom: 20px;
     font-family: var(--fonte-principal);
-    
 }
+
+
+/* == inputs == */
 
 .input-{
     display: flex;
@@ -70,6 +102,9 @@
     border-radius: 8px;
     border: 2px rgba(128, 128, 128, 0.219) solid;
 }
+
+
+/* == outras opções == */
 
 .outras-opcoes{
     display: flex;
@@ -94,7 +129,8 @@
     gap: 13px;
 }
 
-.botoes-1, .botoes-2{
+.botoes-1,
+.botoes-2{
     background-color: #F7F7F7;
     border: 2px #f7f7f7c8 solid;
     border-radius: 10px;
@@ -103,6 +139,7 @@
     margin-bottom: 2rem;
     box-shadow: 0px 4px 2px 0px rgba(0, 0, 0, 0.092);
 }
+
 
 /* == efeitos no botão == */
 
@@ -115,7 +152,7 @@
 .botoes-2:hover{
     transform: scale(1.009);
     opacity: 0.9;
-    cursor: pointer;    
+    cursor: pointer;
 }
 
 .botao-entrar:hover{
@@ -124,7 +161,8 @@
     cursor: pointer;
 }
 
-/* == parte dois ==   */
+
+/* == parte dois == */
 
 .img-icons{
     width: 18px;
@@ -155,6 +193,9 @@
     color: var(--cor-principal);
 }
 
+
+/* == imagem == */
+
 .login-dois{
     display: flex;
     flex-direction: column-reverse;
@@ -164,15 +205,18 @@
     flex: 1;
 }
 
-/* == config == */
+
+/* == configuração da imagem == */
 
 .fundo{
     border-top-left-radius: 28px;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     object-fit: cover;
-    
 }
+
+
+/* == labels == */
 
 .input-texto{
     display: flex;
@@ -182,6 +226,9 @@
     margin-bottom: 15px;
     color: rgb(82, 80, 80);
 }
+
+
+/* == checkbox == */
 
 .input-check{
     display: flex;
@@ -196,19 +243,128 @@
     margin-right: 10px;
 }
 
-.mensagem-erro {
-    display: block;
 
+/* == mensagem de erro == */
+
+.mensagem-erro{
+    display: block;
     width: 350px;
     max-width: 100%;
-
     margin: -10px auto 12px;
-
     text-align: left;
-
     color: #DB7093;
-
     font-family: var(--fonte-principal);
     font-size: 12px;
     font-weight: 600;
+}
+
+
+/* ========================================================= */
+/*                    RESPONSIVIDADE                         */
+/* ========================================================= */
+
+
+/* == telas grandes == */
+
+@media (min-height: 950px){
+
+    .card{
+        transform: scale(1);
+        transform-origin: center center;
+    }
+
+}
+
+
+/* == telas médias == */
+
+@media (max-height: 949px) and (min-width: 769px){
+
+    .card{
+        transform: scale(0.88);
+        transform-origin: center center;
+    }
+
+}
+
+
+/* == telas menores em desktop == */
+
+@media (max-height: 800px) and (min-width: 769px){
+
+    .card{
+        transform: scale(0.78);
+        transform-origin: center center;
+    }
+
+}
+
+
+/* ========================================================= */
+/*                       TABLET / CELULAR                    */
+/* ========================================================= */
+
+@media (max-width: 768px){
+
+    .container-pai{
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+    }
+
+    .login-principal{
+        width: 100%;
+        height: 75vh;
+        min-height: 0;
+        flex: none;
+        margin-top: 0;
+    }
+
+    .parte-dois{
+        width: 100%;
+        height: 25vh;
+        flex: none;
+    }
+
+    .login-dois{
+        width: 100%;
+        height: 100%;
+    }
+
+    .fundo{
+        width: 100%;
+        height: 100%;
+        border-top-left-radius: 28px;
+        object-fit: cover;
+    }
+
+    .card{
+        transform: scale(0.72);
+        transform-origin: center center;
+    }
+
+}
+
+
+/* == celulares menores == */
+
+@media (max-width: 768px) and (max-height: 750px){
+
+    .card{
+        transform: scale(0.62);
+        transform-origin: center center;
+    }
+
+}
+
+
+/* == celulares muito estreitos == */
+
+@media (max-width: 430px){
+
+    .card{
+        transform: scale(0.60);
+        transform-origin: center center;
+    }
+
 }
