@@ -59,18 +59,14 @@ body {
   min-height: 100vh;
 }
 
-/* ============================================================
-   MAIN
-   ============================================================ */
+
 main {
-  /* Removido padding fixo; cada seção controla o próprio espaço */
+
   display: flex;
   flex-direction: column;
 }
 
-/* ============================================================
-   HEADER — mobile-first
-   ============================================================ */
+
 header {
   position: absolute;
   top: 0;
@@ -79,7 +75,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;             /* permite quebra em telas pequenas */
+  flex-wrap: wrap;            
   gap: 0.5rem;
   padding: 1rem var(--padding-lateral);
   z-index: 100;
@@ -96,7 +92,6 @@ header {
   white-space: nowrap;
 }
 
-/* Barra de pesquisa — some em mobile para não poluir */
 .containerBarraPesquisa {
   display: none; /* oculta em mobile */
   align-items: center;
@@ -124,13 +119,12 @@ header {
   width: 100%;
 }
 
-/* ---- Hamburguer (checkbox hack) ---- */
-/* Esconde o checkbox real */
+
 .menuToggle {
   display: none;
 }
 
-/* Ícone hamburguer visível apenas em mobile */
+
 .menuHamburguer {
   display: flex;
   flex-direction: column;
@@ -149,7 +143,6 @@ header {
   transition: transform 0.3s, opacity 0.3s;
 }
 
-/* Animação do hamburguer → X ao abrir */
 .menuToggle:checked + .menuHamburguer span:nth-child(1) {
   transform: translateY(8.5px) rotate(45deg);
 }
@@ -160,9 +153,7 @@ header {
   transform: translateY(-8.5px) rotate(-45deg);
 }
 
-/* ---- Menu de navegação ---- */
 .menuNavegacao {
-  /* Mobile: menu oculto, ocupa largura toda quando aberto */
   width: 100%;
   max-height: 0;
   overflow: hidden;
@@ -171,14 +162,13 @@ header {
   border-radius: 8px;
 }
 
-/* Abre o menu quando o checkbox está marcado */
 .menuToggle:checked ~ .menuNavegacao {
   max-height: 400px;
 }
 
 .menu {
   display: flex;
-  flex-direction: column;  /* empilhado em mobile */
+  flex-direction: column;  
   align-items: center;
   gap: 1rem;
   padding: 1.2rem;
@@ -365,19 +355,19 @@ header {
   border-radius: 10px;
 }
 
-.animacaoCard:hover {
-  transform: scale(1.02);
-  transition: transform 0.3s ease;
-  opacity: 0.9;
-  cursor: pointer;
-}
-
 /* Imagem dos cards */
 .imagemCard {
   width: 100%;
   height: auto;
   border-radius: 8px;
   object-fit: cover;
+}
+
+.imagemCard:hover{
+  transform: translateY(-5px) scale(1.03); 
+  
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08); 
+  cursor: pointer;
 }
 
 .tituloCard {

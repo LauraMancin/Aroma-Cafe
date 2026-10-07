@@ -18,16 +18,13 @@
 html,
 body{
     width: 100%;
-    height: 100%;
+    min-height: 100vh; /* Permite que o body cresça dinamicamente */
 }
 
 body{
-    overflow: hidden;
-    scrollbar-width: none;
-}
-
-body::-webkit-scrollbar{
-    display: none;
+    background-color: white;
+    font-family: var(--fonte-principal);
+    /* Removido o overflow: hidden para permitir rolagem quando necessário */
 }
 
 
@@ -36,7 +33,7 @@ body::-webkit-scrollbar{
 .container-pai{
     display: flex;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh; /* Garante preenchimento completo sem travar a tela */
 }
 
 
@@ -46,34 +43,40 @@ body::-webkit-scrollbar{
     flex: 1;
     display: flex;
     align-items: center;
-    text-align: center;
-    background-color: white;
-    height: 100vh;
     justify-content: center;
-    margin-top: 0;
+    background-color: white;
+    min-height: 100vh;
+    padding: 40px 20px; /* Padding de segurança para telas pequenas de notebook */
+    overflow-y: auto; /* Se o formulário for maior que a tela, cria rolagem isolada nesta coluna */
 }
 
 .card{
     background-color: white;
-    padding: 40px;
+    width: 100%;
+    max-width: 400px; /* Mantém o formulário compacto e elegante */
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    text-align: center;
 }
 
 
 /* == nome da empresa == */
 
 .nome-empresa{
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     font-family: var(--fonte-logo);
     font-weight: bold;
+    font-size: 24px;
 }
 
 
 /* == título == */
 
 .titulo{
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     font-family: var(--fonte-principal);
+    font-size: 22px;
 }
 
 .titulo-{
@@ -90,6 +93,13 @@ body::-webkit-scrollbar{
     font-family: var(--fonte-principal);
 }
 
+.input-principal {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 
 /* == inputs == */
 
@@ -97,63 +107,15 @@ body::-webkit-scrollbar{
     display: flex;
     flex-direction: column;
     padding: 13px;
-    width: 350px;
-    margin-bottom: 15px;
+    width: 100%; /* Ocupa o tamanho máximo do card flexível */
+    max-width: 350px;
+    margin-bottom: 12px;
     border-radius: 8px;
     border: 2px rgba(128, 128, 128, 0.219) solid;
 }
 
 
-/* == outras opções == */
-
-.outras-opcoes{
-    display: flex;
-    margin-top: 20px;
-    flex-direction: row;
-    margin-bottom: 20px;
-    font-family: var(--fonte-principal);
-}
-
-.linha{
-    width: 240px;
-    margin-top: 9px;
-    margin-left: 10px;
-    height: 0.5px;
-    background-color: rgba(0, 0, 0, 0.308);
-}
-
-.outras-opcoes-apps{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 13px;
-}
-
-.botoes-1,
-.botoes-2{
-    background-color: #F7F7F7;
-    border: 2px #f7f7f7c8 solid;
-    border-radius: 10px;
-    padding: 5px;
-    width: 85px;
-    margin-bottom: 2rem;
-    box-shadow: 0px 4px 2px 0px rgba(0, 0, 0, 0.092);
-}
-
-
 /* == efeitos no botão == */
-
-.botoes-1:hover{
-    transform: scale(1.009);
-    opacity: 0.9;
-    cursor: pointer;
-}
-
-.botoes-2:hover{
-    transform: scale(1.009);
-    opacity: 0.9;
-    cursor: pointer;
-}
 
 .botao-entrar:hover{
     transform: scale(1.01);
@@ -164,16 +126,9 @@ body::-webkit-scrollbar{
 
 /* == parte dois == */
 
-.img-icons{
-    width: 18px;
-}
-
-.img-icons2{
-    width: 20px;
-}
-
 .botao-entrar{
-    width: 300px;
+    width: 100%;
+    max-width: 350px;
     padding: 14px;
     font-family: var(--fonte-principal);
     background-color: var(--cor-principal);
@@ -181,7 +136,9 @@ body::-webkit-scrollbar{
     border-radius: 8px;
     border: 1px var(--cor-principal) solid;
     font-weight: bold;
+    margin-top: 10px;
     margin-bottom: 20px;
+    transition: transform 0.2s, opacity 0.2s;
 }
 
 .botao-texto{
@@ -191,18 +148,27 @@ body::-webkit-scrollbar{
 
 .link{
     color: var(--cor-principal);
+    text-decoration: none;
+}
+
+.link:hover {
+    text-decoration: underline;
 }
 
 
 /* == imagem == */
 
 .login-dois{
-    display: flex;
-    flex-direction: column-reverse;
+    width: 100%;
+    height: 100%;
 }
 
 .parte-dois{
     flex: 1;
+    display: block;
+    height: 100vh;
+    position: sticky;
+    top: 0;
 }
 
 
@@ -211,7 +177,7 @@ body::-webkit-scrollbar{
 .fundo{
     border-top-left-radius: 28px;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -219,11 +185,14 @@ body::-webkit-scrollbar{
 /* == labels == */
 
 .input-texto{
-    display: flex;
+    display: block;
+    width: 100%;
+    max-width: 350px;
+    text-align: left;
     font-size: 12px;
     font-family: var(--fonte-principal);
     font-weight: bold;
-    margin-bottom: 15px;
+    margin-bottom: 6px;
     color: rgb(82, 80, 80);
 }
 
@@ -232,15 +201,20 @@ body::-webkit-scrollbar{
 
 .input-check{
     display: flex;
-    margin-top: 20px;
-    margin-bottom: 1.5rem;
+    align-items: center;
+    width: 100%;
+    max-width: 350px;
+    margin-top: 10px;
+    margin-bottom: 1.2rem;
     font-family: var(--fonte-principal);
-    font-size: 14px;
+    font-size: 13px;
     color: black;
+    text-align: left;
 }
 
 .check{
     margin-right: 10px;
+    cursor: pointer;
 }
 
 
@@ -248,9 +222,9 @@ body::-webkit-scrollbar{
 
 .mensagem-erro{
     display: block;
-    width: 350px;
-    max-width: 100%;
-    margin: -10px auto 12px;
+    width: 100%;
+    max-width: 350px;
+    margin: -8px auto 10px;
     text-align: left;
     color: #DB7093;
     font-family: var(--fonte-principal);
@@ -263,108 +237,38 @@ body::-webkit-scrollbar{
 /*                    RESPONSIVIDADE                         */
 /* ========================================================= */
 
-
-/* == telas grandes == */
-
-@media (min-height: 950px){
-
-    .card{
-        transform: scale(1);
-        transform-origin: center center;
+/* Notebooks e telas menores de Desktop (Remove problemas de quebra de altura) */
+@media (max-height: 800px) and (min-width: 769px) {
+    .login-principal {
+        padding: 20px 10px;
     }
-
+    .nome-empresa { margin-bottom: 5px; }
+    .titulo { margin-bottom: 15px; }
+    .input-texto { margin-bottom: 4px; }
+    .input- { margin-bottom: 8px; padding: 10px; }
 }
 
-
-/* == telas médias == */
-
-@media (max-height: 949px) and (min-width: 769px){
-
-    .card{
-        transform: scale(0.88);
-        transform-origin: center center;
-    }
-
-}
-
-
-/* == telas menores em desktop == */
-
-@media (max-height: 800px) and (min-width: 769px){
-
-    .card{
-        transform: scale(0.78);
-        transform-origin: center center;
-    }
-
-}
-
-
-/* ========================================================= */
-/*                       TABLET / CELULAR                    */
-/* ========================================================= */
-
+/* Tablets e Celulares */
 @media (max-width: 768px){
 
     .container-pai{
         flex-direction: column;
-        width: 100%;
-        height: 100vh;
+        min-height: 100vh;
     }
 
     .login-principal{
         width: 100%;
-        height: 75vh;
-        min-height: 0;
-        flex: none;
-        margin-top: 0;
+        min-height: auto;
+        flex: 1;
+        padding: 40px 20px;
     }
 
+    /* Esconde a imagem lateral no celular para focar no formulário extenso */
     .parte-dois{
-        width: 100%;
-        height: 25vh;
-        flex: none;
-    }
-
-    .login-dois{
-        width: 100%;
-        height: 100%;
-    }
-
-    .fundo{
-        width: 100%;
-        height: 100%;
-        border-top-left-radius: 28px;
-        object-fit: cover;
+        display: none; 
     }
 
     .card{
-        transform: scale(0.72);
-        transform-origin: center center;
+        max-width: 100%;
     }
-
-}
-
-
-/* == celulares menores == */
-
-@media (max-width: 768px) and (max-height: 750px){
-
-    .card{
-        transform: scale(0.62);
-        transform-origin: center center;
-    }
-
-}
-
-
-/* == celulares muito estreitos == */
-
-@media (max-width: 430px){
-
-    .card{
-        transform: scale(0.60);
-        transform-origin: center center;
-    }
-
 }
