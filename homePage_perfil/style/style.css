@@ -10,6 +10,16 @@
    /* ============================================================
       VARIÁVEIS GLOBAIS
       ============================================================ */
+
+      html,
+      body {
+          scrollbar-width: none; /* Firefox */
+      }
+      
+      html::-webkit-scrollbar,
+      body::-webkit-scrollbar {
+          display: none; /* Chrome, Edge e Safari */
+      }
    
    :root {
      --cor-principal: #DB7093;
