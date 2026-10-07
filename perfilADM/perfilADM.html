@@ -13,30 +13,30 @@
             <p> Administração </p>
         </div>
         <nav>
-            <li> <img src="./image/home.png" alt="Icone de casa">
-            <label> Visão Geral </label> </li>
-            <li> <img src="./image/carrinho.png" alt="Icone de uma Pessoa">
-            <label class="tab" data-tab="produtos"> Produtos </label> </li>
-            <li> <img src="./image/gato.png" alt="Icone de Gato">
-            <label> Gatos </label></li>
-            <li> <img src="./image/bell.png" alt="Icone de Sino">
-            <label> Notificações </label></li>
-            <li> <img src="./image/settings.png" alt="Icone de Engrenagem">
-            <label> Configurações </label></li>
-            <li> <img src="./image/exit.png" alt="Icone para sair da conta">
-            <label class="botaoSair" id="botaoSair"  onclick="sairDaConta()" style="cursor: pointer;" href="../homePage/index.html"> Sair da Conta </label> </li>
+            <li> <a href="./perfilADM.html"> Visão Geral </a> </li>
+            <li> <a href="./produtos.html"> Produtos </a> </li>
+            <li> <a href="./gatos.html"> Gatos </a></li>
+            <li> <a href="./notificacao.html"> Notificações </a></li>
+            <li> <a href="./configuracao.html"> Configurações </a></li>
         </nav>
-    </section>
 
-    <main class="paginaInicial">
+        <div class="btn-sair">
+            <p class="botaoSair" id="botaoSair"  onclick="sairDaConta()" style="cursor: pointer;" href="../homePage/index.html"> Sair da Conta </p>
+            <img src="./image/exit.png" alt="Icone para sair da conta" class="icone">
+        </div>
+        </section>
+        
+     <main class="paginaInicial">
         <section class="container1">
             <div class="container1-header">
-                <p> terça-feira, 06 de outubro </p>
-                <h1> Bem-vindo, Administrador! </h1>
-                <p> Aqui está um resumo do que está acontecendo hoje </p>
+                <div>
+                    <small> terça-feira, 06 de outubro </small>
+                    <h1> Bem-vindo, Administrador! </h1>
+                    <p class="descricao"> Aqui está um resumo do que está acontecendo hoje </p>
+                </div>
 
                 <div class="container-buttons">
-                    <button class="btn-produto"  onclick="abrirModal()"> <span> + </span> Novo produto </button>
+                    <button class="btn-produto"  onclick="abrirModal()"> <img src="./image/box-add.png" alt="Símbolo de caixa"> Novo produto </button>
                     <button class="btn-adocao" onclick="abrirModal()"> <img src="./image/heart.png" alt="Símbolo de Coração"> Nova adoção </button>
                 </div>
             </div>
@@ -44,16 +44,32 @@
             <div class="container2">
                 <div class="container2-cards">
                     <div class="card">
-                        <small> Gatos no café </small>
-                        <h2> 9 </h2>
-                        <p> 8 disponíveis para adoção </p>
+                        <div class="icone-fundo-gato">
+                            <img src="./image/cat.png" class="icone-gato">
+                        </div>
+                        <div class="descricao">
+                            <small> Gatos no café </small>
+                            <h2> 9 </h2>
+                            <p> 8 disponíveis para adoção </p>
+                        </div>
                     </div>
                     <div class="card">
-                        <small> Reservas de hoje </small>
-                        <h2> 15 </h2>
-                        <p> 6 horários disponíveis </p>
+                         <div class="icone-fundo-calendario">
+                            <img src="./image/calendar.png" class="icone-calendario">
+                        </div>
+                        <div class="descricao">
+                            <small> Reservas de hoje </small>
+                            <h2> 15 </h2>
+                            <p> 6 horários disponíveis </p>
+                        </div>
                     </div>
                     <div class="card">
+                        <div class="icone-fundo-produto">
+                            <img src="./image/coffee.png" class="icone-produto">
+                        </div>
+                        <div>
+                            
+                        </div>
                         <small> Produtos em estoque </small>
                         <h2> 120 </h2>
                         <p> 20 produtos em falta </p>
@@ -66,73 +82,69 @@
             </div>
         </section>
 
-        <section class="container3">
-            <div class="container3-header">
-                <h2> Ações rápidas </h2>
-                <p> Atalhos para as tarefas mais frequentes </p>
-            </div>
-
-            <div class="container3-cards">
-                <div class="card-atalho">
-                    <img src="./image/box-add.png" alt="Simbolo de uma caixa com um sinal de adição">
-                    <h3> Novo Produto </h3>
-                    <p> Adicionar ao catálogo </p>
-                    <img src="./image/angle-right.png" alt="Simbolo de seta para a direita" class="seta-img">
+        <section class="reparticao">
+            <section class="container3">
+                <div class="container3-header">
+                    <h2> Ações rápidas </h2>
+                    <p> Atalhos para as tarefas mais frequentes </p>
                 </div>
-                <div class="card-atalho">
-                    <img src="./image/cat.png" alt="Simbolo de um gato">
-                    <h3> Cadastrar gato </h3>
-                    <p> Novo residente </p>
-                    <img src="./image/angle-right.png" alt="Simbolo de seta para a direita" class="seta-img">
+    
+                <div class="container3-cards">
+                    <div class="card-atalho">
+                        <img src="./image/box-add.png" alt="Simbolo de uma caixa com um sinal de adição">
+                        <h3> Novo Produto </h3>
+                        <p> Adicionar ao catálogo </p>
+                        <img src="./image/angle-right.png" alt="Simbolo de seta para a direita" class="seta-img">
+                    </div>
+                    <div class="card-atalho">
+                        <img src="./image/cat.png" alt="Simbolo de um gato">
+                        <h3> Cadastrar gato </h3>
+                        <p> Novo residente </p>
+                        <img src="./image/angle-right.png" alt="Simbolo de seta para a direita" class="seta-img">
+                    </div>
+                    <div class="card-atalho">
+                        <img src="./image/heart.png" alt="Simbolo de um coração">
+                        <h3> Nova adoção </h3>
+                        <p> Registrar processo </p>
+                        <img src="./image/angle-right.png" alt="Simbolo de seta para a direita" class="seta-img">
+                    </div>
+                    <div class="card-atalho">
+                        <img src="./image/calendar.png" alt="Simbolo de um calendário">
+                        <h3> Agendar reserva </h3>
+                        <p> Agende um horário </p>
+                        <img src="./image/angle-right.png" alt="Simbolo de seta para a direita" class="seta-img">
+                    </div>
                 </div>
-                <div class="card-atalho">
-                    <img src="./image/heart.png" alt="Simbolo de um coração">
-                    <h3> Nova adoção </h3>
-                    <p> Registrar processo </p>
-                    <img src="./image/angle-right.png" alt="Simbolo de seta para a direita" class="seta-img">
+            </section>
+    
+            <section class="container4">
+                <div class="container4-header">
+                    <h2> Atividades recentes </h2>
+                    <p> Últimas atualizações </p>
                 </div>
-                <div class="card-atalho">
-                    <img src="./image/calendar.png" alt="Simbolo de um calendário">
-                    <h3> Agendar reserva </h3>
-                    <p> Agende um horário </p>
-                    <img src="./image/angle-right.png" alt="Simbolo de seta para a direita" class="seta-img">
+    
+                <div class="container4-infos">
+                    <div class="info">
+                        <img src="./image/heart.png" alt="Simbolo de um coração">
+                        <h3> Nova solicitação de adoção </h3>
+                        <p> Mariane quer conhecer a Amora </p>
+                        <small> Há 12 min </small>
+                    </div>
+                    <div class="info">
+                        <img src="./image/box-add.png" alt="Simbolo de uma caixa com um sinal de adição">
+                        <h3> Estoque abaixo do minimo </h3>
+                        <p> Café especial - restam 4 unidades </p>
+                        <small> Há 1h </small>
+                    </div>
+                    <div class="info">
+                        <img src="./image/calendar.png" alt="Simbolo de calendário">
+                        <h3> Reserva confirmada </h3>
+                        <p> Lucas - hoje às 15:30 </p>
+                        <small> Há 2h </small>
+                    </div>
                 </div>
-            </div>
+            </section>
         </section>
-
-        <section class="container4">
-            <div class="container4-header">
-                <h2> Atividades recentes </h2>
-                <p> Últimas atualizações </p>
-            </div>
-
-            <div class="container4-infos">
-                <div class="info">
-                    <img src="./image/heart.png" alt="Simbolo de um coração">
-                    <h3> Nova solicitação de adoção </h3>
-                    <p> Mariane quer conhecer a Amora </p>
-                    <small> Há 12 min </small>
-                </div>
-                <div class="info">
-                    <img src="./image/box-add.png" alt="Simbolo de uma caixa com um sinal de adição">
-                    <h3> Estoque abaixo do minimo </h3>
-                    <p> Café especial - restam 4 unidades </p>
-                    <small> Há 1h </small>
-                </div>
-                <div class="info">
-                    <img src="./image/calendar.png" alt="Simbolo de calendário">
-                    <h3> Reserva confirmada </h3>
-                    <p> Lucas - hoje às 15:30 </p>
-                    <small> Há 2h </small>
-                </div>
-            </div>
-        </section>
-
-        <section class="content active" id="produtos">
-            <p> produto </p>
-        </section>
-
-
     </main>
     <script src="./js/script.js"></script>
 

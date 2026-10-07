@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
-    // Campos na ordem do seu HTML
     const email = campos[0];
     const confirmarEmail = campos[1];
     const senha = campos[2];
@@ -19,19 +18,151 @@ document.addEventListener('DOMContentLoaded', () => {
     const corNormal = '#DB7093';
     const corApagada = '#d99aae';
 
+
+    // =========================
+    // VERIFICAR BOTÃO
+    // =========================
+
+    function atualizarBotao() {
+
+        const todosPreenchidos = Array.from(campos).every(
+            campo => campo.value.trim() !== ''
+        );
+
+        const termosAceitos = check && check.checked;
+
+        if (todosPreenchidos && termosAceitos) {
+
+            botao.style.backgroundColor = corNormal;
+            botao.style.borderColor = corNormal;
+            botao.style.opacity = '1';
+            botao.style.cursor = 'pointer';
+
+        } else {
+
+            botao.style.backgroundColor = corApagada;
+            botao.style.borderColor = corApagada;
+            botao.style.opacity = '0.7';
+            botao.style.cursor = 'not-allowed';
+        }
+    }
+
+
+    // =========================
+    // VALIDAR E-MAIL
+    // =========================
+
+    function emailValido(valor) {
+
+        valor = valor.trim().toLowerCase();
+
+        const formato =
+            /^[a-z0-9._%+-]+@[a-z0-9.-]+\.com$/;
+
+        if (!formato.test(valor)) {
+            return false;
+        }
+
+        const dominiosPermitidos = [
+            'gmail.com',
+            'hotmail.com',
+            'outlook.com',
+            'yahoo.com',
+            'icloud.com',
+            'live.com',
+            'protonmail.com'
+        ];
+
+        const dominio = valor.split('@')[1];
+
+        return dominiosPermitidos.includes(dominio);
+    }
+
+
+    // =========================
+    // VALIDAR SENHA
+    // =========================
+
+    function senhaValida(valor) {
+
+        // Pelo menos:
+        // 8 caracteres
+        // 1 letra maiúscula
+        // 1 letra minúscula
+        // 1 número
+        // 1 símbolo
+
+        const tamanhoMinimo = valor.length >= 8;
+        const temMaiuscula = /[A-Z]/.test(valor);
+        const temMinuscula = /[a-z]/.test(valor);
+        const temNumero = /[0-9]/.test(valor);
+        const temSimbolo = /[^A-Za-z0-9]/.test(valor);
+
+        return (
+            tamanhoMinimo &&
+            temMaiuscula &&
+            temMinuscula &&
+            temNumero &&
+            temSimbolo
+        );
+    }
+
+
+    // =========================
+    // MOSTRAR ERRO
+    // =========================
+
+    function mostrarErro(campo, mensagem) {
+
+        const erroAnterior = campo.nextElementSibling;
+
+        if (
+            erroAnterior &&
+            erroAnterior.classList.contains('mensagem-erro')
+        ) {
+            erroAnterior.remove();
+        }
+
+        const erro = document.createElement('small');
+
+        erro.classList.add('mensagem-erro');
+        erro.textContent = mensagem;
+
+        campo.insertAdjacentElement('afterend', erro);
+
+        campo.classList.add('campo-invalido');
+    }
+
+
+    // =========================
+    // REMOVER ERRO
+    // =========================
+
+    function removerErro(campo) {
+
+        const erro = campo.nextElementSibling;
+
+        if (
+            erro &&
+            erro.classList.contains('mensagem-erro')
+        ) {
+            erro.remove();
+        }
+
+        campo.classList.remove('campo-invalido');
+    }
+
+
     // =========================
     // MÁSCARA DO TELEFONE
     // =========================
 
     telefone.addEventListener('input', () => {
 
-        // Remove tudo que não for número
         let valor = telefone.value.replace(/\D/g, '');
 
-        // Limita a 11 números
         valor = valor.substring(0, 11);
 
-        // Formata o telefone
         if (valor.length > 6) {
 
             valor = valor.replace(
@@ -61,92 +192,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // =========================
-    // VERIFICA SE ESTÁ TUDO PREENCHIDO
+    // INPUTS
     // =========================
 
-    function atualizarBotao() {
-
-        const todosPreenchidos = Array.from(campos).every(
-            campo => campo.value.trim() !== ''
-        );
-
-        const termosAceitos = check ? check.checked : false;
-
-        if (todosPreenchidos && termosAceitos) {
-
-            botao.style.backgroundColor = corNormal;
-            botao.style.borderColor = corNormal;
-            botao.style.opacity = '1';
-            botao.style.cursor = 'pointer';
-
-        } else {
-
-            botao.style.backgroundColor = corApagada;
-            botao.style.borderColor = corApagada;
-            botao.style.opacity = '0.7';
-            botao.style.cursor = 'not-allowed';
-        }
-    }
-
-
-    // Atualiza o botão enquanto o usuário digita
     campos.forEach(campo => {
-        campo.addEventListener('input', atualizarBotao);
-    });
-
-    if (check) {
-        check.addEventListener('change', atualizarBotao);
-    }
-
-
-    // =========================
-    // MOSTRAR ERRO
-    // =========================
-
-    function mostrarErro(campo, mensagem = 'Preencha esse campo') {
-
-        // Evita criar várias mensagens
-        if (
-            campo.nextElementSibling &&
-            campo.nextElementSibling.classList.contains('mensagem-erro')
-        ) {
-            return;
-        }
-
-        const erro = document.createElement('small');
-
-        erro.classList.add('mensagem-erro');
-        erro.textContent = mensagem;
-
-        campo.insertAdjacentElement('afterend', erro);
-
-        campo.style.borderColor = corNormal;
 
         campo.addEventListener('input', () => {
 
-            if (erro) {
-                erro.remove();
-            }
+            removerErro(campo);
+            atualizarBotao();
 
-            campo.style.borderColor = '';
-
-        }, { once: true });
-    }
-
-
-    // =========================
-    // REMOVER ERROS ANTIGOS
-    // =========================
-
-    function limparErros() {
-
-        document.querySelectorAll('.mensagem-erro').forEach(erro => {
-            erro.remove();
         });
 
-        campos.forEach(campo => {
-            campo.style.borderColor = '';
+    });
+
+
+    if (check) {
+
+        check.addEventListener('change', () => {
+            atualizarBotao();
         });
+
     }
 
 
@@ -158,29 +224,67 @@ document.addEventListener('DOMContentLoaded', () => {
 
         evento.preventDefault();
 
-        limparErros();
 
+        // -------------------------
+        // E-MAIL
+        // -------------------------
 
-        // E-mail
         if (email.value.trim() === '') {
 
-            mostrarErro(email);
+            mostrarErro(
+                email,
+                'Preencha esse campo'
+            );
+
             email.focus();
             return;
         }
 
 
-        // Confirmação do e-mail
+        if (!emailValido(email.value)) {
+
+            mostrarErro(
+                email,
+                'Digite um e-mail válido'
+            );
+
+            email.focus();
+            return;
+        }
+
+
+        // -------------------------
+        // CONFIRMAR E-MAIL
+        // -------------------------
+
         if (confirmarEmail.value.trim() === '') {
 
-            mostrarErro(confirmarEmail);
+            mostrarErro(
+                confirmarEmail,
+                'Preencha esse campo'
+            );
+
             confirmarEmail.focus();
             return;
         }
 
 
-        // Verifica se os e-mails são iguais
-        if (email.value.trim() !== confirmarEmail.value.trim()) {
+        if (!emailValido(confirmarEmail.value)) {
+
+            mostrarErro(
+                confirmarEmail,
+                'Digite um e-mail válido'
+            );
+
+            confirmarEmail.focus();
+            return;
+        }
+
+
+        if (
+            email.value.trim().toLowerCase() !==
+            confirmarEmail.value.trim().toLowerCase()
+        ) {
 
             mostrarErro(
                 confirmarEmail,
@@ -192,25 +296,54 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
 
-        // Senha
+        // -------------------------
+        // SENHA
+        // -------------------------
+
         if (senha.value.trim() === '') {
 
-            mostrarErro(senha);
+            mostrarErro(
+                senha,
+                'Preencha esse campo'
+            );
+
             senha.focus();
             return;
         }
 
 
-        // Confirmação da senha
+        // -------------------------
+        // SEGURANÇA DA SENHA
+        // -------------------------
+
+        if (!senhaValida(senha.value)) {
+
+            mostrarErro(
+                senha,
+                'A senha deve ter 8 caracteres, letra maiúscula, letra minúscula, número e símbolo'
+            );
+
+            senha.focus();
+            return;
+        }
+
+
+        // -------------------------
+        // CONFIRMAR SENHA
+        // -------------------------
+
         if (confirmarSenha.value.trim() === '') {
 
-            mostrarErro(confirmarSenha);
+            mostrarErro(
+                confirmarSenha,
+                'Preencha esse campo'
+            );
+
             confirmarSenha.focus();
             return;
         }
 
 
-        // Verifica se as senhas são iguais
         if (senha.value !== confirmarSenha.value) {
 
             mostrarErro(
@@ -223,28 +356,58 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
 
-        // Data de nascimento
-        if (dataNascimento.value.trim() === '') {
+        // -------------------------
+        // DATA DE NASCIMENTO
+        // -------------------------
 
-            mostrarErro(dataNascimento);
+        if (dataNascimento.value === '') {
+
+            mostrarErro(
+                dataNascimento,
+                'Preencha esse campo'
+            );
+
             dataNascimento.focus();
             return;
         }
 
 
-        // Telefone
+        // -------------------------
+        // IDADE
+        // -------------------------
+
+        if (!tem18AnosOuMais(dataNascimento.value)) {
+
+            mostrarErro(
+                dataNascimento,
+                'Você precisa ter 18 anos ou mais'
+            );
+
+            dataNascimento.focus();
+            return;
+        }
+
+
+        // -------------------------
+        // TELEFONE
+        // -------------------------
+
         if (telefone.value.trim() === '') {
 
-            mostrarErro(telefone);
+            mostrarErro(
+                telefone,
+                'Preencha esse campo'
+            );
+
             telefone.focus();
             return;
         }
 
 
-        // Verifica se o telefone tem 11 números
-        const numeroTelefone = telefone.value.replace(/\D/g, '');
+        const numeroTelefone =
+            telefone.value.replace(/\D/g, '');
 
-        if (numeroTelefone.length < 11) {
+        if (numeroTelefone.length !== 11) {
 
             mostrarErro(
                 telefone,
@@ -256,31 +419,72 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
 
-        // Termos
-        if (!check || !check.checked) {
+        // -------------------------
+        // TERMOS
+        // -------------------------
 
-            if (check) {
-                check.focus();
-            }
+        if (!check.checked) {
 
-            alert('Você precisa aceitar os termos de privacidade.');
+            alert(
+                'Você precisa aceitar os termos de privacidade.'
+            );
+
+            check.focus();
             return;
         }
 
 
         // =========================
-        // CADASTRO CONCLUÍDO
+        // CADASTRO APROVADO
         // =========================
 
-        // Só marca como logado depois de passar por todas as validações
-        localStorage.setItem('usuarioLogado', 'true');
+        localStorage.setItem(
+            'usuarioLogado',
+            'true'
+        );
 
-        // Vai para a tela de login
-        window.location.href = '../login/login.html';
+        window.location.href =
+            '../login/login.html';
+
     });
 
 
-    // Estado inicial do botão
+    // =========================
+    // VERIFICAR IDADE
+    // =========================
+
+    function tem18AnosOuMais(data) {
+
+        const nascimento =
+            new Date(data + 'T00:00:00');
+
+        if (isNaN(nascimento.getTime())) {
+            return false;
+        }
+
+        const hoje = new Date();
+
+        let idade =
+            hoje.getFullYear() -
+            nascimento.getFullYear();
+
+        const mes =
+            hoje.getMonth() -
+            nascimento.getMonth();
+
+        if (
+            mes < 0 ||
+            (mes === 0 &&
+             hoje.getDate() < nascimento.getDate())
+        ) {
+            idade--;
+        }
+
+        return idade >= 18;
+    }
+
+
+    // Estado inicial
     atualizarBotao();
 
 });

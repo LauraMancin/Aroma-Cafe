@@ -1,42 +1,107 @@
 <!DOCTYPE html>
+
 <html lang="pt-br">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="./styles/style.css">
-    <link rel="shortcut icon" href="../login/src/iconLogin.png" type="image/x-icon">
+
+    <link
+        rel="shortcut icon"
+        href="../login/src/iconLogin.png"
+        type="image/x-icon"
+    >
 
     <title>Faça seu Cadastro</title>
+
 </head>
+
 <body>
+
     <div class="container-pai">
+
         <section class="login-principal">
+
             <div class="card">
 
-                <p class="nome-empresa">Aroma café</p>
+                <p class="nome-empresa">
+                    Aroma café
+                </p>
 
-                <h2 class="titulo"><span class="titulo-">Cadastre-se</span> e encontre seu <span class="titulo-">café</span></h2>
+                <h2 class="titulo">
+                    <span class="titulo-">
+                        Cadastre-se
+                    </span>
+                    e encontre seu
+                    <span class="titulo-">
+                        café
+                    </span>
+                </h2>
 
                 <form class="input-principal">
-                    <label class="input-texto">E-mail</label>
-                    <input type="email" placeholder="exemplo@email.com.br" class="input-">
 
-                    <label class="input-texto">Confirmar e-mail</label>
-                    <input type="email" placeholder="confirmar e-mail" class="input-">
+                    <label class="input-texto">
+                        E-mail
+                    </label>
 
-                    <label class="input-texto">Senha</label>
-                    <input type="password" placeholder="senha"
-                    class="input-">
+                    <input
+                        type="email"
+                        placeholder="exemplo@email.com.br"
+                        class="input-"
+                    >
 
-                    <label class="input-texto">Confirmar senha</label>
-                    <input type="password" placeholder="confirmar senha"
-                    class="input-">
+                    <label class="input-texto">
+                        Confirmar e-mail
+                    </label>
 
-                    <label class="input-texto">Data de nascimento</label>
-                    <input type="date" placeholder="data de nascimento"
-                    class="input-">
+                    <input
+                        type="email"
+                        placeholder="confirmar e-mail"
+                        class="input-"
+                    >
 
-                    <label class="input-texto">Telefone</label>
+                    <label class="input-texto">
+                        Senha
+                    </label>
+
+                    <input
+                        type="password"
+                        placeholder="senha"
+                        class="input-"
+                        minlength="8"
+                        maxlength="8"
+                    >
+
+                    <label class="input-texto">
+                        Confirmar senha
+                    </label>
+
+                    <input
+                        type="password"
+                        placeholder="confirmar senha"
+                        class="input-"
+                        minlength="8"
+                        maxlength="8"
+                    >
+
+                    <label class="input-texto">
+                        Data de nascimento
+                    </label>
+
+                    <input
+                        type="date"
+                        placeholder="data de nascimento"
+                        class="input-"
+                    >
+
+                    <label class="input-texto">
+                        Telefone
+                    </label>
+
                     <input
                         class="input-"
                         type="tel"
@@ -46,35 +111,59 @@
                     >
 
                     <label class="input-check">
-                    <input type="checkbox" class="check">Eu li e aceito os termos de privacidade.
+
+                        <input
+                            type="checkbox"
+                            class="check"
+                        >
+
+                        Eu li e aceito os termos de privacidade.
+
                     </label>
-                </form> 
 
-                    <button type="button" class="botao-entrar">
-                         Cadastre-se
-                    </button>
+                </form>
 
-                    <p class="botao-texto">Tem conta? <a href="../login/login.html" class="link">Entre</a></p>
+                <button
+                    type="button"
+                    class="botao-entrar"
+                >
+                    Cadastre-se
+                </button>
+
+                <p class="botao-texto">
+                    Tem conta?
+
+                    <a
+                        href="../login/login.html"
+                        class="link"
+                    >
+                        Entre
+                    </a>
+                </p>
 
             </div>
+
         </section>
 
-
         <section class="parte-dois">
-            
+
             <div class="login-dois">
-                <img src="../login/src/fundo.png" alt="Aroma café imagem" class="fundo">
+
+                <img
+                    src="../login/src/fundo.png"
+                    alt="Aroma café imagem"
+                    class="fundo"
+                >
+
             </div>
 
         </section>
 
     </div>
 
-    <script>
-        localStorage.setItem('usuarioLogado', 'true');
-    </script>
-
     <script src="./script.js"></script>
 
 </body>
+
 </html>
+

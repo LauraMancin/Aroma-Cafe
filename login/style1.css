@@ -19,17 +19,17 @@
 
 html {
     width: 100%;
-    min-height: 100%;
+    height: 100%;
 }
 
 body {
     width: 100%;
-    min-height: 100vh;
+    height: 100%;
     font-family: var(--fonte-principal);
 
     /* Esconde a barra de rolagem */
     scrollbar-width: none;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 body::-webkit-scrollbar {
@@ -43,7 +43,10 @@ body::-webkit-scrollbar {
 .container-pai {
     display: flex;
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
+    height: 100dvh;
+
+    overflow: hidden;
 }
 
 /* =========================
@@ -53,6 +56,7 @@ body::-webkit-scrollbar {
 .login-principal {
     flex: 1;
     min-width: 0;
+    min-height: 0;
 
     display: flex;
     align-items: center;
@@ -62,6 +66,8 @@ body::-webkit-scrollbar {
     background-color: white;
 
     padding: clamp(20px, 4vw, 60px);
+
+    overflow: hidden;
 }
 
 .card {
@@ -69,6 +75,12 @@ body::-webkit-scrollbar {
     max-width: 430px;
 
     padding: clamp(10px, 2vw, 30px);
+
+    /* IMPORTANTE:
+       não esconder o conteúdo do card */
+    overflow: visible;
+
+    transform-origin: center center;
 }
 
 /* =========================
@@ -81,7 +93,6 @@ body::-webkit-scrollbar {
     font-family: var(--fonte-logo);
     font-weight: bold;
 
-    /* Nunca fica gigante */
     font-size: clamp(22px, 2vw, 30px);
 }
 
@@ -91,7 +102,6 @@ body::-webkit-scrollbar {
     font-family: var(--fonte-principal);
     font-weight: 700;
 
-    /* Tamanho médio e fluido */
     font-size: clamp(22px, 2.2vw, 30px);
 
     line-height: 1.2;
@@ -339,8 +349,9 @@ body::-webkit-scrollbar {
 .parte-dois {
     flex: 1;
     min-width: 0;
+    min-height: 0;
 
-    min-height: 100vh;
+    height: 100%;
 }
 
 .login-dois {
@@ -348,22 +359,28 @@ body::-webkit-scrollbar {
     height: 100%;
 
     display: flex;
+
+    overflow: hidden;
 }
 
 .fundo {
     display: block;
 
     width: 100%;
-    height: 100vh;
+    height: 100%;
+
+    min-width: 100%;
+    min-height: 100%;
 
     object-fit: cover;
+    object-position: center;
 
     border-top-left-radius: 28px;
 }
 
-/* =========================
+/* =============================
    TELAS GRANDES
-========================= */
+============================= */
 
 @media (min-width: 1400px) {
 
@@ -380,6 +397,42 @@ body::-webkit-scrollbar {
     }
 }
 
+/* =============================
+   TELAS ALTAS
+============================= */
+
+@media (min-height: 850px) and (min-width: 901px) {
+
+    .card {
+        transform: scale(1);
+    }
+}
+
+/* =============================
+   TELAS DESKTOP MAIS BAIXAS
+============================= */
+
+@media (min-height: 700px) and (max-height: 849px) and (min-width: 901px) {
+
+    .card {
+        transform: scale(0.94);
+    }
+}
+
+@media (min-height: 600px) and (max-height: 699px) and (min-width: 901px) {
+
+    .card {
+        transform: scale(0.86);
+    }
+}
+
+@media (max-height: 599px) and (min-width: 901px) {
+
+    .card {
+        transform: scale(0.78);
+    }
+}
+
 /* =========================
    TABLETS
 ========================= */
@@ -388,15 +441,22 @@ body::-webkit-scrollbar {
 
     .container-pai {
         flex-direction: column;
+
+        height: 100dvh;
     }
 
-    /* Imagem em cima */
+    /* =====================
+       IMAGEM EM CIMA
+    ===================== */
+
     .parte-dois {
         order: 1;
 
         width: 100%;
-        min-height: 35vh;
-        height: 35vh;
+        height: 30dvh;
+
+        min-height: 0;
+        flex: 0 0 30dvh;
     }
 
     .login-dois {
@@ -406,24 +466,47 @@ body::-webkit-scrollbar {
 
     .fundo {
         width: 100%;
-        height: 35vh;
-        min-height: 250px;
+        height: 100%;
+
+        min-width: 100%;
+        min-height: 100%;
+
+        object-fit: cover;
 
         border-radius: 0 0 28px 28px;
     }
 
-    /* Login embaixo */
+    /* =====================
+       LOGIN EMBAIXO
+    ===================== */
+
     .login-principal {
         order: 2;
 
         width: 100%;
-        min-height: 65vh;
+        height: 70dvh;
 
-        padding: 40px 20px;
+        min-height: 0;
+
+        flex: 1 1 70dvh;
+
+        padding: 20px;
+
+        overflow: hidden;
     }
 
     .card {
         max-width: 430px;
+
+        padding: 5px;
+
+        transform: scale(
+            clamp(
+                0.72,
+                calc(70dvh / 600px),
+                1
+            )
+        );
     }
 }
 
@@ -434,27 +517,35 @@ body::-webkit-scrollbar {
 @media (max-width: 600px) {
 
     .parte-dois {
-        height: 30vh;
-        min-height: 200px;
+        height: 27dvh;
+        flex-basis: 27dvh;
     }
 
     .fundo {
-        height: 30vh;
-        min-height: 200px;
+        height: 100%;
 
         border-radius: 0 0 20px 20px;
     }
 
     .login-principal {
-        min-height: 70vh;
+        height: 73dvh;
+        flex-basis: 73dvh;
 
-        padding: 30px 15px;
+        padding: 15px 12px;
     }
 
     .card {
         max-width: 400px;
 
         padding: 5px;
+
+        transform: scale(
+            clamp(
+                0.62,
+                calc(73dvh / 600px),
+                1
+            )
+        );
     }
 
     .nome-empresa {
@@ -500,17 +591,31 @@ body::-webkit-scrollbar {
 @media (max-width: 380px) {
 
     .parte-dois {
-        height: 26vh;
-        min-height: 170px;
+        height: 24dvh;
+        flex-basis: 24dvh;
     }
 
     .fundo {
-        height: 26vh;
-        min-height: 170px;
+        height: 100%;
     }
 
     .login-principal {
-        padding: 25px 12px;
+        height: 76dvh;
+        flex-basis: 76dvh;
+
+        padding: 10px;
+    }
+
+    .card {
+        max-width: 360px;
+
+        transform: scale(
+            clamp(
+                0.55,
+                calc(76dvh / 620px),
+                0.95
+            )
+        );
     }
 
     .nome-empresa {
@@ -539,6 +644,48 @@ body::-webkit-scrollbar {
         height: 43px;
     }
 }
+
+/* =========================
+   TELAS MUITO BAIXAS
+========================= */
+
+@media (max-height: 650px) and (max-width: 900px) {
+
+    .parte-dois {
+        height: 22dvh;
+        flex-basis: 22dvh;
+    }
+
+    .login-principal {
+        height: 78dvh;
+        flex-basis: 78dvh;
+    }
+
+    .card {
+        transform: scale(0.72);
+    }
+}
+
+@media (max-height: 550px) and (max-width: 900px) {
+
+    .parte-dois {
+        height: 20dvh;
+        flex-basis: 20dvh;
+    }
+
+    .login-principal {
+        height: 80dvh;
+        flex-basis: 80dvh;
+    }
+
+    .card {
+        transform: scale(0.62);
+    }
+}
+
+/* =========================
+   MENSAGEM DE ERRO
+========================= */
 
 .mensagem-erro {
     display: block;
