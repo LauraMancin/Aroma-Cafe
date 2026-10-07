@@ -84,18 +84,22 @@ body {
     cursor: pointer;
 }
 
-/* Área Principal */
+/* 1. Área Principal: Ocupa todo o espaço restante e centraliza suavemente se a tela for gigante */
 .main-content {
     flex: 1;
-    padding: 30px;
+    padding: 40px; /* Aumenta o espaço para 'respirar' nas bordas */
     display: flex;
     flex-direction: column;
     gap: 25px;
-    max-width: 1200px;
+    width: 100%;
+    max-width: 1300px; /* Aumentado ligeiramente para aproveitar melhor a tela do note */
+    margin: 0 auto; /* Centraliza a área de conteúdo no espaço que sobrar */
 }
 
-/* Seção Perfil */
-.perfil {
+/* 2. As seções de Perfil e Formulário preenchem 100% do container principal */
+.perfil, 
+.secao-formulario, 
+.formulario {
     width: 100%;
 }
 
