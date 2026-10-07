@@ -352,6 +352,45 @@ body {
     color: #555;
 }
 
+
+.tabs {
+    display: flex;
+    gap: 25px;
+    border-bottom: 2px solid #eee;
+    margin-bottom: 25px;
+    position: relative; /* Essencial para a linha alinhar com as abas */
+    padding-bottom: 0;
+}
+
+.tab {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #888;
+    padding: 10px 5px 14px 5px;
+    white-space: nowrap;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.tab.active {
+    color: var(--cor-terciaria);
+    font-weight: 700;
+    border-bottom: none; /* Remove a borda estática padrão */
+}
+
+/* Linha Rosa Deslizante */
+.tab-indicator {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    height: 3px;
+    background-color: var(--cor-principal);
+    border-radius: 3px 3px 0 0;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 /* ==========================================================
    MEDIA QUERIES (RESPONSIVIDADE PARA TABLETS E CELULARES)
    ========================================================== */
