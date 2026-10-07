@@ -13,16 +13,16 @@
             <p> Administração </p>
         </div>
         <nav>
-            <li> <label> Visão Geral </label> </li>
-            <li> <label class="tab" data-tab="produtos"> Produtos </label> </li>
-            <li> <label> Gatos </label></li>
-            <li> <label> Notificações </label></li>
-            <li> <label> Configurações </label></li>
+            <li> <a href="./perfilADM.html"> Visão Geral </a> </li>
+            <li> <a href="./produtos.html"> Produtos </a> </li>
+            <li> <a href="./gatos.html"> Gatos </a></li>
+            <li> <a href="./notificacao.html"> Notificações </a></li>
+            <li> <a href="./configuracao.html"> Configurações </a></li>
         </nav>
 
         <div class="btn-sair">
-            <img src="./image/exit.png" alt="Icone para sair da conta" class="icone">
             <p class="botaoSair" id="botaoSair"  onclick="sairDaConta()" style="cursor: pointer;" href="../homePage/index.html"> Sair da Conta </p>
+            <img src="./image/exit.png" alt="Icone para sair da conta" class="icone">
         </div>
         </section>
         
@@ -44,16 +44,32 @@
             <div class="container2">
                 <div class="container2-cards">
                     <div class="card">
-                        <small> Gatos no café </small>
-                        <h2> 9 </h2>
-                        <p> 8 disponíveis para adoção </p>
+                        <div class="icone-fundo-gato">
+                            <img src="./image/cat.png" class="icone-gato">
+                        </div>
+                        <div class="descricao">
+                            <small> Gatos no café </small>
+                            <h2> 9 </h2>
+                            <p> 8 disponíveis para adoção </p>
+                        </div>
                     </div>
                     <div class="card">
-                        <small> Reservas de hoje </small>
-                        <h2> 15 </h2>
-                        <p> 6 horários disponíveis </p>
+                         <div class="icone-fundo-calendario">
+                            <img src="./image/calendar.png" class="icone-calendario">
+                        </div>
+                        <div class="descricao">
+                            <small> Reservas de hoje </small>
+                            <h2> 15 </h2>
+                            <p> 6 horários disponíveis </p>
+                        </div>
                     </div>
                     <div class="card">
+                        <div class="icone-fundo-produto">
+                            <img src="./image/coffee.png" class="icone-produto">
+                        </div>
+                        <div>
+                            
+                        </div>
                         <small> Produtos em estoque </small>
                         <h2> 120 </h2>
                         <p> 20 produtos em falta </p>
@@ -129,13 +145,6 @@
                 </div>
             </section>
         </section>
-
-
-        <section class="content active" id="produtos">
-            <p> produto </p>
-        </section>
-
-
     </main>
     <script src="./js/script.js"></script>
 
