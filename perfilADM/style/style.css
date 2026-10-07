@@ -25,7 +25,7 @@ html {
 
 body {
     min-height: 100vh;
-    background: #fffafe;
+    background: #fff6ff;
     overflow-x: hidden;
 }
 
@@ -208,6 +208,7 @@ a {
 
 .btn-adocao:hover,
 .btn-produto:hover{
+    cursor: pointer;
     transform: translateY(-5px);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
@@ -258,11 +259,45 @@ a {
     filter: invert(47%) sepia(21%) saturate(996%) hue-rotate(113deg) brightness(91%) contrast(85%);
 }
 
+.icone-fundo-vendas{
+    background-color: #ADD8E6;
+    padding: 10px;
+    border-radius: 10px;
+    display: inline-block;
+}
 
+.icone-vendas{
+    filter: invert(56%) sepia(35%) saturate(545%) hue-rotate(172deg) brightness(94%) contrast(88%);
+}
 
+.icone-fundo-produto{
+    background-color: #C19A6B;
+    padding: 10px;
+    border-radius: 10px;
+    display: inline-block;
+}
 
+.icone-produto{
+    filter: invert(30%) sepia(19%) saturate(1837%) hue-rotate(339deg) brightness(94%) contrast(85%);
+}
 
+/* ========== */
 
+.container2-cards .descricao small{
+    font-family: var(--fonte-secundaria);
+    color: #828282;
+} 
+
+.container2-cards .descricao h2{
+    font-family: var(--fonte-principal);
+    color: #111;
+}
+
+.container2-cards .descricao p{
+    font-family: var(--fonte-principal);
+    color: #828282;
+    font-size: 12px;
+}
 
 .reparticao{
     display: grid;
@@ -270,6 +305,9 @@ a {
     margin-top: 30px;
     gap: 15px;
 }
+
+
+/* ações rápidas */
 
 .container3{
     display: flex;
@@ -280,6 +318,36 @@ a {
     border: 1px solid #E99BB4;
     padding: 30px;
     width: 100%;
+}
+
+.container3-header h2{
+    font-family: var(--fonte-principal);
+    color: #111;
+    font-size: 30px;
+}
+
+.container3-header p{
+    font-family: var(--fonte-secundaria);
+    color: #828282;
+    font-size: 15px;
+}
+
+.container3-cards{
+    padding: 10px;
+}
+
+.container3-cards .card-atalho{
+    display: flex;
+    gap: 20px;
+    border: 1px solid #F8C8DC;
+    padding: 25px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+.card-atalho img{
+    width: 30px;
+    height: 30px;
 }
 
 .container4{
