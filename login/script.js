@@ -43,19 +43,55 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // =========================
-    // VALIDAÇÃO DO E-MAIL
+    // VALIDAR E-MAIL (Igual ao Cadastro)
     // =========================
 
     function emailValido(valor) {
 
-        // Exemplo válido:
-        // nome@gmail.com
-        // usuario@hotmail.com
+        valor = valor.trim().toLowerCase();
 
-        const formatoEmail =
-            /^[^\s@]+@[^\s@]+\.com$/i;
+        const formato = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.com$/;
 
-        return formatoEmail.test(valor);
+        if (!formato.test(valor)) {
+            return false;
+        }
+
+        const dominiosPermitidos = [
+            'gmail.com',
+            'hotmail.com',
+            'outlook.com',
+            'yahoo.com',
+            'icloud.com',
+            'live.com',
+            'protonmail.com'
+        ];
+
+        const dominio = valor.split('@')[1];
+
+        return dominiosPermitidos.includes(dominio);
+    }
+
+
+    // =========================
+    // VALIDAR SENHA (Igual ao Cadastro)
+    // =========================
+
+    function senhaValida(valor) {
+
+        // Pelo menos 8 caracteres (sem limite máximo rígido no script)
+        const tamanhoMinimo = valor.length >= 8;
+        const temMaiuscula = /[A-Z]/.test(valor);
+        const temMinuscula = /[a-z]/.test(valor);
+        const temNumero = /[0-9]/.test(valor);
+        const temSimbolo = /[^A-Za-z0-9]/.test(valor);
+
+        return (
+            tamanhoMinimo &&
+            temMaiuscula &&
+            temMinuscula &&
+            temNumero &&
+            temSimbolo
+        );
     }
 
 
@@ -65,7 +101,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function mostrarErro(campo, mensagem) {
 
-        // Remove erro anterior
         const erroAnterior = campo.nextElementSibling;
 
         if (
@@ -75,16 +110,13 @@ document.addEventListener('DOMContentLoaded', () => {
             erroAnterior.remove();
         }
 
-        // Cria mensagem
         const erro = document.createElement('small');
 
         erro.classList.add('mensagem-erro');
         erro.textContent = mensagem;
 
-        // Coloca abaixo do campo
         campo.insertAdjacentElement('afterend', erro);
 
-        // Destaca o campo
         campo.classList.add('campo-invalido');
     }
 
@@ -109,26 +141,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // =========================
-    // E-MAIL
+    // EVENTOS DE ENTRADA
     // =========================
 
     email.addEventListener('input', () => {
-
         removerErro(email);
         verificarCampos();
-
     });
 
-
-    // =========================
-    // SENHA
-    // =========================
-
     senha.addEventListener('input', () => {
-
         removerErro(senha);
         verificarCampos();
-
     });
 
 
@@ -140,66 +163,73 @@ document.addEventListener('DOMContentLoaded', () => {
 
         evento.preventDefault();
 
-
         // -------------------------
-        // E-MAIL VAZIO
+        // VALIDAÇÃO DO E-MAIL
         // -------------------------
 
         if (email.value.trim() === '') {
-
-            mostrarErro(
-                email,
-                'Preencha esse campo'
-            );
-
+            mostrarErro(email, 'Preencha esse campo');
             email.focus();
-
             return;
         }
 
-
-        // -------------------------
-        // E-MAIL INVÁLIDO
-        // -------------------------
-
-        if (!emailValido(email.value.trim())) {
-
-            mostrarErro(
-                email,
-                'Digite um e-mail válido'
-            );
-
+        if (!emailValido(email.value)) {
+            mostrarErro(email, 'Digite um e-mail válido');
             email.focus();
-
             return;
         }
 
-
         // -------------------------
-        // SENHA VAZIA
+        // VALIDAÇÃO DA SENHA
         // -------------------------
 
         if (senha.value.trim() === '') {
-
-            mostrarErro(
-                senha,
-                'Preencha esse campo'
-            );
-
+            mostrarErro(senha, 'Preencha esse campo');
             senha.focus();
-
             return;
         }
 
+        if (!senhaValida(senha.value)) {
+            mostrarErro(senha, 'A senha deve ter pelo menos 8 caracteres, contendo letra maiúscula, minúscula, número e símbolo');
+            senha.focus();
+            return;
+        }
 
         // -------------------------
-        // TUDO CORRETO
+        // REDIRECIONAMENTO INTELIGENTE BASEADO NA URL ATUAL
         // -------------------------
+        
+        // Verifica se o caminho do arquivo no navegador possui "loginADM.html"
+        if (window.location.pathname.includes('loginADM.html')) {
+            
+            // LÓGICA DA TELA ADM: Salva as permissões e vai para o painel administrativo
+            localStorage.setItem("usuarioLogado", "true");
+            localStorage.setItem("tipoUsuario", "admin");
+            window.location.href = '../perfilADM/perfilADM.html';
 
-        window.location.href =
-            '../homePage_perfil/indexPerfil.html';
+        } else {
+            
+            // LÓGICA DA TELA COMUM: Salva como cliente comum e vai para a página inicial
+            localStorage.setItem("usuarioLogado", "true");
+            localStorage.setItem("tipoUsuario", "cliente");
+            window.location.href = '../homePage_perfil/indexPerfil.html';
+        }
 
     });
+
+
+    // =========================
+    // COMPORTAMENTO INTELIGENTE PARA DADOS DE TESTE
+    // =========================
+    // Identifica a página para preencher o e-mail ideal automaticamente nos testes locais
+    if (window.location.pathname.includes('loginADM.html')) {
+        email.value = "testeadm@gmail.com";
+    } else {
+        email.value = "cliente@gmail.com";
+    }
+    
+    // Ambas usam o mesmo padrão de segurança complexo para a senha
+    senha.value = "Admin123@";
 
 
     // =========================

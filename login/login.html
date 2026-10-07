@@ -1,21 +1,14 @@
 <!doctype html>
-
 <html lang="pt-br">
-
 <head>
 
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="./style1.css">
-
     <link rel="shortcut icon" href="./src/iconLogin.png" type="image/x-icon">
-
     <title>Faça seu Login</title>
 
 </head>
-
 <body>
 
     <div class="container-pai">
@@ -56,8 +49,6 @@
                         type="password"
                         placeholder="senha"
                         class="input-"
-                        minlength="8"
-                        maxlength="8"
                     >
 
                     <div class="checkbox">
@@ -72,6 +63,14 @@
                         </label>
 
                     </div>
+
+                    <!-- Botão limpo inserido dentro do escopo do formulário -->
+                    <button
+                        type="submit"
+                        class="botao-entrar"
+                    >
+                        Entrar
+                    </button>
 
                 </form>
 
@@ -112,18 +111,6 @@
                     </a>
 
                 </div>
-
-                <a
-                    href="../homePage_perfil/indexPerfil.html"
-                    class="link-botao"
-                >
-                    <button
-                        type="button"
-                        class="botao-entrar"
-                    >
-                        Entrar
-                    </button>
-                </a>
 
                 <p class="botao-texto">
                     Não tem conta?
@@ -178,12 +165,8 @@
 
     </div>
 
-    <script>
-        localStorage.setItem("usuarioLogado", "true");
-    </script>
-
+    <!-- Removida a tag script com injeção estática desnecessária -->
     <script src="./script.js"></script>
 
 </body>
-
 </html>
