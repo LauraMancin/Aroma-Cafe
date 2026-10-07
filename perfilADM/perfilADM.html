@@ -7,178 +7,228 @@
     <title>Administrador</title>
 </head>
 <body>
-    <section class="dashboard">
+    <aside class="dashboard">
         <div class="logo">
-            <h2> Aroma Café </h2>
-            <p> Administração </p>
+            <h2>Aroma Café</h2>
+            <p>Administração</p>
         </div>
         <nav>
-            <li> <a href="./perfilADM.html"> Visão Geral </a> </li>
-            <li> <a href="./produtos.html"> Produtos </a> </li>
-            <li> <a href="./gatos.html"> Gatos </a></li>
-            <li> <a href="./notificacao.html"> Notificações </a></li>
-            <li> <a href="./configuracao.html"> Configurações </a></li>
+            <li><a href="./perfilADM.html" class="ativo">Visão Geral</a></li>
+            <li><a href="./produtos.html">Produtos</a></li>
+            <li><a href="./gatos.html">Gatos</a></li>
+            <li><a href="./notificacao.html">Notificações</a></li>
+            <li><a href="./configuracao.html">Configurações</a></li>
         </nav>
-
-        <div class="btn-sair">
-            <p class="botaoSair" id="botaoSair"  onclick="sairDaConta()" style="cursor: pointer;" href="../homePage/index.html"> Sair da Conta </p>
-            <img src="./image/exit.png" alt="Icone para sair da conta" class="icone">
+        <div class="btn-sair" id="botaoSair" onclick="sairDaConta()" role="button" tabindex="0">
+            <p class="botaoSair">Sair da Conta</p>
+            <img src="./image/exit.png" alt="Ícone para sair da conta" class="icone">
         </div>
-        </section>
-        
-     <main class="paginaInicial">
+    </aside>
+
+    <main class="paginaInicial">
         <section class="container1">
             <div class="container1-header">
                 <div>
-                    <small> terça-feira, 06 de outubro </small>
-                    <h1> Bem-vindo, Administrador! </h1>
-                    <p class="descricao"> Aqui está um resumo do que está acontecendo hoje </p>
+                    <small>terça-feira, 06 de outubro</small>
+                    <h1>Bem-vindo, Administrador!</h1>
+                    <p class="descricao">Aqui está um resumo do que está acontecendo hoje</p>
                 </div>
-
                 <div class="container-buttons">
-                    <button class="btn-produto"  onclick="abrirModal()"> <img src="./image/box-add.png" alt="Símbolo de caixa"> Novo produto </button>
-                    <button class="btn-adocao" onclick="abrirModal()"> <img src="./image/heart.png" alt="Símbolo de Coração"> Nova adoção </button>
+                    <button class="btn-produto" data-modal="modalProduto"><img src="./image/box-add.png" alt="">Novo produto</button>
+                    <button class="btn-adocao" data-modal="modalAdocao"><img src="./image/heart.png" alt="">Nova adoção</button>
                 </div>
             </div>
 
-            <div class="container2">
-                <div class="container2-cards">
-                    <div class="card">
-                        <div class="icone-fundo-gato">
-                            <img src="./image/cat.png" class="icone-gato">
-                        </div>
-                        <div class="descricao">
-                            <small> Gatos no café </small>
-                            <h2> 9 </h2>
-                            <p> 8 disponíveis para adoção </p>
-                        </div>
+            <div class="container2-cards">
+                <div class="card">
+                    <div class="icone-fundo-gato"><img src="./image/cat.png" class="icone-gato" alt=""></div>
+                    <div class="descricao">
+                        <small>Gatos no café</small>
+                        <h2>9</h2>
+                        <p>8 disponíveis para adoção</p>
                     </div>
-                    <div class="card">
-                         <div class="icone-fundo-calendario">
-                            <img src="./image/calendar.png" class="icone-calendario">
-                        </div>
-                        <div class="descricao">
-                            <small> Reservas de hoje </small>
-                            <h2> 15 </h2>
-                            <p> 6 horários disponíveis </p>
-                        </div>
+                </div>
+                <div class="card">
+                    <div class="icone-fundo-calendario"><img src="./image/calendar.png" class="icone-calendario" alt=""></div>
+                    <div class="descricao">
+                        <small>Reservas de hoje</small>
+                        <h2>15</h2>
+                        <p>6 horários disponíveis</p>
                     </div>
-                    <div class="card">
-                        <div class="icone-fundo-produto">
-                            <img src="./image/coffee.png" class="icone-produto">
-                        </div>
-                        <div class="descricao">
-                            <small> Produtos em estoque </small>
-                            <h2> 120 </h2>
-                            <p> 20 produtos em falta </p>
-                        </div>
+                </div>
+                <div class="card">
+                    <div class="icone-fundo-produto"><img src="./image/coffee.png" class="icone-produto" alt=""></div>
+                    <div class="descricao"><small>Produtos em estoque</small><h2>120</h2><p>20 produtos em falta</p></div>
+                </div>
+                <div class="card destaque">
+                    <div class="icone-fundo-vendas"><img src="./image/stats.png" class="icone-vendas" alt=""></div>
+                    <div class="descricao">
+                        <small>Vendas do mês</small>
+                        <h2>R$ 12,8 mil</h2>
+                        <p>+8% em relação a setembro</p>
                     </div>
-                    <div class="card">
-                        <div class="icone-fundo-vendas">
-                            <img src="./image/stats.png" class="icone-vendas">
-                        </div>
-                        <div class="descricao">
-                            <small> Vendas do mês </small>
-                            <h2> R$ 12,8 mil </h2>
-                            <p> +8% em relação a setembro </p>
-                        </div>
-                    </div>
+                </div>
             </div>
         </section>
 
         <section class="reparticao">
             <section class="container3">
                 <div class="container3-header">
-                    <h2> Ações rápidas </h2>
-                    <p> Atalhos para as tarefas mais frequentes </p>
+                    <h2>Ações rápidas</h2>
+                    <p>Atalhos para as tarefas mais frequentes</p>
                 </div>
-    
                 <div class="container3-cards">
-                    <div class="card-atalho">
-                        <div class="icone-fundo-produto">
-                            <img src="./image/box-add.png" alt="Simbolo de uma caixa com um sinal de adição" class="icone-produto">
-                        </div>
+                    <div class="card-atalho" data-modal="modalProduto" tabindex="0">
+                        <div class="icone-fundo-produto"><img src="./image/box-add.png" alt="" class="icone-produto"></div>
                         <div class="titulo">
-                            <h3> Novo Produto </h3>
-                            <p> Adicionar ao catálogo </p>
+                            <h3>Novo produto</h3>
+                            <p>Adicionar ao catálogo</p>
                         </div>
-                        <h2 class="seta"> > </h2>
+                        <h2 class="seta">›</h2>
                     </div>
-                    <div class="card-atalho">
-                        <div class="icone-fundo-gato">
-                            <img src="./image/cat.png" alt="Simbolo de um gato" class="icone-gato">
-                        </div>
+                    <div class="card-atalho" tabindex="0">
+                        <div class="icone-fundo-gato"><img src="./image/cat.png" alt="" class="icone-gato"></div>
                         <div class="titulo">
-                            <h3> Cadastrar gato </h3>
-                            <p> Novo residente </p>
+                            <h3>Cadastrar gato</h3>
+                            <p>Novo residente</p>
                         </div>
-                        <h2 class="seta"> > </h2>
+                        <h2 class="seta">›</h2>
                     </div>
-                    <div class="card-atalho">
-                        <div class="icone-fundo-adocao">
-                            <img src="./image/heart.png" alt="Simbolo de um coração" class="icone-adocao">
-                        </div>
+                    <div class="card-atalho" data-modal="modalAdocao" tabindex="0">
+                        <div class="icone-fundo-adocao"><img src="./image/heart.png" alt="" class="icone-adocao"></div>
                         <div class="titulo">
-                            <h3> Nova adoção </h3>
-                            <p> Registrar processo </p>
+                            <h3>Nova adoção</h3>
+                            <p>Registrar processo</p>
                         </div>
-                        <h2 class="seta"> > </h2>
+                        <h2 class="seta">›</h2>
                     </div>
-                    <div class="card-atalho">
-                        <div class="icone-fundo-calendario">
-                            <img src="./image/calendar.png" alt="Simbolo de um calendário" class="icone-calendario">
-                        </div>
+                    <div class="card-atalho" tabindex="0">
+                        <div class="icone-fundo-calendario"><img src="./image/calendar.png" alt="" class="icone-calendario"></div>
                         <div class="titulo">
-                            <h3> Agendar reserva </h3>
-                            <p> Agende um horário </p>
+                            <h3>Agendar reserva</h3>
+                            <p>Agende um horário</p>
                         </div>
-                        <h2 class="seta"> > </h2>
+                        <h2 class="seta">›</h2>
                     </div>
                 </div>
             </section>
-    
+
             <section class="container4">
                 <div class="container4-header">
-                    <h2> Atividades recentes </h2>
-                    <p> Últimas atualizações </p>
+                    <h2>Atividades recentes</h2>
+                    <p>Últimas atualizações</p>
                 </div>
-    
                 <div class="container4-infos">
                     <div class="info">
-                        <div class="icone-fundo-adocao">
-                            <img src="./image/heart.png" alt="Simbolo de um coração" class="icone-adocao">
-                        </div>
+                        <div class="icone-fundo-adocao"><img src="./image/heart.png" alt="" class="icone-adocao"></div>
                         <div class="conteudo">
-                            <h3> Nova solicitação de adoção </h3>
-                            <p> Mariane quer conhecer a Amora </p>
-                            <small> Há 12 min </small>
+                            <h3>Nova solicitação de adoção</h3>
+                            <p>Mariane quer conhecer a Amora</p>
+                            <small>Há 12 min</small>
                         </div>
                     </div>
                     <div class="info">
-                        <div class="icone-fundo-produto">
-                            <img src="./image/box-add.png" alt="Simbolo de uma caixa com um sinal de adição" class="icone-produto">
-                        </div>
+                        <div class="icone-fundo-produto"><img src="./image/box-add.png" alt="" class="icone-produto"></div>
                         <div class="conteudo">
-                            <h3> Estoque abaixo do minimo </h3>
-                            <p> Café especial - restam 4 unidades </p>
-                            <small> Há 1h </small>
+                            <h3>Estoque abaixo do mínimo</h3>
+                            <p>Café especial - restam 4 unidades</p>
+                            <small>Há 1h</small>
                         </div>
                     </div>
                     <div class="info">
-                        <div class="icone-fundo-calendario">
-                            <img src="./image/calendar.png" alt="Simbolo de calendário" class="icone-calendario">
-                        </div>
+                        <div class="icone-fundo-calendario"><img src="./image/calendar.png" alt="" class="icone-calendario"></div>
                         <div class="conteudo">
-                            <h3> Reserva confirmada </h3>
-                            <p> Lucas - hoje às 15:30 </p>
-                            <small> Há 2h </small>
+                            <h3>Reserva confirmada</h3>
+                            <p>Lucas - hoje às 15:30</p>
+                            <small>Há 2h</small>
                         </div>
                     </div>
                 </div>
             </section>
         </section>
     </main>
-    <script src="./js/script.js"></script>
 
+    <!-- Modal: novo produto -->
+    <dialog id="modalProduto" class="modal">
+        <form method="dialog" class="form" id="formProduto">
+            <header class="modal-topo">
+                <div>
+                    <h2>Novo produto</h2>
+                    <p>Preencha os dados para adicionar ao catálogo</p>
+                </div>
+                <button type="button" class="fechar" aria-label="Fechar">×</button>
+            </header>
+            <div class="grade">
+                <label class="full">Nome do produto
+                    <input type="text" name="nome" required placeholder="Ex.: Cappuccino cremoso">
+                </label>
+                <label>Tipo
+                    <select name="tipo" required>
+                        <option value="">Selecione</option>
+                        <option>Café</option><option>Bebida</option><option>Doce</option>
+                        <option>Salgado</option><option>Acessório</option><option>Outro</option>
+                    </select>
+                </label>
+                <label>Preço (R$)
+                    <input type="number" name="preco" min="0" step="0.01" required placeholder="0,00">
+                </label>
+                <label>Quantidade em estoque
+                    <input type="number" name="estoque" min="0" required placeholder="0">
+                </label>
+                <label>Estoque mínimo
+                    <input type="number" name="minimo" min="0" placeholder="Avisar abaixo de...">
+                </label>
+                <label class="full">Detalhes
+                    <textarea name="detalhes" rows="3" placeholder="Ingredientes, tamanho, observações..."></textarea>
+                </label>
+            </div>
+            <footer class="modal-rodape">
+                <button type="button" class="btn-cancelar fechar">Cancelar</button>
+                <button type="submit" class="btn-salvar">Salvar produto</button>
+            </footer>
+        </form>
+    </dialog>
+
+    <!-- Modal: nova adoção -->
+    <dialog id="modalAdocao" class="modal">
+        <form method="dialog" class="form" id="formAdocao">
+            <header class="modal-topo">
+                <div><h2>Nova adoção</h2><p>Registre o processo de adoção</p></div>
+                <button type="button" class="fechar" aria-label="Fechar">×</button>
+            </header>
+            <div class="grade">
+                <label class="full">Nome do interessado
+                    <input type="text" name="interessado" required placeholder="Nome completo">
+                </label>
+                <label>CPF
+                    <input type="text" name="cpf" id="cpf" required inputmode="numeric" maxlength="14" placeholder="000.000.000-00">
+                </label>
+                <label>Telefone
+                    <input type="tel" name="telefone" required placeholder="(19) 90000-0000">
+                </label>
+                <label class="full">E-mail
+                    <input type="email" name="email" placeholder="nome@email.com">
+                </label>
+                <label>Nome do gato
+                    <input type="text" name="gato" required placeholder="Ex.: Amora">
+                </label>
+                <label>Data da visita
+                    <input type="date" name="data" required>
+                </label>
+                <label class="full">Observações
+                    <textarea name="obs" rows="3" placeholder="Moradia, outros animais, experiência com gatos..."></textarea>
+                </label>
+            </div>
+            <footer class="modal-rodape">
+                <button type="button" class="btn-cancelar fechar">Cancelar</button>
+                <button type="submit" class="btn-salvar">Registrar adoção</button>
+            </footer>
+        </form>
+    </dialog>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="./js/script.js"></script>
+    <script src="./js/modal.js"></script>
 </body>
 </html>
