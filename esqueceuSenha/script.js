@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-
+    
     // Atualiza enquanto digita
     senha.addEventListener('input', atualizarBotao);
     confirmarSenha.addEventListener('input', atualizarBotao);
