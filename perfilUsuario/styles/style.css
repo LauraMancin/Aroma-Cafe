@@ -207,6 +207,7 @@ body {
     border-radius: 50%;
 
     object-fit: cover;
+    border: 1px solid #e5e5e5;
 }
 
 .editar-foto {
@@ -489,6 +490,14 @@ body {
    ========================================================== */
 
 .botao-salvar {
+    display: block;
+    margin-left: auto;
+    margin-top: 25px;
+    border: none;
+    background: var(--cor-principal);
+    color: #fff;
+    padding: 10px 24px;
+    border-radius: 7px;
     font-family: var(--fonte-principal);
 
     font-size: 15px;
@@ -761,6 +770,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 4px;
+    min-width: 0;
 }
 
 .seguranca-info strong {
@@ -827,11 +837,11 @@ body {
     .config-item {
         align-items: flex-start;
         flex-direction: column;
-    }
+}
 
     .config-item > * {
-        width: 100%;
-    }
+    width: 100%;
+}
 
     .config-item .switch {
         width: 45px;

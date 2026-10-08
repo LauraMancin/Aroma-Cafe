@@ -1,18 +1,18 @@
-// Abrir modais
+// abrir modais
 document.querySelectorAll('[data-modal]').forEach(el => {
     const abrir = () => document.getElementById(el.dataset.modal).showModal();
     el.addEventListener('click', abrir);
     el.addEventListener('keydown', e => { if (e.key === 'Enter') abrir(); });
 });
 
-// Fechar: botões ×/Cancelar e clique no fundo
+// fechar: botões ×/aancelar e clique no fundo
 document.querySelectorAll('.modal').forEach(m => {
     m.querySelectorAll('.fechar').forEach(b => b.addEventListener('click', () => m.close()));
     m.addEventListener('click', e => { if (e.target === m) m.close(); });
     m.addEventListener('close', () => m.querySelector('form').reset());
 });
 
-// Máscara de CPF
+// máscara de CPF
 const cpf = document.getElementById('cpf');
 cpf.addEventListener('input', () => {
     let v = cpf.value.replace(/\D/g, '').slice(0, 11);
@@ -20,7 +20,7 @@ cpf.addEventListener('input', () => {
     cpf.value = v;
 });
 
-// Aviso de sucesso
+// aviso de sucesso
 function mostrarAviso(msg) {
     const t = document.getElementById('toast');
     t.textContent = msg;
@@ -28,7 +28,7 @@ function mostrarAviso(msg) {
     setTimeout(() => t.classList.remove('visivel'), 3000);
 }
 
-// Envio dos formulários (ligar o back-end depois)
+// envio dos formulários (ligar o back-end depois)
 function tratarEnvio(idForm, idModal, msg) {
     document.getElementById(idForm).addEventListener('submit', e => {
         e.preventDefault();
@@ -46,3 +46,9 @@ function tratarEnvio(idForm, idModal, msg) {
 cpf.addEventListener('input', () => cpf.setCustomValidity(''));
 tratarEnvio('formProduto', 'modalProduto', 'Produto salvo com sucesso');
 tratarEnvio('formAdocao', 'modalAdocao', 'Adoção registrada com sucesso');
+
+// sair da conta 
+function sairDaConta() {
+    localStorage.removeItem('usuarioLogado');
+    window.location.href = '../homePage_perfil/indexPerfil.html';
+}
