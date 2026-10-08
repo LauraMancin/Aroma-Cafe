@@ -9,10 +9,7 @@
 </head>
 <body>
 
-    <!-- Container Principal do Layout -->
     <div class="app-container">
-
-        <!-- Sidebar / Dashboard -->
         <aside class="dashboard">
             <h2> Aroma Café </h2>
             <ul>
@@ -20,14 +17,17 @@
                     <img src="./image/home.png" alt="Icone de casa">
                     <a href="../homePage_perfil/indexPerfil.html">Página Principal</a>
                 </li>
+
                 <li> 
                     <img src="./image/user.png" alt="Icone de uma Pessoa">
                     <label class="tab" data-tab="personal">Perfil</label>
                 </li>
+
                 <li> 
                     <img src="./image/settings.png" alt="Icone de Engrenagem">
                     <label class="tab" data-tab="account">Configurações</label>
                 </li>
+
                 <li> 
                     <img src="./image/exit.png" alt="Icone para sair da conta">
                     <label class="botaoSair" id="botaoSair" onclick="sairDaConta()" style="cursor: pointer;">Sair da conta</label>
@@ -35,11 +35,10 @@
             </ul>
         </aside>
 
-        <!-- Área de Conteúdo Principal -->
         <main class="main-content">
-
-            <!-- Cabeçalho do Perfil -->
+        
             <section class="perfil">
+
                 <div class="info-principais">
                     <div class="foto-container">
                         <img src="./image/user-icon.png" alt="Icone para foto de perfil" class="foto-perfil">
@@ -54,13 +53,14 @@
                             <button class="botao-senha"> Mudar a Senha </button>
                         </div>
                     </div>
+
                 </div>
             </section>
 
-            <!-- Seção do Formulário / Tabs -->
+            <!-- Forms -->
             <section class="secao-formulario">
-                <div class="formulario">
 
+                <div class="formulario">
                     <div class="tabs">
                         <button class="tab active" data-tab="personal">
                             Informações Pessoais
@@ -180,12 +180,10 @@
 
                     <!-- Outras Abas -->
                     
-<!-- =========================
-     CONFIGURAÇÕES
-========================= -->
+
 
                         <div class="content" id="account">
-
+     
                             <div class="config-section">
 
                                 <h2 class="titulo-secao">Dados da conta</h2>
