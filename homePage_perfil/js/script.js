@@ -11,18 +11,12 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
   
-    // =========================
-    // VALIDAÇÃO DE E-MAIL
-    // =========================
-  
+    
     function emailValido(email) {
       return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     }
   
-    // =========================
-    // REMOVER ERRO
-    // =========================
-  
+   
     function removerMensagemErro(campo) {
   
       campo.classList.remove("campo-invalido-contato");
@@ -36,9 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   
-    // =========================
-    // MOSTRAR ERRO
-    // =========================
+    
   
     function mostrarErro(campo, mensagem) {
   
@@ -54,9 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
       campo.parentElement.appendChild(erro);
     }
   
-    // =========================
-    // VALIDAR CAMPO
-    // =========================
+   
   
     function validarCampo(campo) {
   
@@ -77,9 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return true;
     }
   
-    // =========================
-    // VERIFICAR BOTÃO
-    // =========================
+    
   
     function atualizarBotao() {
   
@@ -100,9 +88,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   
-    // =========================
-    // DIGITAÇÃO NOS CAMPOS
-    // =========================
   
     campos.forEach((campo) => {
   
@@ -126,9 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
     });
   
-    // =========================
-    // CLIQUE EM ENVIAR
-    // =========================
+    
   
     botaoEnviar.addEventListener("click", (event) => {
   
@@ -166,9 +149,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
     });
   
-    // =========================
-    // POPUP
-    // =========================
+    
   
     function mostrarPopup() {
   
@@ -239,9 +220,6 @@ document.addEventListener("DOMContentLoaded", () => {
   
     }
   
-    // =========================
-    // ESTADO INICIAL
-    // =========================
   
     atualizarBotao();
   
