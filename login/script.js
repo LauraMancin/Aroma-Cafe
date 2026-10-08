@@ -16,10 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const corApagada = '#d99aae';
 
 
-    // =========================
-    // ATUALIZA O BOTÃO
-    // =========================
-
     function verificarCampos() {
 
         const emailPreenchido = email.value.trim() !== '';
@@ -42,9 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // =========================
-    // VALIDAR E-MAIL (Igual ao Cadastro)
-    // =========================
+    // validar e-amail 
 
     function emailValido(valor) {
 
@@ -72,13 +66,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // =========================
-    // VALIDAR SENHA (Igual ao Cadastro)
-    // =========================
+    // validar senha
 
     function senhaValida(valor) {
 
-        // Pelo menos 8 caracteres (sem limite máximo rígido no script)
         const tamanhoMinimo = valor.length >= 8;
         const temMaiuscula = /[A-Z]/.test(valor);
         const temMinuscula = /[a-z]/.test(valor);
@@ -95,9 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // =========================
-    // MOSTRAR ERRO
-    // =========================
+    // mostra erro caso não tenha tudo completo
 
     function mostrarErro(campo, mensagem) {
 
@@ -121,9 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // =========================
-    // REMOVER ERRO
-    // =========================
+    // remove o erro
 
     function removerErro(campo) {
 
@@ -140,10 +127,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // =========================
-    // EVENTOS DE ENTRADA
-    // =========================
-
     email.addEventListener('input', () => {
         removerErro(email);
         verificarCampos();
@@ -155,17 +138,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    // =========================
-    // BOTÃO ENTRAR
-    // =========================
+    // botão entrar
 
     botaoEntrar.addEventListener('click', (evento) => {
 
         evento.preventDefault();
 
-        // -------------------------
-        // VALIDAÇÃO DO E-MAIL
-        // -------------------------
+        // validação e-mail
 
         if (email.value.trim() === '') {
             mostrarErro(email, 'Preencha esse campo');
@@ -179,9 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // -------------------------
-        // VALIDAÇÃO DA SENHA
-        // -------------------------
+        // validação senha
 
         if (senha.value.trim() === '') {
             mostrarErro(senha, 'Preencha esse campo');
@@ -194,22 +171,18 @@ document.addEventListener('DOMContentLoaded', () => {
             senha.focus();
             return;
         }
-
-        // -------------------------
-        // REDIRECIONAMENTO INTELIGENTE BASEADO NA URL ATUAL
-        // -------------------------
         
         // Verifica se o caminho do arquivo no navegador possui "loginADM.html"
         if (window.location.pathname.includes('loginADM.html')) {
             
-            // LÓGICA DA TELA ADM: Salva as permissões e vai para o painel administrativo
+            // Salva as permissões e vai para o painel administrativo
             localStorage.setItem("usuarioLogado", "true");
             localStorage.setItem("tipoUsuario", "admin");
             window.location.href = '../perfilADM/perfilADM.html';
 
         } else {
             
-            // LÓGICA DA TELA COMUM: Salva como cliente comum e vai para a página inicial
+            // Salva como cliente comum e vai para a página inicial
             localStorage.setItem("usuarioLogado", "true");
             localStorage.setItem("tipoUsuario", "cliente");
             window.location.href = '../homePage_perfil/indexPerfil.html';
@@ -217,24 +190,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     });
 
-
-    // =========================
-    // COMPORTAMENTO INTELIGENTE PARA DADOS DE TESTE
-    // =========================
-    // Identifica a página para preencher o e-mail ideal automaticamente nos testes locais
+    // e-mail e senha do ADM para testes
     if (window.location.pathname.includes('loginADM.html')) {
         email.value = "testeadm@gmail.com";
     } else {
         email.value = "cliente@gmail.com";
     }
     
-    // Ambas usam o mesmo padrão de segurança complexo para a senha
     senha.value = "Admin123@";
 
-
-    // =========================
-    // ESTADO INICIAL
-    // =========================
 
     verificarCampos();
 
