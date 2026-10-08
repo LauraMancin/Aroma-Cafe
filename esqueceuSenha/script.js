@@ -14,9 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const corApagada = '#d99aae';
 
 
-    // =========================
-    // ATUALIZA A COR DO BOTÃO
-    // =========================
+    
 
     function atualizarBotao() {
 
@@ -45,9 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     confirmarSenha.addEventListener('input', atualizarBotao);
 
 
-    // =========================
-    // MOSTRAR ERRO
-    // =========================
+    
 
     function mostrarErro(campo, mensagem) {
 
@@ -71,9 +67,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // =========================
-    // BOTÃO
-    // =========================
 
     botao.addEventListener('click', (evento) => {
 
@@ -122,18 +115,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
 
-        // =========================
-        // SENHA CORRETA
-        // =========================
+        
 
         mostrarPopup();
 
     });
 
 
-    // =========================
-    // POP-UP
-    // =========================
+   
 
     function mostrarPopup() {
 
