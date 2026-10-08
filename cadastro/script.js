@@ -283,7 +283,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         if (!tem18AnosOuMais(dataNascimento.value)) {
-            mostrarErro(dataNascimento, 'Você precisa ter 18 anos ou mais');
+            mostrarErro(dataNascimento, 'Você precisa ter 18 anos ou mais para realizar compras no site');
             dataNascimento.focus();
             return;
         }
