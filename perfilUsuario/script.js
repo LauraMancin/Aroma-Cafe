@@ -104,11 +104,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-
-    // ==========================================
-    // 2. SISTEMA DE ABAS + LINHA ROSA DESLIZANTE
-    // ==========================================
-
     const tabsContainer = document.querySelector(".tabs");
 
     const tabs = document.querySelectorAll(
@@ -232,9 +227,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    // ==========================================
-    // 3. ESTADOS E CIDADES — IBGE API
-    // ==========================================
+    // API IBGE
 
     const estadoSelect =
         document.getElementById("estado");
@@ -324,11 +317,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-
-    // ==========================================
-    // 4. EVENTOS DO MODAL
-    // ==========================================
-
     const modal =
         document.getElementById("modal");
 
@@ -349,9 +337,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    // ==========================================
-    // 5. ATUALIZAÇÃO DO NOME DO PERFIL
-    // ==========================================
+    // atualização do nome no perfil
 
     const inputNome =
         document.getElementById("nome") ||
@@ -427,9 +413,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    // ==========================================
-    // 6. CONFIGURAÇÕES — BOTÕES ALTERAR
-    // ==========================================
+    // configurações
 
     const botoesAlterar =
         document.querySelectorAll(
@@ -525,11 +509,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-
-    // ==========================================
-    // 7. CONFIGURAÇÕES — SWITCHES
-    // ==========================================
-
     const switches =
         document.querySelectorAll(
             '.config-card .switch input[type="checkbox"]'
@@ -588,9 +567,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    // ==========================================
-    // 8. SEGURANÇA — ALTERAR SENHA
-    // ==========================================
+    // alterar senha
 
     const botoesSeguranca =
         document.querySelectorAll(
@@ -730,9 +707,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    // ==========================================
-    // 9. AUTENTICAÇÃO EM DUAS ETAPAS
-    // ==========================================
+    // autenticação em duas etapas
 
     const autenticacao =
         document.querySelector(
@@ -766,9 +741,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    // ==========================================
-    // 10. EXCLUIR CONTA
-    // ==========================================
+    // excluir conta
 
     const botaoExcluir =
         document.querySelector(
@@ -814,9 +787,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    // ==========================================
-    // 11. TEMA
-    // ==========================================
+    // tema
 
     const selectsConfig =
         document.querySelectorAll(
@@ -883,9 +854,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    // ==========================================
-    // 12. IDIOMA
-    // ==========================================
+    // idioma
 
     if (selectsConfig[1]) {
 
@@ -910,16 +879,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
-
-// ==========================================
-// FUNÇÕES GLOBAIS
-// ==========================================
-
-
-// ==========================================
-// ABRIR MODAL
-// ==========================================
-
 function abrirModal() {
 
     const modal =
@@ -936,10 +895,6 @@ function abrirModal() {
 
 }
 
-
-// ==========================================
-// FECHAR MODAL
-// ==========================================
 
 function fecharModal() {
 
@@ -958,9 +913,7 @@ function fecharModal() {
 }
 
 
-// ==========================================
-// SAIR DA CONTA
-// ==========================================
+    // sair da conta
 
 function sairDaConta() {
 
