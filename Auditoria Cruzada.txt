@@ -1,0 +1,22 @@
+- Campo de Cadastro -
+	Se coloca um email não valido da erro
+	Se coloca um email diferente no campo de confirmação da aviso de erro
+	Senha muito curta não funciona, precisa ter 8 caracteres tendo letra maiúscula, minúscula numero e símbolo
+	Senhas diferentes dao erro
+	Se não tiver 18 anos da erro
+	Precisa aceitar os termos de privacidade
+
+-Campo de Login - 
+	Precisa de email valido
+	Aparece o mesmo aviso do campo de cadastro se a senha não estiver nos padrões
+	Botão de logar com google e apple não funciona
+	Botão de esqueceu a senha funciona porém leva pra uma página sem proteção, podendo digitar qualquer senha mesmo se estiver fora dos padrões
+	Botão de entrar como administrador funciona e leva para uma pagina diferente de login
+	Logar na pagina de administrador te leva para uma pagina diferente das demais
+
+- Pagina do administrador -
+	Botões de Produtos, Gatos, Notificações e Configurações não tem conteúdo
+	Botão de cadastrar novo produto funciona e abre uma tela que precisa ser preenchido nome, tipo, preço, quantidade em estoque, estoque mínimo e os detalhes, se não 	inserir algum corretamente da erro
+	Botão de nova adoção é a mesma coisa
+	Botão de cadastrar gato e agendar reserva não funcionam
+	Botão de sair da conta administrativa funciona
