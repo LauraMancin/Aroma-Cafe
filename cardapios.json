@@ -1,0 +1,48 @@
+[
+    {
+        "cafeEspecial": [
+            {
+                "nome": "Gatoccino",
+                "descricao": "Cappucino cremoso com arte de latte em formato de gatinho.",
+                "preco": "R$24,99",
+                "url": "imagens/produtos/gatoccino.jpg"
+            },
+            {
+                "nome": "Bigode Espresso",
+                "descricao": "Espresso duplo forte para quem precisa de energia.",
+                "preco": "R$25,00",
+                "url": "imagens/produtos/bigode espresso.png"
+            },
+            {
+                "nome": "Miau Latte",
+                "descricao": "Latte com calda de baunilha e espuma extra.",
+                "preco": "R$26,00",
+                "url": "imagens/produtos/lattee.jpg"
+            },
+            {
+                "nome": "Nuvem Do Gato",
+                "descricao": "Latte super cremoso com espuma bem leve.",
+                "preco": "R$30,00",
+                "url": "imagens/produtos/nuvemgato.jpg"
+            },
+            {
+                "nome": "Milkshake Patinha",
+                "descricao": "Mocha com chocolate meio amargo e chantilly.",
+                "preco": "R$18,90",
+                "url": "imagens/produtos/milkpatinha.jpg"
+            },
+            {
+                "nome": "Cold Brew Felino",
+                "descricao": "Cold Brew gelado com toque de baunilha aromatizado com canela.",
+                "preco": "R$18,00",
+                "url": "imagens/produtos/cold.png"
+            },
+            {
+                "nome": "Patinha Caramelo",
+                "descricao": "Latte com caramelo e espuma decorada de patinha e leve essência de rum..",
+                "preco": "R$20,00",
+                "url": "imagens/produtos/caramelopatinha.png"
+            }
+        ]
+    }
+]

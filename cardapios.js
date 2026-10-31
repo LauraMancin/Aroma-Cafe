@@ -32,3 +32,16 @@ document.querySelectorAll('.categoria').forEach(categoria => {
 
     atualizarSetas(); // estado inicial
 });
+
+// Trabalhar com localStorage
+const produtos = document.querySelectorAll('.produto-link')
+
+let uva = []
+
+produtos.forEach((produto, index) => {
+    produto.addEventListener('click', () => {
+        uva.push(index)
+
+        localStorage.setItem('produtos', JSON.stringify(uva))
+    })
+})
