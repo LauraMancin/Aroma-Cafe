@@ -1,10 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-
-    // ==========================================
-    // 1. MÁSCARAS E MÁXIMO DE CARACTERES
-    // ==========================================
-
-    // Máscara para CPF (000.000.000-00)
+    // Máscara para o CPF
 
     const cpfInput = document.querySelector(
         'input[placeholder*="CPF"], input[maxlength="12"], input[maxlength="14"]'
@@ -104,6 +99,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
+    // Configuração das abas
+    
     const tabsContainer = document.querySelector(".tabs");
 
     const tabs = document.querySelectorAll(

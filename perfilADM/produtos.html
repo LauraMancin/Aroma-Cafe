@@ -1,65 +1,232 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <link rel="stylesheet" href="./style/produtos.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/produtos.css" />
     <title>Produtos | Aroma Café</title>
-</head>
-<body>
+  </head>
+  <body>
     <aside class="dashboard">
-        <div class="logo">
-            <h2>Aroma Café</h2>
-            <p>Administração</p>
-        </div>
-        <nav>
-            <li><a href="./perfilADM.html" >Visão Geral</a></li>
-            <li><a href="./produtos.html" class="ativo">Produtos</a></li>
-            <li><a href="./gatos.html">Gatos</a></li>
-            <li><a href="./notificacao.html">Notificações</a></li>
-            <li><a href="./configuracao.html">Configurações</a></li>
-        </nav>
-        <div class="btn-sair" id="botaoSair" onclick="sairDaConta()" role="button" tabindex="0">
-            <p class="botaoSair">Sair da Conta</p>
-            <img src="./image/exit.png" alt="Ícone para sair da conta" class="icone">
-        </div>
+      <div class="logo">
+        <h2>Aroma Café</h2>
+        <p>Administração</p>
+      </div>
+      <nav>
+        <li><a href="./perfilADM.html">Visão Geral</a></li>
+        <li><a href="./produtos.html" class="ativo">Produtos</a></li>
+        <li><a href="./gatos.html">Gatos</a></li>
+        <li><a href="./notificacao.html">Notificações</a></li>
+        <li><a href="./configuracao.html">Configurações</a></li>
+      </nav>
+      <div
+        class="btn-sair"
+        id="botaoSair"
+        onclick="sairDaConta()"
+        role="button"
+        tabindex="0"
+      >
+        <p class="botaoSair">Sair da Conta</p>
+        <img
+          src="./image/exit.png"
+          alt="Ícone para sair da conta"
+          class="icone"
+        />
+      </div>
     </aside>
-    
+
     <main class="paginaInicial">
-        <header class="container1-header">
-            <small>terça-feira, 06 de outubro</small>
-            <h1>Produtos e estoque</h1>
-            <p class="descricao"> Monitore os produtos, ingredientes, estoque e fornecedores</p>
-        </header>
+      <header class="container1-header">
+        <small>terça-feira, 06 de outubro</small>
+        <h1>Produtos e estoque</h1>
+        <p class="descricao">
+          Monitore os produtos, ingredientes, estoque e fornecedores
+        </p>
+      </header>
 
-        <section class="container1">
-                <div class="painel">
-                    <div class="tabs" role="tablist">
-                        <button class="tab" role="tab" aria-selected="true" data-t="prod">
-                        Produtos
-                        </button>
-                        <button class="tab" role="tab" aria-selected="false" data-t="ing">
-                        Ingredientes
-                        </button>
-                        <button class="tab" role="tab" aria-selected="false" data-t="forn">
-                        Fornecedores
-                        </button>
-                    </div>
-
-                    <div class="ferramentas" id="ferramentas">
-                        <input type="search" id="busca" placeholder="Buscar produto" aria-label="Buscar produto"/>
-                        <button class="chip" id="soAtencao" aria-pressed="false"> Novo Produto </button>
-                        <button class="btn pri" id="addCtx" style="display: none"></button>
-                    </div>
-
-                    <div class="lista-produto"></div>
+        <section class="container-painel">
+            <!-- janelas de opções -->
+            <div class="atalhos">
+                <div class="tabs">
+                    <button class="tab active" data-tab="produto">Produtos</button>
+                    <button class="tab" data-tab="ingrediente">Ingredientes</button>
+                    <button class="tab" data-tab="fornecedores">Fornecedores</button>
                 </div>
-        </section>
 
+                <!-- aba produto -->
+                <div class="content active" id="produto">
+                    <div class="tools" id="tools">
+                        <input type="search" class="search" id="busca" placeholder="Buscar produto" aria-label="Buscar produto"/>
+                        <button class="btn-produto" data-modal="modalProduto"> + Novo Produto </button>
+                        <label>
+                                <select name="tipo" class="btn-tipo">
+                                <option value="">Categoria</option>
+                                <option>Café</option>
+                                <option>Bebida</option>
+                                <option>Doce</option>
+                                <option>Salgado</option>
+                                <option>Outro</option>
+                                </select>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- aba ingredientes -->
+                <div class="content" id="ingrediente">
+                    <div class="tools" id="tools">
+                        <input type="search" class="search" id="busca" placeholder="Buscar ingrediente" aria-label="Buscar produto"/>
+                        <button class="btn-produto" data-modal="modalIngrediente"> + Novo Ingrediente </button>
+                    </div>
+                </div>
+
+                <!-- aba fornecedor -->
+                <div class="content" id="fornecedores">
+                    <div class="tools" id="tools">
+                        <input type="search" class="search" id="busca" placeholder="Buscar fornecedor" aria-label="Buscar produto"/>
+                        <button class="btn-produto" data-modal="modalFornecedor"> + Adicionar fornecedor </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
     </main>
 
+    <!-- modal: Novo Produto -->
+    <dialog id="modalProduto" class="modal">
+        <form method="dialog" class="form" id="formProduto">
+            <header class="modal-topo">
+                <div>
+                    <h2>Novo produto</h2>
+                    <p>Preencha os dados para adicionar ao catálogo</p>
+                </div>
+                <button type="button" class="fechar" aria-label="Fechar">×</button>
+            </header>
+            <div class="grade">
+                <label class="full">Nome do produto
+                    <input type="text" name="nome" required placeholder="Ex.: Cappuccino cremoso">
+                </label>
+                <label>Categoria
+                    <select name="tipo" required>
+                        <option value="">Selecione</option>
+                        <option>Café</option>
+                        <option>Bebida</option>
+                        <option>Doce</option>
+                        <option>Salgado</option>
+                        <option>Outro</option>
+                    </select>
+                </label>
+                <label>Preço (R$)
+                    <input type="number" name="preco" min="0" step="0.01" required placeholder="0,00">
+                </label>
+                <label>Quantidade em estoque
+                    <input type="number" name="estoque" min="0" required placeholder="0">
+                </label>
+                <label>Estoque mínimo
+                    <input type="number" name="minimo" min="0" placeholder="Avisar abaixo de...">
+                </label>
+                <label class="full">Detalhes
+                    <textarea name="detalhes" rows="3" placeholder="Ingredientes, tamanho, porções, observações..."></textarea>
+                </label>
+            </div>
+            <footer class="modal-rodape">
+                <button type="button" class="btn-cancelar fechar">Cancelar</button>
+                <button type="submit" class="btn-salvar">Salvar produto</button>
+            </footer>
+        </form>
+    </dialog>
 
+    <!-- Modal: Ingredientes -->
+    <dialog id="modalIngrediente" class="modal">
+        <form method="dialog" class="form" id="formIngrediente">
+            <header class="modal-topo">
+                <div>
+                    <h2>Novo Ingrediente</h2>
+                    <p>Preencha os dados para adicionar ao catálogo</p>
+                </div>
+                <button type="button" class="fechar" aria-label="Fechar">×</button>
+            </header>
+            <div class="grade">
+                <label class="full">Nome do ingrediente
+                    <input type="text" name="nome" required placeholder="Ex.: Leite de aveia">
+                </label>
+                <label>Fornecedor
+                    <select name="tipo" required>
+                        <option value="">Selecione</option>
+                        <option>Torrifação Serra</option>
+                        <option>Laticinios do Vale</option>
+                        <option>Atacado Central</option>
+                        <option>Granja Santa Rita</option>
+                        <option>Embalagens Bom Pack</option>
+                    </select>
+                </label>
+                <label>Preço (R$)
+                    <input type="number" name="preco" min="0" step="0.01" required placeholder="0,00">
+                </label>
+                <label>Unidade
+                    <select name="tipo" required>
+                        <option value="">Selecione</option>
+                        <option>kg</option>
+                        <option>g</option>
+                        <option>L</option>
+                        <option>ml</option>
+                        <option>un</option>
+                    </select>
+                </label>
+                <label>Quantidade em estoque
+                    <input type="number" name="estoque" min="0" required placeholder="0">
+                </label>
+                <label>Estoque mínimo
+                    <input type="number" name="minimo" min="0" placeholder="Avisar abaixo de...">
+                </label>
+                <label class="full">Detalhes
+                    <textarea name="detalhes" rows="3" placeholder="Ingredientes, tamanho, porções, observações..."></textarea>
+                </label>
+            </div>
+            <footer class="modal-rodape">
+                <button type="button" class="btn-cancelar fechar">Cancelar</button>
+                <button type="submit" class="btn-salvar">Salvar ingrediente</button>
+            </footer>
+        </form>
+    </dialog>
+
+    <dialog id="modalFornecedor" class="modal">
+        <form method="dialog" class="form" id="formFornecedor">
+            <header class="modal-topo">
+                <div>
+                    <h2>Novo fornecedor</h2>
+                    <p>Preencha os dados para adicionar ao catálogo</p>
+                </div>
+                <button type="button" class="fechar" aria-label="Fechar">×</button>
+            </header>
+            <div class="grade">
+                <label class="full">Nome do Fornecedor
+                    <input type="text" name="nome" required placeholder="Ex.: Padaria Estrela">
+                </label>
+                <label>Categoria
+                    <select name="tipo" required>
+                        <option value="">Selecione</option>
+                        <option>Café</option>
+                        <option>Bebida</option>
+                        <option>Doce</option>
+                        <option>Salgado</option>
+                        <option>Outro</option>
+                    </select>
+                </label>
+                <label>WhatsApp com DDD
+                    <input  type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" pattern="^\([0-9]{2}\)\s?[0-9]{4,5}-[0-9]{4}$" required>
+                </label>
+                <label class="full">Detalhes
+                    <textarea name="detalhes" rows="3" placeholder="Ingredientes, preço, observações..."></textarea>
+                </label>
+            </div>
+            <footer class="modal-rodape">
+                <button type="button" class="btn-cancelar fechar">Cancelar</button>
+                <button type="submit" class="btn-salvar">Salvar fornecedor</button>
+            </footer>
+        </form>
+    </dialog>
 
     <script src="./js/modal.js"></script>
+    <script src="./js/tabs.js"></script>
 </body>
 </html>
