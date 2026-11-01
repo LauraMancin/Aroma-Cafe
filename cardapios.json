@@ -43,6 +43,94 @@
                 "preco": "R$20,00",
                 "url": "imagens/produtos/caramelopatinha.png"
             }
+        ],
+        "bebidaGelada": [
+            {
+                "nome": "Iced Latte",
+                "descricao": "Bebida composta por um/dois shots de café expresso com leite e cubos de gelo.",
+                "preco": "R$25,60",
+                "url": "imagens/produtos/geladas/icedlatte.jpg"
+            },
+            {
+                "nome": "Latte Mel",
+                "descricao": "Equilíbrio entre o amargor do expresso com a doçura natural do mel e a suavidade do leite.",
+                "preco": "R$22,00",
+                "url": "imagens/produtos/geladas/lattemel.jpg"
+            },
+            {
+                "nome": "Frappé",
+                "descricao": "Café batido com gelo, sorvete ou leite. Bebida com textura cremosa e gelada.",
+                "preco": "R$30,00",
+                "url": "imagens/produtos/geladas/frape.webp"
+            },
+            {
+                "nome": "Ice Cream Mocha",
+                "descricao": "Bebida gelada e cremosa, combinando sorvete, calda de chocolate e finalizado com chantilly.",
+                "preco": "R$30,00",
+                "url": "imagens/produtos/geladas/mocha.jpg"
+            },
+            {
+                "nome": "Affogato",
+                "descricao": "Uma bola de sorvete afogada em uma dose de café expresso quente.",
+                "preco": "R$34,99",
+                "url": "imagens/produtos/geladas/affogato.jpg"
+            },
+            {
+                "nome": "Dalgona Coffee",
+                "descricao": "Espuma densa e cremosa de café solúvel, açúcar e água quente sobre leite.",
+                "preco": "R$27,00",
+                "url": "imagens/produtos/geladas/dalgona.jpg"
+            },
+            {
+                "nome": "Coffee Cola",
+                "descricao": "CMistura de café expresso com refrigerante de cola.",
+                "preco": "R$20,00",
+                "url": "imagens/produtos/geladas/cola.jpg"
+            }
+        ],
+        "acompanhamento": [
+            {
+                "nome": "Cookie De Patinha",
+                "descricao": "Intenso e amanteigado, nosso Cookie Patinha é macio por dentro e crocante por fora.",
+                "preco": "R$19,99",
+                "url": "imagens/produtos/doces/cookie.jpg"
+            },
+            {
+                "nome": "Brownie De Café",
+                "descricao": "Crocante e quentinho, nosso Brownie De Café aguarda por você!",
+                "preco": "R$25,00",
+                "url": "imagens/produtos/doces/brownie.png"
+            },
+            {
+                "nome": "Cheesecake De Café Com Chocolate",
+                "descricao": "Tendo uma base crocante, o Cheesecake equilibra a cremosidade do cheese com a intensidade do café.",
+                "preco": "R$25,00",
+                "url": "imagens/produtos/doces/chesscake.jpg"
+            },
+            {
+                "nome": "Cinnamon Roll",
+                "descricao": "Massa fofinha recheada com manteiga, açúcar e canela.",
+                "preco": "R$30,00",
+                "url": "imagens/produtos/doces/cina.png"
+            },
+            {
+                "nome": "Banoffee",
+                "descricao": "Base crocante de biscoito, fatias de banana fresca e uma cobertura generosa de chantilly.",
+                "preco": "R$30,00",
+                "url": "imagens/produtos/doces/banana.png"
+            },
+            {
+                "nome": "Tiramisù",
+                "descricao": "Camadas alternadas de biscoitos embebidos em café forte e um creme de queijo mascarpone.",
+                "preco": "R$30,00",
+                "url": "imagens/produtos/doces/tiramisu.png"
+            },
+            {
+                "nome": "Focaccia",
+                "descricao": "Pão achatado, macio e aromático, banhado com azeite e ervas.",
+                "preco": "R$30,00",
+                "url": "imagens/produtos/focaccia.png"
+            }
         ]
     }
 ]
