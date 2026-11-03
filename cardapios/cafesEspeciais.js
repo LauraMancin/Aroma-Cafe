@@ -5,7 +5,7 @@ const descricaoProduto = document.getElementById('descricaoProduto')
 
 const botaoCarrinho = document.getElementById('botaoCarrinho')
 
-const uva = JSON.parse(localStorage.getItem('produtos')) || []
+const produtosInformacoes = JSON.parse(localStorage.getItem('produtos')) || []
 
 let indexChave = 0
 let precoMonetario = 0
@@ -34,25 +34,25 @@ fetch('../cardapios.json')
     .then(cardapios => {
 
         cardapios.forEach(cardapio => {
-            const ultimoIndex = uva.length - 1
+            const ultimoIndex = produtosInformacoes.length - 1
 
             let carrinho = []
 
-            if(uva[ultimoIndex] <= 6){
-                indexChave = uva[ultimoIndex]
+            if(produtosInformacoes[ultimoIndex] <= 6){
+                indexChave = produtosInformacoes[ultimoIndex]
 
-                imgCardapio.setAttribute('src', cardapio.cafeEspecial[uva[ultimoIndex]].url)
+                imgCardapio.setAttribute('src', cardapio.cafeEspecial[produtosInformacoes[ultimoIndex]].url)
 
-                nomeProduto.innerText = `${cardapio.cafeEspecial[uva[ultimoIndex]].nome}`
+                nomeProduto.innerText = `${cardapio.cafeEspecial[produtosInformacoes[ultimoIndex]].nome}`
 
-                precoMonetario = cardapio.cafeEspecial[uva[ultimoIndex]].preco
+                precoMonetario = cardapio.cafeEspecial[produtosInformacoes[ultimoIndex]].preco
 
                 precoProduto.innerText += precoMonetario.toFixed(2).replace('.', ',')
                 
-                descricaoProduto.innerText = cardapio.cafeEspecial[uva[ultimoIndex]].descricao
+                descricaoProduto.innerText = cardapio.cafeEspecial[produtosInformacoes[ultimoIndex]].descricao
             }
-            else if(uva[ultimoIndex] <= 13){
-                indexChave = uva[ultimoIndex] - cardapio.cafeEspecial.length
+            else if(produtosInformacoes[ultimoIndex] <= 13){
+                indexChave = produtosInformacoes[ultimoIndex] - cardapio.cafeEspecial.length
 
                 imgCardapio.setAttribute('src', cardapio.bebidaGelada[indexChave].url)
 
@@ -65,7 +65,7 @@ fetch('../cardapios.json')
                 descricaoProduto.innerText = cardapio.bebidaGelada[indexChave].descricao
             }
             else{
-                indexChave = uva[ultimoIndex] - (cardapio.cafeEspecial.length + cardapio.bebidaGelada.length)
+                indexChave = produtosInformacoes[ultimoIndex] - (cardapio.cafeEspecial.length + cardapio.bebidaGelada.length)
 
                 imgCardapio.setAttribute('src', cardapio.acompanhamento[indexChave].url)
 

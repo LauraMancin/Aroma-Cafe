@@ -26,22 +26,22 @@ document.querySelectorAll('.categoria').forEach(categoria => {
         lista.scrollBy({ left: passo(), behavior: 'smooth' });
     });
 
-    // Atualiza ao rolar (inclusive com o dedo no celular) e ao redimensionar a tela
+    // Atualiza ao rolar e ao redimensionar a tela
     lista.addEventListener('scroll', atualizarSetas);
     window.addEventListener('resize', atualizarSetas);
 
-    atualizarSetas(); // estado inicial
+    atualizarSetas(); 
 });
 
-// Trabalhar com localStorage
+// localStorage
 const produtos = document.querySelectorAll('.produto-link')
 
-let uva = []
+let produtosInformacoes = []
 
 produtos.forEach((produto, index) => {
     produto.addEventListener('click', () => {
-        uva.push(index)
+        produtosInformacoes.push(index)
 
-        localStorage.setItem('produtos', JSON.stringify(uva))
+        localStorage.setItem('produtos', JSON.stringify(produtosInformacoes))   
     })
 })
