@@ -293,7 +293,8 @@ a {
     box-shadow 0.3s ease;
 }
 
-.btn-produto:hover {
+.btn-produto:hover,
+.btn-tipo:hover {
   cursor: pointer;
   transform: translateY(-3px);
   background: var(--cor-botao-efeito);

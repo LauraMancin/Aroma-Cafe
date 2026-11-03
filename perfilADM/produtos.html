@@ -86,8 +86,11 @@
                         <button class="btn-produto" data-modal="modalFornecedor"> + Adicionar fornecedor </button>
                     </div>
                 </div>
-
             </div>
+        </section>
+
+        <section>
+            <div class="lista-produtos"></div>
         </section>
     </main>
 
@@ -102,6 +105,7 @@
                 <button type="button" class="fechar" aria-label="Fechar">×</button>
             </header>
             <div class="grade">
+                <input type="hidden" id="produto-id">
                 <label class="full">Nome do produto
                     <input type="text" name="nome" required placeholder="Ex.: Cappuccino cremoso">
                 </label>
@@ -130,7 +134,7 @@
             </div>
             <footer class="modal-rodape">
                 <button type="button" class="btn-cancelar fechar">Cancelar</button>
-                <button type="submit" class="btn-salvar">Salvar produto</button>
+                <button type="submit" class="btn-salvar" id="btn-submit">Salvar produto</button>
             </footer>
         </form>
     </dialog>
@@ -228,5 +232,6 @@
 
     <script src="./js/modal.js"></script>
     <script src="./js/tabs.js"></script>
+    <script src="./js/cards.js"></script>
 </body>
 </html>
