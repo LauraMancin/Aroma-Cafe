@@ -23,6 +23,10 @@
     --container-padding: clamp(16px, 5%, 80px) /*deixa o padding responsivo valorMinimo, valorIdeal e valorMaximo*/
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 /* Menu */
 
 header{
@@ -188,7 +192,10 @@ header{
 .gatos{
     display: grid;
     line-height: 1.5;
-    text-decoration: none;
+}
+
+.gatos a{
+    text-decoration: none
 }
 
 .gatos img {
@@ -292,6 +299,11 @@ header{
 .especificacoes{
     list-style: none;
     margin-bottom: 50px;
+}
+
+.especificacoes li{
+    display: flex;
+    gap: 20px;
 }
 
 .descricao{

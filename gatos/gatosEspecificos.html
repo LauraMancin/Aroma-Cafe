@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nespresso</title>
+    <title>Pucca</title>
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="shortcut icon" href="./assets/icone.png" type="image/x-icon">
 </head>
@@ -22,23 +22,9 @@
  
         <div>
             <nav class="menuNavegacao">
-
-                <ul> 
-                        <li class="dropdown" tabindex="0">
-                            <a href="#"><span class="cardap-colorido">CARDÁPIO</span></a>
-
-                            <div class="dropdown-menu">
-                                <a href="../cardapios/cafesEspeciais.html">Cafés Especiais</a>
-                                <a href="../cardapios/bebidasGeladas.html" class="Bebidas-menu">Bebidas Geladas</a>
-                                <a href="../cardapios/doces.html">Doces e <br>
-                                Acompanhamentos</a>
-                            </div>
-                        </li>  
-                </ul>
-
-
                 <!-- menu -->
                 <div class="menu">
+                    <a href="../cardapios.html"><span class="cardap-colorido">CARDÁPIO</span></a>
                     <a href="gatos.html" class="ativo">ADOÇÕES</a>
                     <a href="reservas.html">RESERVAS</a>
                 </div>
@@ -49,24 +35,24 @@
 
     
     <!--Parte do gato-->
-    <a href="./gatos.html" class="voltar"><img src="./assets/icon_voltar.png"></a>
+    <a href="./gatos.html#blocoGatos" class="voltar"><img src="./assets/icon_voltar.png"></a>
     <section class="container">
         <div class="containerFoto">
             <div class="imgGato">
-                <img src="./assets/gato_nespresso.png" alt="Foto Gato Nespresso">
+                <img id="fotoGato" src="" alt="Foto gato">
             </div>
 
         </div>
 
         <div class="containerEspecificacoes">
             <ul class="especificacoes">
-                <li><h1 class="nomeGato">NESPRESSO</h1></li>
-                <li> <img src="./assets/icon_macho.png" alt="Sexo do gato">Macho</li>
-                <li> <img src="./assets/icon_raca.png" alt="Raça do gato">SRD (Vira-lata)</li>
-                <li> <img src="./assets/icon_pelagem.png" alt="Tipo de pelagem">Pelagem média</li>
-                <li> <img src="./assets/icon_olhos.png" alt="Cor dos olhos">Olhos Verdes</li>
-                <li> <img src="./assets/icon_nascimento.png" alt="Data de Nascimento">Nascimento aprox. Novembro 2025</li>
-
+                <li><h1 class="nomeGato" id="nomeGato"></h1></li>
+                <li> <img src="" alt="Sexo do gato" id="iconeSexo"><p id="sexoGato"></p></li>
+                <li> <img src="" alt="Raça do gato" id="iconeRaca"><p id="racaGato"></p></li>
+                <li> <img src="" alt="Tipo de pelagem" id="iconePelagem"><p id="tipoPelagem"></p></li>
+                <li> <img src="" alt="Cor dos olhos" id="iconeOlhos"><p id="corOlhos"></p></li>
+                <li> <img src="" alt="Data de Nascimento" id="iconeNascimento"><p id="dataNascimento"></p></li>
+                
                 <!--Botão e popup-->
                 <button class="botaoAdotar" onclick="abrirModal()">Quero Adotar</button>
                 <div id="modal" class="modal-overlay">
@@ -80,7 +66,7 @@
         </div>
     </section>
     <div class="descricao">
-        <p>Nespresso é cheio de personalidade! Independente, mas também muito carinhoso quando se sente seguro. Gosta de explorar e escolher seus próprios cantinhos para relaxar. Com paciência e amor, se mostra um excelente companheiro, daqueles que criam laços fortes com o tutor.</p>
+        <p id="descricao"></p>
     </div>
 
     <!--Rodapé-->
@@ -119,6 +105,7 @@
         </section>
     </footer>
 
-    <script src="javascript/botaoAdotar.js"></script>
+    <script src="./javascript/botaoAdotar.js"></script>
+    <script src="./javascript/exibirGato.js"></script>
 </body>
 </html> 

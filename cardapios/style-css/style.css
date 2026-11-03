@@ -57,31 +57,6 @@ header {
     transform: scale(1.03);
 }
 
-.dropdown {
-    list-style-type: none;
-    position: relative;
-}
-
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    margin-top: 1rem;
-    border: 5px solid var(--cor-botao-efeito);
-    border-radius: 18px;
-    padding: 20px;
-    right: 0; 
-    background-color: var(--cor-secundaria);
-    z-index: 100;
-}
-
-.dropdown-menu a {
-    display: block;
-}
-
-.dropdown:focus-within .dropdown-menu {
-    display: block;
-}
-
 .Bebidas-menu {
     margin-top: 0.8rem;
     margin-bottom: 0.8rem;

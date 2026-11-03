@@ -53,11 +53,11 @@
     <main class="pagina-carrinho">
         <section class="carrinho-topo">
             <div>
-                <small>3 itens no carrinho</small>
+                <small><span id="infoQuantidadeTotal"></span> no carrinho</small>
                 <h1>Meu carrinho</h1>
                 <p>Confira seu pedido antes de finalizar</p>
             </div>
-            <a href="../cardapios/cafesEspeciais.html" class="btn-continuar">Continuar comprando</a>
+            <a href="../cardapios.html" class="btn-continuar">Continuar comprando</a>
         </section>
 
         <section class="carrinho-layout">
@@ -68,69 +68,8 @@
                     <p>Ajuste as quantidades ou remova itens</p>
                 </div>
 
-                <div class="lista-itens">
-                    <article class="item-carrinho">
-                        <div class="item-icone">
-                        <img src="../cardapios/imagens/produtos/gatoccino.jpg" alt="Gatoccino">
-                        </div>
-                        <div class="item-info">
-                            <h3>Gatoccino</h3>
-                            <p>Cappuccino cremoso com arte de latte em formato de gatinho.</p>
-                            <span class="tag-lactose">Contém lactose</span>
-                        </div>
-                        <div class="quantidade">
-                            <button type="button" class="btn-qtd" aria-label="Diminuir quantidade">−</button>
-                            <span class="qtd-valor">2</span>
-                            <button type="button" class="btn-qtd" aria-label="Aumentar quantidade">+</button>
-                        </div>
-                        <div class="item-preco">
-                            <small>R$ 24,99 un.</small>
-                            <strong>R$ 49,98</strong>
-                        </div>
-                        <button type="button" class="btn-remover" aria-label="Remover item">×</button>
-                    </article>
-
-                    <article class="item-carrinho">
-                        <div class="item-icone">
-                        <img src="../cardapios/imagens/produtos/doces/cookie.jpg" alt="Cookie de patinha">
-                        </div>
-                        <div class="item-info">
-                            <h3>Cookie de patinha</h3>
-                            <p>Intenso e amanteigado, macio por dentro e crocante por fora.</p>
-                            <span class="tag-lactose">Contém lactose</span>
-                        </div>
-                        <div class="quantidade">
-                            <button type="button" class="btn-qtd" aria-label="Diminuir quantidade">−</button>
-                            <span class="qtd-valor">1</span>
-                            <button type="button" class="btn-qtd" aria-label="Aumentar quantidade">+</button>
-                        </div>
-                        <div class="item-preco">
-                            <small>R$ 19,99 un.</small>
-                            <strong>R$ 19,99</strong>
-                        </div>
-                        <button type="button" class="btn-remover" aria-label="Remover item">×</button>
-                    </article>
-
-                    <article class="item-carrinho">
-                        <div class="item-icone">
-                            <img src="../cardapios/imagens/produtos/cold.png" alt="Cold brew felino">
-                        </div>
-                        <div class="item-info">
-                            <h3>Cold brew felino</h3>
-                            <p>Cold brew gelado com toque de baunilha e canela.</p>
-                            <span class="tag-lactose">Contém lactose</span>
-                        </div>
-                        <div class="quantidade">
-                            <button type="button" class="btn-qtd" aria-label="Diminuir quantidade">−</button>
-                            <span class="qtd-valor">1</span>
-                            <button type="button" class="btn-qtd" aria-label="Aumentar quantidade">+</button>
-                        </div>
-                        <div class="item-preco">
-                            <small>R$ 18,00 un.</small>
-                            <strong>R$ 18,00</strong>
-                        </div>
-                        <button type="button" class="btn-remover" aria-label="Remover item">×</button>
-                    </article>
+                <div id="lista-itens" class="lista-itens">
+                    
                 </div>
             </section>
 
@@ -204,5 +143,6 @@
             </div>
         </section>
     </footer> 
+    <script src="carrinho.js"></script>
 </body>
 </html>
