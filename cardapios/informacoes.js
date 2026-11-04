@@ -38,8 +38,8 @@ fetch('../cardapios.json')
 
             let carrinho = []
 
-            if(produtosInformacoes[ultimoIndex] <= 6){
-                indexChave = produtosInformacoes[ultimoIndex]
+            if(uva[ultimoIndex] <= cardapio.cafeEspecial.length - 1){
+                indexChave = uva[ultimoIndex]
 
                 imgCardapio.setAttribute('src', cardapio.cafeEspecial[produtosInformacoes[ultimoIndex]].url)
 
@@ -51,8 +51,8 @@ fetch('../cardapios.json')
                 
                 descricaoProduto.innerText = cardapio.cafeEspecial[produtosInformacoes[ultimoIndex]].descricao
             }
-            else if(produtosInformacoes[ultimoIndex] <= 13){
-                indexChave = produtosInformacoes[ultimoIndex] - cardapio.cafeEspecial.length
+            else if(uva[ultimoIndex] <= (cardapio.cafeEspecial.length - 1) + (cardapio.bebidaGelada.length - 1)){
+                indexChave = uva[ultimoIndex] - cardapio.cafeEspecial.length
 
                 imgCardapio.setAttribute('src', cardapio.bebidaGelada[indexChave].url)
 
