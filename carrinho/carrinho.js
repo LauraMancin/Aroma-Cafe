@@ -59,11 +59,7 @@ botaoRemover.forEach((botao, index) => {
 const esvaziarCarrinho = document.getElementById('esvaziarCarrinho')
 
 esvaziarCarrinho.addEventListener('click', () => {
-    for(const index in carrinho){
-        carrinho.splice(index, 1)
-    }
-
-    localStorage.setItem('carrinho', JSON.stringify(carrinho))
+    localStorage.setItem('carrinho', JSON.stringify([]))
 
     location.reload()
     alert('Carrinho foi esvaziado')
