@@ -83,28 +83,28 @@
                 <div class="resumo-linhas">
                     <div class="resumo-linha">
                         <span>Subtotal</span>
-                        <strong>R$ 87,97</strong>
+                        <strong>R$ <span id="valorPedido">--</span></strong>
                     </div>
                     <div class="resumo-linha">
                         <span>Desconto</span>
-                        <strong>− R$ 0,00</strong>
+                        <strong>− R$ <span id="valorDesconto">0,00</span></strong>
                     </div>
                     <div class="resumo-linha total">
                         <span>Total</span>
-                        <strong>R$ 87,97</strong>
+                        <strong>R$ <span id="valorTotal">--</span></strong>
                     </div>
                 </div>
 
                 <form class="cupom" onsubmit="return false">
                     <label for="cupom">Cupom de desconto</label>
                     <div class="cupom-campo">
-                        <input type="text" id="cupom" name="cupom" placeholder="Digite seu cupom">
-                        <button type="submit" class="btn-aplicar">Aplicar</button>
+                        <input type="text" id="campoCupom" name="cupom" placeholder="Digite seu cupom">
+                        <button class="btn-aplicar" id="aplicarCupom">Aplicar</button>
                     </div>
                 </form>
 
                 <button type="button" class="btn-finalizar">Finalizar pedido</button>
-                <button type="button" class="btn-limpar">Esvaziar carrinho</button>
+                <button type="button" class="btn-limpar" id="esvaziarCarrinho">Esvaziar carrinho</button>
             </aside>
         </section>
     </main>
