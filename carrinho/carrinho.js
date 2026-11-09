@@ -90,7 +90,7 @@ fetch('./cupons.json')
 
                     valorDesconto.innerText = desconto
 
-                    valorTotal.innerText = valorProdutos - desconto
+                    valorTotal.innerText = (valorProdutos - desconto).toFixed(2)
 
                     campoCupom.value = ''
                 }
