@@ -1,120 +1,28 @@
-    const tabsContainer = document.querySelector(".tabs");
-    const tabs = document.querySelectorAll(
-        ".tabs .tab"
-    );
+// Abas (Produtos / Ingredientes / Fornecedores) com indicador rosa
+(() => {
+  const barra = document.querySelector(".tabs");
+  const abas = [...document.querySelectorAll(".tab")];
+  const indicador = document.createElement("span");
+  indicador.className = "tab-indicator";
+  barra.appendChild(indicador);
 
-    const contents = document.querySelectorAll(
-        ".content"
-    );
+  const mover = (aba) => {
+    indicador.style.width = aba.offsetWidth + "px";
+    indicador.style.transform = `translateX(${aba.offsetLeft}px)`;
+  };
 
+  abas.forEach((aba) =>
+    aba.addEventListener("click", () => {
+      abas.forEach((a) => a.classList.toggle("active", a === aba));
+      document
+        .querySelectorAll(".content")
+        .forEach((c) => c.classList.toggle("active", c.id === aba.dataset.tab));
+      mover(aba);
+    })
+  );
 
-    if (tabsContainer && tabs.length > 0) {
-
-        // Criar linha rosa
-
-        const indicator = document.createElement("div");
-
-        indicator.classList.add("tab-indicator");
-
-        tabsContainer.appendChild(indicator);
-
-
-        // Posicionar linha rosa
-
-        function posicionarIndicador(tabAtiva) {
-
-            const containerRect =
-                tabsContainer.getBoundingClientRect();
-
-            const tabRect =
-                tabAtiva.getBoundingClientRect();
-
-            indicator.style.width =
-                `${tabRect.width}px`;
-
-            indicator.style.transform =
-                `translateX(${tabRect.left - containerRect.left}px)`;
-
-        }
-
-
-        // Aba ativa inicialmente
-
-        const abaAtivaInicial =
-            document.querySelector(
-                ".tabs .tab.active"
-            ) || tabs[0];
-
-
-        posicionarIndicador(
-            abaAtivaInicial
-        );
-
-
-        // Troca de abas
-
-        tabs.forEach((tab) => {
-
-            tab.addEventListener("click", () => {
-
-                // Remove active das abas
-
-                tabs.forEach((t) => {
-                    t.classList.remove("active");
-                });
-
-
-                // Remove active dos conteúdos
-
-                contents.forEach((c) => {
-                    c.classList.remove("active");
-                });
-
-
-                // Ativa aba clicada
-
-                tab.classList.add("active");
-
-
-                // Move linha rosa
-
-                posicionarIndicador(tab);
-
-
-                // Descobre conteúdo
-
-                const target =
-                    tab.getAttribute("data-tab");
-
-
-                const contentEl =
-                    document.getElementById(target);
-
-
-                // Mostra conteúdo
-
-                if (contentEl) {
-                    contentEl.classList.add("active");
-                }
-
-            });
-
-        });
-
-
-        // Reposiciona linha ao redimensionar
-
-        window.addEventListener("resize", () => {
-
-            const tabAtiva =
-                document.querySelector(
-                    ".tabs .tab.active"
-                );
-
-            if (tabAtiva) {
-                posicionarIndicador(tabAtiva);
-            }
-
-        });
-
-    }
+  const ativa = () => abas.find((a) => a.classList.contains("active"));
+  mover(ativa());
+  window.addEventListener("load", () => mover(ativa()));
+  window.addEventListener("resize", () => mover(ativa()));
+})();
