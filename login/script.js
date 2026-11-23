@@ -1,150 +1,92 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    const campos = document.querySelectorAll('.input-');
+    const form = document.querySelector('.input-principal');
+    const email = document.getElementById('email');
+    const senha = document.getElementById('senha');
     const botaoEntrar = document.querySelector('.botao-entrar');
 
-    if (campos.length < 2 || !botaoEntrar) {
+    if (!form || !email || !senha || !botaoEntrar) {
         return;
     }
 
-    // Campos
-    const email = campos[0];
-    const senha = campos[1];
+    const tipo = document.body.dataset.tipo === 'admin' ? 'admin' : 'cliente';
 
-    // Cores do botão
-    const corNormal = '#DB7093';
-    const corApagada = '#d99aae';
+    const DESTINOS = {
+        admin: '../perfilADM/perfilADM.html',
+        cliente: '../homePage_perfil/indexPerfil.html'
+    };
 
+    
+    // localhost 
+    const MODO_TESTE = ['localhost', '127.0.0.1', ''].includes(window.location.hostname);
 
-    function verificarCampos() {
+    const CONTAS_TESTE = {
+        cliente: { email: 'cliente@gmail.com', senha: 'Admin123@' },
+        admin: { email: 'testeadm@gmail.com', senha: 'Admin123@' }
+    };
 
-        const emailPreenchido = email.value.trim() !== '';
-        const senhaPreenchida = senha.value.trim() !== '';
-
-        if (emailPreenchido && senhaPreenchida) {
-
-            botaoEntrar.style.backgroundColor = corNormal;
-            botaoEntrar.style.borderColor = corNormal;
-            botaoEntrar.style.opacity = '1';
-            botaoEntrar.style.cursor = 'pointer';
-
-        } else {
-
-            botaoEntrar.style.backgroundColor = corApagada;
-            botaoEntrar.style.borderColor = corApagada;
-            botaoEntrar.style.opacity = '0.7';
-            botaoEntrar.style.cursor = 'not-allowed';
-        }
+    if (MODO_TESTE) {
+        email.value = CONTAS_TESTE[tipo].email;
+        senha.value = CONTAS_TESTE[tipo].senha;
     }
 
 
-    // validar e-amail 
 
     function emailValido(valor) {
-
-        valor = valor.trim().toLowerCase();
-
-        const formato = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.com$/;
-
-        if (!formato.test(valor)) {
-            return false;
-        }
-
-        const dominiosPermitidos = [
-            'gmail.com',
-            'hotmail.com',
-            'outlook.com',
-            'yahoo.com',
-            'icloud.com',
-            'live.com',
-            'protonmail.com'
-        ];
-
-        const dominio = valor.split('@')[1];
-
-        return dominiosPermitidos.includes(dominio);
+        valor = valor.trim();
+        return valor.length <= 254 && /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(valor);
     }
 
 
-    // validar senha
-
-    function senhaValida(valor) {
-
-        const tamanhoMinimo = valor.length >= 8;
-        const temMaiuscula = /[A-Z]/.test(valor);
-        const temMinuscula = /[a-z]/.test(valor);
-        const temNumero = /[0-9]/.test(valor);
-        const temSimbolo = /[^A-Za-z0-9]/.test(valor);
-
-        return (
-            tamanhoMinimo &&
-            temMaiuscula &&
-            temMinuscula &&
-            temNumero &&
-            temSimbolo
-        );
-    }
-
-
-    // mostra erro caso não tenha tudo completo
-
-    function mostrarErro(campo, mensagem) {
-
-        const erroAnterior = campo.nextElementSibling;
-
-        if (
-            erroAnterior &&
-            erroAnterior.classList.contains('mensagem-erro')
-        ) {
-            erroAnterior.remove();
-        }
-
-        const erro = document.createElement('small');
-
-        erro.classList.add('mensagem-erro');
-        erro.textContent = mensagem;
-
-        campo.insertAdjacentElement('afterend', erro);
-
-        campo.classList.add('campo-invalido');
-    }
-
-
-    // remove o erro
+    // -- msg de erro
 
     function removerErro(campo) {
-
-        const erro = campo.nextElementSibling;
-
-        if (
-            erro &&
-            erro.classList.contains('mensagem-erro')
-        ) {
-            erro.remove();
-        }
-
+        const erro = document.getElementById(campo.id + '-erro');
+        if (erro) erro.remove();
         campo.classList.remove('campo-invalido');
+        campo.removeAttribute('aria-invalid');
+        campo.removeAttribute('aria-describedby');
+    }
+
+    function mostrarErro(campo, mensagem) {
+        removerErro(campo);
+
+        const erro = document.createElement('small');
+        erro.id = campo.id + '-erro';
+        erro.className = 'mensagem-erro';
+        erro.setAttribute('role', 'alert');
+        erro.textContent = mensagem; // textContent = seguro contra injeção de código
+
+        campo.insertAdjacentElement('afterend', erro);
+        campo.classList.add('campo-invalido');
+        campo.setAttribute('aria-invalid', 'true');
+        campo.setAttribute('aria-describedby', erro.id);
+    }
+
+    function verificarCampos() {
+        const preenchidos = email.value.trim() !== '' && senha.value !== '';
+        botaoEntrar.classList.toggle('inativo', !preenchidos);
+    }
+
+    email.addEventListener('input', () => { removerErro(email); verificarCampos(); });
+    senha.addEventListener('input', () => { removerErro(senha); verificarCampos(); });
+
+
+    function autenticar(emailDigitado, senhaDigitada) {
+        if (MODO_TESTE) {
+            const conta = CONTAS_TESTE[tipo];
+            return emailDigitado.trim().toLowerCase() === conta.email &&
+                   senhaDigitada === conta.senha;
+        }
+        return null;
     }
 
 
-    email.addEventListener('input', () => {
-        removerErro(email);
-        verificarCampos();
-    });
+    // -- envio forms 
 
-    senha.addEventListener('input', () => {
-        removerErro(senha);
-        verificarCampos();
-    });
-
-
-    // botão entrar
-
-    botaoEntrar.addEventListener('click', (evento) => {
+    form.addEventListener('submit', (evento) => {
 
         evento.preventDefault();
-
-        // validação e-mail
 
         if (email.value.trim() === '') {
             mostrarErro(email, 'Preencha esse campo');
@@ -158,48 +100,29 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // validação senha
-
-        if (senha.value.trim() === '') {
+        if (senha.value === '') {
             mostrarErro(senha, 'Preencha esse campo');
             senha.focus();
             return;
         }
 
-        if (!senhaValida(senha.value)) {
-            mostrarErro(senha, 'A senha deve ter pelo menos 8 caracteres, contendo letra maiúscula, minúscula, número e símbolo');
+        const resultado = autenticar(email.value, senha.value);
+
+        if (resultado === null) {
+            mostrarErro(senha, 'Login indisponível: servidor ainda não conectado.');
+            return;
+        }
+
+        if (resultado === false) {
+            mostrarErro(senha, 'E-mail ou senha incorretos');
             senha.focus();
             return;
         }
-        
-        // Verifica se o caminho do arquivo no navegador possui "loginADM.html"
-        if (window.location.pathname.includes('loginADM.html')) {
-            
-            // Salva as permissões e vai para o painel administrativo
-            localStorage.setItem("usuarioLogado", "true");
-            localStorage.setItem("tipoUsuario", "admin");
-            window.location.href = '../perfilADM/perfilADM.html';
 
-        } else {
-            
-            // Salva como cliente comum e vai para a página inicial
-            localStorage.setItem("usuarioLogado", "true");
-            localStorage.setItem("tipoUsuario", "cliente");
-            window.location.href = '../homePage_perfil/indexPerfil.html';
-        }
-
+        localStorage.setItem('usuarioLogado', 'true');
+        localStorage.setItem('tipoUsuario', tipo);
+        window.location.href = DESTINOS[tipo];
     });
 
-    // e-mail e senha do ADM para testes
-    if (window.location.pathname.includes('loginADM.html')) {
-        email.value = "testeadm@gmail.com";
-    } else {
-        email.value = "cliente@gmail.com";
-    }
-    
-    senha.value = "Admin123@";
-
-
     verificarCampos();
-
 });

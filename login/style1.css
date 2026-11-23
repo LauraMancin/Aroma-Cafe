@@ -4,12 +4,11 @@
 :root {
     --fonte-principal: 'Inter', sans-serif;
     --cor-principal: #DB7093;
+    --cor-erro: #B3365F; /* mais escura que a principal: legível no fundo branco */
     --fonte-logo: 'Mogra', system-ui;
 }
 
-/* =========================
-   RESET
-========================= */
+/* ===== RESET ===== */
 
 * {
     margin: 0;
@@ -17,172 +16,104 @@
     box-sizing: border-box;
 }
 
-html {
+html, body {
     width: 100%;
     height: 100%;
 }
 
 body {
-    width: 100%;
-    height: 100%;
     font-family: var(--fonte-principal);
-
-    /* Esconde a barra de rolagem */
-    scrollbar-width: none;
     overflow: hidden;
 }
 
-body::-webkit-scrollbar {
-    display: none;
-}
-
-/* =========================
-   CONTAINER PRINCIPAL
-========================= */
 
 .container-pai {
     display: flex;
     width: 100%;
     height: 100vh;
     height: 100dvh;
-
     overflow: hidden;
 }
-
-/* =========================
-   PARTE DO LOGIN
-========================= */
 
 .login-principal {
     flex: 1;
     min-width: 0;
     min-height: 0;
-
     display: flex;
-    align-items: center;
-    justify-content: center;
-
     text-align: center;
     background-color: white;
-
     padding: clamp(20px, 4vw, 60px);
-
-    overflow: hidden;
+    overflow-y: auto;
 }
 
 .card {
     width: 100%;
     max-width: 430px;
-
+    margin: auto;
     padding: clamp(10px, 2vw, 30px);
-
-    /* IMPORTANTE:
-       não esconder o conteúdo do card */
-    overflow: visible;
-
-    transform-origin: center center;
 }
 
-/* =========================
-   TEXTOS
-========================= */
+/* -- textos */
 
 .nome-empresa {
     margin-bottom: 15px;
-
     font-family: var(--fonte-logo);
     font-weight: bold;
-
     font-size: clamp(22px, 2vw, 30px);
 }
 
 .titulo {
     margin-bottom: 10px;
-
-    font-family: var(--fonte-principal);
     font-weight: 700;
-
     font-size: clamp(22px, 2.2vw, 30px);
-
     line-height: 1.2;
 }
 
-.titulo- {
-    color: var(--cor-principal);
-}
+.titulo- { color: var(--cor-principal); }
 
 .texto- {
-    color: gray;
-
+    color: #666; 
     margin-bottom: 20px;
-
-    font-family: var(--fonte-principal);
-
     font-size: clamp(13px, 1.2vw, 16px);
     line-height: 1.5;
 }
 
-/* =========================
-   FORMULÁRIO
-========================= */
+/* -- forms */
 
-.input-principal {
-    width: 100%;
-}
+.input-principal { width: 100%; }
 
 .input-texto {
     display: block;
-
     width: 100%;
     max-width: 350px;
-
     margin: 0 auto 7px;
-
     text-align: left;
-
-    font-family: var(--fonte-principal);
     font-size: 12px;
     font-weight: bold;
-
     color: rgb(82, 80, 80);
 }
 
 .input- {
     display: block;
-
     width: 100%;
     max-width: 350px;
-
     padding: 13px;
-
     margin: 0 auto 15px;
-
     border-radius: 8px;
     border: 2px solid rgba(128, 128, 128, 0.219);
-
-    outline: none;
-
     font-family: var(--fonte-principal);
     font-size: 14px;
+    outline: none;
 }
 
-.input-:focus {
-    border-color: var(--cor-principal);
-}
-
-/* =========================
-   CHECKBOX
-========================= */
+.input-:focus { border-color: var(--cor-principal); }
 
 .checkbox {
     display: flex;
     align-items: center;
-
     width: 100%;
     max-width: 350px;
-
     margin: 0 auto 18px;
-
     text-align: left;
 }
 
@@ -191,53 +122,60 @@ body::-webkit-scrollbar {
     margin-right: 10px;
 }
 
-.label-conectado {
-    font-family: var(--fonte-principal);
+.label-conectado { font-size: clamp(12px, 1vw, 14px); }
 
-    font-size: clamp(12px, 1vw, 14px);
+
+.botao-entrar {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    padding: 14px;
+    margin: 15px auto 20px;
+    font-family: var(--fonte-principal);
+    font-size: 14px;
+    font-weight: bold;
+    background-color: var(--cor-principal);
+    color: white;
+    border-radius: 8px;
+    border: 1px solid var(--cor-principal);
+    cursor: pointer;
+    transition: 0.2s ease;
 }
 
-/* =========================
-   OUTRAS OPÇÕES
-========================= */
+.botao-entrar:hover { transform: scale(1.01); opacity: 0.9; }
+
+.botao-entrar.inativo {
+    background-color: #d99aae;
+    border-color: #d99aae;
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
 
 .outras-opcoes {
     display: flex;
     align-items: center;
     justify-content: center;
-
     width: 100%;
     max-width: 350px;
-
     gap: 10px;
-
     margin: 20px auto;
-
-    font-family: var(--fonte-principal);
-
     font-size: clamp(12px, 1vw, 14px);
 }
 
 .linha {
     flex: 1;
-
     height: 1px;
-
     background-color: rgba(0, 0, 0, 0.2);
 }
-
-/* =========================
-   BOTÕES DOS APPS
-========================= */
 
 .outras-opcoes-apps {
     display: flex;
     align-items: center;
     justify-content: center;
-
     gap: 13px;
-
-    margin-bottom: 5px;
+    margin-bottom: 25px;
 }
 
 .botoes-1,
@@ -245,465 +183,124 @@ body::-webkit-scrollbar {
     display: flex;
     align-items: center;
     justify-content: center;
-
-    background-color: #F7F7F7;
-
-    border: 2px solid #f7f7f7c8;
-    border-radius: 10px;
-
-    padding: 8px;
-
     width: 80px;
     height: 48px;
-
+    background-color: #F7F7F7;
+    border: 2px solid #f7f7f7c8;
+    border-radius: 10px;
     box-shadow: 0 4px 2px 0 rgba(0, 0, 0, 0.092);
-
+    text-decoration: none;
     transition: 0.2s ease;
 }
 
 .botoes-1:hover,
-.botoes-2:hover {
-    transform: scale(1.02);
-    opacity: 0.9;
-    cursor: pointer;
-}
+.botoes-2:hover { transform: scale(1.02); opacity: 0.9; }
 
-/* =========================
-   ÍCONES
-========================= */
-
-.img-icons {
-    width: 18px;
-    max-width: 100%;
-}
-
-.img-icons2 {
-    width: 20px;
-    max-width: 100%;
-}
-
-/* =========================
-   BOTÃO ENTRAR
-========================= */
-
-.botao-entrar {
-    display: block;
-
-    width: 100%;
-    max-width: 300px;
-
-    padding: 14px;
-
-    margin: 15px auto 20px;
-
-    font-family: var(--fonte-principal);
-    font-size: 14px;
-    font-weight: bold;
-
-    background-color: var(--cor-principal);
-    color: white;
-
-    border-radius: 8px;
-    border: 1px solid var(--cor-principal);
-
-    transition: 0.2s ease;
-}
-
-.botao-entrar:hover {
-    transform: scale(1.01);
-    opacity: 0.9;
-    cursor: pointer;
-}
-
-.link-botao {
-    text-decoration: none;
-}
+.img-icons  { width: 18px; max-width: 100%; }
+.img-icons2 { width: 20px; max-width: 100%; }
 
 .botao-texto,
 .card > p {
-    font-family: var(--fonte-principal);
-
     font-size: clamp(12px, 1vw, 14px);
-
     line-height: 1.5;
 }
 
+.espaco-adm { margin-top: 20px; }
+
 .link {
     color: var(--cor-principal);
-
-    font-family: var(--fonte-principal);
-
     font-size: inherit;
-
     text-decoration: none;
 }
 
-.link:hover {
-    text-decoration: underline;
-}
+.link:hover,
+.link:focus-visible { text-decoration: underline; }
 
-/* =========================
-   PARTE DA IMAGEM
-========================= */
+/* - img */
 
 .parte-dois {
     flex: 1;
     min-width: 0;
     min-height: 0;
-
     height: 100%;
 }
 
 .login-dois {
+    display: flex;
     width: 100%;
     height: 100%;
-
-    display: flex;
-
     overflow: hidden;
 }
 
 .fundo {
     display: block;
-
     width: 100%;
     height: 100%;
-
-    min-width: 100%;
-    min-height: 100%;
-
     object-fit: cover;
-    object-position: center;
-
+    object-position: center center;
     border-top-left-radius: 28px;
 }
 
-/* =============================
-   TELAS GRANDES
-============================= */
-
-@media (min-width: 1400px) {
-
-    .login-principal {
-        padding: 40px;
-    }
-
-    .card {
-        max-width: 440px;
-    }
-
-    .titulo {
-        font-size: 28px;
-    }
-}
-
-/* =============================
-   TELAS ALTAS
-============================= */
-
-@media (min-height: 850px) and (min-width: 901px) {
-
-    .card {
-        transform: scale(1);
-    }
-}
-
-/* =============================
-   TELAS DESKTOP MAIS BAIXAS
-============================= */
-
-@media (min-height: 700px) and (max-height: 849px) and (min-width: 901px) {
-
-    .card {
-        transform: scale(0.94);
-    }
-}
-
-@media (min-height: 600px) and (max-height: 699px) and (min-width: 901px) {
-
-    .card {
-        transform: scale(0.86);
-    }
-}
-
-@media (max-height: 599px) and (min-width: 901px) {
-
-    .card {
-        transform: scale(0.78);
-    }
-}
-
-/* =========================
-   TABLETS
-========================= */
-
-@media (max-width: 900px) {
-
-    .container-pai {
-        flex-direction: column;
-
-        height: 100dvh;
-    }
-
-    /* =====================
-       IMAGEM EM CIMA
-    ===================== */
-
-    .parte-dois {
-        order: 1;
-
-        width: 100%;
-        height: 30dvh;
-
-        min-height: 0;
-        flex: 0 0 30dvh;
-    }
-
-    .login-dois {
-        width: 100%;
-        height: 100%;
-    }
-
-    .fundo {
-        width: 100%;
-        height: 100%;
-
-        min-width: 100%;
-        min-height: 100%;
-
-        object-fit: cover;
-
-        border-radius: 0 0 28px 28px;
-    }
-
-    /* =====================
-       LOGIN EMBAIXO
-    ===================== */
-
-    .login-principal {
-        order: 2;
-
-        width: 100%;
-        height: 70dvh;
-
-        min-height: 0;
-
-        flex: 1 1 70dvh;
-
-        padding: 20px;
-
-        overflow: hidden;
-    }
-
-    .card {
-        max-width: 430px;
-
-        padding: 5px;
-
-        transform: scale(
-            clamp(
-                0.72,
-                calc(70dvh / 600px),
-                1
-            )
-        );
-    }
-}
-
-/* =========================
-   CELULAR
-========================= */
-
-@media (max-width: 600px) {
-
-    .parte-dois {
-        height: 27dvh;
-        flex-basis: 27dvh;
-    }
-
-    .fundo {
-        height: 100%;
-
-        border-radius: 0 0 20px 20px;
-    }
-
-    .login-principal {
-        height: 73dvh;
-        flex-basis: 73dvh;
-
-        padding: 15px 12px;
-    }
-
-    .card {
-        max-width: 400px;
-
-        padding: 5px;
-
-        transform: scale(
-            clamp(
-                0.62,
-                calc(73dvh / 600px),
-                1
-            )
-        );
-    }
-
-    .nome-empresa {
-        font-size: 24px;
-        margin-bottom: 12px;
-    }
-
-    .titulo {
-        font-size: 22px;
-    }
-
-    .texto- {
-        font-size: 14px;
-        margin-bottom: 18px;
-    }
-
-    .input-texto,
-    .input-,
-    .checkbox,
-    .outras-opcoes {
-        max-width: 100%;
-    }
-
-    .input- {
-        padding: 12px;
-    }
-
-    .botao-entrar {
-        max-width: 100%;
-    }
-
-    .botoes-1,
-    .botoes-2 {
-        width: 75px;
-        height: 45px;
-    }
-}
-
-/* =========================
-   CELULARES PEQUENOS
-========================= */
-
-@media (max-width: 380px) {
-
-    .parte-dois {
-        height: 24dvh;
-        flex-basis: 24dvh;
-    }
-
-    .fundo {
-        height: 100%;
-    }
-
-    .login-principal {
-        height: 76dvh;
-        flex-basis: 76dvh;
-
-        padding: 10px;
-    }
-
-    .card {
-        max-width: 360px;
-
-        transform: scale(
-            clamp(
-                0.55,
-                calc(76dvh / 620px),
-                0.95
-            )
-        );
-    }
-
-    .nome-empresa {
-        font-size: 22px;
-    }
-
-    .titulo {
-        font-size: 20px;
-    }
-
-    .texto- {
-        font-size: 13px;
-    }
-
-    .input- {
-        padding: 11px;
-    }
-
-    .botao-entrar {
-        padding: 12px;
-    }
-
-    .botoes-1,
-    .botoes-2 {
-        width: 70px;
-        height: 43px;
-    }
-}
-
-/* =========================
-   TELAS MUITO BAIXAS
-========================= */
-
-@media (max-height: 650px) and (max-width: 900px) {
-
-    .parte-dois {
-        height: 22dvh;
-        flex-basis: 22dvh;
-    }
-
-    .login-principal {
-        height: 78dvh;
-        flex-basis: 78dvh;
-    }
-
-    .card {
-        transform: scale(0.72);
-    }
-}
-
-@media (max-height: 550px) and (max-width: 900px) {
-
-    .parte-dois {
-        height: 20dvh;
-        flex-basis: 20dvh;
-    }
-
-    .login-principal {
-        height: 80dvh;
-        flex-basis: 80dvh;
-    }
-
-    .card {
-        transform: scale(0.62);
-    }
-}
-
-/* =========================
-   MENSAGEM DE ERRO
-========================= */
+/* -- mensagem erro  */
 
 .mensagem-erro {
     display: block;
-
     width: 350px;
     max-width: 100%;
-
     margin: -10px auto 12px;
-
     text-align: left;
-
-    color: #DB7093;
-
-    font-family: var(--fonte-principal);
+    color: var(--cor-erro);
     font-size: 12px;
     font-weight: 600;
 }
 
 .campo-invalido {
-    border: 1px solid #DB7093 !important;
+    border: 2px solid var(--cor-erro) !important;
+}
+
+/* -- tablet e celular */
+
+@media (max-width: 900px) {
+
+    .container-pai { flex-direction: column; }
+
+    .parte-dois {
+        order: 1;
+        flex: 0 0 28dvh;
+        height: 28dvh;
+    }
+
+    .fundo { border-radius: 0 0 28px 28px; }
+
+    .login-principal {
+        order: 2;
+        flex: 1 1 auto;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .parte-dois { flex-basis: 24dvh; height: 24dvh; }
+    .fundo { border-radius: 0 0 20px 20px; }
+
+    .login-principal { padding: 15px 12px; }
+    .card { padding: 5px; }
+
+    .nome-empresa { font-size: 24px; margin-bottom: 12px; }
+    .titulo { font-size: 22px; }
+    .texto- { font-size: 14px; margin-bottom: 18px; }
+
+    .input-texto,
+    .input-,
+    .checkbox,
+    .outras-opcoes,
+    .botao-entrar { max-width: 100%; }
+
+    .input- { padding: 12px; }
+}
+
+/* Telas muito baixas (celular deitado): imagem some para sobrar espaço */
+@media (max-height: 500px) and (max-width: 900px) {
+    .parte-dois { display: none; }
 }
