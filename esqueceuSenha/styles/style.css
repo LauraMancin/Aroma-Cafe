@@ -15,6 +15,10 @@
 
 }
 
+a{
+    text-decoration: none;
+}
+
 /* == div pai == */
 .container-pai{
     display: flex;
@@ -38,10 +42,12 @@
     align-items: center;
 }
 
-.nome-empresa{
+.nome-empresa {
+    color: #000;
     margin-bottom: 15px;
     font-family: var(--fonte-logo);
     font-weight: bold;
+    font-size: 18px;
 }
 
 .titulo{
@@ -64,13 +70,18 @@
 }
 
 .input-{
-    display: flex;
+    outline: none;
     flex-direction: column;
     padding: 13px;
     width: 350px;
     margin-bottom: 15px;
     border-radius: 8px;
     border: 2px rgba(128, 128, 128, 0.219) solid;
+}
+
+.input-:focus{
+    border-color: var(--cor-principal);
+    box-shadow: 0 0 0 3px rgba(219, 112, 147, 0.2);
 }
 
 .checkbox{
