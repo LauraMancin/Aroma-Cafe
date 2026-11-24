@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas | Aroma Café</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="shortcut icon" href="./assets/icone_reservas.png" type="image/x-icon">
+
+</head>
+<body>
+    <header>
+        <!-- logo-->
+        <a href="../index.html" class="logoAroma">Aroma Café</a>
+        <div class="containerBarraPesquisa barraPesquisa">
+        <img
+            src="./assets/icon_pesquisa.png"
+            alt="Lupa de pesquisa"
+            class="iconePesquisa"/>
+        <input type="text" placeholder="Encontre Seu Café &#127861;" />
+        </div>
+
+        <div>
+            <nav class="menuNavegacao">
+
+                <ul> 
+                    <li class="dropdown" tabindex="0">
+                        <a href="#"><span class="cardap-colorido">CARDÁPIO</span></a>
+
+                        <div class="dropdown-menu">
+                                <a href="../cardapios/cafesEspeciais.html">Cafés Especiais</a>
+                                <a href="../cardapios/bebidasGeladas.html" class="Bebidas-menu">Bebidas Geladas</a>
+                            <a href="../cardapios/doces.html">Doces e <br>Acompanhamentos</a>
+                        </div>
+                    </li>  
+                </ul>
+
+                    <!-- menu -->
+                    <div class="menu">
+                        <a href="gatos.html">ADOÇÕES</a>
+                        <a href="reservas.html" class="ativo">RESERVAS</a>
+                    </div>
+            </nav>
+        </div>
+    </header>
+
+
+    <!--Parte principal-->
+    <main class="adocao">
+        <!--Parte do Banner-->
+        <section class="adocaoBanner">
+            <img src="./assets/banner_reservas.png" alt="Banner Reservas" class="bannerGatos">
+            <h2 class="gatosDisponiveis">VEJA NOSSOS GATINHOS DISPONÍVEIS:</h2>
+        </section>
+
+        
+        <div class="funcionamentoRegras">
+            <!--Como funciona a reserva-->
+            <div class="reserva">
+                <h1 class="titulo">COMO FUNCIONA PARA<strong class="tituloDestaque"> RESERVAR</strong></h1>
+                    <ul class="descricaoAdotar">
+                        <li><img src="./assets/icon_num1.png">Reservas: As visitas devem ser agendadas com pelo menos 30 minutos de antecedência em relação ao horário desejado;</li>
+                        <li><img src="./assets/icon_num2.png">Capacidade: Cada sessão recebe um máximo de até 10 pessoas, para manter um ambiente tranquilo e confortável para os gatos;</li>
+                        <li><img src="./assets/icon_num3.png">Duração da visita: O tempo de permanência é de até 1 hora por sessão;</li>
+                        <li><img src="./assets/icon_num4.png">Valor: A entrada custa R$15 por pessoa.</li>
+                    </ul>
+            </div>
+
+            <!--Regras do ambiente-->
+            <div>
+                <h1 class="titulo">NOSSAS <strong class="tituloDestaque">REGRAS</strong></h1>
+                <ul class="descricaoAdotar">
+                    <li><img src="./assets/icon_num1.png">Seja gentil e respeitoso com os gatos; nada de puxar, apertar, acorda-los ou assusta-los;</li>
+                    <li><img src="./assets/icon_num2.png">Evite fazer barulho alto, correr pelo ambiente ou pegar os gatos no colo;</li>
+                    <li><img src="./assets/icon_num3.png">Higienize as mãos antes e depois da interação com os gatos;</li>
+                    <li><img src="./assets/icon_num4.png">Crianças devem estar sempre acompanhadas por um responsável.</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+        <!-- Parte do formulário -->
+        <div class="contatoContainer">
+
+            <div class="contatoForm">
+                <div class="formRow">
+                    <div class="formGroup">
+                        <label>Nome</label>
+                        <input type="text" placeholder="Ex: Maria" />
+                    </div>
+                    
+                    <div class="formGroup">
+                        <label>Sobrenome</label>
+                        <input type="text" placeholder="Ex: Silvia" />
+                    </div>
+                </div>
+                
+                <div class="formRow">
+                    <div class="formGroup">
+                        <label>Endereço de e-mail</label>
+                        <input type="email" placeholder="Ex: seuemail@gmail.com" />
+                    </div>
+                    
+                    <div class="formGroup">
+                        <label>Data</label>
+                        <div class="data">
+                            <input type="date" id="data" name="data">
+                        </div>
+                    </div>
+                </div>
+
+                <!--Botão e popup-->
+                    <button class="botaoEnviar" onclick="abrirModal()">Enviar</button>
+        
+                    <div id="modal" class="modal-overlay">
+                        <div class="modal-caixa">
+                            <p class="botaoFechar" onclick="fecharModal()">x</p>
+                            <h2 class="tituloPopup">Solicitação de Reserva enviada!</h2>
+                            <p class="textoPopup">Em breve, <strong class="textoPopupDestacado">você receberá um e-mail de confirmação</strong> com mais informações sobre o horário escolhido para visitar o ambiente dos gatinhos.
+                            Agradecemos pelo seu interesse e esperamos sua visita!</p>
+                        </div>
+                    </div>
+                
+            </div>
+        </div>
+        
+    
+   <!--Rodapé-->
+   <footer>
+        <section class="footer-container">
+
+            <div class="footer-col logo">
+                <h2 class="rodapeAromaCafe">Aroma Café</h2>
+
+                <div class="redesSociais">
+                    <a href="#"><img src="./assets/Icon_facebook.png"></a>
+                    <a href="#"><img src="./assets/Icon_linkedIn.png"></a>
+                    <a href="#"><img src="./assets/Icon_youtube.png"></a>
+                    <a href="#"><img src="./assets/Icon_Instagram.png"></a>
+                </div>
+            </div>
+
+            <div class="explorar">
+                <p class="titulo tituloExplorar">Explorar</p>
+                <a href="#">Nosso espaço</a>
+                <a href="./gatos.html">Mural dos gatos</a>
+            </div>
+
+            <div class="servicos">
+                <p class="titulo tituloServicos">Serviços</p>
+                <a href="#">Eventos & Workshop</a>
+                <a href="#">Coffee Experience</a>
+            </div>
+
+            <div class="suporte">
+                <p class="titulo tituloSuporte">Suporte</p>
+                <a href="#">Contato</a>
+                <a href="#">Privacidade</a>
+                <a href="#">Fale com a gente</a>
+            </div>
+        </section>
+    </footer>
+    <script src="javascript/botaoReserva.js"></script>
+</body>
+</html>

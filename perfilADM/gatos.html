@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/produtos.css" />
+    <link rel="stylesheet" href="./style/produtos-extra.css" />
+    <link rel="stylesheet" href="./style/gatos.css" />
+    <title>Gatos | Aroma Café</title>
+  </head>
+  <body>
+    <aside class="dashboard">
+      <div class="logo">
+        <h2>Aroma Café</h2>
+        <p>Administração</p>
+      </div>
+      <nav>
+        <li><a href="./perfilADM.html">Visão Geral</a></li>
+        <li><a href="./produtos.html">Produtos</a></li>
+        <li><a href="./gatos.html" class="ativo">Gatos</a></li>
+        <li><a href="./notificacao.html">Notificações</a></li>
+        <li><a href="./configuracao.html">Configurações</a></li>
+      </nav>
+      <div class="btn-sair" id="botaoSair" onclick="sairDaConta()" role="button" tabindex="0">
+        <p class="botaoSair">Sair da Conta</p>
+        <img src="./image/exit.png" alt="Ícone para sair da conta" class="icone" />
+      </div>
+    </aside>
+
+    <main class="paginaInicial">
+      <header class="container1-header">
+        <small id="dataHoje"></small>
+        <h1>Adoção de gatos</h1>
+        <p class="descricao">Acompanhe os gatinhos, ONGs parceiras, suprimentos e veterinárias</p>
+      </header>
+
+      <section class="container-painel">
+        <div class="atalhos">
+          <div class="tabs">
+            <button class="tab active" data-tab="gatos">Gatos</button>
+            <button class="tab" data-tab="itens">Itens essenciais</button>
+            <button class="tab" data-tab="vets">Veterinárias</button>
+            <button class="tab" data-tab="ongs">ONGs de resgate</button>
+          </div>
+
+          <!-- aba gatos -->
+          <div class="content active" id="gatos">
+            <div class="tools">
+              <input type="search" class="search" id="buscaGato" placeholder="Buscar gato" aria-label="Buscar gato" />
+              <button class="btn-produto" data-modal="modalGato">+ Novo Gato</button>
+              <label>
+                <select id="filtroSituacao" class="btn-tipo" aria-label="Filtrar por situação">
+                  <option value="">Situação</option>
+                  <option>Disponível</option>
+                  <option>Em processo</option>
+                  <option>Adotado</option>
+                </select>
+              </label>
+            </div>
+            <div class="lista-produtos" id="listaGatos"></div>
+          </div>
+
+          <!-- aba itens essenciais -->
+          <div class="content" id="itens">
+            <div class="tools">
+              <input type="search" class="search" id="buscaItem" placeholder="Buscar item" aria-label="Buscar item" />
+              <button class="btn-produto" data-modal="modalItem">+ Novo Item</button>
+            </div>
+            <div class="lista-produtos" id="listaItens"></div>
+          </div>
+
+          <!-- aba veterinárias -->
+          <div class="content" id="vets">
+            <div class="tools">
+              <input type="search" class="search" id="buscaVet" placeholder="Buscar veterinária" aria-label="Buscar veterinária" />
+              <button class="btn-produto" data-modal="modalVet">+ Nova Veterinária</button>
+            </div>
+            <div class="lista-produtos" id="listaVets"></div>
+          </div>
+
+          <!-- aba ONGs -->
+          <div class="content" id="ongs">
+            <div class="tools">
+              <input type="search" class="search" id="buscaOng" placeholder="Buscar ONG" aria-label="Buscar ONG" />
+              <button class="btn-produto" data-modal="modalOng">+ Nova ONG</button>
+            </div>
+            <div class="lista-produtos" id="listaOngs"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- modal: Gato -->
+    <dialog id="modalGato" class="modal">
+      <form class="form" id="formGato">
+        <header class="modal-topo">
+          <div><h2>Novo gato</h2><p>Preencha os dados do gatinho</p></div>
+          <button type="button" class="fechar" aria-label="Fechar">×</button>
+        </header>
+        <div class="grade">
+          <input type="hidden" name="id" />
+          <label class="full">Nome
+            <input type="text" name="nome" required placeholder="Ex.: Mingau" />
+          </label>
+          <div class="full upload">
+            <span class="sub-titulo">Foto do gato</span>
+            <label class="btn-upload">
+              📷 Escolher foto
+              <input type="file" id="fotoGato" accept="image/*" hidden />
+            </label>
+            <img id="previewImg" class="preview-img" alt="Prévia da foto" hidden />
+          </div>
+          <label>Raça
+            <input type="text" name="raca" required placeholder="Ex.: SRD, Siamês..." />
+          </label>
+          <label>Data de nascimento
+            <input type="date" name="nascimento" required />
+          </label>
+          <label>Cor dos olhos
+            <select name="olhos" required>
+              <option value="">Selecione</option>
+              <option>Verde</option><option>Azul</option><option>Amarelo</option>
+              <option>Âmbar</option><option>Castanho</option><option>Heterocromia</option>
+            </select>
+          </label>
+          <label>Pelagem
+            <input type="text" name="pelagem" required placeholder="Ex.: Tigrada, curta" />
+          </label>
+          <label class="full">Deficiência
+            <input type="text" name="deficiencia" placeholder="Deixe em branco se não possuir" />
+          </label>
+          <label class="full">Situação
+            <select name="situacao" required>
+              <option>Disponível</option><option>Em processo</option><option>Adotado</option>
+            </select>
+          </label>
+          <label class="full">Detalhes
+            <textarea name="detalhes" rows="3" placeholder="Temperamento, vacinas, castração, observações..."></textarea>
+          </label>
+        </div>
+        <footer class="modal-rodape">
+          <button type="button" class="btn-excluir" data-excluir="gato" hidden>Excluir</button>
+          <button type="button" class="btn-cancelar fechar">Cancelar</button>
+          <button type="submit" class="btn-salvar">Salvar gato</button>
+        </footer>
+      </form>
+    </dialog>
+
+    <!-- modal: Item essencial -->
+    <dialog id="modalItem" class="modal">
+      <form class="form" id="formItem">
+        <header class="modal-topo">
+          <div><h2>Novo item</h2><p>Monitore o estoque dos itens dos gatos</p></div>
+          <button type="button" class="fechar" aria-label="Fechar">×</button>
+        </header>
+        <div class="grade">
+          <input type="hidden" name="id" />
+          <label class="full">Nome do item
+            <input type="text" name="nome" required placeholder="Ex.: Areia higiênica" />
+          </label>
+          <label>Unidade
+            <select name="unidade" required>
+              <option value="">Selecione</option>
+              <option>kg</option><option>g</option><option>L</option><option>ml</option><option>un</option>
+            </select>
+          </label>
+          <label>Quantidade em estoque
+            <input type="number" name="estoque" min="0" step="any" required placeholder="0" />
+          </label>
+          <label>Estoque mínimo
+            <input type="number" name="minimo" min="0" step="any" placeholder="Avisar abaixo de..." />
+          </label>
+          <label>Consumo por dia
+            <input type="number" name="consumo" min="0" step="any" placeholder="Para estimar duração" />
+          </label>
+        </div>
+        <footer class="modal-rodape">
+          <button type="button" class="btn-excluir" data-excluir="item" hidden>Excluir</button>
+          <button type="button" class="btn-cancelar fechar">Cancelar</button>
+          <button type="submit" class="btn-salvar">Salvar item</button>
+        </footer>
+      </form>
+    </dialog>
+
+    <!-- modal: Veterinária -->
+    <dialog id="modalVet" class="modal">
+      <form class="form" id="formVet">
+        <header class="modal-topo">
+          <div><h2>Nova veterinária</h2><p>Contato para emergências dos gatinhos</p></div>
+          <button type="button" class="fechar" aria-label="Fechar">×</button>
+        </header>
+        <div class="grade">
+          <input type="hidden" name="id" />
+          <label class="full">Nome da clínica / veterinário(a)
+            <input type="text" name="nome" required placeholder="Ex.: Clínica Pet Vida" />
+          </label>
+          <label>Telefone / WhatsApp
+            <input type="tel" class="mascara-tel" name="telefone" required placeholder="(00) 00000-0000" pattern="^\([0-9]{2}\)\s?[0-9]{4,5}-[0-9]{4}$" />
+          </label>
+          <label>Atende 24h?
+            <select name="urgencia" required><option>Não</option><option>Sim</option></select>
+          </label>
+          <label class="full">Endereço
+            <input type="text" name="endereco" placeholder="Rua, número, bairro" />
+          </label>
+          <label class="full">Detalhes
+            <textarea name="detalhes" rows="3" placeholder="Horários, valores, observações..."></textarea>
+          </label>
+        </div>
+        <footer class="modal-rodape">
+          <button type="button" class="btn-excluir" data-excluir="vet" hidden>Excluir</button>
+          <button type="button" class="btn-cancelar fechar">Cancelar</button>
+          <button type="submit" class="btn-salvar">Salvar veterinária</button>
+        </footer>
+      </form>
+    </dialog>
+
+    <!-- modal: ONG -->
+    <dialog id="modalOng" class="modal">
+      <form class="form" id="formOng">
+        <header class="modal-topo">
+          <div><h2>Nova ONG</h2><p>Contato de ONG de resgate animal</p></div>
+          <button type="button" class="fechar" aria-label="Fechar">×</button>
+        </header>
+        <div class="grade">
+          <input type="hidden" name="id" />
+          <label class="full">Nome da ONG
+            <input type="text" name="nome" required placeholder="Ex.: Amigos dos Bichanos" />
+          </label>
+          <label>Telefone / WhatsApp
+            <input type="tel" class="mascara-tel" name="telefone" required placeholder="(00) 00000-0000" pattern="^\([0-9]{2}\)\s?[0-9]{4,5}-[0-9]{4}$" />
+          </label>
+          <label>Cidade
+            <input type="text" name="cidade" placeholder="Ex.: Piracicaba" />
+          </label>
+          <label class="full">E-mail ou Instagram
+            <input type="text" name="contato" placeholder="contato@ong.org / @ong" />
+          </label>
+          <label class="full">Detalhes
+            <textarea name="detalhes" rows="3" placeholder="Como ajudam, horários, observações..."></textarea>
+          </label>
+        </div>
+        <footer class="modal-rodape">
+          <button type="button" class="btn-excluir" data-excluir="ong" hidden>Excluir</button>
+          <button type="button" class="btn-cancelar fechar">Cancelar</button>
+          <button type="submit" class="btn-salvar">Salvar ONG</button>
+        </footer>
+      </form>
+    </dialog>
+
+    <div class="toast" id="toast" role="status"></div>
+
+    <script src="./js/modal.js"></script>
+    <script src="./js/tabs.js"></script>
+    <script src="./js/gatos.js"></script>
+  </body>
+</html>

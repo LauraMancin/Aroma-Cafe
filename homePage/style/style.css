@@ -1,0 +1,929 @@
+/* ============================================================
+   FONTES
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ribeye&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mogra&display=swap');
+
+/* ============================================================
+   VARIÁVEIS GLOBAIS
+   ============================================================ */
+
+html,
+body {
+    scrollbar-width: none; /* Firefox */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none; /* Chrome, Edge e Safari */
+}
+
+:root {
+  --cor-principal: #DB7093;
+  --cor-botao-efeito: #E99BB4;
+  --cor-secundaria: #FFFFFF;
+  --cor-terciaria: #000000;
+  --cor-cinza: #828282;
+  --cor-cinza-secundario: #454545;
+  --fonte-principal: 'Inter', sans-serif;
+  --fonte-logo: 'Ribeye', sans-serif;
+
+  /* clamp(min, preferido, max) — tamanhos fluidos */
+  --fonte-titulo: clamp(1.5rem, 5vw, 2.5rem);       /* 24px → 40px */
+  --fonte-descricao: clamp(0.9rem, 2.5vw, 1.25rem); /* ~14px → 20px */
+  --fonte-botao: clamp(0.85rem, 2vw, 1.1rem);
+  --fonte-subtitulo: clamp(0.8rem, 1.5vw, 1rem);
+
+  /* padding lateral responsivo */
+  --padding-lateral: clamp(1rem, 5vw, 5rem);
+}
+
+/* ============================================================
+   RESET
+   ============================================================ */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--cor-secundaria); /* fundo branco para o resto da página */
+  color: var(--cor-terciaria);
+  font-family: var(--fonte-principal);
+  min-height: 100vh;
+}
+
+
+main {
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;            
+  gap: 0.5rem;
+  padding: 1rem var(--padding-lateral);
+  z-index: 100;
+  color: white;
+}
+
+/* Logo */
+.logoAroma {
+  text-decoration: none;
+  color: var(--cor-secundaria);
+  font-weight: bold;
+  font-family: 'Mogra', sans-serif;
+  font-size: clamp(1rem, 3vw, 1.25rem);
+  white-space: nowrap;
+}
+
+.containerBarraPesquisa {
+  display: none; /* oculta em mobile */
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 50px;
+  padding: 8px 16px;
+  width: clamp(200px, 35vw, 500px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.iconePesquisa {
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.barraPesquisa input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  font-family: var(--fonte-principal);
+  color: #333333;
+  width: 100%;
+}
+
+
+.menuToggle {
+  display: none;
+}
+
+
+.menuHamburguer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 200;
+}
+
+.menuHamburguer span {
+  display: block;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.menuToggle:checked + .menuHamburguer span:nth-child(1) {
+  transform: translateY(8.5px) rotate(45deg);
+}
+.menuToggle:checked + .menuHamburguer span:nth-child(2) {
+  opacity: 0;
+}
+.menuToggle:checked + .menuHamburguer span:nth-child(3) {
+  transform: translateY(-8.5px) rotate(-45deg);
+}
+
+.menuNavegacao {
+  width: 100%;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  background: rgba(0,0,0,0.85);
+  border-radius: 8px;
+}
+
+.menuToggle:checked ~ .menuNavegacao {
+  max-height: 400px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;  
+  align-items: center;
+  gap: 1rem;
+  padding: 1.2rem;
+  font-family: var(--fonte-principal);
+}
+
+.menu a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.menu a:hover,
+.menu .ativo {
+  color: var(--cor-principal);
+}
+
+/* ============================================================
+   BOTÃO PRINCIPAL
+   ============================================================ */
+.botaoPrincipal {
+  background-color: var(--cor-principal);
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 10px 20px;
+  border: none;
+  font-size: var(--fonte-botao);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.botaoPrincipal:hover {
+  background-color: var(--cor-botao-efeito);
+}
+
+/* ============================================================
+   BANNER
+   ============================================================ */
+.banner {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0 var(--padding-lateral);
+  text-align: center;
+  /* imagem de fundo restrita ao banner */
+  background: url(../image/Fundo.png) no-repeat center center / cover;
+}
+
+.tituloPrincipalHome {
+  font-family: 'Mogra', sans-serif;
+  font-size: clamp(2.5rem, 10vw, 4rem);
+  color: white;
+}
+
+.tituloSecundarioHome {
+  font-family: var(--fonte-principal);
+  font-size: clamp(1rem, 3.5vw, 1.5rem);
+  font-weight: 500;
+  color: var(--cor-secundaria);
+  text-align: center;
+}
+
+/* ============================================================
+   UTILITÁRIOS DE SEÇÃO
+   ============================================================ */
+.tituloPrincipal {
+  font-family: var(--fonte-principal);
+  font-size: var(--fonte-titulo);
+  color: #000000;
+  text-align: center; /* mobile: centralizado */
+  /* Remove margens absolutas */
+}
+
+.destaque {
+  color: var(--cor-principal);
+}
+
+.textoConteudo {
+  font-family: var(--fonte-principal);
+  font-size: var(--fonte-descricao);
+  color: #000000;
+  text-align: center;
+  font-weight: bold;
+  max-width: 600px;
+  width: 100%;
+}
+
+/* Imagens das seções */
+.imagemSecao {
+  width: 100%;
+  height: auto;
+  max-width: 500px;
+  border-radius: 10px;
+  object-fit: cover;
+  /* Remove margin-left fixo */
+}
+
+/* ============================================================
+   SEÇÃO SOBRE — mobile-first: coluna única
+   ============================================================ */
+.secaoSobre {
+  display: flex;
+  flex-direction: column;   /* empilha em mobile */
+  align-items: center;
+  gap: 2rem;
+  padding: 4rem var(--padding-lateral) 2rem;
+  background: rgba(255,255,255,0.85);
+}
+
+.containerSobre {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+/* ============================================================
+   SEÇÃO FUNCIONAMENTO — mobile-first: coluna única
+   ============================================================ */
+.secaoFuncionamento {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 4rem var(--padding-lateral) 2rem;
+  background: rgba(255,255,255,0.75);
+}
+
+.containerFuncionamento {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.textoFuncionamento {
+  max-width: 700px;
+}
+
+/* ============================================================
+   SEÇÃO CARDÁPIO — mobile-first: coluna única
+   ============================================================ */
+.secaoCardapio {
+  padding: 4rem var(--padding-lateral) 2rem;
+  background: rgba(255,255,255,0.85);
+}
+
+.containerCardapio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.tituloCardapio {
+  text-align: center;
+}
+
+/* Cards empilhados em mobile */
+.cardapioContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 900px;
+}
+
+.cardapioLadoDireito {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.card {
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+/* Imagem dos cards */
+.imagemCard {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.imagemCard:hover{
+  transform: translateY(-5px) scale(1.03); 
+  
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08); 
+  cursor: pointer;
+}
+
+.tituloCard {
+  font-family: var(--fonte-principal);
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  font-weight: 500;
+  color: var(--cor-terciaria);
+  margin-top: 0.5rem;
+}
+
+.textoCard {
+  font-family: var(--fonte-principal);
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  font-weight: 400;
+  color: var(--cor-cinza);
+}
+
+/* ============================================================
+   SEÇÃO CONTATO — mobile-first: coluna única
+   ============================================================ */
+.tituloContato {
+  text-align: center;
+  padding: 0 var(--padding-lateral);
+  margin-top: 2rem;
+}
+
+.contatoSection {
+  padding: 1.5rem var(--padding-lateral) 3rem;
+  background: rgba(255,255,255,0.85);
+}
+
+.contatoContainer {
+  display: flex;
+  flex-direction: column;   /* empilha em mobile */
+  gap: 2.5rem;
+}
+
+.contatoForm {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+/* Em mobile os campos Nome/Sobrenome ficam em coluna */
+.formRow {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.formGroup label {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--cor-cinza-secundario);
+  text-align: left;
+}
+
+.formGroup input,
+.formGroup textarea {
+  border: 1.5px solid var(--cor-cinza);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 0.9rem;
+  color: var(--cor-cinza-secundario);
+  background: var(--cor-secundaria);
+  outline: none;
+  transition: border-color 0.2s;
+  font-family: inherit;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+  border-color: var(--cor-principal);
+}
+
+.formGroup textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.botaoEnviar {
+  background: var(--cor-principal);
+  color: var(--cor-secundaria);
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  padding: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+  width: 100%;
+}
+
+.botaoEnviar:hover {
+  background: var(--cor-botao-efeito);
+}
+
+.contatoInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.infoItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: clamp(0.85rem, 2vw, 1rem);
+  color: var(--cor-terciaria);
+  line-height: 1.5;
+}
+
+.infoItem .icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.infoItem .icon img {
+  width: 20px;
+  height: 20px;
+}
+
+/* ============================================================
+   RODAPÉ — mobile-first
+   ============================================================ */
+footer {
+  background-color: var(--cor-secundaria);
+  padding: 2.5rem var(--padding-lateral);
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;  /* empilha em mobile */
+  gap: 2rem;
+  border-top: 1px solid #ddd;
+  padding-top: 2rem;
+  font-family: var(--fonte-principal);
+  font-size: var(--fonte-subtitulo);
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.rodapeAromaCafe {
+  font-family: 'Mogra', sans-serif;
+  font-size: clamp(1.1rem, 3vw, 1.4rem);
+}
+
+.redesSociais {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.redesSociais img {
+  width: 30px;
+  opacity: 0.7;
+}
+
+.explorar,
+.servicos,
+.suporte {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.titulo {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+footer a {
+  text-decoration: none;
+  color: #555;
+  font-size: 14px;
+}
+
+footer a:hover {
+  color: var(--cor-principal);
+}
+
+/* ============================================================
+   MEDIA QUERIES
+   ============================================================ */
+
+/* ---- TABLET: ≥ 600px ---- */
+@media (min-width: 600px) {
+  /* Barra de pesquisa aparece a partir do tablet */
+  .containerBarraPesquisa {
+    display: flex;
+  }
+
+  /* Hamburguer some — menu fica sempre visível */
+  .menuHamburguer {
+    display: none;
+  }
+
+  .menuNavegacao {
+    width: auto;
+    max-height: none;
+    overflow: visible;
+    background: transparent;
+    border-radius: 0;
+  }
+
+  .menu {
+    flex-direction: row; /* itens lado a lado */
+    padding: 0;
+    gap: 1.5rem;
+  }
+
+  /* formRow com 2 colunas */
+  .formRow {
+    flex-direction: row;
+  }
+}
+
+/* ---- TABLET LARGO: ≥ 768px ---- */
+@media (min-width: 768px) {
+  /* Seções lado a lado */
+  .secaoSobre {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+  }
+
+  .containerSobre {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .tituloPrincipal {
+    text-align: left;
+  }
+
+  .textoConteudo {
+    text-align: left;
+  }
+
+  /* Funcionamento: imagem à esquerda, texto à direita */
+  .secaoFuncionamento {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .containerFuncionamento {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  /* Cardápio: card grande + dois pequenos lado a lado */
+  .cardapioContainer {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .card {
+    flex: 1;
+  }
+
+  .cardapioLadoDireito {
+    flex: 1;
+  }
+
+  /* Contato: form + info lado a lado */
+  .contatoContainer {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .contatoForm {
+    flex: 1 1 55%;
+  }
+
+  .contatoInfo {
+    flex: 1 1 40%;
+    padding-top: 42px;
+  }
+
+  /* Rodapé: colunas lado a lado */
+  .footer-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+/* ---- DESKTOP: ≥ 1024px ---- */
+@media (min-width: 1024px) {
+  .menu {
+    gap: 2rem;
+    font-size: 1rem;
+  }
+
+  .secaoSobre,
+  .secaoFuncionamento {
+    gap: 4rem;
+    padding: 5rem var(--padding-lateral) 3rem;
+  }
+
+  .secaoCardapio {
+    padding: 5rem var(--padding-lateral) 3rem;
+  }
+
+  .contatoSection {
+    padding: 2rem var(--padding-lateral) 4rem;
+  }
+
+  /* Imagens maiores em desktop */
+  .imagemSecao {
+    max-width: 600px;
+    max-height: 480px;
+  }
+
+  /* Rodapé não empilha mais */
+  .footer-container {
+    flex-wrap: nowrap;
+  }
+}
+
+/* ---- TELAS MUITO PEQUENAS: < 360px ---- */
+@media (max-width: 359px) {
+  .logoAroma {
+    font-size: 1rem;
+  }
+
+  .tituloPrincipalHome {
+    font-size: 2rem;
+  }
+}
+
+/* ============================================================
+   ACESSIBILIDADE — respeita preferência de movimento reduzido
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .animacaoCard:hover {
+    transform: none;
+    transition: none;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ============================================================
+   AJUSTE FINAL DE RESPONSIVIDADE
+   Mantém as seções estáveis em diferentes telas
+   ============================================================ */
+
+.secaoSobre,
+.secaoFuncionamento {
+  width: 100%;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: clamp(2rem, 4vw, 4rem);
+
+  padding-top: clamp(2.5rem, 4vw, 3.5rem);
+  padding-bottom: clamp(2.5rem, 4vw, 3.5rem);
+  padding-left: clamp(1.5rem, 5vw, 4.5rem);
+  padding-right: clamp(1.5rem, 5vw, 4.5rem);
+}
+
+
+/* Mantém o conteúdo com largura controlada */
+
+.containerSobre,
+.containerFuncionamento {
+  flex: 1 1 0;
+  width: 100%;
+  max-width: 600px;
+  min-width: 0;
+}
+
+
+/* Imagens proporcionais */
+
+.imagemSecao {
+  flex: 0 1 520px;
+  width: 100%;
+  max-width: 520px;
+
+  height: clamp(280px, 30vw, 380px);
+
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+
+/* Texto não cresce demais */
+
+.textoConteudo,
+.textoFuncionamento {
+  width: 100%;
+  max-width: 600px;
+}
+
+
+/* ============================================================
+   TELAS MÉDIAS
+   ============================================================ */
+
+@media (min-width: 768px) and (max-width: 1100px) {
+
+  .secaoSobre,
+  .secaoFuncionamento {
+    gap: 2.5rem;
+
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+
+  .imagemSecao {
+    flex: 0 1 45%;
+    max-width: 460px;
+    height: clamp(280px, 32vw, 340px);
+  }
+
+  .containerSobre,
+  .containerFuncionamento {
+    max-width: 500px;
+  }
+
+  .textoConteudo {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+}
+
+
+/* ============================================================
+   DESKTOP GRANDE
+   ============================================================ */
+
+@media (min-width: 1101px) {
+
+  .secaoSobre,
+  .secaoFuncionamento {
+    min-height: 450px;
+  }
+
+  .imagemSecao {
+    height: 380px;
+  }
+
+}
+
+
+/* ============================================================
+   CELULAR
+   ============================================================ */
+
+@media (max-width: 767px) {
+
+  .secaoSobre,
+  .secaoFuncionamento {
+    width: 100%;
+
+    flex-direction: column;
+
+    gap: 1.8rem;
+
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+  }
+
+  .secaoFuncionamento {
+    flex-direction: column;
+  }
+
+  .containerSobre,
+  .containerFuncionamento {
+    width: 100%;
+    max-width: 600px;
+
+    align-items: center;
+
+    text-align: center;
+  }
+
+  .tituloPrincipal {
+    text-align: center;
+  }
+
+  .textoConteudo {
+    text-align: center;
+
+    width: 100%;
+    max-width: 600px;
+
+    line-height: 1.5;
+  }
+
+  .imagemSecao {
+    width: 100%;
+    max-width: 520px;
+
+    height: clamp(220px, 65vw, 300px);
+  }
+
+}
+
+
+/* ============================================================
+   CELULAR PEQUENO
+   ============================================================ */
+
+@media (max-width: 480px) {
+
+  .secaoSobre,
+  .secaoFuncionamento {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    gap: 1.5rem;
+  }
+
+  .imagemSecao {
+    height: 250px;
+  }
+
+}
+
+
+/* ============================================================
+   TELAS MUITO PEQUENAS
+   ============================================================ */
+
+@media (max-width: 359px) {
+
+  .imagemSecao {
+    height: 220px;
+  }
+
+}

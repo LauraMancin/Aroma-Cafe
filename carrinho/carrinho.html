@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./images/icone_carrinho.png" type="image/x-icon">
+    <title>Carrinho | Aroma Café</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/carrinho.css">
+</head>
+<body>
+    <header>
+        <!-- logo-->
+        <a href="../index.html" class="logoAroma">Aroma Café</a>
+        <div class="containerBarraPesquisa barraPesquisa">
+        <img
+            src="../homePage/image/lupaPesquisa.png"
+            alt="Lupa de pesquisa"
+            class="iconePesquisa"
+        />
+        <input type="text" placeholder="Encontre Seu Café &#127861;" />
+        </div>
+
+        <div>
+            <nav class="menuNavegacao">
+
+                <ul> 
+                <ul> 
+                    <li class="dropdown" tabindex="0">
+                        <a href="#"><span class="cardap-colorido">CARDÁPIO</span></a>
+
+                        <div class="dropdown-menu">
+                            <a href="../cardapios/cafesEspeciais.html">Cafés Especiais</a>
+                            <a href="../cardapios/bebidasGeladas.html" class="Bebidas-menu">Bebidas Geladas</a>
+                            <a href="../cardapios/doces.html">Doces e <br>
+                            Acompanhamentos</a>
+                        </div>
+                    </li>  
+            </ul>
+
+            </ul>
+
+                <!-- menu -->
+                <div class="menu">
+                    <a href="gatos.html" class="ativo">ADOÇÕES</a>
+                    <a href="reservas.html">RESERVAS</a>
+                </div>
+            </nav>
+        </div>
+
+    </header>
+
+    <main class="pagina-carrinho">
+        <section class="carrinho-topo">
+            <div>
+                <small><span id="infoQuantidadeTotal"></span> no carrinho</small>
+                <h1>Meu carrinho</h1>
+                <p>Confira seu pedido antes de finalizar</p>
+            </div>
+            <a href="../cardapios.html" class="btn-continuar">Continuar comprando</a>
+        </section>
+
+        <section class="carrinho-layout">
+            <!-- Itens -->
+            <section class="carrinho-itens">
+                <div class="carrinho-titulo">
+                    <h2>Itens do pedido</h2>
+                    <p>Ajuste as quantidades ou remova itens</p>
+                </div>
+
+                <div id="lista-itens" class="lista-itens">
+                    
+                </div>
+            </section>
+
+            <!-- Resumo -->
+            <aside class="carrinho-resumo">
+                <div class="carrinho-titulo">
+                    <h2>Resumo</h2>
+                    <p>Valores do pedido</p>
+                </div>
+
+                <div class="resumo-linhas">
+                    <div class="resumo-linha">
+                        <span>Subtotal</span>
+                        <strong>R$ 87,97</strong>
+                    </div>
+                    <div class="resumo-linha">
+                        <span>Desconto</span>
+                        <strong>− R$ 0,00</strong>
+                    </div>
+                    <div class="resumo-linha total">
+                        <span>Total</span>
+                        <strong>R$ 87,97</strong>
+                    </div>
+                </div>
+
+                <form class="cupom" onsubmit="return false">
+                    <label for="cupom">Cupom de desconto</label>
+                    <div class="cupom-campo">
+                        <input type="text" id="cupom" name="cupom" placeholder="Digite seu cupom">
+                        <button type="submit" class="btn-aplicar">Aplicar</button>
+                    </div>
+                </form>
+
+                <button type="button" class="btn-finalizar">Finalizar pedido</button>
+                <button type="button" class="btn-limpar">Esvaziar carrinho</button>
+            </aside>
+        </section>
+    </main>
+
+    <!-- Rodapé-->
+    <footer>
+        <section class="footer-container">
+            <div class="footer-col logo">
+            <h2 class="rodapeAromaCafe">Aroma Café</h2>
+
+            <div class="redesSociais">
+                <a href="#"><img src="../homePage/image/icon_FaceBook.png" /></a>
+                <a href="#"><img src="../homePage/image/icon_Link.png" /></a>
+                <a href="#"><img src="../homePage/image/icon_Youtube.png" /></a>
+                <a href="#"><img src="../homePage/image/icon_Instagram.png"></a>
+            </div>
+            </div>
+
+            <div class="explorar">
+            <p class="titulo tituloExplorar">Explorar</p>
+            <a href="#">Nosso espaço</a>
+            <a href="../gatos/gatos.html">Mural dos gatos</a>
+            </div>
+
+            <div class="servicos">
+            <p class="titulo tituloServicos">Serviços</p>
+            <a href="#">Eventos & Workshop</a>
+            <a href="#">Coffee Experience</a>
+            </div>
+
+            <div class="suporte">
+                <p class="titulo tituloSuporte">Suporte</p>
+                <a href="#">Contato</a>
+                <a href="#">Privacidade</a>
+                <a href="#">Fale com a gente</a>
+            </div>
+        </section>
+    </footer> 
+    <script src="carrinho.js"></script>
+</body>
+</html>

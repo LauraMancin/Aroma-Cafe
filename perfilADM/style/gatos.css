@@ -1,0 +1,52 @@
+/* situação de adoção */
+.status.disponivel { color: #2e9e5b; }
+.status.processo { color: rgb(232, 146, 93); }
+.status.adotado { color: var(--cor-principal-escura); }
+
+.status.sim { color: #d64545; }
+.status.nao { color: var(--cor-quaternaria); font-weight: 500; }
+
+.card-produto .linha .qntd,
+.card-produto .linha .texto-detalhe {
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+/* barra de nível dos itens essenciais */
+.barra {
+  height: 8px;
+  overflow: hidden;
+  background: #f3e3ea;
+  border-radius: 99px;
+}
+.barra span {
+  display: block;
+  height: 100%;
+  background: currentColor;
+  border-radius: 99px;
+  transition: width 0.3s ease;
+}
+.barra.ok { color: #2e9e5b; }
+.barra.baixo { color: rgb(232, 146, 93); }
+.barra.faltando { color: #d64545; }
+
+/* ajuste rápido de estoque */
+.ajuste {
+  display: flex;
+  gap: 8px;
+  margin-top: 14px;
+}
+.ajuste button {
+  flex: 1;
+  height: 36px;
+  color: var(--cor-principal-escura);
+  font-family: var(--fonte-principal);
+  font-size: 18px;
+  background: #fff;
+  border: 1px solid var(--cor-botao-efeito);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.ajuste button:hover { background: #fdeef3; }
+.ajuste + .btn-editar { margin-top: 10px; }

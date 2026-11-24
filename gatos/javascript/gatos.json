@@ -1,0 +1,96 @@
+[
+    {
+        "gatos": [
+            {
+                "nome": "Pucca",
+                "sexo": ["./assets/icon_femea.png", "Fêmea"],
+                "raca": ["./assets/icon_raca.png", "SRD (Vira-lata)"],
+                "pelagem": ["./assets/icon_pelagem.png", "Pelagem Curta"],
+                "olhos": ["./assets/icon_olhos.png", "Olhos Azuis"],
+                "nascimento": ["./assets/icon_nascimento.png", "Nascimento aprox. Junho 2024"],
+                "descricao": "Uma gatinha que vivia nas ruas, sobrevivendo com ajuda ocasional de pessoas em um estacionamento, estava grávida e doente com esporotricose. Próxima de dar à luz, foi resgatada por alguém que lhe ofereceu cuidados, tratamento e segurança para ter seus filhotes. Hoje, está saudável, curada e pronta para adoção, sendo carinhosa após ganhar confiança, sociável com outros gatos e já castrada, vacinada e testada negativa para FIV e FeLV.",
+                "url": "./assets/gata_pucca.png"
+            },
+            {
+                "nome": "Polvilho",
+                "sexo": ["./assets/icon_macho.png", "Macho"],
+                "raca": ["./assets/icon_raca.png", "SRD (Vira-lata)"],
+                "pelagem": ["./assets/icon_pelagem.png", "Pelagem Curta"],
+                "olhos": ["./assets/icon_olhos.png", "Olhos Verdes"],
+                "nascimento": ["./assets/icon_nascimento.png", "Nascimento aprox. Maio 2024"],
+                "descricao": "Polvilho é puro carinho em forma de gatinho. Muito dócil e apegado, ele adora estar por perto e receber atenção. Possui uma condição especial que exige alguns cuidados contínuos, mas nada que diminua sua vontade de amar e ser amado. É um companheiro fiel, perfeito para quem busca um vínculo forte e cheio de afeto.",
+                "url": "./assets/gato_polvilho.png"
+            },
+            {
+                "nome": "Hipnus e Plutus",
+                "sexo": ["./assets/icon_macho.png", "Machos"],
+                "raca": ["./assets/icon_raca.png", "SRD (Vira-lata)"],
+                "pelagem": ["./assets/icon_pelagem.png", "Pelagem Curta"],
+                "olhos": ["./assets/icon_olhos.png", "Olhos azuis (Hipnus) e verdes (Plutus)"],
+                "nascimento": ["./assets/icon_nascimento.png", "Nascimento aprox. Janeiro 2026"],
+                "descricao": "Essa duplinha é inseparável! Hipnos e Plutus cresceram juntos e compartilham tudo: brincadeiras, sonecas e muito carinho. São curiosos, ativos e adoram explorar o ambiente. Ideais para adoção conjunta, pois a conexão entre eles é linda de ver. Com eles, sua casa nunca ficará sem vida.",
+                "url": "./assets/gatos_hipnus_e_plutus.png"
+            },
+            {
+                "nome": "Heidi",
+                "sexo": ["./assets/icon_femea.png", "Fêmea"],
+                "raca": ["./assets/icon_raca.png", "SRD (Vira-lata)"],
+                "pelagem": ["./assets/icon_pelagem.png", "Pelagem Curta"],
+                "olhos": ["./assets/icon_olhos.png", "Olhos Oliva"],
+                "nascimento": ["./assets/icon_nascimento.png", "Nascimento aprox. Setembro 2025"],
+                "descricao": "Heidi é uma guerreira cheia de ternura. Apesar de sua condição especial, ela leva a vida com leveza e muito amor para dar. É tranquila, observadora e gosta de ambientes calmos. Com os cuidados certos, se torna uma companheira extremamente fiel. Heidi é perfeita para quem acredita que o amor está nos detalhes.",
+                "url": "./assets/gata_heidi.png"
+            },
+            {
+                "nome": "Pilão",
+                "sexo": ["./assets/icon_macho.png", "Macho"],
+                "raca": ["./assets/icon_raca.png", "SRD (Vira-lata)"],
+                "pelagem": ["./assets/icon_pelagem.png", "Pelagem Curta"],
+                "olhos": ["./assets/icon_olhos.png", "Olhos Amarelos"],
+                "nascimento": ["./assets/icon_nascimento.png", "Nascimento aprox. Fevereiro 2025"],
+                "descricao": "Pilão tem aquele jeitinho curioso que conquista qualquer um. Adora observar tudo ao redor e participar da rotina da casa. Brincalhão na medida certa, também aprecia momentos de descanso ao lado de quem ama. É um gato equilibrado, ideal para quem quer um companheiro presente e carinhoso.",
+                "url": "./assets/gato_pilão.png"
+            },
+            {
+                "nome": "Nespresso",
+                "sexo": ["./assets/icon_macho.png", "Macho"],
+                "raca": ["./assets/icon_raca.png", "SRD (Vira-lata)"],
+                "pelagem": ["./assets/icon_pelagem.png", "Pelagem Curta"],
+                "olhos": ["./assets/icon_olhos.png", "Olhos Verdes"],
+                "nascimento": ["./assets/icon_nascimento.png", "Nascimento aprox. Novembro 2025"],
+                "descricao": "Nespresso é cheio de personalidade! Independente, mas também muito carinhoso quando se sente seguro. Gosta de explorar e escolher seus próprios cantinhos para relaxar. Com paciência e amor, se mostra um excelente companheiro, daqueles que criam laços fortes com o tutor.",
+                "url": "./assets/gato_nespresso.png"
+            },
+            {
+                "nome": "Amazonas e Tocantins",
+                "sexo": ["./assets/icon_femea.png", "Fêmeas"],
+                "raca": ["./assets/icon_raca.png", "SRD (Vira-lata)"],
+                "pelagem": ["./assets/icon_pelagem.png", "Pelagem Curta"],
+                "olhos": ["./assets/icon_olhos.png", "Olhos Azuis"],
+                "nascimento": ["./assets/icon_nascimento.png", "Nascimento aprox. Junho 2024"],
+                "descricao": "Uma gatinha que vivia nas ruas, sobrevivendo com ajuda ocasional de pessoas em um estacionamento, estava grávida e doente com esporotricose. Próxima de dar à luz, foi resgatada por alguém que lhe ofereceu cuidados, tratamento e segurança para ter seus filhotes. Hoje, está saudável, curada e pronta para adoção, sendo carinhosa após ganhar confiança, sociável com outros gatos e já castrada, vacinada e testada negativa para FIV e FeLV.",
+                "url": "./assets/gatos_amazonas_e_tocantins.png"
+            },
+            {
+                "nome": "Eliane",
+                "sexo": ["./assets/icon_femea.png", "Fêmea"],
+                "raca": ["./assets/icon_raca.png", "SRD (Vira-lata)"],
+                "pelagem": ["./assets/icon_pelagem.png", "Pelagem Curta"],
+                "olhos": ["./assets/icon_olhos.png", "Olhos Verdes"],
+                "nascimento": ["./assets/icon_nascimento.png", "Nascimento aprox. Maio 2024"],
+                "descricao": "Polvilho é puro carinho em forma de gatinho. Muito dócil e apegado, ele adora estar por perto e receber atenção. Possui uma condição especial que exige alguns cuidados contínuos, mas nada que diminua sua vontade de amar e ser amado. É um companheiro fiel, perfeito para quem busca um vínculo forte e cheio de afeto.",
+                "url": "./assets/gata_eliane.png"
+            },
+            {
+                "nome": "Dora",
+                "sexo": ["./assets/icon_femea.png", "Fêmea"],
+                "raca": ["./assets/icon_raca.png", "SRD (Vira-lata)"],
+                "pelagem": ["./assets/icon_pelagem.png", "Pelagem Curta"],
+                "olhos": ["./assets/icon_olhos.png", "Olhos Azuis"],
+                "nascimento": ["./assets/icon_nascimento.png", "Nascimento aprox. Dezembro 2024"],
+                "descricao": "Dora é uma gatinha encantadora, com um jeitinho doce e acolhedor. Adora descansar em lugares confortáveis e observar o movimento ao redor. Carinhosa e tranquila, se adapta bem a diferentes ambientes. É a companhia ideal para quem procura paz, afeto e momentos de calmaria.",
+                "url": "./assets/gata_dora.png"
+            }
+        ]
+    }
+]

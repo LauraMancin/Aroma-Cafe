@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; script-src 'self'; form-action 'self'; base-uri 'self'">
+    <link rel="stylesheet" href="./style1.css">
+    <link rel="shortcut icon" href="./src/iconLogin.png" type="image/x-icon">
+    <title>Login ADM | Aroma Café</title>
+</head>
+<body data-tipo="admin">
+
+    <div class="container-pai">
+
+        <section class="login-principal">
+            <div class="card">
+
+                <p class="nome-empresa">Aroma café</p>
+
+                <h2 class="titulo">
+                    Bem-Vindo
+                    <span class="titulo-">de volta</span>
+                </h2>
+
+                <p class="texto-">Acesso do administrador</p>
+
+                <form class="input-principal" novalidate>
+
+                    <label class="input-texto" for="email">E-mail</label>
+                    <input type="email" id="email" name="email" class="input-"
+                           placeholder="exemplo@email.com.br"
+                           autocomplete="username" maxlength="254">
+
+                    <label class="input-texto" for="senha">Senha</label>
+                    <input type="password" id="senha" name="senha" class="input-"
+                           placeholder="senha"
+                           autocomplete="current-password" maxlength="128">
+
+                    <div class="checkbox">
+                        <input type="checkbox" id="conectado" class="input-check">
+                        <label class="label-conectado" for="conectado">Manter-me conectado</label>
+                    </div>
+
+                    <button type="submit" class="botao-entrar">Entrar</button>
+
+                </form>
+
+                <p>
+                    <a href="../esqueceuSenha/senha.html" class="link">Esqueceu a senha?</a>
+                </p>
+
+            </div>
+        </section>
+
+        <section class="parte-dois">
+            <div class="login-dois">
+                <img src="./src/fundo.png" alt="Aroma café imagem" class="fundo">
+            </div>
+        </section>
+
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
