@@ -11,7 +11,6 @@
 
     <div class="app-container">
 
-        <!-- ===== MENU LATERAL ===== -->
         <aside class="dashboard">
             <div class="marca">
                 <h2>Aroma Café</h2>
@@ -51,7 +50,6 @@
 
         <main class="main-content">
 
-            <!-- ===== CABEÇALHO DO PERFIL ===== -->
             <section class="perfil">
                 <div class="info-principais">
                     <div class="foto-container">
@@ -70,7 +68,6 @@
                 </div>
             </section>
 
-            <!-- ===== FORMULÁRIOS ===== -->
             <section class="secao-formulario">
                 <div class="formulario">
                     <div class="tabs">
@@ -79,7 +76,6 @@
                         <button class="tab" type="button" data-tab="security">Segurança</button>
                     </div>
 
-                    <!-- ===== ABA: INFORMAÇÕES PESSOAIS ===== -->
                     <div class="content active" id="personal">
                         <div class="form-grid">
                             <div class="input-group">
@@ -185,7 +181,6 @@
                         <button class="botao-salvar" type="button" id="botaoSalvar" disabled>SALVAR</button>
                     </div>
 
-                    <!-- ===== ABA: CONFIGURAÇÕES ===== -->
                     <div class="content" id="account">
 
                         <div class="config-section">
@@ -261,7 +256,6 @@
 
                     </div>
 
-                    <!-- ===== ABA: SEGURANÇA ===== -->
                     <div class="content" id="security">
 
                         <div class="seguranca-alerta">
@@ -343,18 +337,19 @@
         </main>
     </div>
 
-    <!-- ===== MODAL: SALVO ===== -->
     <div id="modal" class="modal-overlay">
+
         <div class="modal-caixa modal-salvo" role="dialog" aria-modal="true" aria-labelledby="tituloSalvo">
             <button class="botaoFechar" type="button" data-fechar aria-label="Fechar">&times;</button>
             <div class="icone-salvo">✓</div>
             <h2 class="tituloPopup" id="tituloSalvo">SALVO!</h2>
             <p class="textoPopup" id="textoSalvo">Suas alterações foram salvas com sucesso.</p>
         </div>
+
     </div>
 
-    <!-- ===== MODAL: EDITAR PERFIL ===== -->
     <div id="modalPerfil" class="modal-overlay">
+
         <div class="modal-caixa" role="dialog" aria-modal="true" aria-labelledby="tituloEditar">
             <button class="botaoFechar" type="button" data-fechar aria-label="Fechar">&times;</button>
             <h2 class="modal-titulo" id="tituloEditar">Editar perfil</h2>
@@ -386,10 +381,11 @@
                 <button class="botao-salvar botao-modal" type="button" id="salvarPerfil">Salvar</button>
             </div>
         </div>
+
     </div>
 
-    <!-- ===== MODAL: ALTERAR E-MAIL / TELEFONE ===== -->
     <div id="modalContato" class="modal-overlay">
+
         <div class="modal-caixa" role="dialog" aria-modal="true" aria-labelledby="tituloContato">
             <button class="botaoFechar" type="button" data-fechar aria-label="Fechar">&times;</button>
             <h2 class="modal-titulo" id="tituloContato">Alterar e-mail</h2>
@@ -407,10 +403,11 @@
                 <button class="botao-salvar botao-modal" type="button" id="salvarContato">Salvar</button>
             </div>
         </div>
+
     </div>
 
-    <!-- ===== MODAL: ALTERAR SENHA ===== -->
     <div id="modalSenha" class="modal-overlay">
+
         <div class="modal-caixa" role="dialog" aria-modal="true" aria-labelledby="tituloSenha">
             <button class="botaoFechar" type="button" data-fechar aria-label="Fechar">&times;</button>
             <h2 class="modal-titulo" id="tituloSenha">Alterar senha</h2>
@@ -447,10 +444,12 @@
                 <button class="botao-salvar botao-modal" type="button" id="salvarSenha">Salvar senha</button>
             </div>
         </div>
+
     </div>
 
-    <!-- ===== MODAL: CONFIRMAR SAÍDA ===== -->
+
     <div id="modalSair" class="modal-overlay">
+
         <div class="modal-caixa modal-salvo" role="dialog" aria-modal="true" aria-labelledby="tituloSair">
             <button class="botaoFechar" type="button" data-fechar aria-label="Fechar">&times;</button>
             <h2 class="tituloPopup" id="tituloSair">Sair da conta?</h2>
@@ -460,6 +459,7 @@
                 <button class="botao-salvar botao-modal" type="button" id="confirmarSair">Sim, sair</button>
             </div>
         </div>
+        
     </div>
 
     <script src="script.js"></script>

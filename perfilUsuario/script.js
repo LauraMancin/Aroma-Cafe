@@ -1,10 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    /* =========================================================
-       ARMAZENAMENTO (localStorage)
-       Obs.: é uma solução de front-end para demonstração.
-       Quando houver back-end, estes dados devem ir para o servidor.
-    ========================================================= */
     const CHAVE_PERFIL = "aromaPerfil";
     const CHAVE_SENHA = "aromaSenha";
 
@@ -37,9 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const $ = (id) => document.getElementById(id);
 
-    /* =========================================================
-       MÁSCARAS
-    ========================================================= */
+    /* mascaras */
     function mascaraCPF(valor) {
         let v = valor.replace(/\D/g, "").slice(0, 11);
         v = v.replace(/(\d{3})(\d)/, "$1.$2");
@@ -66,9 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
     $("cep").addEventListener("input", (e) => { e.target.value = mascaraCEP(e.target.value); });
     $("numero").addEventListener("input", (e) => { e.target.value = e.target.value.replace(/\D/g, ""); });
 
-    /* =========================================================
-       MODAIS
-    ========================================================= */
+    /* - modais */
     let temporizadorSalvo = null;
 
     function abrirModal(id) {
@@ -109,9 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.abrirModal = abrirModal;
     window.fecharModal = fecharModal;
 
-    /* =========================================================
-       ATUALIZAR A TELA COM OS DADOS SALVOS
-    ========================================================= */
+    /* atualiza tela */
     function nomeCompleto() {
         return `${perfil.nome || ""} ${perfil.sobrenome || ""}`.trim();
     }
@@ -131,9 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    /* =========================================================
-       ESTADO / CIDADE (API IBGE)
-    ========================================================= */
+    /* estado/cidade */
     function carregarCidades(uf, cidadeSelecionada) {
         const cidadeSelect = $("cidade");
 
@@ -171,9 +158,7 @@ document.addEventListener("DOMContentLoaded", () => {
         validarFormulario();
     });
 
-    /* =========================================================
-       BOTÃO SALVAR: só ativa com TODOS os campos preenchidos
-    ========================================================= */
+    /* salva  */
     function validarFormulario() {
         const completo = CAMPOS.every((campo) => $(campo).value.trim() !== "");
         $("botaoSalvar").disabled = !completo;
@@ -186,9 +171,7 @@ document.addEventListener("DOMContentLoaded", () => {
         $(campo).addEventListener("change", validarFormulario);
     });
 
-    /* =========================================================
-       SALVAR INFORMAÇÕES PESSOAIS (todos os campos)
-    ========================================================= */
+    /* salva inf. */
     $("botaoSalvar").addEventListener("click", () => {
         if (!validarFormulario()) return;
         CAMPOS.forEach((campo) => {
@@ -205,9 +188,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    /* =========================================================
-       ABAS + MENU LATERAL
-    ========================================================= */
+    /* menu */
     const tabsContainer = document.querySelector(".tabs");
     const tabs = document.querySelectorAll(".tabs .tab");
     const contents = document.querySelectorAll(".content");
@@ -257,9 +238,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("resize", posicionarIndicador);
     window.addEventListener("hashchange", () => ativarAba(location.hash.slice(1), false));
 
-    /* =========================================================
-       EDITAR PERFIL (foto, nome, e-mail)
-    ========================================================= */
+    /* editaar perfil */
     let fotoTemporaria = "";
 
     function abrirEditarPerfil() {
@@ -331,9 +310,7 @@ document.addEventListener("DOMContentLoaded", () => {
         mostrarSalvo(ok ? "Seu perfil foi atualizado." : "Não foi possível salvar neste navegador.");
     });
 
-    /* =========================================================
-       CONFIGURAÇÕES: ALTERAR E-MAIL / TELEFONE (com tela)
-    ========================================================= */
+    /* config*/
     let tipoContato = "email";
 
     function abrirContato(tipo) {
@@ -410,9 +387,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    /* =========================================================
-       ALTERAR SENHA (com tela)
-    ========================================================= */
+    /* - alterar senha */
     function abrirSenha() {
         ["senhaAtual", "novaSenha", "confirmarSenha"].forEach((id) => {
             $(id).value = "";
@@ -454,9 +429,7 @@ document.addEventListener("DOMContentLoaded", () => {
         mostrarSalvo(ok ? "Sua senha foi alterada." : "Não foi possível salvar neste navegador.");
     });
 
-    /* =========================================================
-       SEGURANÇA: demais ações
-    ========================================================= */
+    /* - segurança  */
     document.querySelector('[data-acao="dispositivo"]').addEventListener("click", () => {
         alert("Este é o dispositivo que você está usando atualmente.");
     });
@@ -481,15 +454,11 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    /* =========================================================
-       SAIR DA CONTA (com confirmação)
-    ========================================================= */
+    /* sair da conta - confirmação */
     $("botaoSair").addEventListener("click", () => abrirModal("modalSair"));
     $("confirmarSair").addEventListener("click", sairDaConta);
 
-    /* =========================================================
-       INICIALIZAÇÃO
-    ========================================================= */
+    /* - inicialização */
     preencherFormulario();
     atualizarTela();
     validarFormulario();
@@ -507,9 +476,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-/* =========================================================
-   SAIR DA CONTA
-========================================================= */
+/* sair da conta */
 function sairDaConta() {
     localStorage.removeItem("usuarioLogado");
     window.location.href = "../homePage_perfil/indexPerfil.html";
