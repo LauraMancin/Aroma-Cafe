@@ -10,124 +10,130 @@
 <body>
 
     <div class="app-container">
+
+        <!-- ===== MENU LATERAL ===== -->
         <aside class="dashboard">
-            <h2> Aroma Café </h2>
-            <ul>
-                <li> 
-                    <img src="./image/home.png" alt="Icone de casa">
-                    <a href="../homePage_perfil/indexPerfil.html">Página Principal</a>
-                </li>
+            <div class="marca">
+                <h2>Aroma Café</h2>
+                <p>Minha conta</p>
+            </div>
 
-                <li> 
-                    <img src="./image/user.png" alt="Icone de uma Pessoa">
-                    <label class="tab" data-tab="personal">Perfil</label>
-                </li>
+            <nav>
+                <ul>
+                    <li>
+                        <a class="nav-link" href="../homePage_perfil/indexPerfil.html">
+                            <img src="./image/home.png" alt="Ícone de casa">
+                            <span>Página Principal</span>
+                        </a>
+                    </li>
 
-                <li> 
-                    <img src="./image/settings.png" alt="Icone de Engrenagem">
-                    <label class="tab" data-tab="account">Configurações</label>
-                </li>
+                    <li>
+                        <a class="nav-link" href="#personal" data-tab="personal" data-menu="perfil">
+                            <img src="./image/user.png" alt="Ícone de uma pessoa">
+                            <span>Perfil</span>
+                        </a>
+                    </li>
 
-                <li> 
-                    <img src="./image/exit.png" alt="Icone para sair da conta">
-                    <label class="botaoSair" id="botaoSair" onclick="sairDaConta()" style="cursor: pointer;">Sair da conta</label>
-                </li>
-            </ul>
+                    <li>
+                        <a class="nav-link" href="#account" data-tab="account" data-menu="configuracoes">
+                            <img src="./image/settings.png" alt="Ícone de engrenagem">
+                            <span>Configurações</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <button class="botao-sair" id="botaoSair" type="button" onclick="sairDaConta()">
+                <span>Sair da Conta</span>
+                <img src="./image/exit.png" alt="Ícone para sair da conta">
+            </button>
         </aside>
 
         <main class="main-content">
-        
-            <section class="perfil">
 
+            <!-- ===== CABEÇALHO DO PERFIL ===== -->
+            <section class="perfil">
                 <div class="info-principais">
                     <div class="foto-container">
-                        <img src="./image/user-icon.png" alt="Icone para foto de perfil" class="foto-perfil">
-                        <img src="./image/camera.png" alt="Icone para mudar a foto de perfil" class="editar-foto">
+                        <img src="./image/user-icon.png" alt="Foto de perfil" class="foto-perfil" id="fotoPerfil">
+                        <img src="./image/camera.png" alt="Alterar a foto de perfil" class="editar-foto" id="botaoCamera" title="Alterar foto">
                     </div>
 
                     <div class="dados-usuario">
-                        <h2> Nome Completo </h2>
-                        <p>exemplo@gmail.com</p>
+                        <h2 id="nomePerfil">Nome Completo</h2>
+                        <p id="emailPerfil">exemplo@gmail.com</p>
                         <div class="botoes-usuario">
-                            <button class="botao-perfil"> Editar Perfil </button>
-                            <button class="botao-senha"> Mudar a Senha </button>
+                            <button class="botao-perfil" id="botaoEditarPerfil" type="button">Editar Perfil</button>
+                            <button class="botao-senha" id="botaoMudarSenha" type="button">Mudar a Senha</button>
                         </div>
                     </div>
-
                 </div>
             </section>
 
-            <!-- Forms -->
+            <!-- ===== FORMULÁRIOS ===== -->
             <section class="secao-formulario">
-
                 <div class="formulario">
                     <div class="tabs">
-                        <button class="tab active" data-tab="personal">
-                            Informações Pessoais
-                        </button>
-                        <button class="tab" data-tab="account">
-                            Configurações
-                        </button>
-                        <button class="tab" data-tab="security">
-                            Segurança
-                        </button>
+                        <button class="tab active" type="button" data-tab="personal">Informações Pessoais</button>
+                        <button class="tab" type="button" data-tab="account">Configurações</button>
+                        <button class="tab" type="button" data-tab="security">Segurança</button>
                     </div>
 
-                    <!-- Aba Personal Info -->
+                    <!-- ===== ABA: INFORMAÇÕES PESSOAIS ===== -->
                     <div class="content active" id="personal">
                         <div class="form-grid">
                             <div class="input-group">
-                                <label>Nome</label>
-                                <input type="text">
+                                <label for="nome">Nome</label>
+                                <input type="text" id="nome" name="nome">
                             </div>
 
                             <div class="input-group">
-                                <label>Sobrenome</label>
-                                <input type="text">
+                                <label for="sobrenome">Sobrenome</label>
+                                <input type="text" id="sobrenome" name="sobrenome">
                             </div>
 
                             <div class="input-group">
-                                <label>Data de Nascimento</label>
-                                <input type="date">
+                                <label for="nascimento">Data de Nascimento</label>
+                                <input type="date" id="nascimento">
                             </div>
 
                             <div class="input-group">
-                                <label>CPF</label>
-                                <input type="text" maxlength="14">
+                                <label for="cpf">CPF</label>
+                                <input type="text" id="cpf" maxlength="14" placeholder="000.000.000-00" inputmode="numeric">
                             </div>
 
                             <div class="input-group">
-                                <label>Número para contato</label>
-                                <input type="tel" placeholder="(11) 99999-9999">
+                                <label for="telefone">Número para contato</label>
+                                <input type="tel" id="telefone" placeholder="(11) 99999-9999">
                             </div>
 
                             <div class="input-group">
-                                <label>Endereço</label>
-                                <input type="text">
+                                <label for="endereco">Endereço</label>
+                                <input type="text" id="endereco">
                             </div>
 
                             <div class="input-group">
-                                <label>Número</label>
-                                <input type="number">
+                                <label for="numero">Número</label>
+                                <input type="text" id="numero" inputmode="numeric">
                             </div>
 
                             <div class="input-group">
-                                <label>Complemento</label>
-                                <input type="text">
+                                <label for="complemento">Complemento</label>
+                                <input type="text" id="complemento">
                             </div>
 
                             <div class="input-group">
-                                <label>CEP</label>
-                                <input type="text" maxlength="9" placeholder="00000-000">
+                                <label for="cep">CEP</label>
+                                <input type="text" id="cep" maxlength="9" placeholder="00000-000" inputmode="numeric">
                             </div>
 
                             <div class="input-group">
-                                <label>Moradia</label>
-                                <input type="text" placeholder="Ex: Casa, Apto...">
+                                <label for="moradia">Moradia</label>
+                                <input type="text" id="moradia" placeholder="Ex: Casa, Apto...">
                             </div>
 
                             <div class="input-group">
-                                <label>Estado</label>
+                                <label for="estado">Estado</label>
                                 <select id="estado">
                                     <option value="">Selecione</option>
                                     <option value="AC">Acre</option>
@@ -161,7 +167,7 @@
                             </div>
 
                             <div class="input-group">
-                                <label>Cidade</label>
+                                <label for="cidade">Cidade</label>
                                 <select id="cidade">
                                     <option value="">Selecione um estado primeiro</option>
                                 </select>
@@ -170,395 +176,278 @@
 
                         <div class="textarea-group">
                             <div class="input-group">
-                                <label>Descreva seu ambiente:</label>
+                                <label for="ambiente">Descreva seu ambiente:</label>
                                 <textarea name="ambiente" id="ambiente" rows="4" placeholder="Faça uma descrição mais detalhada sobre o seu ambiente..."></textarea>
                             </div>
                         </div>
 
-                        <button class="botao-salvar" onclick="abrirModal()">SALVAR</button>
+                        <button class="botao-salvar" type="button" id="botaoSalvar">SALVAR</button>
                     </div>
 
-                    <!-- Outras Abas -->
-                    
+                    <!-- ===== ABA: CONFIGURAÇÕES ===== -->
+                    <div class="content" id="account">
 
+                        <div class="config-section">
+                            <h2 class="titulo-secao">Dados da conta</h2>
+                            <p class="descricao-secao">Gerencie as informações utilizadas na sua conta.</p>
 
-                        <div class="content" id="account">
-     
-                            <div class="config-section">
-
-                                <h2 class="titulo-secao">Dados da conta</h2>
-
-                                <p class="descricao-secao">
-                                    Gerencie as informações utilizadas na sua conta.
-                                </p>
-
-                                <div class="config-card">
-
-                                    <div class="config-item">
-
-                                        <div class="config-info">
-                                            <strong>E-mail</strong>
-                                            <span>Seu endereço de e-mail cadastrado</span>
-                                        </div>
-
-                                        <div style="display: flex; align-items: center; gap: 15px;">
-                                            <span class="config-valor">
-                                                exemplo@gmail.com
-                                            </span>
-
-                                            <button class="botao-alterar">
-                                                Alterar
-                                            </button>
-                                        </div>
-
+                            <div class="config-card">
+                                <div class="config-item">
+                                    <div class="config-info">
+                                        <strong>E-mail</strong>
+                                        <span>Seu endereço de e-mail cadastrado</span>
                                     </div>
 
-
-                                    <div class="config-item">
-
-                                        <div class="config-info">
-                                            <strong>Número de telefone</strong>
-                                            <span>Telefone associado à sua conta</span>
-                                        </div>
-
-                                        <div style="display: flex; align-items: center; gap: 15px;">
-                                            <span class="config-valor">
-                                                (11) 99999-9999
-                                            </span>
-
-                                            <button class="botao-alterar">
-                                                Alterar
-                                            </button>
-                                        </div>
-
+                                    <div class="config-acao">
+                                        <span class="config-valor" id="valorEmail">exemplo@gmail.com</span>
+                                        <button class="botao-alterar" type="button" data-alterar="email">Alterar</button>
                                     </div>
-
                                 </div>
 
-                            </div>
-
-
-                            <div class="config-section">
-
-                                <h2 class="titulo-secao">Notificações</h2>
-
-                                <p class="descricao-secao">
-                                    Escolha quais notificações você deseja receber.
-                                </p>
-
-                                <div class="config-card">
-
-                                    <div class="config-item">
-
-                                        <div class="config-info">
-                                            <strong>Novidades</strong>
-
-                                            <span>
-                                                Receba informações sobre novidades do Aroma Café.
-                                            </span>
-                                        </div>
-
-                                        <label class="switch">
-                                            <input type="checkbox" checked>
-                                            <span class="slider"></span>
-                                        </label>
-
+                                <div class="config-item">
+                                    <div class="config-info">
+                                        <strong>Número de telefone</strong>
+                                        <span>Telefone associado à sua conta</span>
                                     </div>
 
-
-                                    <div class="config-item">
-
-                                        <div class="config-info">
-                                            <strong>Promoções e ofertas</strong>
-
-                                            <span>
-                                                Receba ofertas e promoções especiais.
-                                            </span>
-                                        </div>
-
-                                        <label class="switch">
-                                            <input type="checkbox" checked>
-                                            <span class="slider"></span>
-                                        </label>
-
+                                    <div class="config-acao">
+                                        <span class="config-valor" id="valorTelefone">(11) 99999-9999</span>
+                                        <button class="botao-alterar" type="button" data-alterar="telefone">Alterar</button>
                                     </div>
-
-
-                                    <div class="config-item">
-
-                                        <div class="config-info">
-                                            <strong>Atualizações da conta</strong>
-
-                                            <span>
-                                                Receba avisos importantes sobre sua conta.
-                                            </span>
-                                        </div>
-
-                                        <label class="switch">
-                                            <input type="checkbox" checked>
-                                            <span class="slider"></span>
-                                        </label>
-
-                                    </div>
-
                                 </div>
-
                             </div>
-
-
-                            <div class="config-section">
-
-                                <h2 class="titulo-secao">Aparência</h2>
-
-                                <p class="descricao-secao">
-                                    Personalize a aparência da sua experiência.
-                                </p>
-
-                                <div class="config-card">
-
-                                    <div class="config-item">
-
-                                        <div class="config-info">
-                                            <strong>Tema</strong>
-
-                                            <span>
-                                                Escolha como o sistema deve ser exibido.
-                                            </span>
-                                        </div>
-
-                                        <select class="select-config">
-                                            <option>Claro</option>
-                                            <option>Escuro</option>
-                                            <option>Automático</option>
-                                        </select>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-
-                            <div class="config-section">
-
-                                <h2 class="titulo-secao">Idioma</h2>
-
-                                <p class="descricao-secao">
-                                    Escolha o idioma utilizado no sistema.
-                                </p>
-
-                                <div class="config-card">
-
-                                    <div class="config-item">
-
-                                        <div class="config-info">
-                                            <strong>Idioma</strong>
-
-                                            <span>
-                                                Idioma atual da sua conta.
-                                            </span>
-                                        </div>
-
-                                        <select class="select-config">
-                                            <option>Português (Brasil)</option>
-                                            <option>English</option>
-                                            <option>Español</option>
-                                        </select>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-
                         </div>
 
+                        <div class="config-section">
+                            <h2 class="titulo-secao">Notificações</h2>
+                            <p class="descricao-secao">Escolha quais notificações você deseja receber.</p>
 
-                        <!-- =========================
-                            SEGURANÇA
-                        ========================= -->
-
-                        <div class="content" id="security">
-
-                            <div class="seguranca-alerta">
-
-                                <strong>Proteja sua conta</strong>
-
-                                <p>
-                                    Mantenha seus dados de acesso atualizados e utilize uma senha
-                                    segura para evitar acessos não autorizados.
-                                </p>
-
-                            </div>
-
-
-                            <div class="config-section">
-
-                                <h2 class="titulo-secao">Senha</h2>
-
-                                <p class="descricao-secao">
-                                    Altere sua senha sempre que necessário para manter sua conta segura.
-                                </p>
-
-                                <div class="seguranca-item">
-
-                                    <div class="seguranca-info">
-
-                                        <strong>Alterar senha</strong>
-
-                                        <span>
-                                            Recomendamos utilizar uma senha forte e diferente de outras contas.
-                                        </span>
-
+                            <div class="config-card">
+                                <div class="config-item">
+                                    <div class="config-info">
+                                        <strong>Novidades</strong>
+                                        <span>Receba informações sobre novidades do Aroma Café.</span>
                                     </div>
-
-                                    <button class="botao-seguranca">
-                                        Alterar senha
-                                    </button>
-
-                                </div>
-
-                            </div>
-
-
-                            <div class="config-section">
-
-                                <h2 class="titulo-secao">Autenticação</h2>
-
-                                <p class="descricao-secao">
-                                    Adicione uma camada extra de proteção à sua conta.
-                                </p>
-
-                                <div class="seguranca-item">
-
-                                    <div class="seguranca-info">
-
-                                        <strong>Autenticação em duas etapas</strong>
-
-                                        <span>
-                                            Solicite uma segunda forma de verificação ao entrar na conta.
-                                        </span>
-
-                                    </div>
-
                                     <label class="switch">
-                                        <input type="checkbox">
+                                        <input type="checkbox" data-notificacao="novidades" checked>
                                         <span class="slider"></span>
                                     </label>
-
                                 </div>
 
-                            </div>
-
-
-                            <div class="config-section">
-
-                                <h2 class="titulo-secao">Sessões ativas</h2>
-
-                                <p class="descricao-secao">
-                                    Confira os dispositivos que estão conectados à sua conta.
-                                </p>
-
-                                <div class="seguranca-item">
-
-                                    <div class="seguranca-info">
-
-                                        <strong>Este dispositivo</strong>
-
-                                        <span>
-                                            Navegador atual • Ativo agora
-                                        </span>
-
+                                <div class="config-item">
+                                    <div class="config-info">
+                                        <strong>Promoções e ofertas</strong>
+                                        <span>Receba ofertas e promoções especiais.</span>
                                     </div>
-
-                                    <button class="botao-seguranca">
-                                        Dispositivo atual
-                                    </button>
-
+                                    <label class="switch">
+                                        <input type="checkbox" data-notificacao="promocoes" checked>
+                                        <span class="slider"></span>
+                                    </label>
                                 </div>
 
-                            </div>
-
-
-                            <div class="config-section">
-
-                                <h2 class="titulo-secao">Histórico de acessos</h2>
-
-                                <p class="descricao-secao">
-                                    Consulte informações sobre os últimos acessos realizados na sua conta.
-                                </p>
-
-                                <div class="seguranca-item">
-
-                                    <div class="seguranca-info">
-
-                                        <strong>Último acesso</strong>
-
-                                        <span>
-                                            Este dispositivo • Acesso recente
-                                        </span>
-
+                                <div class="config-item">
+                                    <div class="config-info">
+                                        <strong>Atualizações da conta</strong>
+                                        <span>Receba avisos importantes sobre sua conta.</span>
                                     </div>
-
-                                    <button class="botao-seguranca">
-                                        Ver histórico
-                                    </button>
-
+                                    <label class="switch">
+                                        <input type="checkbox" data-notificacao="conta" checked>
+                                        <span class="slider"></span>
+                                    </label>
                                 </div>
-
                             </div>
-
-
-                            <div class="config-section">
-
-                                <h2 class="titulo-secao">Excluir conta</h2>
-
-                                <p class="descricao-secao">
-                                    Esta ação é permanente e não poderá ser desfeita.
-                                </p>
-
-                                <div class="seguranca-item">
-
-                                    <div class="seguranca-info">
-
-                                        <strong>Excluir minha conta</strong>
-
-                                        <span>
-                                            Todos os dados associados à sua conta serão removidos.
-                                        </span>
-
-                                    </div>
-
-                                    <button class="botao-perigo">
-                                        Excluir conta
-                                    </button>
-
-                                </div>
-
-                            </div>
-
                         </div>
 
+                    </div>
 
+                    <!-- ===== ABA: SEGURANÇA ===== -->
+                    <div class="content" id="security">
 
+                        <div class="seguranca-alerta">
+                            <strong>Proteja sua conta</strong>
+                            <p>Mantenha seus dados de acesso atualizados e utilize uma senha segura para evitar acessos não autorizados.</p>
+                        </div>
+
+                        <div class="config-section">
+                            <h2 class="titulo-secao">Senha</h2>
+                            <p class="descricao-secao">Altere sua senha sempre que necessário para manter sua conta segura.</p>
+
+                            <div class="seguranca-item">
+                                <div class="seguranca-info">
+                                    <strong>Alterar senha</strong>
+                                    <span>Recomendamos utilizar uma senha forte e diferente de outras contas.</span>
+                                </div>
+                                <button class="botao-seguranca" type="button" data-acao="senha">Alterar senha</button>
+                            </div>
+                        </div>
+
+                        <div class="config-section">
+                            <h2 class="titulo-secao">Autenticação</h2>
+                            <p class="descricao-secao">Adicione uma camada extra de proteção à sua conta.</p>
+
+                            <div class="seguranca-item">
+                                <div class="seguranca-info">
+                                    <strong>Autenticação em duas etapas</strong>
+                                    <span>Solicite uma segunda forma de verificação ao entrar na conta.</span>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" id="doisFatores">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="config-section">
+                            <h2 class="titulo-secao">Sessões ativas</h2>
+                            <p class="descricao-secao">Confira os dispositivos que estão conectados à sua conta.</p>
+
+                            <div class="seguranca-item">
+                                <div class="seguranca-info">
+                                    <strong>Este dispositivo</strong>
+                                    <span>Navegador atual • Ativo agora</span>
+                                </div>
+                                <button class="botao-seguranca" type="button" data-acao="dispositivo">Dispositivo atual</button>
+                            </div>
+                        </div>
+
+                        <div class="config-section">
+                            <h2 class="titulo-secao">Histórico de acessos</h2>
+                            <p class="descricao-secao">Consulte informações sobre os últimos acessos realizados na sua conta.</p>
+
+                            <div class="seguranca-item">
+                                <div class="seguranca-info">
+                                    <strong>Último acesso</strong>
+                                    <span>Este dispositivo • Acesso recente</span>
+                                </div>
+                                <button class="botao-seguranca" type="button" data-acao="historico">Ver histórico</button>
+                            </div>
+                        </div>
+
+                        <div class="config-section">
+                            <h2 class="titulo-secao">Excluir conta</h2>
+                            <p class="descricao-secao">Esta ação é permanente e não poderá ser desfeita.</p>
+
+                            <div class="seguranca-item">
+                                <div class="seguranca-info">
+                                    <strong>Excluir minha conta</strong>
+                                    <span>Todos os dados associados à sua conta serão removidos.</span>
+                                </div>
+                                <button class="botao-perigo" type="button" id="botaoExcluir">Excluir conta</button>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </section>
-
         </main>
     </div>
 
-    <!-- Modal Pop-up -->
-    
+    <!-- ===== MODAL: SALVO ===== -->
     <div id="modal" class="modal-overlay">
-        <div class="modal-caixa">
-            <button class="botaoFechar" onclick="fecharModal()">&times;</button>
-            <h2 class="tituloPopup">SALVO!</h2>
-            <p class="textoPopup">Suas alterações foram salvas com sucesso.</p>
+        <div class="modal-caixa modal-salvo" role="dialog" aria-modal="true" aria-labelledby="tituloSalvo">
+            <button class="botaoFechar" type="button" data-fechar aria-label="Fechar">&times;</button>
+            <div class="icone-salvo">✓</div>
+            <h2 class="tituloPopup" id="tituloSalvo">SALVO!</h2>
+            <p class="textoPopup" id="textoSalvo">Suas alterações foram salvas com sucesso.</p>
         </div>
     </div>
 
+    <!-- ===== MODAL: EDITAR PERFIL ===== -->
+    <div id="modalPerfil" class="modal-overlay">
+        <div class="modal-caixa" role="dialog" aria-modal="true" aria-labelledby="tituloEditar">
+            <button class="botaoFechar" type="button" data-fechar aria-label="Fechar">&times;</button>
+            <h2 class="modal-titulo" id="tituloEditar">Editar perfil</h2>
+            <p class="modal-descricao">Atualize sua foto, nome e e-mail.</p>
 
+            <div class="foto-edicao">
+                <img src="./image/user-icon.png" alt="Pré-visualização da foto" id="previaFoto">
+                <div>
+                    <label class="botao-secundario" for="arquivoFoto">Escolher imagem</label>
+                    <input type="file" id="arquivoFoto" accept="image/*" hidden>
+                    <span class="dica-foto">JPG ou PNG</span>
+                </div>
+            </div>
 
-    <script src="script.js"></script> 
+            <div class="input-group">
+                <label for="editNome">Nome completo</label>
+                <input type="text" id="editNome" autocomplete="name">
+            </div>
+
+            <div class="input-group">
+                <label for="editEmail">E-mail</label>
+                <input type="email" id="editEmail" autocomplete="email">
+            </div>
+
+            <p class="erro-form" id="erroPerfil"></p>
+
+            <div class="modal-acoes">
+                <button class="botao-secundario" type="button" data-fechar>Cancelar</button>
+                <button class="botao-salvar botao-modal" type="button" id="salvarPerfil">Salvar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== MODAL: ALTERAR E-MAIL / TELEFONE ===== -->
+    <div id="modalContato" class="modal-overlay">
+        <div class="modal-caixa" role="dialog" aria-modal="true" aria-labelledby="tituloContato">
+            <button class="botaoFechar" type="button" data-fechar aria-label="Fechar">&times;</button>
+            <h2 class="modal-titulo" id="tituloContato">Alterar e-mail</h2>
+            <p class="modal-descricao" id="descricaoContato"></p>
+
+            <div class="input-group">
+                <label for="valorContato" id="labelContato">Novo e-mail</label>
+                <input type="text" id="valorContato">
+            </div>
+
+            <p class="erro-form" id="erroContato"></p>
+
+            <div class="modal-acoes">
+                <button class="botao-secundario" type="button" data-fechar>Cancelar</button>
+                <button class="botao-salvar botao-modal" type="button" id="salvarContato">Salvar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== MODAL: ALTERAR SENHA ===== -->
+    <div id="modalSenha" class="modal-overlay">
+        <div class="modal-caixa" role="dialog" aria-modal="true" aria-labelledby="tituloSenha">
+            <button class="botaoFechar" type="button" data-fechar aria-label="Fechar">&times;</button>
+            <h2 class="modal-titulo" id="tituloSenha">Alterar senha</h2>
+            <p class="modal-descricao">Use pelo menos 8 caracteres, misturando letras e números.</p>
+
+            <div class="input-group">
+                <label for="senhaAtual">Senha atual</label>
+                <div class="campo-senha">
+                    <input type="password" id="senhaAtual" autocomplete="current-password">
+                    <button type="button" class="ver-senha" data-ver="senhaAtual">Mostrar</button>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="novaSenha">Nova senha</label>
+                <div class="campo-senha">
+                    <input type="password" id="novaSenha" autocomplete="new-password">
+                    <button type="button" class="ver-senha" data-ver="novaSenha">Mostrar</button>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="confirmarSenha">Confirmar nova senha</label>
+                <div class="campo-senha">
+                    <input type="password" id="confirmarSenha" autocomplete="new-password">
+                    <button type="button" class="ver-senha" data-ver="confirmarSenha">Mostrar</button>
+                </div>
+            </div>
+
+            <p class="erro-form" id="erroSenha"></p>
+
+            <div class="modal-acoes">
+                <button class="botao-secundario" type="button" data-fechar>Cancelar</button>
+                <button class="botao-salvar botao-modal" type="button" id="salvarSenha">Salvar senha</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
