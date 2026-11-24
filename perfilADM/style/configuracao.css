@@ -1,0 +1,224 @@
+/* Página de configurações — mantém a identidade visual do Aroma Café */
+
+.pagina-interna {
+  max-width:1400px;
+}
+
+.topo-pagina {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:20px;
+  margin-bottom:24px;
+  padding:30px 36px;
+  background:linear-gradient(135deg,#fff 60%,#fdeef3);
+  border:1px solid var(--cor-botao-efeito);
+  border-radius:20px;
+}
+
+.topo-pagina small {
+  color:var(--cor-principal);
+  font-size:13px;
+  font-weight:600;
+}
+
+.topo-pagina h1 {
+  margin:6px 0;
+  color:#111;
+  font:600 30px var(--fonte-principal);
+}
+
+.subtitulo {
+  color:var(--cor-quaternaria);
+  font-size:14px;
+}
+
+.layout-configuracao {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
+  align-items:start;
+}
+
+.painel-config {
+  padding:28px;
+  background:#fff;
+  border:1px solid var(--cor-botao-efeito);
+  border-radius:18px;
+}
+
+.painel-titulo {
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding-bottom:20px;
+  margin-bottom:20px;
+  border-bottom:1px solid #f0e4ec;
+}
+
+.config-icone {
+  display:grid;
+  place-items:center;
+  flex:0 0 44px;
+  width:44px;
+  height:44px;
+  border-radius:12px;
+  background:#fde3ec;
+  color:var(--cor-principal-escura);
+  font-size:22px;
+}
+
+.painel-titulo h2 {
+  color:#111;
+  font:600 18px var(--fonte-principal);
+}
+
+.painel-titulo p {
+  margin-top:3px;
+  color:var(--cor-quaternaria);
+  font-size:12px;
+}
+
+.form-config {
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+
+.campo-config {
+  display:flex;
+  flex-direction:column;
+  gap:7px;
+}
+
+.campo-config label {
+  color:#333;
+  font:500 13px var(--fonte-principal);
+}
+
+.campo-config input,
+.campo-config select {
+  width:100%;
+  padding:11px 13px;
+  border:1px solid #ddd;
+  border-radius:10px;
+  background:#fff;
+  color:#222;
+  font:14px var(--fonte-secundaria);
+}
+
+.campo-config input:focus,
+.campo-config select:focus {
+  outline:0;
+  border-color:var(--cor-principal);
+  box-shadow:0 0 0 3px rgba(219,112,147,.16);
+}
+
+.opcao-config {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  padding:13px 0;
+  border-bottom:1px solid #f4eaf0;
+  cursor:pointer;
+}
+
+.opcao-config span {
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+}
+
+.opcao-config strong {
+  color:#333;
+  font:500 13px var(--fonte-principal);
+}
+
+.opcao-config small {
+  color:var(--cor-quaternaria);
+  font-size:12px;
+  line-height:1.4;
+}
+
+.opcao-config input {
+  width:18px;
+  height:18px;
+  flex-shrink:0;
+  accent-color:var(--cor-principal);
+  cursor:pointer;
+}
+
+.acoes-config {
+  display:flex;
+  justify-content:flex-end;
+  margin-top:5px;
+}
+
+.btn-primario {
+  padding:11px 19px;
+  border:1px solid var(--cor-principal-escura);
+  border-radius:10px;
+  background:var(--cor-principal);
+  color:#fff;
+  font:500 14px var(--fonte-principal);
+  cursor:pointer;
+  transition:.2s;
+}
+
+.btn-primario:hover {
+  background:var(--cor-principal-escura);
+  transform:translateY(-2px);
+}
+
+.aviso-seguranca {
+  padding:16px;
+  margin-bottom:18px;
+  border-radius:12px;
+  background:#fff7fa;
+  border:1px solid #f5d5e1;
+}
+
+.aviso-seguranca strong {
+  color:#333;
+  font:600 14px var(--fonte-principal);
+}
+
+.aviso-seguranca p {
+  margin-top:6px;
+  color:#666;
+  font-size:13px;
+  line-height:1.6;
+}
+
+.btn-secundario {
+  padding:10px 15px;
+  border:1px solid var(--cor-suave);
+  border-radius:10px;
+  background:#fff;
+  color:var(--cor-principal-escura);
+  font:500 13px var(--fonte-principal);
+  cursor:pointer;
+}
+
+.btn-secundario:hover {
+  background:#fff7fa;
+  border-color:var(--cor-principal);
+}
+
+@media(max-width:1000px) {
+  .layout-configuracao {
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:800px) {
+  .topo-pagina {
+    padding:24px;
+  }
+
+  .painel-config {
+    padding:22px;
+  }
+}

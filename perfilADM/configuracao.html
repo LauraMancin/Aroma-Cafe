@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style/style.css">
+  <link rel="stylesheet" href="style/configuracao.css">
+  <link rel="shortcut icon" href="./image/administrator.png" type="image/x-icon">
+  <title>Configurações | Aroma Café</title>
+</head>
+<body>
+  <aside class="dashboard">
+    <div class="logo">
+      <h2>Aroma Café</h2>
+      <p>Administração</p>
+    </div>
+
+    <nav>
+      <li><a href="./perfilADM.html">Visão Geral</a></li>
+      <li><a href="./produtos.html">Produtos</a></li>
+      <li><a href="./gatos.html">Gatos</a></li>
+      <li><a href="./notificacao.html">Notificações</a></li>
+      <li><a href="./configuracao.html" class="ativo">Configurações</a></li>
+    </nav>
+
+    <div class="btn-sair" id="botaoSair" onclick="sairDaConta()" role="button" tabindex="0">
+      <p class="botaoSair">Sair da Conta</p>
+      <img src="./image/exit.png" alt="Ícone para sair da conta" class="icone">
+    </div>
+  </aside>
+
+  <main class="paginaInicial pagina-interna">
+    <section class="topo-pagina">
+      <div>
+        <small>Painel administrativo</small>
+        <h1>Configurações</h1>
+        <p class="subtitulo">Gerencie suas informações e as preferências do sistema.</p>
+      </div>
+    </section>
+
+    <div class="layout-configuracao">
+
+      <section class="painel-config">
+        <div class="painel-titulo">
+          <span class="config-icone">♙</span>
+          <div>
+            <h2>Perfil administrativo</h2>
+            <p>Informações de acesso e identificação.</p>
+          </div>
+        </div>
+
+        <form id="formPerfil" class="form-config">
+          <div class="campo-config">
+            <label for="nomeAdmin">Nome completo</label>
+            <input id="nomeAdmin" name="nome" type="text" placeholder="Nome do administrador" required>
+          </div>
+
+          <div class="campo-config">
+            <label for="emailAdmin">E-mail</label>
+            <input id="emailAdmin" name="email" type="email" placeholder="admin@aromacafe.com" required>
+          </div>
+
+          <div class="campo-config">
+            <label for="telefoneAdmin">Telefone</label>
+            <input id="telefoneAdmin" name="telefone" type="tel" placeholder="(19) 90000-0000">
+          </div>
+
+          <div class="campo-config">
+            <label for="cargoAdmin">Função</label>
+            <input id="cargoAdmin" name="cargo" type="text" value="Administrador">
+          </div>
+
+          <div class="acoes-config">
+            <button class="btn-primario" type="submit">Salvar perfil</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="painel-config">
+        <div class="painel-titulo">
+          <span class="config-icone">🔔</span>
+          <div>
+            <h2>Preferências de notificações</h2>
+            <p>Escolha quais avisos deseja acompanhar.</p>
+          </div>
+        </div>
+
+        <form id="formPreferencias" class="form-config">
+          <label class="opcao-config">
+            <span>
+              <strong>Estoque baixo</strong>
+              <small>Alertas quando produtos ou ingredientes precisarem de reposição.</small>
+            </span>
+            <input type="checkbox" name="estoque" checked>
+          </label>
+
+          <label class="opcao-config">
+            <span>
+              <strong>Solicitações de adoção</strong>
+              <small>Novos interessados e atualizações dos processos de adoção.</small>
+            </span>
+            <input type="checkbox" name="adocao" checked>
+          </label>
+
+          <label class="opcao-config">
+            <span>
+              <strong>Reservas</strong>
+              <small>Confirmações, alterações e cancelamentos de reservas.</small>
+            </span>
+            <input type="checkbox" name="reservas" checked>
+          </label>
+
+          <label class="opcao-config">
+            <span>
+              <strong>Avisos do sistema</strong>
+              <small>Informações sobre atualizações e ações administrativas.</small>
+            </span>
+            <input type="checkbox" name="sistema" checked>
+          </label>
+
+          <div class="acoes-config">
+            <button class="btn-primario" type="submit">Salvar preferências</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="painel-config">
+        <div class="painel-titulo">
+          <span class="config-icone">⚙</span>
+          <div>
+            <h2>Preferências gerais</h2>
+            <p>Ajustes de exibição e funcionamento do painel.</p>
+          </div>
+        </div>
+
+        <form id="formGeral" class="form-config">
+          <div class="campo-config">
+            <label for="idioma">Idioma do painel</label>
+            <select id="idioma" name="idioma">
+              <option value="pt-BR">Português (Brasil)</option>
+            </select>
+          </div>
+
+          <div class="campo-config">
+            <label for="formatoData">Formato de data</label>
+            <select id="formatoData" name="formatoData">
+              <option value="dd/mm/aaaa">DD/MM/AAAA</option>
+              <option value="aaaa-mm-dd">AAAA-MM-DD</option>
+            </select>
+          </div>
+
+          <label class="opcao-config">
+            <span>
+              <strong>Manter sessão neste dispositivo</strong>
+              <small>Preferência visual armazenada apenas neste navegador.</small>
+            </span>
+            <input type="checkbox" name="manterSessao">
+          </label>
+
+          <div class="acoes-config">
+            <button class="btn-primario" type="submit">Salvar configurações</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="painel-config painel-seguranca">
+        <div class="painel-titulo">
+          <span class="config-icone">⌑</span>
+          <div>
+            <h2>Segurança</h2>
+            <p>Cuidados com o acesso administrativo.</p>
+          </div>
+        </div>
+
+        <div class="aviso-seguranca">
+          <strong>Proteja sua conta</strong>
+          <p>
+            Utilize uma senha forte e não compartilhe seus dados de acesso.
+            Para sair do painel, use a opção “Sair da Conta” no menu lateral.
+          </p>
+        </div>
+
+        <button type="button" class="btn-secundario" id="restaurarPadrao">
+          Restaurar preferências padrão
+        </button>
+      </section>
+
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </main>
+
+  <script src="./js/configuracao.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style/style.css">
+  <link rel="stylesheet" href="./style/notificacao.css">
+  <link rel="shortcut icon" href="./image/administrator.png" type="image/x-icon">
+  <title>Notificações | Aroma Café</title>
+</head>
+<body>
+  <aside class="dashboard">
+    <div class="logo"><h2>Aroma Café</h2><p>Administração</p></div>
+    <nav>
+      <li><a href="./perfilADM.html">Visão Geral</a></li>
+      <li><a href="./produtos.html">Produtos</a></li>
+      <li><a href="./gatos.html">Gatos</a></li>
+      <li><a href="./notificacao.html" class="ativo">Notificações</a></li>
+      <li><a href="./configuracao.html">Configurações</a></li>
+    </nav>
+    <div class="btn-sair" id="botaoSair" onclick="sairDaConta()" role="button" tabindex="0">
+      <p class="botaoSair">Sair da Conta</p>
+      <img src="./image/exit.png" alt="Ícone para sair da conta" class="icone">
+    </div>
+  </aside>
+
+  <main class="paginaInicial pagina-interna">
+    <section class="topo-pagina">
+      <div>
+        <small>Painel administrativo</small>
+        <h1>Notificações</h1>
+        <p class="subtitulo">Acompanhe os avisos e as atualizações do Aroma Café.</p>
+      </div>
+      <button class="btn-primario" id="marcarTodas">Marcar todas como lidas</button>
+    </section>
+
+    <section class="resumo-notificacoes">
+      <article class="resumo-card">
+        <span class="resumo-icone rosa">✉</span>
+        <div><small>Total de notificações</small><h2 id="totalNotificacoes">0</h2></div>
+      </article>
+      <article class="resumo-card">
+        <span class="resumo-icone amarelo">!</span>
+        <div><small>Não lidas</small><h2 id="naoLidas">0</h2></div>
+      </article>
+      <article class="resumo-card">
+        <span class="resumo-icone verde">✓</span>
+        <div><small>Resolvidas / lidas</small><h2 id="lidas">0</h2></div>
+      </article>
+    </section>
+
+    <section class="painel-notificacoes">
+      <div class="painel-cabecalho">
+        <div>
+          <h2>Central de avisos</h2>
+          <p>Mensagens importantes sobre a rotina da cafeteria.</p>
+        </div>
+        <button class="btn-texto" id="limparLidas">Limpar lidas</button>
+      </div>
+
+      <div class="filtros-notificacao">
+        <label class="busca-notificacao">
+          ⌕
+          <input type="search" id="buscaNotificacao" placeholder="Buscar notificação...">
+        </label>
+
+        <select id="filtroTipo" aria-label="Filtrar por categoria">
+          <option value="todas">Todas as categorias</option>
+          <option value="estoque">Estoque</option>
+          <option value="adocao">Adoções</option>
+          <option value="reserva">Reservas</option>
+          <option value="sistema">Sistema</option>
+        </select>
+
+        <select id="filtroStatus" aria-label="Filtrar por situação">
+          <option value="todas">Todas</option>
+          <option value="nao-lidas">Não lidas</option>
+          <option value="lidas">Lidas</option>
+        </select>
+      </div>
+
+      <div id="listaNotificacoes" class="lista-notificacoes" aria-live="polite"></div>
+    </section>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </main>
+
+  <script src="./js/notificacao.js"></script>
+</body>
+</html>
