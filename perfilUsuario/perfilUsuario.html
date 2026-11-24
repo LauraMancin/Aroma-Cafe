@@ -43,7 +43,7 @@
                 </ul>
             </nav>
 
-            <button class="botao-sair" id="botaoSair" type="button" onclick="sairDaConta()">
+            <button class="botao-sair" id="botaoSair" type="button">
                 <span>Sair da Conta</span>
                 <img src="./image/exit.png" alt="Ícone para sair da conta">
             </button>
@@ -181,7 +181,8 @@
                             </div>
                         </div>
 
-                        <button class="botao-salvar" type="button" id="botaoSalvar">SALVAR</button>
+                        <p class="aviso-salvar" id="avisoSalvar">Preencha todos os campos para poder salvar.</p>
+                        <button class="botao-salvar" type="button" id="botaoSalvar" disabled>SALVAR</button>
                     </div>
 
                     <!-- ===== ABA: CONFIGURAÇÕES ===== -->
@@ -444,6 +445,19 @@
             <div class="modal-acoes">
                 <button class="botao-secundario" type="button" data-fechar>Cancelar</button>
                 <button class="botao-salvar botao-modal" type="button" id="salvarSenha">Salvar senha</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== MODAL: CONFIRMAR SAÍDA ===== -->
+    <div id="modalSair" class="modal-overlay">
+        <div class="modal-caixa modal-salvo" role="dialog" aria-modal="true" aria-labelledby="tituloSair">
+            <button class="botaoFechar" type="button" data-fechar aria-label="Fechar">&times;</button>
+            <h2 class="tituloPopup" id="tituloSair">Sair da conta?</h2>
+            <p class="textoPopup">Você realmente deseja sair da sua conta?</p>
+            <div class="modal-acoes acoes-centro">
+                <button class="botao-secundario" type="button" data-fechar>Cancelar</button>
+                <button class="botao-salvar botao-modal" type="button" id="confirmarSair">Sim, sair</button>
             </div>
         </div>
     </div>

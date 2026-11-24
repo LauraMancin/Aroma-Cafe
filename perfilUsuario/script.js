@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
             return Promise.resolve();
         }
 
-        cidadeSelect.innerHTML = "<option>Carregando...</option>";
+        cidadeSelect.innerHTML = '<option value="">Carregando...</option>';
 
         return fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${uf}/municipios`)
             .then((r) => {
@@ -158,20 +158,39 @@ document.addEventListener("DOMContentLoaded", () => {
                     cidadeSelect.appendChild(op);
                 });
                 if (cidadeSelecionada) cidadeSelect.value = cidadeSelecionada;
+                validarFormulario();
             })
             .catch(() => {
                 cidadeSelect.innerHTML = '<option value="">Erro ao carregar cidades</option>';
+                validarFormulario();
             });
     }
 
     $("estado").addEventListener("change", function () {
         carregarCidades(this.value);
+        validarFormulario();
+    });
+
+    /* =========================================================
+       BOTÃO SALVAR: só ativa com TODOS os campos preenchidos
+    ========================================================= */
+    function validarFormulario() {
+        const completo = CAMPOS.every((campo) => $(campo).value.trim() !== "");
+        $("botaoSalvar").disabled = !completo;
+        $("avisoSalvar").style.display = completo ? "none" : "block";
+        return completo;
+    }
+
+    CAMPOS.forEach((campo) => {
+        $(campo).addEventListener("input", validarFormulario);
+        $(campo).addEventListener("change", validarFormulario);
     });
 
     /* =========================================================
        SALVAR INFORMAÇÕES PESSOAIS (todos os campos)
     ========================================================= */
     $("botaoSalvar").addEventListener("click", () => {
+        if (!validarFormulario()) return;
         CAMPOS.forEach((campo) => {
             perfil[campo] = $(campo).value.trim();
         });
@@ -463,10 +482,17 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     /* =========================================================
+       SAIR DA CONTA (com confirmação)
+    ========================================================= */
+    $("botaoSair").addEventListener("click", () => abrirModal("modalSair"));
+    $("confirmarSair").addEventListener("click", sairDaConta);
+
+    /* =========================================================
        INICIALIZAÇÃO
     ========================================================= */
     preencherFormulario();
     atualizarTela();
+    validarFormulario();
 
     if (perfil.estado) {
         carregarCidades(perfil.estado, perfil.cidade);
