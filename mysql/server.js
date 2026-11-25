@@ -26,3 +26,16 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Servidor Aroma Café rodando na porta ${PORT}`);
 });
+
+const db = require('./db');
+
+app.get('/api/health', async (req, res) => {
+  try { await db.query('SELECT 1'); res.json({ ok: true }); }
+  catch (e) { res.status(500).json({ ok: false }); }
+});
+
+app.listen(PORT, async () => {
+  try { await db.query('SELECT 1'); console.log('✔ MySQL conectado'); }
+  catch (e) { console.error('✖ Falha no MySQL:', e.message); }
+  console.log(`Servidor Aroma Café na porta ${PORT}`);
+});

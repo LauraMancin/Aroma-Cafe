@@ -48,3 +48,32 @@ router.patch('/:id/status', async (req, res) => {
 });
  
 module.exports = router;
+
+router.patch('/:id/status', async (req, res) => {
+  const { status } = req.body;
+  if (!['pendente', 'aprovada', 'recusada'].includes(status))
+    return res.status(400).json({ erro: 'Status inválido' });
+
+  const conn = await db.getConnection();
+  try {
+    await conn.beginTransaction();
+    const [r] = await conn.query(
+      'UPDATE solicitacao_adocao SET status = ? WHERE id_solicitacao = ?',
+      [status, req.params.id]);
+    if (!r.affectedRows) { await conn.rollback(); return res.status(404).json({ erro: 'Solicitação não encontrada' }); }
+
+    if (status === 'aprovada') {
+      await conn.query(
+        `UPDATE gato SET status = 'adotado'
+         WHERE id_gato = (SELECT id_gato FROM solicitacao_adocao WHERE id_solicitacao = ?)`,
+        [req.params.id]);
+    }
+    await conn.commit();
+    res.json({ mensagem: 'Status atualizado' });
+  } catch (err) {
+    await conn.rollback();
+    res.status(500).json({ erro: 'Erro ao atualizar solicitação' });
+  } finally {
+    conn.release();
+  }
+});
